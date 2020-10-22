@@ -1,9 +1,9 @@
 import cv2
 
 # Load the cascade
-face_cascade = cv2.CascadeClassifier(r'D:\Desktop\CCCMI\tunjing-opencv\haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(r'D:\Desktop\CCCMI\selflearning_tunjing\opencv\haarcascade_frontalface_default.xml')
 # Read the input image
-imgR = cv2.imread(r'D:\Desktop\CCCMI\tunjing-opencv\test.jpg')
+imgR = cv2.imread(r'D:\Desktop\CCCMI\selflearning_tunjing\opencv\test.jpg')
 img = cv2.resize(imgR, (960, 540))
 
 #Convert into grayscale
