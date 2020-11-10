@@ -18,7 +18,7 @@ def detect_labels_local_file(photo):
     return len(response['Labels'])
 
 def main():
-    photo=r'D:\Desktop\Untitled.png'
+    photo=r'D:\Desktop\ecdyonurus-dispar1.jpg'
 
     label_count=detect_labels_local_file(photo)
     print("Labels detected: " + str(label_count))
