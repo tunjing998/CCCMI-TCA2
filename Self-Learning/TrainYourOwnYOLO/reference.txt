@@ -1,4 +1,0 @@
-used to learn about yolo and get a grasp of modelling
-full code and tutorial: 
-https://blog.insightdatascience.com/how-to-train-your-own-yolov3-detector-from-scratch-224d10e55de2
-source: github.com/AntonMu/TrainYourOwnYOLO
