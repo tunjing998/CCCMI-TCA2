@@ -17,10 +17,26 @@ class User_Account(models.Model):
     created_at = models.DateTimeField()
     user_group = models.CharField(max_length = 200)
 
-
+class River(models.Model):
+    river_id = models.AutoField(primary_key = True)
+    river_code = models.CharField(max_length = 200)
+    river_name = models.CharField(max_length = 200)
+    river_catchments = models.CharField(max_length = 200)
+    river_location = models.PointField()
+    local_authority = models.CharField(max_length = 200)
+    water_body_category  = models.CharField(max_length = 200)
+    protected_area = models.BooleanField()
+    area = models.FloatField()
+    length = models.FloatField()
+    transboundary = models.FloatField()
+    canal = models.FloatField()
 
 class Data(models.Model):
-    data_id = models.AutoField(primary_key = True)    
+    data_id = models.AutoField(primary_key = True) 
+    river = models.ForeignKey(
+        River,
+        on_delete=models.CASCADE
+    )   
     location = models.PointField()
     ph = models.FloatField()
     temp = models.FloatField()
