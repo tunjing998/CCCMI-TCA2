@@ -1,4 +1,5 @@
-from django.contrib.gis.db import models
+from django.db import models
+from django.utils import timezone
 # Create your models here.
 
 class Login_Account(models.Model):
@@ -22,7 +23,8 @@ class River(models.Model):
     river_code = models.CharField(max_length = 200)
     river_name = models.CharField(max_length = 200)
     river_catchments = models.CharField(max_length = 200)
-    river_location = models.PointField()
+    longitute = models.FloatField()
+    langitute = models.FloatField()
     local_authority = models.CharField(max_length = 200)
     water_body_category  = models.CharField(max_length = 200)
     protected_area = models.BooleanField()
@@ -35,14 +37,18 @@ class Data(models.Model):
     data_id = models.AutoField(primary_key = True) 
     river = models.ForeignKey(
         River,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        default=None, 
+        blank=True, 
+        null=True
     )   
-    location = models.PointField()
-    ph = models.FloatField()
-    temp = models.FloatField()
-    date_captured = models.DateTimeField()
-    ecological_status = models.CharField(max_length = 200)
-    score_by_insect = models.IntegerField()
+    longitute = models.FloatField(default=None, blank=True, null=True)
+    langitute = models.FloatField(default=None, blank=True, null=True)
+    ph = models.FloatField(default=None, blank=True, null=True)
+    temp = models.FloatField(default=None, blank=True, null=True)
+    date_captured = models.DateTimeField(default=None, blank=True, null=True)
+    ecological_status = models.CharField(max_length = 200,default=None, blank=True, null=True)
+    score_by_insect = models.IntegerField(default=None, blank=True, null=True)
 
 class Image(models.Model):
     image_id = models.AutoField(primary_key = True)
