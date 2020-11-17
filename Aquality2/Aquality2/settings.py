@@ -81,7 +81,8 @@ DATABASES = {
     'USER': ***REMOVED***,
     'PASSWORD': '',
     'HOST': ***REMOVED***,
-    'PORT': ***REMOVED***
+    'PORT': ***REMOVED***,
+    'init_command': ***REMOVED***
   }
   }
 

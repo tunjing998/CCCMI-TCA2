@@ -7,6 +7,8 @@ class Login_Account(models.Model):
     username = models.CharField(max_length=200)
     email = models.EmailField()
     password = models.CharField(max_length=200)
+    def __str__(self):
+        return self.username
 
 class User_Account(models.Model):
     user_account = models.OneToOneField(
