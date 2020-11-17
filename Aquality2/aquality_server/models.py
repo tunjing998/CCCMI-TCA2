@@ -1,5 +1,4 @@
-from django.db import models
-
+from django.contrib.gis.db import models
 # Create your models here.
 
 class Login_Account(models.Model):
@@ -18,9 +17,16 @@ class User_Account(models.Model):
     created_at = models.DateTimeField()
     user_group = models.CharField(max_length = 200)
 
-class Data(models.Model):
-    data_id = models.AutoField(primary_key = True)
 
+
+class Data(models.Model):
+    data_id = models.AutoField(primary_key = True)    
+    location = models.PointField()
+    ph = models.FloatField()
+    temp = models.FloatField()
+    date_captured = models.DateTimeField()
+    ecological_status = models.CharField(max_length = 200)
+    score_by_insect = models.IntegerField()
 
 class Image(models.Model):
     image_id = models.AutoField(primary_key = True)
