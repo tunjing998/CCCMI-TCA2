@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -9,12 +10,14 @@ import {
   SignIn,
   CreateAccount,
   Profile,
-  Home,
   Search,
   Search2,
   Details,
   Splash,
+  Settings,
 } from './Screens';
+
+import {Home} from './screens/Home';
 
 //authorize stack
 const AuthStack = createStackNavigator();
@@ -62,12 +65,12 @@ const RootStackScreen = ({userToken}) => (
   </RootStack.Navigator>
 );
 
-const TabsScreen = () => (
+/* const TabsScreen = () => (
   <Tabs.Navigator>
     <Tabs.Screen name="Home" component={HomeStackScreen} />
     <Tabs.Screen name="Search" component={SearchStackScreen} />
   </Tabs.Navigator>
-);
+); */
 
 const ProfileStackScreen = () => (
   <ProfileStack.Navigator>
@@ -96,10 +99,11 @@ const SearchStackScreen = () => (
 );
 
 const Drawer = createDrawerNavigator();
-const DrawerScreen = () => (
+const DrawerScreen = ({Button}) => (
   <Drawer.Navigator>
-    <Drawer.Screen name="Home" component={TabsScreen} />
+    <Drawer.Screen name="Home" component={HomeStackScreen} />
     <Drawer.Screen name="Profile" component={ProfileStackScreen} />
+    <Drawer.Screen name="Settings" component={Settings} />
   </Drawer.Navigator>
 );
 export default () => {

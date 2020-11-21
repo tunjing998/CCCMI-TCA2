@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const ScreenContainer = ({children}) => (
+export const ScreenContainer = ({children}) => (
   <View style={styles.container}>{children}</View>
 );
 
@@ -51,28 +51,9 @@ export const Profile = ({navigation}) => {
     <ScreenContainer>
       <Text>Profile Screen</Text>
       <Button title="Drawer" onPress={() => navigation.toggleDrawer()} />
-      <Button title="Sign Out" onPress={() => signOut()} />
     </ScreenContainer>
   );
 };
-
-export const Home = ({navigation}) => (
-  <ScreenContainer>
-    <Text>Master List Screen</Text>
-    <Button
-      title="React Native by Example"
-      onPress={() =>
-        // send name param, later grab using route
-        navigation.push('Details', {name: 'React Native by Example '})
-      }
-    />
-    <Button
-      title="React Native School"
-      onPress={() => navigation.push('Details', {name: 'React Native School'})}
-    />
-    <Button title="Drawer" onPress={() => navigation.toggleDrawer()} />
-  </ScreenContainer>
-);
 
 export const Search = ({navigation}) => (
   <ScreenContainer>
@@ -108,5 +89,11 @@ export const Details = ({route}) => (
 export const Splash = () => (
   <ScreenContainer>
     <Text>Loading...</Text>
+  </ScreenContainer>
+);
+
+export const Settings = () => (
+  <ScreenContainer>
+    <Text>Settings Screen</Text>
   </ScreenContainer>
 );
