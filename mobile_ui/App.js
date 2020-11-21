@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-/* import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'; */
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {AuthContext} from './context';
 
@@ -16,6 +16,10 @@ import {Settings} from './screens/Settings';
 import {Details} from './Screens';
 import {LocateRiver} from './screens/LocateRiver';
 import {ChooseRiverScreen} from './screens/ChooseRiver';
+
+import {RiverDetails} from './screens/RiverDetails';
+import {Arduino} from './screens/Arduino';
+import {Insects} from './screens/Insects';
 
 //sign in / create account
 const AuthStack = createStackNavigator();
@@ -36,31 +40,6 @@ const AuthStackScreen = () => (
 
 /* const SearchStack = createStackNavigator(); */
 const ProfileStack = createStackNavigator();
-
-const RootStack = createStackNavigator();
-const RootStackScreen = ({userToken}) => (
-  <RootStack.Navigator headerMode="none">
-    {/* if user token exist, render drawer screen */}
-    {userToken ? (
-      <RootStack.Screen
-        name="App"
-        component={DrawerScreen}
-        options={{
-          animationEnabled: false,
-        }}
-      />
-    ) : (
-      /* else, render authstack screen */
-      <RootStack.Screen
-        name="Auth"
-        component={AuthStackScreen}
-        options={{
-          animationEnabled: false,
-        }}
-      />
-    )}
-  </RootStack.Navigator>
-);
 
 /* const Tabs = createBottomTabNavigator();
 const TabsScreen = () => (
@@ -113,6 +92,16 @@ const ChooseRiverStackScreen = () => (
   </ChooseRiver.Navigator>
 );
 
+//main screen bottom tab navigator
+const Tab = createBottomTabNavigator();
+const BottomTabs = () => (
+  <Tab.Navigator>
+    <Tab.Screen name="River Details" component={RiverDetails} />
+    <Tab.Screen name="Arduino" component={Arduino} />
+    <Tab.Screen name="Insects" component={Insects} />
+  </Tab.Navigator>
+);
+
 //render based on usertoken
 export default () => {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -154,3 +143,28 @@ export default () => {
     </AuthContext.Provider>
   );
 };
+
+const RootStack = createStackNavigator();
+const RootStackScreen = ({userToken}) => (
+  <RootStack.Navigator headerMode="none">
+    {/* if user token exist, render drawer screen */}
+    {userToken ? (
+      <RootStack.Screen
+        name="App"
+        component={DrawerScreen}
+        options={{
+          animationEnabled: false,
+        }}
+      />
+    ) : (
+      /* else, render authstack screen */
+      <RootStack.Screen
+        name="Auth"
+        component={AuthStackScreen}
+        options={{
+          animationEnabled: false,
+        }}
+      />
+    )}
+  </RootStack.Navigator>
+);
