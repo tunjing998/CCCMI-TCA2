@@ -5,5 +5,6 @@ import {ScreenContainer} from '../styles/screenContainer';
 export const Arduino = () => (
   <ScreenContainer>
     <Text>Arduino Screen</Text>
+    
   </ScreenContainer>
 );
