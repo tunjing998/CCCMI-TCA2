@@ -1,9 +1,7 @@
 import React from 'react';
-import {Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createStackNavigator, HeaderBackButton} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createDrawerNavigator} from '@react-navigation/drawer';
 import {AuthContext} from './context';
 
 import {Home} from './screens/Home';
@@ -11,20 +9,46 @@ import {SignIn} from './screens/SignIn';
 import {CreateAccount} from './screens/CreateAccount';
 import {Profile} from './screens/Profile';
 import {Splash} from './screens/Splash';
-import {Settings} from './screens/Settings';
 
-import {Details} from './Screens';
 import {LocateRiver} from './screens/LocateRiver';
 import {ChooseRiverScreen} from './screens/ChooseRiver';
-
+import {ViewSample} from './screens/ViewSample';
 import {RiverDetails} from './screens/RiverDetails';
 import {Arduino} from './screens/Arduino';
 import {Insects} from './screens/Insects';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 //sign in / create account
 const AuthStack = createStackNavigator();
+const GeneralStackScreen = ({navigation}) => (
+  <AuthStack.Navigator initialRouteName="Home">
+    <AuthStack.Screen name="Home" component={Home} />
+    <AuthStack.Screen name="Profile" component={Profile} />
+    <AuthStack.Screen name="LocateRiver" component={LocateRiver} />
+    <AuthStack.Screen name="ChooseRiver" component={ChooseRiverScreen} />
+    <AuthStack.Screen
+      name="RiverDetails"
+      component={RiverDetailsStackScreen}
+      options={{
+        headerLeft: () => (
+          <HeaderBackButton
+            onPress={() => {
+              navigation.navigate('Home');
+            }}
+          />
+        ),
+      }}
+    />
+    <AuthStack.Screen name="ViewSample" component={ViewSample} />
+  </AuthStack.Navigator>
+);
+
 const AuthStackScreen = () => (
-  <AuthStack.Navigator>
+  <AuthStack.Navigator
+    initialRouteName="SignIn"
+    screenOptions={{
+      headerShown: false,
+    }}>
     <AuthStack.Screen
       name="SignIn"
       component={SignIn}
@@ -38,69 +62,43 @@ const AuthStackScreen = () => (
   </AuthStack.Navigator>
 );
 
-/* const SearchStack = createStackNavigator(); */
-const ProfileStack = createStackNavigator();
-
-/* const Tabs = createBottomTabNavigator();
-const TabsScreen = () => (
-  <Tabs.Navigator>
-    <Tabs.Screen name="Home" component={HomeStackScreen} />
-    <Tabs.Screen name="Search" component={SearchStackScreen} />
-  </Tabs.Navigator>
-); */
-
-const ProfileStackScreen = () => (
-  <ProfileStack.Navigator>
-    <ProfileStack.Screen name="Profile" component={Profile} />
-  </ProfileStack.Navigator>
-);
-
-//home
-const HomeStack = createStackNavigator();
-const HomeStackScreen = () => (
-  <HomeStack.Navigator>
-    <HomeStack.Screen name="Home" component={Home} />
-    <HomeStack.Screen
-      name="ChooseRiverStackScreen"
-      component={ChooseRiverStackScreen}
-    />
-  </HomeStack.Navigator>
-);
-
-/* const SearchStackScreen = () => (
-  <SearchStack.Navigator>
-    <SearchStack.Screen name="Search" component={Search} />
-    <SearchStack.Screen name="Search2" component={Search2} />
-  </SearchStack.Navigator>
-); */
-
-const Drawer = createDrawerNavigator();
-const DrawerScreen = () => (
-  <Drawer.Navigator>
-    <Drawer.Screen name="Home" component={HomeStackScreen} />
-    <Drawer.Screen name="Profile" component={ProfileStackScreen} />
-    <Drawer.Screen name="Settings" component={Settings} />
-  </Drawer.Navigator>
-);
-
-//Choose River Stack
-const ChooseRiver = createStackNavigator();
-const ChooseRiverStackScreen = () => (
-  <ChooseRiver.Navigator>
-    <ChooseRiver.Screen name="Locate River" component={LocateRiver} />
-    <ChooseRiver.Screen name="Choose River" component={ChooseRiverScreen} />
-  </ChooseRiver.Navigator>
-);
-
-//main screen bottom tab navigator
-const Tab = createBottomTabNavigator();
-const BottomTabs = () => (
-  <Tab.Navigator>
-    <Tab.Screen name="River Details" component={RiverDetails} />
-    <Tab.Screen name="Arduino" component={Arduino} />
-    <Tab.Screen name="Insects" component={Insects} />
-  </Tab.Navigator>
-);
+const RiverDetailsStack = createBottomTabNavigator();
+export const RiverDetailsStackScreen = () => {
+  return (
+    <RiverDetailsStack.Navigator>
+      <RiverDetailsStack.Screen
+        name="RiverDetails"
+        component={RiverDetails}
+        options={{
+          tabBarLabel: 'Details',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="exclamation-triangle" size={size} color={color} />
+          ),
+        }}
+      />
+      <RiverDetailsStack.Screen
+        name="Arduino"
+        component={Arduino}
+        options={{
+          tabBarLabel: 'Arduino',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="arrows" size={size} color={color} />
+          ),
+        }}
+      />
+      <RiverDetailsStack.Screen
+        name="Insects"
+        component={Insects}
+        options={{
+          tabBarLabel: 'Insects',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="bug" size={size} color={color} />
+          ),
+        }}
+      />
+    </RiverDetailsStack.Navigator>
+  );
+};
 
 //render based on usertoken
 export default () => {
@@ -151,7 +149,7 @@ const RootStackScreen = ({userToken}) => (
     {userToken ? (
       <RootStack.Screen
         name="App"
-        component={DrawerScreen}
+        component={GeneralStackScreen}
         options={{
           animationEnabled: false,
         }}

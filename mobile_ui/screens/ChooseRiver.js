@@ -8,12 +8,7 @@ export const ChooseRiverScreen = ({navigation}) => {
       <Text>Choose River Screen</Text>
       <Button
         title="Choose"
-        onPress={() =>
-          // send name param, later grab using route cc
-          navigation.navigate('BottomTabs', {
-            screen: 'River Details',
-          })
-        }
+        onPress={() => navigation.navigate('RiverDetails')}
       />
     </ScreenContainer>
   );

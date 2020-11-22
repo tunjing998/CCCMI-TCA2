@@ -8,7 +8,7 @@ export const LocateRiver = ({navigation}) => {
       <Text>Locate River Screen</Text>
       <Button
         title="select river"
-        onPress={() => navigation.push('Choose River')}
+        onPress={() => navigation.push('ChooseRiver')}
       />
     </ScreenContainer>
   );
