@@ -17,6 +17,7 @@ import {RiverDetails} from './screens/RiverDetails';
 import {Arduino} from './screens/Arduino';
 import {Insects} from './screens/Insects';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {HeaderButtons} from './screens/headerButtons';
 
 //sign in / create account
 const AuthStack = createStackNavigator();
@@ -24,12 +25,21 @@ const GeneralStackScreen = ({navigation}) => (
   <AuthStack.Navigator initialRouteName="Home">
     <AuthStack.Screen name="Home" component={Home} />
     <AuthStack.Screen name="Profile" component={Profile} />
-    <AuthStack.Screen name="LocateRiver" component={LocateRiver} />
-    <AuthStack.Screen name="ChooseRiver" component={ChooseRiverScreen} />
+    <AuthStack.Screen
+      name="LocateRiver"
+      component={LocateRiver}
+      options={{title: 'Locate River'}}
+    />
+    <AuthStack.Screen
+      name="ChooseRiver"
+      component={ChooseRiverScreen}
+      options={{title: 'Choose River'}}
+    />
     <AuthStack.Screen
       name="RiverDetails"
       component={RiverDetailsStackScreen}
-      options={{
+      options={({route}) => ({
+        title: route.params.name,
         headerLeft: () => (
           <HeaderBackButton
             onPress={() => {
@@ -37,7 +47,8 @@ const GeneralStackScreen = ({navigation}) => (
             }}
           />
         ),
-      }}
+        headerRight: () => <HeaderButtons />,
+      })}
     />
     <AuthStack.Screen name="ViewSample" component={ViewSample} />
   </AuthStack.Navigator>

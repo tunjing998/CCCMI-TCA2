@@ -12,4 +12,8 @@ export const globalStyles = StyleSheet.create({
     marginVertical: 10,
     borderRadius: 5,
   },
+  icons: {
+    flex: 1,
+    flexDirection: 'row',
+  },
 });
