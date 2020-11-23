@@ -11,19 +11,16 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# False if not in os.environ
+DEBUG = config('DEBUG')
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ***REMOVED***
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
+SECRET_KEY = config('SECRET_KEY')
 
 ALLOWED_HOSTS = []
 
@@ -78,12 +75,12 @@ WSGI_APPLICATION = 'Aquality2.wsgi.application'
 DATABASES = {
 'default': {
     'ENGINE': 'django.db.backends.mysql',
-    'NAME': ***REMOVED***,
-    'USER': ***REMOVED***,
-    'PASSWORD': '',
-    'HOST': ***REMOVED***,
-    'PORT': ***REMOVED***,
-    'init_command': ***REMOVED***
+    'NAME': config('DATABASE_NAME'),
+    'USER': config('DATABASE_USERNAME'),
+    'PASSWORD': config('DATABASE_PASSWORD'),
+    'HOST':config('DATABASE_HOST'),
+    'PORT':config('DATABASE_PORT'),
+    'init_command': config('DATABASE_INITCOMMAND')
   }
   }
 
