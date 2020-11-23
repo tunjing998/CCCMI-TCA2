@@ -79,3 +79,4 @@ def saveRiverListToDb(waterbodyList):
 def saveRiverListToDbFromWFA():
     waterbodylist = getAllWaterBodyDetails()
     saveRiverListToDb(waterbodylist)
+    return 'Done'
