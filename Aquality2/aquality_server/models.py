@@ -29,11 +29,9 @@ class River(models.Model):
     langitute = models.FloatField()
     local_authority = models.CharField(max_length = 200)
     water_body_category  = models.CharField(max_length = 200)
-    protected_area = models.BooleanField()
-    area = models.FloatField()
-    length = models.FloatField()
-    transboundary = models.FloatField()
-    canal = models.FloatField()
+    protected_area = models.CharField(max_length = 20)
+    transboundary = models.CharField(max_length = 20)
+    canal = models.CharField(max_length = 20)
 
 class Data(models.Model):
     data_id = models.AutoField(primary_key = True) 
