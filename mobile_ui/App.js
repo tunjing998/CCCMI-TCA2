@@ -8,6 +8,7 @@ import {Home} from './screens/Home';
 import {SignIn} from './screens/SignIn';
 import {CreateAccount} from './screens/CreateAccount';
 import {Profile} from './screens/Profile';
+import {Settings} from './screens/Settings';
 import {Splash} from './screens/Splash';
 
 import {LocateRiver} from './screens/LocateRiver';
@@ -25,6 +26,7 @@ const GeneralStackScreen = ({navigation}) => (
   <AuthStack.Navigator initialRouteName="Home">
     <AuthStack.Screen name="Home" component={Home} />
     <AuthStack.Screen name="Profile" component={Profile} />
+    <AuthStack.Screen name="Settings" component={Settings} />
     <AuthStack.Screen
       name="LocateRiver"
       component={LocateRiver}

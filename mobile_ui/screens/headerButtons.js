@@ -1,22 +1,23 @@
 import React from 'react';
-import {View} from 'react-native';
-import {StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {useNavigation} from '@react-navigation/native';
 
-export const HeaderButtons = ({navigation}) => {
+export const HeaderButtons = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.icons}>
       <Icon
         style={{padding: 10}}
         name="user"
         size={30}
-        onPress={() => alert('go to profile')}
+        onPress={() => navigation.push('Profile')}
       />
       <Icon
         style={{padding: 10}}
         name="cog"
         size={30}
-        onPress={() => alert('go to settings')}
+        onPress={() => navigation.push('Settings')}
       />
     </View>
   );
