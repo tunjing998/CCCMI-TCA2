@@ -22,7 +22,7 @@ class User_Account(models.Model):
 
 class River(models.Model):
     river_id = models.AutoField(primary_key = True)
-    river_code = models.CharField(max_length = 200)
+    river_code = models.CharField(max_length = 200,unique=True)
     river_name = models.CharField(max_length = 200)
     river_catchments = models.CharField(max_length = 200)
     longitute = models.FloatField()
