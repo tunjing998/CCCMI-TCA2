@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 # Create your models here.
 
+# Login Account Model
 class Login_Account(models.Model):
     account_id = models.AutoField(primary_key = True)
     username = models.CharField(max_length=200)
@@ -10,6 +11,7 @@ class Login_Account(models.Model):
     def __str__(self):
         return self.username
 
+#User Account Models
 class User_Account(models.Model):
     user_account = models.OneToOneField(
         Login_Account,
@@ -20,6 +22,7 @@ class User_Account(models.Model):
     created_at = models.DateTimeField()
     user_group = models.CharField(max_length = 200)
 
+#River Models
 class River(models.Model):
     river_id = models.AutoField(primary_key = True)
     river_code = models.CharField(max_length = 200,unique=True)
@@ -34,6 +37,7 @@ class River(models.Model):
     transboundary = models.CharField(max_length = 20)
     canal = models.CharField(max_length = 20)
 
+#Data Collected Model
 class Data(models.Model):
     data_id = models.AutoField(primary_key = True) 
     river = models.ForeignKey(
@@ -51,6 +55,7 @@ class Data(models.Model):
     ecological_status = models.CharField(max_length = 200,default=None, blank=True, null=True)
     score_by_insect = models.IntegerField(default=None, blank=True, null=True)
 
+#Image Model
 class Image(models.Model):
     image_id = models.AutoField(primary_key = True)
     image_path = models.CharField(max_length =200)
