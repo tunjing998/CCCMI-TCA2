@@ -14,17 +14,17 @@ export const Home = ({navigation}) => {
         title="Take new sample"
         onPress={() =>
           // send name param, later grab using route cc
-          navigation.navigate('ChooseRiverStackScreen', {
-            screen: 'Locate River',
-          })
+          navigation.push('LocateRiver')
         }
       />
-      {/* <Button
+      <Button
         title="View Sample"
-        onPress={() => navigation.push('Details', {name: 'View Sample Screen'})}
-      /> */}
+        onPress={() =>
+          navigation.push('ViewSample', {name: 'View Sample Screen'})
+        }
+      />
 
-      <Button title="Drawer" onPress={() => navigation.toggleDrawer()} />
+      {/* <Button title="Drawer" onPress={() => navigation.toggleDrawer()} /> */}
       <Button title="Sign Out" onPress={() => signOut()} color="red" />
     </ScreenContainer>
   );

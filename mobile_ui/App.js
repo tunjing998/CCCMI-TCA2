@@ -1,26 +1,67 @@
 import React from 'react';
-import {Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-/* import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'; */
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createStackNavigator, HeaderBackButton} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {AuthContext} from './context';
 
 import {Home} from './screens/Home';
 import {SignIn} from './screens/SignIn';
 import {CreateAccount} from './screens/CreateAccount';
 import {Profile} from './screens/Profile';
-import {Splash} from './screens/Splash';
 import {Settings} from './screens/Settings';
+import {Splash} from './screens/Splash';
 
-import {Details} from './Screens';
 import {LocateRiver} from './screens/LocateRiver';
 import {ChooseRiverScreen} from './screens/ChooseRiver';
+import {ViewSample} from './screens/ViewSample';
+import {RiverDetails} from './screens/RiverDetails';
+import {Arduino} from './screens/Arduino';
+import {Insects} from './screens/Insects';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {HeaderButtons} from './screens/headerButtons';
 
 //sign in / create account
 const AuthStack = createStackNavigator();
+const GeneralStackScreen = ({navigation}) => (
+  <AuthStack.Navigator initialRouteName="Home">
+    <AuthStack.Screen name="Home" component={Home} />
+    <AuthStack.Screen name="Profile" component={Profile} />
+    <AuthStack.Screen name="Settings" component={Settings} />
+    <AuthStack.Screen
+      name="LocateRiver"
+      component={LocateRiver}
+      options={{title: 'Locate River'}}
+    />
+    <AuthStack.Screen
+      name="ChooseRiver"
+      component={ChooseRiverScreen}
+      options={{title: 'Choose River'}}
+    />
+    <AuthStack.Screen
+      name="RiverDetails"
+      component={RiverDetailsStackScreen}
+      options={({route}) => ({
+        title: route.params.name,
+        headerLeft: () => (
+          <HeaderBackButton
+            onPress={() => {
+              navigation.navigate('Home');
+            }}
+          />
+        ),
+        headerRight: () => <HeaderButtons />,
+      })}
+    />
+    <AuthStack.Screen name="ViewSample" component={ViewSample} />
+  </AuthStack.Navigator>
+);
+
 const AuthStackScreen = () => (
-  <AuthStack.Navigator>
+  <AuthStack.Navigator
+    initialRouteName="SignIn"
+    screenOptions={{
+      headerShown: false,
+    }}>
     <AuthStack.Screen
       name="SignIn"
       component={SignIn}
@@ -34,84 +75,43 @@ const AuthStackScreen = () => (
   </AuthStack.Navigator>
 );
 
-/* const SearchStack = createStackNavigator(); */
-const ProfileStack = createStackNavigator();
-
-const RootStack = createStackNavigator();
-const RootStackScreen = ({userToken}) => (
-  <RootStack.Navigator headerMode="none">
-    {/* if user token exist, render drawer screen */}
-    {userToken ? (
-      <RootStack.Screen
-        name="App"
-        component={DrawerScreen}
+const RiverDetailsStack = createBottomTabNavigator();
+export const RiverDetailsStackScreen = () => {
+  return (
+    <RiverDetailsStack.Navigator>
+      <RiverDetailsStack.Screen
+        name="RiverDetails"
+        component={RiverDetails}
         options={{
-          animationEnabled: false,
+          tabBarLabel: 'Details',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="exclamation-triangle" size={size} color={color} />
+          ),
         }}
       />
-    ) : (
-      /* else, render authstack screen */
-      <RootStack.Screen
-        name="Auth"
-        component={AuthStackScreen}
+      <RiverDetailsStack.Screen
+        name="Arduino"
+        component={Arduino}
         options={{
-          animationEnabled: false,
+          tabBarLabel: 'Arduino',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="arrows" size={size} color={color} />
+          ),
         }}
       />
-    )}
-  </RootStack.Navigator>
-);
-
-/* const Tabs = createBottomTabNavigator();
-const TabsScreen = () => (
-  <Tabs.Navigator>
-    <Tabs.Screen name="Home" component={HomeStackScreen} />
-    <Tabs.Screen name="Search" component={SearchStackScreen} />
-  </Tabs.Navigator>
-); */
-
-const ProfileStackScreen = () => (
-  <ProfileStack.Navigator>
-    <ProfileStack.Screen name="Profile" component={Profile} />
-  </ProfileStack.Navigator>
-);
-
-//home
-const HomeStack = createStackNavigator();
-const HomeStackScreen = () => (
-  <HomeStack.Navigator>
-    <HomeStack.Screen name="Home" component={Home} />
-    <HomeStack.Screen
-      name="ChooseRiverStackScreen"
-      component={ChooseRiverStackScreen}
-    />
-  </HomeStack.Navigator>
-);
-
-/* const SearchStackScreen = () => (
-  <SearchStack.Navigator>
-    <SearchStack.Screen name="Search" component={Search} />
-    <SearchStack.Screen name="Search2" component={Search2} />
-  </SearchStack.Navigator>
-); */
-
-const Drawer = createDrawerNavigator();
-const DrawerScreen = () => (
-  <Drawer.Navigator>
-    <Drawer.Screen name="Home" component={HomeStackScreen} />
-    <Drawer.Screen name="Profile" component={ProfileStackScreen} />
-    <Drawer.Screen name="Settings" component={Settings} />
-  </Drawer.Navigator>
-);
-
-//Choose River Stack
-const ChooseRiver = createStackNavigator();
-const ChooseRiverStackScreen = () => (
-  <ChooseRiver.Navigator>
-    <ChooseRiver.Screen name="Locate River" component={LocateRiver} />
-    <ChooseRiver.Screen name="Choose River" component={ChooseRiverScreen} />
-  </ChooseRiver.Navigator>
-);
+      <RiverDetailsStack.Screen
+        name="Insects"
+        component={Insects}
+        options={{
+          tabBarLabel: 'Insects',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="bug" size={size} color={color} />
+          ),
+        }}
+      />
+    </RiverDetailsStack.Navigator>
+  );
+};
 
 //render based on usertoken
 export default () => {
@@ -154,3 +154,28 @@ export default () => {
     </AuthContext.Provider>
   );
 };
+
+const RootStack = createStackNavigator();
+const RootStackScreen = ({userToken}) => (
+  <RootStack.Navigator headerMode="none">
+    {/* if user token exist, render drawer screen */}
+    {userToken ? (
+      <RootStack.Screen
+        name="App"
+        component={GeneralStackScreen}
+        options={{
+          animationEnabled: false,
+        }}
+      />
+    ) : (
+      /* else, render authstack screen */
+      <RootStack.Screen
+        name="Auth"
+        component={AuthStackScreen}
+        options={{
+          animationEnabled: false,
+        }}
+      />
+    )}
+  </RootStack.Navigator>
+);
