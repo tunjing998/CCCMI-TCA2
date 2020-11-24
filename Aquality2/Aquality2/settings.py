@@ -34,8 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aquality_server.apps.AqualityServerConfig',
-    'catchmentApiCatch.apps.CatchmentapicatchConfig'
+    'aquality_server.apps.AqualityServerConfig'
 ]
 
 MIDDLEWARE = [
