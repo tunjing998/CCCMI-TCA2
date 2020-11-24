@@ -49,6 +49,7 @@ def getAllWaterBodyCode():
             
 def getAllWaterBodyDetails():
     waterbodyCodeList = getAllWaterBodyCode()
+    waterbodyCodeList = list(dict.fromkeys(waterbodyCodeList))
     waterbodyDetailList = []
     for waterbodyCode in waterbodyCodeList:
         targetUrl = catchmentsUrl + waterbodyApiKey + waterbodyCode
@@ -65,7 +66,8 @@ def saveRiverListToDb(waterbodyList):
         water = River(
                 river_code=waterbody.get("Code"),
                 river_name = waterbody.get("Name"),
-                river_catchments =waterbody.get("Code") ,
+                river_catchments_code =waterbody.get("Catchment")[0].get("Code"),
+                river_catchments =waterbody.get("Catchment")[0].get("Name"),
                 longitute =waterbody.get("Longitude") ,
                 langitute =waterbody.get("Latitude") ,
                 local_authority = waterbody.get("LocalAuthority"),

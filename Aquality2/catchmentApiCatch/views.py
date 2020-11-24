@@ -8,5 +8,5 @@ def home(request):
     catchmentList = CatchmentCatcher.getOneWaterDetails()
     catchmentList.get("Catchment")
     return render(request, 'catchmentApiCatch/home.html', {
-        'catchmentList': catchmentList
+        'catchmentList': catchmentList.get("Catchment")[0].get("Code")
     })
