@@ -1,25 +1,30 @@
 import requests
 from aquality_server.models import River
 
+#The Path Variable Access to wfd Api
 catchmentsUrl = "https://wfdapi.edenireland.ie/api/"
 catchmentApiKey = 'catchment/'
 subcatchmentApiKey = '/subcatchment/'
 waterbodyApiKey = 'waterbody/'
 
+#Get JsonResult From targetUrl
 def getJsonFrom(targetUrl):
     response = requests.get(targetUrl)
     return response.json()
 
+#Get all CatchmentList From API
 def getCatchmentList():
     targetUrl = catchmentsUrl + catchmentApiKey
     jsonData = getJsonFrom(targetUrl)
     return jsonData['Catchments']
 
+#Get One CatchmentDetai By Catchment Code
 def getCatchmentDetail(code):
     targetUrl = catchmentsUrl + catchmentApiKey + code
     jsonData = getJsonFrom(targetUrl)
     return jsonData
 
+#Get All Catchment Detail By Using All Catchment 
 def getCatchmentDetailList():
     catchmentList = getCatchmentList()
     catchmentDataList = []
@@ -28,16 +33,19 @@ def getCatchmentDetailList():
         catchmentDataList.append(getJsonFrom(targetUrl))
     return catchmentDataList
 
+#Get Subcatchment Detail by SubcatchmentCode
 def getSubCatchmentDetail(subcatchmentcode):
     targetUrl = catchmentsUrl + catchmentApiKey + subcatchmentcode.split('_')[0]+ subcatchmentApiKey + subcatchmentcode
     jsonData = getJsonFrom(targetUrl)
     return jsonData
 
+#Get Waterbody Detail by its code
 def getWaterBodyDetail(waterbodycode):
     targetUrl = catchmentsUrl + waterbodyApiKey + waterbodycode
     jsonData = getJsonFrom(targetUrl)
     return jsonData
 
+#Get All Waterbody Code 
 def getAllWaterBodyCode():
     catchmentList = getCatchmentDetailList()
     waterbodyCodeList = []
@@ -47,6 +55,7 @@ def getAllWaterBodyCode():
                 waterbodyCodeList.append(waterbody["Code"])
     return waterbodyCodeList
             
+#Get All Waterbody Details List
 def getAllWaterBodyDetails():
     waterbodyCodeList = getAllWaterBodyCode()
     waterbodyCodeList = list(dict.fromkeys(waterbodyCodeList))
@@ -56,11 +65,13 @@ def getAllWaterBodyDetails():
         waterbodyDetailList.append(getJsonFrom(targetUrl))
     return waterbodyDetailList
 
-def getOneWaterDetails():
-    waterbodyCode = "IE_NW_01B010100"
+#Get Waterbody Detail By Its Code
+def getOneWaterDetails(waterbodyCode):
+#   waterbodyCode = "IE_NW_01B010100"
     targetUrl = catchmentsUrl + waterbodyApiKey + waterbodyCode
     return getJsonFrom(targetUrl)
 
+#Save All RiverList into Database
 def saveRiverListToDb(waterbodyList):
     for waterbody in waterbodyList:
         water = River(
@@ -78,6 +89,7 @@ def saveRiverListToDb(waterbodyList):
                 )
         water.save()
 
+# Load All Data From WFA, Save to DB
 def saveRiverListToDbFromWFA():
     waterbodylist = getAllWaterBodyDetails()
     saveRiverListToDb(waterbodylist)
