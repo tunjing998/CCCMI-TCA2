@@ -18,6 +18,5 @@ from django.urls import include, path
 
 urlpatterns = [
     path('aquality_server/', include('aquality_server.urls')),
-    path('admin/', admin.site.urls),
-    path('catchmentApiCatch/',include('catchmentApiCatch.urls'))
+    path('admin/', admin.site.urls)
 ]
