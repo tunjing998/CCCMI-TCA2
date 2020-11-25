@@ -10,6 +10,8 @@ target 'mobile_ui' do
 
   pod 'react-native-geolocation', :path => '../node_modules/@react-native-community/geolocation'
 
+  pod 'ReactNativeGetLocation', :path => '../node_modules/react-native-get-location'
+
   target 'mobile_uiTests' do
     inherit! :complete
     # Pods for testing

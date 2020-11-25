@@ -11,9 +11,7 @@ import {
   TextInput,
 } from 'react-native';
 
-//import all the components we are going to use.
-import Geolocation from '@react-native-community/geolocation';
-
+import GetLocation from 'react-native-get-location';
 export default class LocateTest extends Component {
   constructor() {
     super();
@@ -29,12 +27,16 @@ export default class LocateTest extends Component {
     this.textInputContent = React.createRef();
   }
 
+  /**
+   *life cycle
+   *
+   * @memberof LocateTest
+   */
   componentDidMount = async () => (
     () => {
       const requestLocationPermission = async () => {
         if (Platform.OS === 'ios') {
           this.getOneTimeLocation();
-          this.subscribeLocationLocation();
         } else {
           try {
             const granted = await PermissionsAndroid.request(
@@ -47,7 +49,6 @@ export default class LocateTest extends Component {
             if (granted === PermissionsAndroid.RESULTS.GRANTED) {
               //To Check, If Permission is granted
               this.getOneTimeLocation();
-              this.subscribeLocationLocation();
             } else {
               this.setState({locationStatus: 'Permission Denied'});
             }
@@ -64,6 +65,11 @@ export default class LocateTest extends Component {
     []
   );
 
+  /**
+   *life cycle
+   *
+   * @memberof LocateTest
+   */
   componentDidUpdate = async () => (
     () => {
       const requestLocationPermission = async () => {
@@ -99,71 +105,62 @@ export default class LocateTest extends Component {
     []
   );
 
+  /**
+   *get time location once
+   *
+   * @memberof LocateTest
+   */
   getOneTimeLocation = () => {
+    console.log('getOneTimeLocation called');
     this.setState({locationStatus: 'Getting Location ...'});
-    Geolocation.getCurrentPosition(
-      //Will give you the current location
-      (position) => {
+    GetLocation.getCurrentPosition({
+      enableHighAccuracy: true,
+      timeout: 15000,
+    })
+      .then((position) => {
         this.setState({locationStatus: 'You are Here'});
 
         //getting the Longitude from the location json
-        const currentLongitude = JSON.stringify(position.coords.longitude);
+        const currentLongitude = JSON.stringify(position.longitude);
 
         //getting the Latitude from the location json
-        const currentLatitude = JSON.stringify(position.coords.latitude);
+        const currentLatitude = JSON.stringify(position.latitude);
 
         //Setting Longitude state
         this.setState({
           location: {latitude: currentLatitude, longitude: currentLongitude},
         });
-      },
-      (error) => {
+      })
+      .catch((error) => {
         this.setState({locationStatus: error.message});
-      },
-      {
-        enableHighAccuracy: false,
-        timeout: 30000,
-        maximumAge: 1000,
-      },
-    );
+      });
   };
 
-  subscribeLocationLocation = () => {
-    watchID = Geolocation.watchPosition(
-      (position) => {
-        //Will give you the location on location change
-        this.setState({locationStatus: 'You are Here'});
-
-        console.log(position);
-
-        //getting the Longitude from the location json
-        const currentLongitude = JSON.stringify(position.coords.longitude);
-
-        //getting the Latitude from the location json
-        const currentLatitude = JSON.stringify(position.coords.latitude);
-
-        this.setState({
-          location: {latitude: currentLatitude, longitude: currentLongitude},
-        });
-      },
-      (error) => {
-        this.setState({locationStatus: error.message});
-      },
-      {
-        enableHighAccuracy: false,
-        maximumAge: 1000,
-      },
-    );
-  };
-
+  /**
+   *
+   * getInput from TextInput
+   * @param {*} input text
+   * @memberof LocateTest
+   */
   getInput(text) {
     this.setState({...this.state, searchInput: text});
   }
 
+  /**
+   *Search River
+   *
+   * @memberof LocateTest
+   */
   searchRiver() {
     alert(this.state.searchInput);
   }
 
+  /**
+   *render input value
+   *
+   * @return {*}
+   * @memberof LocateTest
+   */
   renderInput() {
     let width = Dimensions.get('window').width - 20;
     return (
@@ -183,6 +180,12 @@ export default class LocateTest extends Component {
     );
   }
 
+  /**
+   *render content
+   *
+   * @return {*}
+   * @memberof LocateTest
+   */
   render() {
     return (
       <>
@@ -206,21 +209,11 @@ export default class LocateTest extends Component {
               onPress={() => this.getOneTimeLocation()}></Button>
           </View>
           <View>
-            <Text style={styles.boldText}>{this.state.locationStatus}</Text>
-            <Text
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: 16,
-              }}>
+            <Text style={styles.fonts}>{this.state.locationStatus}</Text>
+            <Text style={styles.fonts}>
               Longitude: {this.state.location.longitude}
             </Text>
-            <Text
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: 16,
-              }}>
+            <Text style={styles.fonts}>
               Latitude: {this.state.location.latitude}
             </Text>
           </View>
@@ -230,6 +223,10 @@ export default class LocateTest extends Component {
   }
 }
 
+/**
+ * styles
+ * @type {*}
+ * */
 const styles = StyleSheet.create({
   container: {
     flex: 1,
