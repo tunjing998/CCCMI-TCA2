@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "e73f0bab91f58fdf884ab970bd820b06",
+        "name": "00000022.jpg",
+        "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000022.jpg",
+        "size": {
+            "width": 500,
+            "height": 332
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "rZkfpCDrB",
+            "type": "RECTANGLE",
+            "tags": [
+                "ecdyonurus"
+            ],
+            "boundingBox": {
+                "height": 332,
+                "width": 427.44425195451316,
+                "left": 0,
+                "top": 0
+            },
+            "points": [
+                {
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "x": 427.44425195451316,
+                    "y": 0
+                },
+                {
+                    "x": 427.44425195451316,
+                    "y": 332
+                },
+                {
+                    "x": 0,
+                    "y": 332
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

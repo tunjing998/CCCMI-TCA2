@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "673f235d2b680c29159fca4236355b99",
+        "name": "00000006.jpg",
+        "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000006.jpg",
+        "size": {
+            "width": 1200,
+            "height": 800
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "mVTmRlQU-",
+            "type": "RECTANGLE",
+            "tags": [
+                "heptagenia"
+            ],
+            "boundingBox": {
+                "height": 473.33333333333337,
+                "width": 940,
+                "left": 11.666666666666668,
+                "top": 110
+            },
+            "points": [
+                {
+                    "x": 11.666666666666668,
+                    "y": 110
+                },
+                {
+                    "x": 951.6666666666667,
+                    "y": 110
+                },
+                {
+                    "x": 951.6666666666667,
+                    "y": 583.3333333333334
+                },
+                {
+                    "x": 11.666666666666668,
+                    "y": 583.3333333333334
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

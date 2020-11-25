@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "ad81990fbb842df92fc3b114f5ad89c3",
+        "name": "00000167.jpg",
+        "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/rhithrogena/00000167.jpg",
+        "size": {
+            "width": 1600,
+            "height": 1213
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "3Mz0rAWCA",
+            "type": "RECTANGLE",
+            "tags": [
+                "rhithrogena"
+            ],
+            "boundingBox": {
+                "height": 573.1758241758242,
+                "width": 551.1111111111111,
+                "left": 362.22222222222223,
+                "top": 448.62671703296706
+            },
+            "points": [
+                {
+                    "x": 362.22222222222223,
+                    "y": 448.62671703296706
+                },
+                {
+                    "x": 913.3333333333334,
+                    "y": 448.62671703296706
+                },
+                {
+                    "x": 913.3333333333334,
+                    "y": 1021.8025412087912
+                },
+                {
+                    "x": 362.22222222222223,
+                    "y": 1021.8025412087912
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

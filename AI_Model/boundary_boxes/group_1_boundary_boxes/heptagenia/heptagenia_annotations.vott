@@ -1,0 +1,405 @@
+{
+    "name": "heptagenia_annotations",
+    "securityToken": "heptagenia_annotations Token",
+    "sourceConnection": {
+        "name": "heptagenia_annotations",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNmU3YWVmNTg1ZjUwZWY2NGRhZWJkMzFkMTkzNmE5MDQ0NjMzMTcxZDUzNjIzZTdlZTMxYTIwMjQ5YjljMGI3YjZiNzUxYjdmNDYzMjBlOThhMzRjNjIyNGU4NWFkMWI4MWQ1MWM3ZDQ2MWQ5MjIwOGFkYjJhZjkwMzM4MWFiZWJmYzYyODc4NjliNjE4ZjEyNTc0OTkxYTY5ZjljNzMwMDA4M2ZlYWI4NDE2MTdkMjNmZDI0ZGQ3NTRkYTIzOGVlIiwiaXYiOiI5ZjBmODM5NDU3NjdkYWE1Y2M2NDMzZTM5ZTc3OGYyNTNhYjEzOTRiOWYzNGM0N2UifQ=="
+        },
+        "id": "UyC-2BZcw"
+    },
+    "targetConnection": {
+        "name": "heptagenia_annotations",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiY2QyODk1NDg2ZDliNzc0OGNmZjg5ZDZkMTUyYzU5ZGM5YWJkMjM3OTk3ZTM4YWNiMTc5NzEwZDhiYzQzYjZhOGU1NTQyZmJiOWE5MDVhYzE3NDNkZTVlZjEyNzMzODQwYWJhY2Y0NTNjZWI4ZTRiYzNhYjg5ZjZjYmM0ZTI1YzljMjQyMDE1NGYzYWY2ZDQ1MWY0ZDMwZjQ1ZmQyZmU0ZjAwM2M4NzcxOWFjN2MxZTNhNjdkMGJkZThiNzBjNTI2IiwiaXYiOiI0MzQwMDUxMDU1ZThjYzBlNWE2ZmJlM2RjMjI5NzhhYzY5ZDViZDBlNjI5YjkwZDQifQ=="
+        },
+        "id": "4jWgObAi2"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "heptagenia",
+            "color": "#5db300"
+        }
+    ],
+    "id": "qoQ23kUx-",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "csv",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNGNkMzhhNzYyOWU4ZmM4Njg3MTk4YzliOGIyZWEwMDlhZmE2NjE1MmI3YzQ0NzlkMGQ0NDA1N2IzOWRlNzljMTFhZTE3MmE0MTc4NTI5MzRlOTFiMzQ2NWJkM2I2ZGQyIiwiaXYiOiJjN2IzZWYyMjM3MTliOGM3M2FmNjI0M2RjOGFlOTZkMDM2MzFjNGM2YTc1OGNkMTEifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "a1dc6919df25cbfd6dd6ae2181a2b96b",
+    "assets": {
+        "1bbc7e745be8e66f1330a7f7985230ae": {
+            "format": "jpg",
+            "id": "1bbc7e745be8e66f1330a7f7985230ae",
+            "name": "00000003.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000003.jpg",
+            "size": {
+                "width": 290,
+                "height": 176
+            },
+            "state": 2,
+            "type": 1
+        },
+        "673f235d2b680c29159fca4236355b99": {
+            "format": "jpg",
+            "id": "673f235d2b680c29159fca4236355b99",
+            "name": "00000006.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000006.jpg",
+            "size": {
+                "width": 1200,
+                "height": 800
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0bc7312203ec0989d34919692b511fd9": {
+            "format": "jpg",
+            "id": "0bc7312203ec0989d34919692b511fd9",
+            "name": "00000011.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000011.jpg",
+            "size": {
+                "width": 816,
+                "height": 543
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6d568f2ebca38462879677cc104ff85f": {
+            "format": "jpg",
+            "id": "6d568f2ebca38462879677cc104ff85f",
+            "name": "00000012.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000012.jpg",
+            "size": {
+                "width": 600,
+                "height": 450
+            },
+            "state": 2,
+            "type": 1
+        },
+        "531785648bdd966a8aead6fa3c16849d": {
+            "format": "jpg",
+            "id": "531785648bdd966a8aead6fa3c16849d",
+            "name": "00000034.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000034.jpg",
+            "size": {
+                "width": 3399,
+                "height": 2311
+            },
+            "state": 2,
+            "type": 1
+        },
+        "75c8641d1ca3d27ec4dbde414b6225d0": {
+            "format": "jpg",
+            "id": "75c8641d1ca3d27ec4dbde414b6225d0",
+            "name": "00000043.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000043.jpg",
+            "size": {
+                "width": 640,
+                "height": 425
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c53aeac892ada8f5716e906f317fe359": {
+            "format": "jpg",
+            "id": "c53aeac892ada8f5716e906f317fe359",
+            "name": "00000051.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000051.jpg",
+            "size": {
+                "width": 3648,
+                "height": 4365
+            },
+            "state": 2,
+            "type": 1
+        },
+        "878b16c252e25c591a7116ffbe8435a2": {
+            "format": "jpg",
+            "id": "878b16c252e25c591a7116ffbe8435a2",
+            "name": "00000059.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000059.jpg",
+            "size": {
+                "width": 816,
+                "height": 603
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e39579ad875f23f013e36d4647fdf877": {
+            "format": "jpg",
+            "id": "e39579ad875f23f013e36d4647fdf877",
+            "name": "00000064.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000064.jpg",
+            "size": {
+                "width": 1600,
+                "height": 1031
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c56e2bd1f92cf716daf35909738b6ccd": {
+            "format": "jpg",
+            "id": "c56e2bd1f92cf716daf35909738b6ccd",
+            "name": "00000067.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000067.jpg",
+            "size": {
+                "width": 961,
+                "height": 557
+            },
+            "state": 2,
+            "type": 1
+        },
+        "805f60a3bd66af95b69f2d7ccd2ad26c": {
+            "format": "jpg",
+            "id": "805f60a3bd66af95b69f2d7ccd2ad26c",
+            "name": "00000073.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000073.jpg",
+            "size": {
+                "width": 480,
+                "height": 360
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ad30e5bf4a872448c756a7fa05d5bc98": {
+            "format": "jpg",
+            "id": "ad30e5bf4a872448c756a7fa05d5bc98",
+            "name": "00000074.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000074.jpg",
+            "size": {
+                "width": 595,
+                "height": 405
+            },
+            "state": 2,
+            "type": 1
+        },
+        "339e91e0a8aec4c31d205435c5b9a40c": {
+            "format": "jpg",
+            "id": "339e91e0a8aec4c31d205435c5b9a40c",
+            "name": "00000077.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000077.jpg",
+            "size": {
+                "width": 500,
+                "height": 360
+            },
+            "state": 2,
+            "type": 1
+        },
+        "eebcbee84d54425865f32272b311a444": {
+            "format": "jpg",
+            "id": "eebcbee84d54425865f32272b311a444",
+            "name": "00000091.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000091.jpg",
+            "size": {
+                "width": 290,
+                "height": 169
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ba19e0f10111ba63d67041bc301010e9": {
+            "format": "jpg",
+            "id": "ba19e0f10111ba63d67041bc301010e9",
+            "name": "00000103.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000103.jpg",
+            "size": {
+                "width": 500,
+                "height": 298
+            },
+            "state": 2,
+            "type": 1
+        },
+        "eeca554d7b71a06320010dac88178d3d": {
+            "format": "jpg",
+            "id": "eeca554d7b71a06320010dac88178d3d",
+            "name": "00000105.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000105.jpg",
+            "size": {
+                "width": 1600,
+                "height": 1204
+            },
+            "state": 2,
+            "type": 1
+        },
+        "51c103cbe3181bb47aa05c43f5964356": {
+            "format": "jpg",
+            "id": "51c103cbe3181bb47aa05c43f5964356",
+            "name": "00000114.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000114.jpg",
+            "size": {
+                "width": 600,
+                "height": 438
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ad64ed8744d5073b6f4467439610d3c8": {
+            "format": "jpg",
+            "id": "ad64ed8744d5073b6f4467439610d3c8",
+            "name": "00000120.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000120.jpg",
+            "size": {
+                "width": 988,
+                "height": 723
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b5be75e98a8cdc3148a78ffe5503d62d": {
+            "format": "jpg",
+            "id": "b5be75e98a8cdc3148a78ffe5503d62d",
+            "name": "00000122.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000122.jpg",
+            "size": {
+                "width": 500,
+                "height": 751
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ab7f832795f1f4af15fe386f3b4845cd": {
+            "format": "jpg",
+            "id": "ab7f832795f1f4af15fe386f3b4845cd",
+            "name": "00000123.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000123.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "01f31c5d984fa79d743946b0bc434396": {
+            "format": "jpg",
+            "id": "01f31c5d984fa79d743946b0bc434396",
+            "name": "00000129.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000129.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4914b177ce1e338e011390ecd4f489cf": {
+            "format": "jpg",
+            "id": "4914b177ce1e338e011390ecd4f489cf",
+            "name": "00000137.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000137.jpg",
+            "size": {
+                "width": 382,
+                "height": 280
+            },
+            "state": 2,
+            "type": 1
+        },
+        "510841240d5ec4b1c7750eb9a1c993e7": {
+            "format": "jpg",
+            "id": "510841240d5ec4b1c7750eb9a1c993e7",
+            "name": "00000139.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000139.jpg",
+            "size": {
+                "width": 356,
+                "height": 290
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b23c4835e173061083e3500ba81c2a60": {
+            "format": "jpg",
+            "id": "b23c4835e173061083e3500ba81c2a60",
+            "name": "00000155.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000155.jpg",
+            "size": {
+                "width": 1600,
+                "height": 1317
+            },
+            "state": 2,
+            "type": 1
+        },
+        "87ffa5bf8fd6be0f1dfc94b6a27ed7b2": {
+            "format": "jpg",
+            "id": "87ffa5bf8fd6be0f1dfc94b6a27ed7b2",
+            "name": "00000164.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000164.jpg",
+            "size": {
+                "width": 250,
+                "height": 162
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ddc90014a43e47de7487e1b625ea7c76": {
+            "format": "jpg",
+            "id": "ddc90014a43e47de7487e1b625ea7c76",
+            "name": "00000226.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000226.jpg",
+            "size": {
+                "width": 1340,
+                "height": 1600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "85711b4ea8e14773a726cce69d022368": {
+            "format": "jpg",
+            "id": "85711b4ea8e14773a726cce69d022368",
+            "name": "00000234.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000234.jpg",
+            "size": {
+                "width": 500,
+                "height": 413
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0eb56334277edbb5f6331b8d84a2daed": {
+            "format": "jpg",
+            "id": "0eb56334277edbb5f6331b8d84a2daed",
+            "name": "00000244.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000244.jpg",
+            "size": {
+                "width": 800,
+                "height": 530
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b7fb24adb01a3718439baf19c1d7cf43": {
+            "format": "jpg",
+            "id": "b7fb24adb01a3718439baf19c1d7cf43",
+            "name": "00000272.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000272.jpg",
+            "size": {
+                "width": 220,
+                "height": 147
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a1dc6919df25cbfd6dd6ae2181a2b96b": {
+            "format": "jpg",
+            "id": "a1dc6919df25cbfd6dd6ae2181a2b96b",
+            "name": "00000273.jpg",
+            "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/heptagenia/00000273.jpg",
+            "size": {
+                "width": 640,
+                "height": 428
+            },
+            "state": 2,
+            "type": 1
+        }
+    }
+}

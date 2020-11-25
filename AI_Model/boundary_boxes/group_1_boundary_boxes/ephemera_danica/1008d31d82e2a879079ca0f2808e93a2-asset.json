@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "1008d31d82e2a879079ca0f2808e93a2",
+        "name": "00000006.jpg",
+        "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/ephemera_danica/00000006.jpg",
+        "size": {
+            "width": 850,
+            "height": 468
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "Ipo_X8CPI",
+            "type": "RECTANGLE",
+            "tags": [
+                "ephemera_danica"
+            ],
+            "boundingBox": {
+                "height": 378.3829787234043,
+                "width": 796.6919365954514,
+                "left": 3.5148173673328738,
+                "top": 31.89494680851064
+            },
+            "points": [
+                {
+                    "x": 3.5148173673328738,
+                    "y": 31.89494680851064
+                },
+                {
+                    "x": 800.2067539627842,
+                    "y": 31.89494680851064
+                },
+                {
+                    "x": 800.2067539627842,
+                    "y": 410.27792553191495
+                },
+                {
+                    "x": 3.5148173673328738,
+                    "y": 410.27792553191495
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}
