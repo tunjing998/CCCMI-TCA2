@@ -4,4 +4,12 @@ AI_Model/boundary_boxes/group_1_boundary_boxes/ephemera_danica/vott-csv-export/
 AI_Model/boundary_boxes/group_1_boundary_boxes/heptagenia/vott-csv-export/
 AI_Model/boundary_boxes/group_1_boundary_boxes/rhithrogena/vott-csv-export/
 AI_Model/boundary_boxes/group_1_boundary_boxes/serratella_ignita/vott-csv-export/
+
+!AI_Model/boundary_boxes/group_1_boundary_boxes/caenis/vott-csv-export/caenis_annotations-export.csv
+!AI_Model/boundary_boxes/group_1_boundary_boxes/ecdyonurus/vott-csv-export/ecdyonurus-export.csv
+!AI_Model/boundary_boxes/group_1_boundary_boxes/ephemera_danica/vott-csv-export/ephemera_danica-export.csv
+!AI_Model/boundary_boxes/group_1_boundary_boxes/heptagenia/vott-csv-export/heptagenia-export.csv
+!AI_Model/boundary_boxes/group_1_boundary_boxes/rhithrogena/vott-csv-export/rhithrogena-export.csv
+!AI_Model/boundary_boxes/group_1_boundary_boxes/serratella_ignita/vott-csv-export/serratella_ignita-export.csv
+
 AI_Model/images/
