@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aquality_server.apps.AqualityServerConfig'
+    'aquality_server.apps.AqualityServerConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
