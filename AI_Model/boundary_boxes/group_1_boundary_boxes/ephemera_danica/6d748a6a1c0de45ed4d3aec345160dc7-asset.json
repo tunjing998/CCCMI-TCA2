@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "6d748a6a1c0de45ed4d3aec345160dc7",
+        "name": "00000021.jpg",
+        "path": "file:D:/College/Team/CCCMI/AI_Model/images/group_1_mayflies/ephemera_danica/00000021.jpg",
+        "size": {
+            "width": 500,
+            "height": 289
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "SJg4dkNzl",
+            "type": "RECTANGLE",
+            "tags": [
+                "ephemera_danica"
+            ],
+            "boundingBox": {
+                "height": 276.9439809296782,
+                "width": 492.0744314266023,
+                "left": 0.34458993797381116,
+                "top": 5.629730333730632
+            },
+            "points": [
+                {
+                    "x": 0.34458993797381116,
+                    "y": 5.629730333730632
+                },
+                {
+                    "x": 492.41902136457617,
+                    "y": 5.629730333730632
+                },
+                {
+                    "x": 492.41902136457617,
+                    "y": 282.5737112634088
+                },
+                {
+                    "x": 0.34458993797381116,
+                    "y": 282.5737112634088
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

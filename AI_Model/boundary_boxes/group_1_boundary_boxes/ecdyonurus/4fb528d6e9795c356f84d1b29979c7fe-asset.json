@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "4fb528d6e9795c356f84d1b29979c7fe",
+        "name": "00000422.jpg",
+        "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000422.jpg",
+        "size": {
+            "width": 1200,
+            "height": 1199
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "ReitJoiar",
+            "type": "RECTANGLE",
+            "tags": [
+                "ecdyonurus"
+            ],
+            "boundingBox": {
+                "height": 985.9014989293362,
+                "width": 551.8716577540107,
+                "left": 236.00935828877004,
+                "top": 213.0985010706638
+            },
+            "points": [
+                {
+                    "x": 236.00935828877004,
+                    "y": 213.0985010706638
+                },
+                {
+                    "x": 787.8810160427807,
+                    "y": 213.0985010706638
+                },
+                {
+                    "x": 787.8810160427807,
+                    "y": 1199
+                },
+                {
+                    "x": 236.00935828877004,
+                    "y": 1199
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

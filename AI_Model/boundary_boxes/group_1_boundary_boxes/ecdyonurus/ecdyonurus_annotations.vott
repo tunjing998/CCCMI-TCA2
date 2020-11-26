@@ -1,0 +1,1677 @@
+{
+    "name": "ecdyonurus_annotations",
+    "securityToken": "ecdyonurus_annotations Token",
+    "sourceConnection": {
+        "name": "ecdyonurus_annotation",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNjI3NzM1NDViMWY1YTFiOGJlNTQyZjFhMTVkYmU5ODlhOTM3YjAyYzY1ZTc2MGQ4MTQxYjc3N2I5ZjEzY2ZjMmU3NTAwNzQyODJkOGE4MjYzYzFjMzEzOWUxOTNkMjZmZDJmMDM0NDdiOTExMzUyNjk0Y2FmY2MwZjYzMmQ1MGFlYmVjMjIxODJkMjBmMTIxOGIzOTY1NWQwZTNhYjNiZiIsIml2IjoiZDAwMDM4MWIyYzE4ZWE5MzllODcwOWE0OWZkOTYyOGE0ZjFiMzIyNGJmYjY3ZGRhIn0="
+        },
+        "id": "3k2bWwnTb"
+    },
+    "targetConnection": {
+        "name": "ecdyonurus_annotations",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiODE5OTVkOWNlMzkyYTdiNjQzMzE2YTY3NzcxMTk3NWM4M2RiZDc1YmNjYzBkNWY4MWYzMWFmOTkwNjg4ODE3MDA1MzZkOGYyNmEzMGFkMDI5YmU0ZDFjN2NlYTUzZTE2ZWMyYWM2MjM0MjJmYWE2MzNmZTE4ODU1Y2JjMmY3ZDA2ZWM4ZGI2MDdiMmUwODQxZGRkYjkwZDVjNTY2NTllZGFiZTRhZjgzZjdiYzJmOWQyNTg2YjY0ZjhhOGMxY2NmIiwiaXYiOiI0ZTNlNTNmNThmNWJlZmU5YzMyNjgzYzU2YzA4MTc2ZGQ0NDAyNTE0NDhiOTEyZWYifQ=="
+        },
+        "id": "6CZ897dV4"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "ecdyonurus",
+            "color": "#5db300"
+        }
+    ],
+    "id": "ZhHOo2mPm",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "csv",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNzJiOGFhMGE4ZGVhMGIyZmQxMzFlOGQyNTdjOWEzZWRjNGZkMmZjZGY2MWJjNWFhNTc2MGQyMzE1NzVlOTMxMTkwZDcyOWE3M2VjMmQyYjU4MmQ0ODVlYmYxMGMwY2ZmIiwiaXYiOiI2M2Y0MjBmZjU2YTUxZDI5NDVkNDQwNDVjNjhmY2FlYTRjZjAzZTE2NDE2Y2ZiMTgifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "e6ae77a1a232a092f12009f16c2b2b68",
+    "assets": {
+        "1deb1c3eaafd589679ffdf301f3a5af4": {
+            "format": "jpg",
+            "id": "1deb1c3eaafd589679ffdf301f3a5af4",
+            "name": "00000001.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000001.jpg",
+            "size": {
+                "width": 600,
+                "height": 439
+            },
+            "state": 2,
+            "type": 1
+        },
+        "76781af5b36ff93caa042e43216f6b7e": {
+            "format": "jpg",
+            "id": "76781af5b36ff93caa042e43216f6b7e",
+            "name": "00000003.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000003.jpg",
+            "size": {
+                "width": 800,
+                "height": 391
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0bcfa85001f4e2a5e9805f67704e2af6": {
+            "format": "jpg",
+            "id": "0bcfa85001f4e2a5e9805f67704e2af6",
+            "name": "00000006.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000006.jpg",
+            "size": {
+                "width": 900,
+                "height": 940
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4a594cf3dcb73ba1dd455d6855ef9d82": {
+            "format": "jpg",
+            "id": "4a594cf3dcb73ba1dd455d6855ef9d82",
+            "name": "00000008.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000008.jpg",
+            "size": {
+                "width": 500,
+                "height": 310
+            },
+            "state": 2,
+            "type": 1
+        },
+        "bc1bdd83c78b47095f3efef229779ff1": {
+            "format": "jpg",
+            "id": "bc1bdd83c78b47095f3efef229779ff1",
+            "name": "00000010.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000010.jpg",
+            "size": {
+                "width": 1200,
+                "height": 799
+            },
+            "state": 2,
+            "type": 1
+        },
+        "de53d1453103b10cd1f065bc947d4b58": {
+            "format": "jpg",
+            "id": "de53d1453103b10cd1f065bc947d4b58",
+            "name": "00000018.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000018.jpg",
+            "size": {
+                "width": 1300,
+                "height": 934
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d5c532ad4087041193c3c27fed8ff145": {
+            "format": "jpg",
+            "id": "d5c532ad4087041193c3c27fed8ff145",
+            "name": "00000020.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000020.jpg",
+            "size": {
+                "width": 650,
+                "height": 487
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2c755f9d0cc65802f5927f8aa62714da": {
+            "format": "jpg",
+            "id": "2c755f9d0cc65802f5927f8aa62714da",
+            "name": "00000021.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000021.jpg",
+            "size": {
+                "width": 560,
+                "height": 559
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e73f0bab91f58fdf884ab970bd820b06": {
+            "format": "jpg",
+            "id": "e73f0bab91f58fdf884ab970bd820b06",
+            "name": "00000022.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000022.jpg",
+            "size": {
+                "width": 500,
+                "height": 332
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c6058094bfefc45f81ad854e85f288d0": {
+            "format": "jpg",
+            "id": "c6058094bfefc45f81ad854e85f288d0",
+            "name": "00000023.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000023.jpg",
+            "size": {
+                "width": 1300,
+                "height": 934
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d31a97d9698c91342add16df899df6b6": {
+            "format": "jpg",
+            "id": "d31a97d9698c91342add16df899df6b6",
+            "name": "00000024.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000024.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b888ffdfcc9df8c84dc950118c5ca64f": {
+            "format": "jpg",
+            "id": "b888ffdfcc9df8c84dc950118c5ca64f",
+            "name": "00000025.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000025.jpg",
+            "size": {
+                "width": 800,
+                "height": 531
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d8ca2187889e1eef02a417c556e3f1b1": {
+            "format": "jpg",
+            "id": "d8ca2187889e1eef02a417c556e3f1b1",
+            "name": "00000027.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000027.jpg",
+            "size": {
+                "width": 1024,
+                "height": 1120
+            },
+            "state": 2,
+            "type": 1
+        },
+        "caa49ea151d7fab433e9ecf5e7518c1e": {
+            "format": "jpg",
+            "id": "caa49ea151d7fab433e9ecf5e7518c1e",
+            "name": "00000029.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000029.jpg",
+            "size": {
+                "width": 500,
+                "height": 270
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f4fcd1e7c55d5cc67a331fe88a517f55": {
+            "format": "jpg",
+            "id": "f4fcd1e7c55d5cc67a331fe88a517f55",
+            "name": "00000030.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000030.jpg",
+            "size": {
+                "width": 320,
+                "height": 320
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5264ee51f8062318a3cf32e26e49c9b8": {
+            "format": "jpg",
+            "id": "5264ee51f8062318a3cf32e26e49c9b8",
+            "name": "00000031.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000031.jpg",
+            "size": {
+                "width": 2008,
+                "height": 2953
+            },
+            "state": 2,
+            "type": 1
+        },
+        "47fb29636b58cff6eb20b3da80941fec": {
+            "format": "jpg",
+            "id": "47fb29636b58cff6eb20b3da80941fec",
+            "name": "00000032.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000032.jpg",
+            "size": {
+                "width": 300,
+                "height": 731
+            },
+            "state": 2,
+            "type": 1
+        },
+        "80aa244bb920295493447e285540c5b9": {
+            "format": "jpg",
+            "id": "80aa244bb920295493447e285540c5b9",
+            "name": "00000034.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000034.jpg",
+            "size": {
+                "width": 500,
+                "height": 500
+            },
+            "state": 2,
+            "type": 1
+        },
+        "fed967602d80a48c0127ea1cff287f6c": {
+            "format": "jpg",
+            "id": "fed967602d80a48c0127ea1cff287f6c",
+            "name": "00000035.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000035.jpg",
+            "size": {
+                "width": 320,
+                "height": 320
+            },
+            "state": 2,
+            "type": 1
+        },
+        "326a69af73eb7f528e815bcde6cf1a95": {
+            "format": "jpg",
+            "id": "326a69af73eb7f528e815bcde6cf1a95",
+            "name": "00000036.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000036.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "aa3f5ed608eb8613f10e1f91f9342bc7": {
+            "format": "jpg",
+            "id": "aa3f5ed608eb8613f10e1f91f9342bc7",
+            "name": "00000037.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000037.jpg",
+            "size": {
+                "width": 380,
+                "height": 560
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3bb19bf2fc065d720215fb22c9bcd92e": {
+            "format": "jpg",
+            "id": "3bb19bf2fc065d720215fb22c9bcd92e",
+            "name": "00000038.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000038.jpg",
+            "size": {
+                "width": 1049,
+                "height": 699
+            },
+            "state": 2,
+            "type": 1
+        },
+        "73fe98eb87952f500c57886583702c7a": {
+            "format": "jpg",
+            "id": "73fe98eb87952f500c57886583702c7a",
+            "name": "00000041.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000041.jpg",
+            "size": {
+                "width": 276,
+                "height": 480
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e33fbd1d1fe5faeedcd2e9273faa1ab3": {
+            "format": "jpg",
+            "id": "e33fbd1d1fe5faeedcd2e9273faa1ab3",
+            "name": "00000044.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000044.jpg",
+            "size": {
+                "width": 1024,
+                "height": 768
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ea74a1838ae01b43f7399d80cb6ba9b1": {
+            "format": "jpg",
+            "id": "ea74a1838ae01b43f7399d80cb6ba9b1",
+            "name": "00000045.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000045.jpg",
+            "size": {
+                "width": 639,
+                "height": 474
+            },
+            "state": 2,
+            "type": 1
+        },
+        "9081d6e3df5a3944c77ce09148c31ee1": {
+            "format": "jpg",
+            "id": "9081d6e3df5a3944c77ce09148c31ee1",
+            "name": "00000047.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000047.jpg",
+            "size": {
+                "width": 456,
+                "height": 456
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a85fbb4e39cf7be5075625ff3172fcba": {
+            "format": "jpg",
+            "id": "a85fbb4e39cf7be5075625ff3172fcba",
+            "name": "00000051.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000051.jpg",
+            "size": {
+                "width": 350,
+                "height": 234
+            },
+            "state": 2,
+            "type": 1
+        },
+        "267c6677ebe598218f193383c0a32c3a": {
+            "format": "jpg",
+            "id": "267c6677ebe598218f193383c0a32c3a",
+            "name": "00000053.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000053.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8cf8bc75b8dc6f501d0175783585ee9a": {
+            "format": "jpg",
+            "id": "8cf8bc75b8dc6f501d0175783585ee9a",
+            "name": "00000056.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000056.jpg",
+            "size": {
+                "width": 1422,
+                "height": 789
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1475585f26cf8d23af7f502672328839": {
+            "format": "jpg",
+            "id": "1475585f26cf8d23af7f502672328839",
+            "name": "00000057.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000057.jpg",
+            "size": {
+                "width": 850,
+                "height": 1213
+            },
+            "state": 2,
+            "type": 1
+        },
+        "db7a4ac4b6aef6f835c4c2124ecba4f3": {
+            "format": "jpg",
+            "id": "db7a4ac4b6aef6f835c4c2124ecba4f3",
+            "name": "00000058.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000058.jpg",
+            "size": {
+                "width": 640,
+                "height": 425
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8123585ccbc4cd8e4d6be1c0efcafa8f": {
+            "format": "jpg",
+            "id": "8123585ccbc4cd8e4d6be1c0efcafa8f",
+            "name": "00000059.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000059.jpg",
+            "size": {
+                "width": 1300,
+                "height": 956
+            },
+            "state": 2,
+            "type": 1
+        },
+        "089420bd6da819accd14f67610f5b9d2": {
+            "format": "jpg",
+            "id": "089420bd6da819accd14f67610f5b9d2",
+            "name": "00000063.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000063.jpg",
+            "size": {
+                "width": 299,
+                "height": 450
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3e896456ea13b39b4f64c34b413bd258": {
+            "format": "jpg",
+            "id": "3e896456ea13b39b4f64c34b413bd258",
+            "name": "00000065.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000065.jpg",
+            "size": {
+                "width": 1300,
+                "height": 960
+            },
+            "state": 2,
+            "type": 1
+        },
+        "29aeba472249d0d75a426a0bcdd36cef": {
+            "format": "jpg",
+            "id": "29aeba472249d0d75a426a0bcdd36cef",
+            "name": "00000067.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000067.jpg",
+            "size": {
+                "width": 500,
+                "height": 349
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f5d2891a0a7ca93364b3b07a698b87f8": {
+            "format": "jpg",
+            "id": "f5d2891a0a7ca93364b3b07a698b87f8",
+            "name": "00000072.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000072.jpg",
+            "size": {
+                "width": 299,
+                "height": 199
+            },
+            "state": 2,
+            "type": 1
+        },
+        "31a5b8ec2490c1f1fbd8e446751cbb8b": {
+            "format": "jpg",
+            "id": "31a5b8ec2490c1f1fbd8e446751cbb8b",
+            "name": "00000073.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000073.jpg",
+            "size": {
+                "width": 1000,
+                "height": 683
+            },
+            "state": 2,
+            "type": 1
+        },
+        "cf32d2d1c0a8a91acacb3183ddf71ddb": {
+            "format": "jpg",
+            "id": "cf32d2d1c0a8a91acacb3183ddf71ddb",
+            "name": "00000074.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000074.jpg",
+            "size": {
+                "width": 546,
+                "height": 373
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ea819ad61c51a6827fe1404dbfb81b3b": {
+            "format": "jpg",
+            "id": "ea819ad61c51a6827fe1404dbfb81b3b",
+            "name": "00000077.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000077.jpg",
+            "size": {
+                "width": 900,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "cb36eaa5c816bab8a12f772b19de2910": {
+            "format": "jpg",
+            "id": "cb36eaa5c816bab8a12f772b19de2910",
+            "name": "00000078.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000078.jpg",
+            "size": {
+                "width": 640,
+                "height": 494
+            },
+            "state": 2,
+            "type": 1
+        },
+        "eac256cef07aab14cdd51e7304a645cd": {
+            "format": "jpg",
+            "id": "eac256cef07aab14cdd51e7304a645cd",
+            "name": "00000084.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000084.jpg",
+            "size": {
+                "width": 800,
+                "height": 698
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d5457ad3e3cacc7b133bdc119ae0b345": {
+            "format": "jpg",
+            "id": "d5457ad3e3cacc7b133bdc119ae0b345",
+            "name": "00000085.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000085.jpg",
+            "size": {
+                "width": 290,
+                "height": 218
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8526835209c89357ed38e1dd77ee01fc": {
+            "format": "jpg",
+            "id": "8526835209c89357ed38e1dd77ee01fc",
+            "name": "00000089.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000089.jpg",
+            "size": {
+                "width": 1000,
+                "height": 662
+            },
+            "state": 2,
+            "type": 1
+        },
+        "60da59cd9054d241948c8907386f3afe": {
+            "format": "jpg",
+            "id": "60da59cd9054d241948c8907386f3afe",
+            "name": "00000090.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000090.jpg",
+            "size": {
+                "width": 1300,
+                "height": 957
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5d063d66517f436577400a8852769a08": {
+            "format": "jpg",
+            "id": "5d063d66517f436577400a8852769a08",
+            "name": "00000092.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000092.jpg",
+            "size": {
+                "width": 600,
+                "height": 418
+            },
+            "state": 2,
+            "type": 1
+        },
+        "9f0942dd8abb651ad2e8068aa54d71b5": {
+            "format": "jpg",
+            "id": "9f0942dd8abb651ad2e8068aa54d71b5",
+            "name": "00000094.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000094.jpg",
+            "size": {
+                "width": 1300,
+                "height": 953
+            },
+            "state": 2,
+            "type": 1
+        },
+        "946fb966ee1754dacdb4ea1ec02c3b8c": {
+            "format": "jpg",
+            "id": "946fb966ee1754dacdb4ea1ec02c3b8c",
+            "name": "00000096.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000096.jpg",
+            "size": {
+                "width": 1300,
+                "height": 957
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b9c8eda868335ca4cf8fc000a43cac04": {
+            "format": "jpg",
+            "id": "b9c8eda868335ca4cf8fc000a43cac04",
+            "name": "00000097.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000097.jpg",
+            "size": {
+                "width": 560,
+                "height": 534
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ec7557562a29e321cc76dc59c0fe38fa": {
+            "format": "jpg",
+            "id": "ec7557562a29e321cc76dc59c0fe38fa",
+            "name": "00000098.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000098.jpg",
+            "size": {
+                "width": 900,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "10a7d6b85e9102d168a3d7971c410403": {
+            "format": "jpg",
+            "id": "10a7d6b85e9102d168a3d7971c410403",
+            "name": "00000099.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000099.jpg",
+            "size": {
+                "width": 1000,
+                "height": 760
+            },
+            "state": 2,
+            "type": 1
+        },
+        "df377cb4adaa233c64c76b4c26948821": {
+            "format": "jpg",
+            "id": "df377cb4adaa233c64c76b4c26948821",
+            "name": "00000101.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000101.jpg",
+            "size": {
+                "width": 900,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "71950ea25a0b8a94c27679d4e78f1bc4": {
+            "format": "jpg",
+            "id": "71950ea25a0b8a94c27679d4e78f1bc4",
+            "name": "00000102.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000102.jpg",
+            "size": {
+                "width": 545,
+                "height": 384
+            },
+            "state": 2,
+            "type": 1
+        },
+        "89c5e183b1931e539cc663982e40d862": {
+            "format": "jpg",
+            "id": "89c5e183b1931e539cc663982e40d862",
+            "name": "00000104.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000104.jpg",
+            "size": {
+                "width": 640,
+                "height": 425
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2dea3b0b55da1df23c2245456deabd0b": {
+            "format": "jpg",
+            "id": "2dea3b0b55da1df23c2245456deabd0b",
+            "name": "00000110.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000110.jpg",
+            "size": {
+                "width": 640,
+                "height": 424
+            },
+            "state": 2,
+            "type": 1
+        },
+        "88c30f3c5ff3048fc1cd801f75e33b45": {
+            "format": "jpg",
+            "id": "88c30f3c5ff3048fc1cd801f75e33b45",
+            "name": "00000111.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000111.jpg",
+            "size": {
+                "width": 1500,
+                "height": 1600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "75218d14a3e32f288a5fcbe65ac77a24": {
+            "format": "jpg",
+            "id": "75218d14a3e32f288a5fcbe65ac77a24",
+            "name": "00000113.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000113.jpg",
+            "size": {
+                "width": 500,
+                "height": 346
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c989886e330d2b458257463237b8a378": {
+            "format": "jpg",
+            "id": "c989886e330d2b458257463237b8a378",
+            "name": "00000114.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000114.jpg",
+            "size": {
+                "width": 300,
+                "height": 200
+            },
+            "state": 2,
+            "type": 1
+        },
+        "036863f86783308b4c8887853453e9bd": {
+            "format": "jpg",
+            "id": "036863f86783308b4c8887853453e9bd",
+            "name": "00000117.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000117.jpg",
+            "size": {
+                "width": 600,
+                "height": 486
+            },
+            "state": 2,
+            "type": 1
+        },
+        "cb8487f6868189d2444e105e581ed191": {
+            "format": "jpg",
+            "id": "cb8487f6868189d2444e105e581ed191",
+            "name": "00000118.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000118.jpg",
+            "size": {
+                "width": 1024,
+                "height": 699
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c70b30777de48f2fea1d2d6d74ffa31e": {
+            "format": "jpg",
+            "id": "c70b30777de48f2fea1d2d6d74ffa31e",
+            "name": "00000120.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000120.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0dd60e47b2a1e6ee8a452bfdadeab6c7": {
+            "format": "jpg",
+            "id": "0dd60e47b2a1e6ee8a452bfdadeab6c7",
+            "name": "00000123.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000123.jpg",
+            "size": {
+                "width": 900,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "042e0284ca0eb551ac1dddd105ba8595": {
+            "format": "jpg",
+            "id": "042e0284ca0eb551ac1dddd105ba8595",
+            "name": "00000124.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000124.jpg",
+            "size": {
+                "width": 640,
+                "height": 640
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d670875190870c837a9db790bebab9a5": {
+            "format": "jpg",
+            "id": "d670875190870c837a9db790bebab9a5",
+            "name": "00000125.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000125.jpg",
+            "size": {
+                "width": 558,
+                "height": 560
+            },
+            "state": 2,
+            "type": 1
+        },
+        "7133d67c07c2d09bf22b63d979d8db58": {
+            "format": "jpg",
+            "id": "7133d67c07c2d09bf22b63d979d8db58",
+            "name": "00000126.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000126.jpg",
+            "size": {
+                "width": 300,
+                "height": 200
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1fece3284e7d9255406b0a364fb26ad8": {
+            "format": "jpg",
+            "id": "1fece3284e7d9255406b0a364fb26ad8",
+            "name": "00000127.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000127.jpg",
+            "size": {
+                "width": 1024,
+                "height": 673
+            },
+            "state": 2,
+            "type": 1
+        },
+        "698e82fa35be02e042f659722210e2b9": {
+            "format": "jpg",
+            "id": "698e82fa35be02e042f659722210e2b9",
+            "name": "00000132.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000132.jpg",
+            "size": {
+                "width": 1000,
+                "height": 649
+            },
+            "state": 2,
+            "type": 1
+        },
+        "18069d7865e954f4f4ba979e0cd84aed": {
+            "format": "jpg",
+            "id": "18069d7865e954f4f4ba979e0cd84aed",
+            "name": "00000138.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000138.jpg",
+            "size": {
+                "width": 1300,
+                "height": 963
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b0c4e7d39af07a57660b57304d174bd1": {
+            "format": "jpg",
+            "id": "b0c4e7d39af07a57660b57304d174bd1",
+            "name": "00000142.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000142.jpg",
+            "size": {
+                "width": 640,
+                "height": 425
+            },
+            "state": 2,
+            "type": 1
+        },
+        "7779e6a523f906f495ca7ee1d088d8f8": {
+            "format": "jpg",
+            "id": "7779e6a523f906f495ca7ee1d088d8f8",
+            "name": "00000143.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000143.jpg",
+            "size": {
+                "width": 900,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "7e151b3308fa12135e5a75afb6ca4139": {
+            "format": "jpg",
+            "id": "7e151b3308fa12135e5a75afb6ca4139",
+            "name": "00000144.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000144.jpg",
+            "size": {
+                "width": 1280,
+                "height": 720
+            },
+            "state": 2,
+            "type": 1
+        },
+        "62c167a94d4215c286cff3692c9c311a": {
+            "format": "jpg",
+            "id": "62c167a94d4215c286cff3692c9c311a",
+            "name": "00000148.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000148.jpg",
+            "size": {
+                "width": 450,
+                "height": 301
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d93be077e2ac6008747c17e3c98825f3": {
+            "format": "jpg",
+            "id": "d93be077e2ac6008747c17e3c98825f3",
+            "name": "00000151.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000151.jpg",
+            "size": {
+                "width": 1200,
+                "height": 900
+            },
+            "state": 2,
+            "type": 1
+        },
+        "96dbeef66994f45cb53d1699fe0abcf0": {
+            "format": "jpg",
+            "id": "96dbeef66994f45cb53d1699fe0abcf0",
+            "name": "00000152.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000152.jpg",
+            "size": {
+                "width": 820,
+                "height": 547
+            },
+            "state": 2,
+            "type": 1
+        },
+        "48b4bdd14e5dfe7131bcbd0d25132e45": {
+            "format": "jpg",
+            "id": "48b4bdd14e5dfe7131bcbd0d25132e45",
+            "name": "00000153.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000153.jpg",
+            "size": {
+                "width": 300,
+                "height": 225
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f924d3d5b385da8ecbb77851f5314b91": {
+            "format": "jpg",
+            "id": "f924d3d5b385da8ecbb77851f5314b91",
+            "name": "00000159.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000159.jpg",
+            "size": {
+                "width": 1284,
+                "height": 1390
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f902b3e81951ee4b000d20d99f0da066": {
+            "format": "jpg",
+            "id": "f902b3e81951ee4b000d20d99f0da066",
+            "name": "00000164.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000164.jpg",
+            "size": {
+                "width": 900,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "9695df59c6de886f899ee087ac828c9f": {
+            "format": "jpg",
+            "id": "9695df59c6de886f899ee087ac828c9f",
+            "name": "00000169.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000169.jpg",
+            "size": {
+                "width": 1500,
+                "height": 1101
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b5c2a156d7383dbc7b9f00d8d00ff3e6": {
+            "format": "jpg",
+            "id": "b5c2a156d7383dbc7b9f00d8d00ff3e6",
+            "name": "00000174.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000174.jpg",
+            "size": {
+                "width": 324,
+                "height": 500
+            },
+            "state": 2,
+            "type": 1
+        },
+        "78972d1aa56dff1711c14c6c231128bf": {
+            "format": "jpg",
+            "id": "78972d1aa56dff1711c14c6c231128bf",
+            "name": "00000182.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000182.jpg",
+            "size": {
+                "width": 300,
+                "height": 200
+            },
+            "state": 2,
+            "type": 1
+        },
+        "523882b5eb86994a785a192d9beefa8a": {
+            "format": "jpg",
+            "id": "523882b5eb86994a785a192d9beefa8a",
+            "name": "00000183.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000183.jpg",
+            "size": {
+                "width": 390,
+                "height": 280
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0e19e8147699d2bf2ecf6184b502ab8a": {
+            "format": "jpg",
+            "id": "0e19e8147699d2bf2ecf6184b502ab8a",
+            "name": "00000184.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000184.jpg",
+            "size": {
+                "width": 640,
+                "height": 466
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4fbb3ce8d369c938efe75979cd0158ca": {
+            "format": "jpg",
+            "id": "4fbb3ce8d369c938efe75979cd0158ca",
+            "name": "00000185.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000185.jpg",
+            "size": {
+                "width": 800,
+                "height": 533
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b7c909e7b65c959a88ed2815e65c38dc": {
+            "format": "jpg",
+            "id": "b7c909e7b65c959a88ed2815e65c38dc",
+            "name": "00000186.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000186.jpg",
+            "size": {
+                "width": 478,
+                "height": 700
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ca3a1dd746372d09d717ad8c2b32345c": {
+            "format": "jpg",
+            "id": "ca3a1dd746372d09d717ad8c2b32345c",
+            "name": "00000190.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000190.jpg",
+            "size": {
+                "width": 900,
+                "height": 602
+            },
+            "state": 2,
+            "type": 1
+        },
+        "fc9843cb3740abc00b033a2040630193": {
+            "format": "jpg",
+            "id": "fc9843cb3740abc00b033a2040630193",
+            "name": "00000196.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000196.jpg",
+            "size": {
+                "width": 1920,
+                "height": 1080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f8f32ca173048b66ca3510b75013f5db": {
+            "format": "jpg",
+            "id": "f8f32ca173048b66ca3510b75013f5db",
+            "name": "00000206.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000206.jpg",
+            "size": {
+                "width": 1000,
+                "height": 630
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8ef0eee785074114a6983d41d565caae": {
+            "format": "jpg",
+            "id": "8ef0eee785074114a6983d41d565caae",
+            "name": "00000210.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000210.jpg",
+            "size": {
+                "width": 640,
+                "height": 425
+            },
+            "state": 2,
+            "type": 1
+        },
+        "17da69557be83a3bc38fa84507d36a92": {
+            "format": "jpg",
+            "id": "17da69557be83a3bc38fa84507d36a92",
+            "name": "00000217.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000217.jpg",
+            "size": {
+                "width": 1024,
+                "height": 496
+            },
+            "state": 2,
+            "type": 1
+        },
+        "413af3d846ecb32133c1bd6641f6c280": {
+            "format": "jpg",
+            "id": "413af3d846ecb32133c1bd6641f6c280",
+            "name": "00000218.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000218.jpg",
+            "size": {
+                "width": 400,
+                "height": 315
+            },
+            "state": 2,
+            "type": 1
+        },
+        "27082bfdba48db2744f5ec3882b21c2b": {
+            "format": "jpg",
+            "id": "27082bfdba48db2744f5ec3882b21c2b",
+            "name": "00000220.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000220.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ebe212277e7a45e824b3f0b2b8264f7a": {
+            "format": "jpg",
+            "id": "ebe212277e7a45e824b3f0b2b8264f7a",
+            "name": "00000221.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000221.jpg",
+            "size": {
+                "width": 2007,
+                "height": 2639
+            },
+            "state": 2,
+            "type": 1
+        },
+        "37e29d7e44d3cc5ae33d83f43446dcac": {
+            "format": "jpg",
+            "id": "37e29d7e44d3cc5ae33d83f43446dcac",
+            "name": "00000236.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000236.jpg",
+            "size": {
+                "width": 474,
+                "height": 640
+            },
+            "state": 2,
+            "type": 1
+        },
+        "665230fcce2736ebacb975fd90da69f8": {
+            "format": "jpg",
+            "id": "665230fcce2736ebacb975fd90da69f8",
+            "name": "00000257.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000257.jpg",
+            "size": {
+                "width": 400,
+                "height": 267
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1ef439409cfe73bfe4f3a3f128fae3ca": {
+            "format": "jpg",
+            "id": "1ef439409cfe73bfe4f3a3f128fae3ca",
+            "name": "00000258.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000258.jpg",
+            "size": {
+                "width": 800,
+                "height": 533
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6f3e7b969257aa33e9b24bbb5ce621e8": {
+            "format": "jpg",
+            "id": "6f3e7b969257aa33e9b24bbb5ce621e8",
+            "name": "00000259.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000259.jpg",
+            "size": {
+                "width": 800,
+                "height": 533
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5a730a7bb30ea059faaa2cd0f4ba9c0e": {
+            "format": "jpg",
+            "id": "5a730a7bb30ea059faaa2cd0f4ba9c0e",
+            "name": "00000265.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000265.jpg",
+            "size": {
+                "width": 2000,
+                "height": 1697
+            },
+            "state": 2,
+            "type": 1
+        },
+        "66feebce1ab92ae42d202439130fde5f": {
+            "format": "jpg",
+            "id": "66feebce1ab92ae42d202439130fde5f",
+            "name": "00000270.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000270.jpg",
+            "size": {
+                "width": 465,
+                "height": 700
+            },
+            "state": 2,
+            "type": 1
+        },
+        "87abdbb7b18dae18d84d9d50d42b981f": {
+            "format": "jpg",
+            "id": "87abdbb7b18dae18d84d9d50d42b981f",
+            "name": "00000280.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000280.jpg",
+            "size": {
+                "width": 2469,
+                "height": 2137
+            },
+            "state": 2,
+            "type": 1
+        },
+        "386840f12277cac6a5700b2c65384b80": {
+            "format": "jpg",
+            "id": "386840f12277cac6a5700b2c65384b80",
+            "name": "00000285.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000285.jpg",
+            "size": {
+                "width": 800,
+                "height": 533
+            },
+            "state": 2,
+            "type": 1
+        },
+        "87aef356fa6f75fc72c11eb2af9b7cdd": {
+            "format": "jpg",
+            "id": "87aef356fa6f75fc72c11eb2af9b7cdd",
+            "name": "00000291.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000291.jpg",
+            "size": {
+                "width": 9921,
+                "height": 2900
+            },
+            "state": 2,
+            "type": 1
+        },
+        "1149a377bba654d7160470e66f7dbe73": {
+            "format": "jpg",
+            "id": "1149a377bba654d7160470e66f7dbe73",
+            "name": "00000302.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000302.jpg",
+            "size": {
+                "width": 533,
+                "height": 800
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c26ced8a832f8c5a80f99057a521c05e": {
+            "format": "jpg",
+            "id": "c26ced8a832f8c5a80f99057a521c05e",
+            "name": "00000303.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000303.jpg",
+            "size": {
+                "width": 600,
+                "height": 325
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b58f6ba1d7b033f41598ee5e284030e0": {
+            "format": "jpg",
+            "id": "b58f6ba1d7b033f41598ee5e284030e0",
+            "name": "00000313.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000313.jpg",
+            "size": {
+                "width": 650,
+                "height": 463
+            },
+            "state": 2,
+            "type": 1
+        },
+        "18ea47a100b52f52af268a27d5d93d5d": {
+            "format": "jpg",
+            "id": "18ea47a100b52f52af268a27d5d93d5d",
+            "name": "00000318.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000318.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b81c1162742fb59d681db10a4e22803a": {
+            "format": "jpg",
+            "id": "b81c1162742fb59d681db10a4e22803a",
+            "name": "00000320.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000320.jpg",
+            "size": {
+                "width": 800,
+                "height": 599
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2eccbadd46642dd8e5e60afe528fc97a": {
+            "format": "jpg",
+            "id": "2eccbadd46642dd8e5e60afe528fc97a",
+            "name": "00000328.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000328.jpg",
+            "size": {
+                "width": 747,
+                "height": 527
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ea884eb0a901da5220d4abb9c9e555d6": {
+            "format": "jpg",
+            "id": "ea884eb0a901da5220d4abb9c9e555d6",
+            "name": "00000330.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000330.jpg",
+            "size": {
+                "width": 480,
+                "height": 360
+            },
+            "state": 2,
+            "type": 1
+        },
+        "881b265c22587e8f68bccdd53c8f6356": {
+            "format": "jpg",
+            "id": "881b265c22587e8f68bccdd53c8f6356",
+            "name": "00000332.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000332.jpg",
+            "size": {
+                "width": 500,
+                "height": 334
+            },
+            "state": 2,
+            "type": 1
+        },
+        "65e388d8038aa8be6e7e4eae6f5a18d8": {
+            "format": "jpg",
+            "id": "65e388d8038aa8be6e7e4eae6f5a18d8",
+            "name": "00000339.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000339.jpg",
+            "size": {
+                "width": 900,
+                "height": 675
+            },
+            "state": 2,
+            "type": 1
+        },
+        "66852d500fb13e410a172df8a42c980f": {
+            "format": "jpg",
+            "id": "66852d500fb13e410a172df8a42c980f",
+            "name": "00000356.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000356.jpg",
+            "size": {
+                "width": 566,
+                "height": 396
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6627305fd511e7f8134a8ce876979fa0": {
+            "format": "jpg",
+            "id": "6627305fd511e7f8134a8ce876979fa0",
+            "name": "00000364.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000364.jpg",
+            "size": {
+                "width": 600,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "6be745d30bc709345e40c04dcfc62bca": {
+            "format": "jpg",
+            "id": "6be745d30bc709345e40c04dcfc62bca",
+            "name": "00000365.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000365.jpg",
+            "size": {
+                "width": 787,
+                "height": 551
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b4177e1ee731d60c9ab66ae13768411d": {
+            "format": "jpg",
+            "id": "b4177e1ee731d60c9ab66ae13768411d",
+            "name": "00000371.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000371.jpg",
+            "size": {
+                "width": 640,
+                "height": 480
+            },
+            "state": 2,
+            "type": 1
+        },
+        "a06715f69f4612471380995fa02f35a6": {
+            "format": "jpg",
+            "id": "a06715f69f4612471380995fa02f35a6",
+            "name": "00000378.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000378.jpg",
+            "size": {
+                "width": 800,
+                "height": 634
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5819676444b6ee5f042651a0b593acc0": {
+            "format": "jpg",
+            "id": "5819676444b6ee5f042651a0b593acc0",
+            "name": "00000391.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000391.jpg",
+            "size": {
+                "width": 620,
+                "height": 465
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3450702114cf316369fbd888b5e278f6": {
+            "format": "jpg",
+            "id": "3450702114cf316369fbd888b5e278f6",
+            "name": "00000399.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000399.jpg",
+            "size": {
+                "width": 1200,
+                "height": 872
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f1105c4fef5c789d7c539f6cc4b7285a": {
+            "format": "jpg",
+            "id": "f1105c4fef5c789d7c539f6cc4b7285a",
+            "name": "00000403.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000403.jpg",
+            "size": {
+                "width": 500,
+                "height": 341
+            },
+            "state": 2,
+            "type": 1
+        },
+        "7552321769917ebb9676f8d1d5486c23": {
+            "format": "jpg",
+            "id": "7552321769917ebb9676f8d1d5486c23",
+            "name": "00000410.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000410.jpg",
+            "size": {
+                "width": 1000,
+                "height": 627
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4ae7cdc5824083e94094843f80d19445": {
+            "format": "jpg",
+            "id": "4ae7cdc5824083e94094843f80d19445",
+            "name": "00000412.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000412.jpg",
+            "size": {
+                "width": 175,
+                "height": 173
+            },
+            "state": 2,
+            "type": 1
+        },
+        "dc0b628c6b05e10fcfc6563fbe23db99": {
+            "format": "jpg",
+            "id": "dc0b628c6b05e10fcfc6563fbe23db99",
+            "name": "00000414.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000414.jpg",
+            "size": {
+                "width": 787,
+                "height": 551
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ac725395586f80c1f283b4498d3ed932": {
+            "format": "jpg",
+            "id": "ac725395586f80c1f283b4498d3ed932",
+            "name": "00000416.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000416.jpg",
+            "size": {
+                "width": 1000,
+                "height": 666
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4fb528d6e9795c356f84d1b29979c7fe": {
+            "format": "jpg",
+            "id": "4fb528d6e9795c356f84d1b29979c7fe",
+            "name": "00000422.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000422.jpg",
+            "size": {
+                "width": 1200,
+                "height": 1199
+            },
+            "state": 2,
+            "type": 1
+        },
+        "86ea8aa4a470496d595b343af2e254b6": {
+            "format": "jpg",
+            "id": "86ea8aa4a470496d595b343af2e254b6",
+            "name": "00000426.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000426.jpg",
+            "size": {
+                "width": 800,
+                "height": 533
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5c719b647e82620f49a6f4238663648e": {
+            "format": "jpg",
+            "id": "5c719b647e82620f49a6f4238663648e",
+            "name": "00000429.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000429.jpg",
+            "size": {
+                "width": 400,
+                "height": 287
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8c1507b225ff07009e6b6faf5e7b8015": {
+            "format": "jpg",
+            "id": "8c1507b225ff07009e6b6faf5e7b8015",
+            "name": "00000435.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000435.jpg",
+            "size": {
+                "width": 500,
+                "height": 293
+            },
+            "state": 2,
+            "type": 1
+        },
+        "77af911bd6d247d08c07863cf3702dae": {
+            "format": "jpg",
+            "id": "77af911bd6d247d08c07863cf3702dae",
+            "name": "00000450.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000450.jpg",
+            "size": {
+                "width": 1044,
+                "height": 733
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f8768e36f0d3fa4ac9ca4b0340f88422": {
+            "format": "jpg",
+            "id": "f8768e36f0d3fa4ac9ca4b0340f88422",
+            "name": "00000452.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000452.jpg",
+            "size": {
+                "width": 500,
+                "height": 436
+            },
+            "state": 2,
+            "type": 1
+        },
+        "834fdc1c04adcdaf3007b5ad4dc96a1e": {
+            "format": "jpg",
+            "id": "834fdc1c04adcdaf3007b5ad4dc96a1e",
+            "name": "00000471.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000471.jpg",
+            "size": {
+                "width": 630,
+                "height": 420
+            },
+            "state": 2,
+            "type": 1
+        },
+        "23332622456f001011265d2e57ffe417": {
+            "format": "jpg",
+            "id": "23332622456f001011265d2e57ffe417",
+            "name": "00000495.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000495.jpg",
+            "size": {
+                "width": 800,
+                "height": 533
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3a04108b46212326ebfadcf87638c181": {
+            "format": "jpg",
+            "id": "3a04108b46212326ebfadcf87638c181",
+            "name": "00000532.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000532.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "79bfbfe5c82a6bf1fc2a665bd45fcf1f": {
+            "format": "jpg",
+            "id": "79bfbfe5c82a6bf1fc2a665bd45fcf1f",
+            "name": "00000535.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000535.jpg",
+            "size": {
+                "width": 505,
+                "height": 296
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0206d38cefd22a1e2e2e9f5c3f88811f": {
+            "format": "jpg",
+            "id": "0206d38cefd22a1e2e2e9f5c3f88811f",
+            "name": "00000537.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000537.jpg",
+            "size": {
+                "width": 570,
+                "height": 404
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e99fbafa20610a6fb9cb476d98d90c32": {
+            "format": "jpg",
+            "id": "e99fbafa20610a6fb9cb476d98d90c32",
+            "name": "00000542.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000542.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2f11919f83ea007ede3e0ee22a35d8fc": {
+            "format": "jpg",
+            "id": "2f11919f83ea007ede3e0ee22a35d8fc",
+            "name": "00000548.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000548.jpg",
+            "size": {
+                "width": 1024,
+                "height": 768
+            },
+            "state": 2,
+            "type": 1
+        },
+        "5efa5719a46b9d5910a124c2a57d9c57": {
+            "format": "jpg",
+            "id": "5efa5719a46b9d5910a124c2a57d9c57",
+            "name": "00000571.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000571.jpg",
+            "size": {
+                "width": 471,
+                "height": 345
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e6ae77a1a232a092f12009f16c2b2b68": {
+            "format": "jpg",
+            "id": "e6ae77a1a232a092f12009f16c2b2b68",
+            "name": "00000574.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/ecdyonurus/00000574.jpg",
+            "size": {
+                "width": 482,
+                "height": 256
+            },
+            "state": 2,
+            "type": 1
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "781062b43fc25fda019ffa4a2f45bb68",
+        "name": "00000001.jpg",
+        "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000001.jpg",
+        "size": {
+            "width": 320,
+            "height": 320
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "ikVtYHLv3",
+            "type": "RECTANGLE",
+            "tags": [
+                "serratella_ignita"
+            ],
+            "boundingBox": {
+                "height": 319.65738758029977,
+                "width": 320,
+                "left": 0,
+                "top": 0
+            },
+            "points": [
+                {
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "x": 320,
+                    "y": 0
+                },
+                {
+                    "x": 320,
+                    "y": 319.65738758029977
+                },
+                {
+                    "x": 0,
+                    "y": 319.65738758029977
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}

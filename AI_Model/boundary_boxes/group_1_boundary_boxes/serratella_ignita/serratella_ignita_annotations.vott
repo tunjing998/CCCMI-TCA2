@@ -1,0 +1,177 @@
+{
+    "name": "serratella_ignita_annotations",
+    "securityToken": "serratella_ignita_annotations Token",
+    "sourceConnection": {
+        "name": "serratella_ignita_annotations",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiNDgxMjMzOTU5Nzc0NGEwZWFiZjMyZDMxZDZiMzQ3NzgzMGQyY2I0MDc4NzU1ZTdmYjJlYzA2YWEyODE2NjcxZjFkOTFmYTFmZTdlZmU2OWYwODdkZWNlNWFlMzA2OGNkZDEwNjMxY2M1NzlhZWQwMzViMGRiYWQ1M2Y4MGJhM2ZiODA3MDIxZDkwZDQ0ODIzNTQ3N2NmOTYxNmU2ODM0YiIsIml2IjoiNTQ5YmY5NDBjYjY1NzIwNmE5NjYwZjY4NTM1YmQwN2IyZDE0MmUyNzVkZTAyYmZhIn0="
+        },
+        "id": "bMO4a49Zy"
+    },
+    "targetConnection": {
+        "name": "serratella_ignita_annotations",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYjcyZjE2YTk4MjI4MDA4NjNlOWMzM2ZkZWJhZjM2YjZmNWRjYTE2YTIyMjBlY2M5NTUzNTQ5OTZhN2I4NmMxYzYzNTI1NmM4MWY4NTI5YzA2ZGVmNzRjNjVkNzkwYmI1MzI2MTVjMzg0ZDAxMDZiNzljMDIyNjJlNTRkYTc0NTkwYjg5YTdjMmQ4MDI5MTg5NWQyYmQ2NGM2NTcxZDE2MjRjMWU3NDNlYTRiMTk2ZmI2ZTg5YTg3ZTYzMDE0MjIyIiwiaXYiOiIzNGM0NjAyMTQzN2U2ZjlmNDJmZWIxMmJjZDRhNTkxOGNlMjRkMjRiNmJkM2NlYzkifQ=="
+        },
+        "id": "qgD1hpz28"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "serratella_ignita",
+            "color": "#5db300"
+        }
+    ],
+    "id": "CsKTe-_jq",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "csv",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiZGVmZjhhZjNiNjRmNWU5YTgxYjkxMWFkOTM0ZDM1MDExYTE5OTliOTIxZjUyOTkxODE2YWMwYzEwZGJiYzNhZjQ0MDRhMGMxZDY3YzlmNGFmZTE5MjNjZmVmZTU3YjAwIiwiaXYiOiI1Zjc5ZjE1NDk0ZDQ4NWI3Y2Y0YTgyYWU5ODk1ZTdjYWQzYTZmN2RhNDNiMDhmYTcifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "ddc6b5f52aaa53dbf7f3d0b0bc9900fe",
+    "assets": {
+        "f75544fd3809d8367aaf2990b5cbe7c6": {
+            "format": "jpg",
+            "id": "f75544fd3809d8367aaf2990b5cbe7c6",
+            "name": "00000000.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000000.jpg",
+            "size": {
+                "width": 600,
+                "height": 468
+            },
+            "state": 2,
+            "type": 1
+        },
+        "781062b43fc25fda019ffa4a2f45bb68": {
+            "format": "jpg",
+            "id": "781062b43fc25fda019ffa4a2f45bb68",
+            "name": "00000001.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000001.jpg",
+            "size": {
+                "width": 320,
+                "height": 320
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f452f923b15891a7af9ac663e972ad3b": {
+            "format": "jpg",
+            "id": "f452f923b15891a7af9ac663e972ad3b",
+            "name": "00000003.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000003.jpg",
+            "size": {
+                "width": 500,
+                "height": 314
+            },
+            "state": 2,
+            "type": 1
+        },
+        "27720a17ce9f0caab6debe749d5b6599": {
+            "format": "jpg",
+            "id": "27720a17ce9f0caab6debe749d5b6599",
+            "name": "00000004.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000004.jpg",
+            "size": {
+                "width": 500,
+                "height": 422
+            },
+            "state": 2,
+            "type": 1
+        },
+        "57220aae8d64a651ebc105df708be511": {
+            "format": "jpg",
+            "id": "57220aae8d64a651ebc105df708be511",
+            "name": "00000007.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000007.jpg",
+            "size": {
+                "width": 800,
+                "height": 600
+            },
+            "state": 2,
+            "type": 1
+        },
+        "39fbdbae295e913445cbbbd6fa8c18bb": {
+            "format": "jpg",
+            "id": "39fbdbae295e913445cbbbd6fa8c18bb",
+            "name": "00000009.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000009.jpg",
+            "size": {
+                "width": 290,
+                "height": 166
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3290efa0101f1dcc67affb7922d56a6d": {
+            "format": "jpg",
+            "id": "3290efa0101f1dcc67affb7922d56a6d",
+            "name": "00000017.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000017.jpg",
+            "size": {
+                "width": 480,
+                "height": 360
+            },
+            "state": 2,
+            "type": 1
+        },
+        "2c42a313e83a70cd104ae823aa8a1de9": {
+            "format": "jpg",
+            "id": "2c42a313e83a70cd104ae823aa8a1de9",
+            "name": "00000020.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000020.jpg",
+            "size": {
+                "width": 816,
+                "height": 711
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ac5110c47108425a040c139c72084300": {
+            "format": "jpg",
+            "id": "ac5110c47108425a040c139c72084300",
+            "name": "00000022.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000022.jpg",
+            "size": {
+                "width": 508,
+                "height": 560
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b86362d6485a6879661553b7957147ad": {
+            "format": "jpg",
+            "id": "b86362d6485a6879661553b7957147ad",
+            "name": "00000024.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000024.jpg",
+            "size": {
+                "width": 1024,
+                "height": 1121
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ddc6b5f52aaa53dbf7f3d0b0bc9900fe": {
+            "format": "jpg",
+            "id": "ddc6b5f52aaa53dbf7f3d0b0bc9900fe",
+            "name": "00000028.jpg",
+            "path": "file:D:/College/Team/Images/group_1_mayflies/serratella_ignita/00000028.jpg",
+            "size": {
+                "width": 500,
+                "height": 323
+            },
+            "state": 2,
+            "type": 1
+        }
+    }
+}

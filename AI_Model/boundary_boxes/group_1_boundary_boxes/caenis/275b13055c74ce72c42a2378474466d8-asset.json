@@ -1,0 +1,48 @@
+{
+    "asset": {
+        "format": "jpg",
+        "id": "275b13055c74ce72c42a2378474466d8",
+        "name": "00000034.jpg",
+        "path": "file:D:/College/Team/Images/group_1_mayflies/caenis/00000034.jpg",
+        "size": {
+            "width": 800,
+            "height": 600
+        },
+        "state": 2,
+        "type": 1
+    },
+    "regions": [
+        {
+            "id": "C4jaX3mUO",
+            "type": "RECTANGLE",
+            "tags": [
+                "caenis"
+            ],
+            "boundingBox": {
+                "height": 585.8672376873661,
+                "width": 798.1827309236947,
+                "left": 0,
+                "top": 1.284796573875803
+            },
+            "points": [
+                {
+                    "x": 0,
+                    "y": 1.284796573875803
+                },
+                {
+                    "x": 798.1827309236947,
+                    "y": 1.284796573875803
+                },
+                {
+                    "x": 798.1827309236947,
+                    "y": 587.152034261242
+                },
+                {
+                    "x": 0,
+                    "y": 587.152034261242
+                }
+            ]
+        }
+    ],
+    "version": "2.2.0"
+}
