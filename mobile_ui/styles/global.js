@@ -5,7 +5,7 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#1B262C',
+    // backgroundColor: '#1B262C',
   },
   button: {
     paddingHorizontal: 20,

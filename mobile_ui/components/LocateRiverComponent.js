@@ -166,8 +166,8 @@ export default class LocateTest extends Component {
     return (
       <>
         <TextInput
-          placeholder="E.g.  Liffey or 74.168462, 45.9812645"
-          placeholderTextColor="#FFFFFF"
+          placeholder="E.g.  Liffey or 53.3539, -6.3557"
+          placeholderTextColor="#00000"
           width={width}
           style={[styles.localInput]}
           onChangeText={(text) => this.getInput(text)}
@@ -189,7 +189,7 @@ export default class LocateTest extends Component {
   render() {
     return (
       <>
-        <SafeAreaView style={{flex: 1, backgroundColor: '#1B262C'}}>
+        <SafeAreaView style={{flex: 1}}>
           <View style={styles.container}>
             <Text style={[styles.fonts, styles.titleOne]}>First Step...</Text>
             <Text style={[styles.fonts, styles.titleTwo]}>
@@ -211,10 +211,10 @@ export default class LocateTest extends Component {
           <View>
             <Text style={styles.fonts}>{this.state.locationStatus}</Text>
             <Text style={styles.fonts}>
-              Longitude: {this.state.location.longitude}
+              Latitude: {this.state.location.latitude}
             </Text>
             <Text style={styles.fonts}>
-              Latitude: {this.state.location.latitude}
+              Longitude: {this.state.location.longitude}
             </Text>
           </View>
         </SafeAreaView>
@@ -239,7 +239,8 @@ const styles = StyleSheet.create({
     marginVertical: 16,
   },
   fonts: {
-    color: '#FFFFFF',
+    // color: '#FFFFFF',
+    color: '#1B262C',
     fontSize: 30,
   },
   container: {
@@ -256,7 +257,8 @@ const styles = StyleSheet.create({
   textRemind: {
     marginTop: 5,
     paddingLeft: 30,
-    color: '#FFFFFF',
+    // color: '#FFFFFF',
+    color: '#1B262C',
   },
   localInput: {
     marginTop: 50,
@@ -265,7 +267,8 @@ const styles = StyleSheet.create({
     borderColor: '#95989A',
     borderRadius: 5,
     fontSize: 15,
-    color: '#FFFFFF',
+    // color: '#FFFFFF',
+    color: '#1B262C',
     paddingLeft: 10,
   },
 });
