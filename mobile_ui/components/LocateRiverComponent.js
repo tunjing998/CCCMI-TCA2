@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   View,
@@ -20,11 +20,8 @@ export default class LocateTest extends Component {
       location: {latitude: null, longitude: null},
       error: null,
       searchInput: '',
-      openMap: false,
-      region: '',
       locationStatus: '',
     };
-    this.textInputContent = React.createRef();
   }
 
   /**
@@ -172,7 +169,8 @@ export default class LocateTest extends Component {
           width={width}
           style={[styles.localInput]}
           onChangeText={(text) => this.getInput(text)}
-          value={this.state.searchInput}></TextInput>
+          value={this.state.searchInput}
+          testID={'userTestInput'}></TextInput>
       </>
     );
   }
