@@ -129,6 +129,7 @@ export default class LocateTest extends Component {
         //Setting Longitude state
         this.setState({
           location: {latitude: currentLatitude, longitude: currentLongitude},
+          searchInput: currentLatitude + ',' + currentLongitude,
         });
       })
       .catch((error) => {
@@ -171,11 +172,7 @@ export default class LocateTest extends Component {
           width={width}
           style={[styles.localInput]}
           onChangeText={(text) => this.getInput(text)}
-          value={
-            this.state.location.latitude &&
-            this.state.location.longitude &&
-            this.state.location.latitude + ',' + this.state.location.longitude
-          }></TextInput>
+          value={this.state.searchInput}></TextInput>
       </>
     );
   }
