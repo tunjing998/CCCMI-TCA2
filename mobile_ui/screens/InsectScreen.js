@@ -1,15 +1,16 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
-const DetailsScreen = ({navigation}) => {
+const InsectScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Details Screen</Text>
+      <Text>Insect Screen</Text>
+      <Button title="Click Here" onPress={() => alert('Button Clicked!')} />
     </View>
   );
 };
 
-export default DetailsScreen;
+export default InsectScreen;
 
 const styles = StyleSheet.create({
   container: {
