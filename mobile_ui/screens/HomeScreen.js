@@ -8,7 +8,10 @@ const HomeScreen = ({navigation}) => {
   const theme = useTheme();
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel="homeScreenContainer"
+      testID="homeScreenContainer">
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
       <Text style={{color: colors.text}}>Home Screen</Text>
       {/* <Button
@@ -18,8 +21,14 @@ const HomeScreen = ({navigation}) => {
       <Button
         title="Take new sample"
         onPress={() => navigation.navigate('SearchRiverScreen')}
+        accessibilityLabel="homeScreenTakeNewSampleButton"
+        testID="homeScreenTakeNewSampleButton"
       />
-      <Button title="View sample" />
+      <Button
+        title="View sample"
+        accessibilityLabel="homeScreenViewSampleButton"
+        testID="homeScreenViewSampleButton"
+      />
     </View>
   );
 };
