@@ -12,11 +12,11 @@ const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
-      {/* <Text style={{color: colors.text}}>Home Screen</Text> */}
+
       <Button
-        ViewComponent={LinearGradient} // Don't forget this!
+        ViewComponent={LinearGradient}
         linearGradientProps={{
-          colors: ['#07beb8', '#3dccc7', '#68d8d6'],
+          colors: ['#e76f51', '#f4a261'],
           start: {x: 0, y: 0},
           end: {x: 1, y: 0},
         }}
@@ -26,9 +26,9 @@ const HomeScreen = ({navigation}) => {
         onPress={() => navigation.navigate('SearchRiverScreen')}
       />
       <Button
-        ViewComponent={LinearGradient} // Don't forget this!
+        ViewComponent={LinearGradient}
         linearGradientProps={{
-          colors: ['#07beb8', '#3dccc7', '#68d8d6'],
+          colors: ['#e76f51', '#f4a261'],
           start: {x: 0, y: 0},
           end: {x: 1, y: 0},
         }}
