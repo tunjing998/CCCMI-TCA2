@@ -5,7 +5,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
 import InsectScreen from './InsectScreen';
 import ArduinoScreen from './ArduinoScreen';
@@ -16,7 +15,7 @@ const DetailsStack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
 const MainTabScreen = () => (
-  <Tab.Navigator initialRouteName="Home" activeColor="#fff">
+  <Tab.Navigator initialRouteName="Details" activeColor="#fff">
     {/* <Tab.Screen
       name="Home"
       component={HomeStackScreen}
