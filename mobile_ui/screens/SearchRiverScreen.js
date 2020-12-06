@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Text} from 'react-native-elements';
 import {Button} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
-
+import {useTheme} from '@react-navigation/native';
 const SearchRiverScreen = ({navigation}) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
@@ -13,6 +13,47 @@ const SearchRiverScreen = ({navigation}) => {
   const handleSearch = () => {
     //pass data to search from api
   };
+  const {colors} = useTheme();
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    searchSection: {
+      // flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#fff',
+      marginBottom: 30,
+    },
+    searchIcon: {
+      padding: 10,
+    },
+    input: {
+      flex: 1,
+      paddingTop: 10,
+      paddingRight: 10,
+      paddingBottom: 10,
+      paddingLeft: 0,
+      backgroundColor: '#fff',
+      color: '#424242',
+      borderBottomColor: colors.text,
+      borderBottomWidth: 1,
+    },
+    buttonText: {
+      fontSize: 20,
+    },
+    buttonContainer: {
+      width: '80%',
+      marginVertical: 10,
+    },
+    title: {
+      paddingBottom: 70,
+      color: colors.text,
+    },
+  });
 
   return (
     <View style={styles.container}>
@@ -57,11 +98,13 @@ const SearchRiverScreen = ({navigation}) => {
         />
       </View>
 
-      <Text h4>Results found:</Text>
+      <Text h4 h4Style={{color: colors.text}}>
+        Results found:
+      </Text>
       <Button
         ViewComponent={LinearGradient} // Don't forget this!
         linearGradientProps={{
-          colors: ['#012a4a', '#013a63', '#01497c'],
+          colors: ['#264653', '#2a9d8f'],
           start: {x: 0, y: 0},
           end: {x: 1, y: 0},
         }}
@@ -73,7 +116,7 @@ const SearchRiverScreen = ({navigation}) => {
       <Button
         ViewComponent={LinearGradient} // Don't forget this!
         linearGradientProps={{
-          colors: ['#012a4a', '#013a63', '#01497c'],
+          colors: ['#264653', '#2a9d8f'],
           start: {x: 0, y: 0},
           end: {x: 1, y: 0},
         }}
@@ -86,41 +129,3 @@ const SearchRiverScreen = ({navigation}) => {
 };
 
 export default SearchRiverScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  searchSection: {
-    // flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    paddingBottom: 30,
-  },
-  searchIcon: {
-    padding: 10,
-  },
-  input: {
-    flex: 1,
-    paddingTop: 10,
-    paddingRight: 10,
-    paddingBottom: 10,
-    paddingLeft: 0,
-    backgroundColor: '#fff',
-    color: '#424242',
-  },
-  buttonText: {
-    fontSize: 25,
-  },
-  buttonContainer: {
-    width: 200,
-    marginVertical: 10,
-  },
-  title: {
-    paddingBottom: 70,
-  },
-});

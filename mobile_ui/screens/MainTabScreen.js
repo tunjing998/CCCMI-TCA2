@@ -15,18 +15,7 @@ const DetailsStack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
 const MainTabScreen = () => (
-  <Tab.Navigator initialRouteName="Details" activeColor="#fff">
-    {/* <Tab.Screen
-      name="Home"
-      component={HomeStackScreen}
-      options={{
-        tabBarLabel: 'Home',
-        tabBarColor: '#009387',
-        tabBarIcon: ({color}) => (
-          <Icon name="ios-home" color={color} size={26} />
-        ),
-      }}
-    /> */}
+  <Tab.Navigator initialRouteName="Details" activeColor="#fff" shifting>
     <Tab.Screen
       name="Details"
       component={DetailsStackScreen}
@@ -38,6 +27,7 @@ const MainTabScreen = () => (
         ),
       }}
     />
+
     <Tab.Screen
       name="Arduino"
       component={ArduinoScreen}
@@ -49,12 +39,13 @@ const MainTabScreen = () => (
         ),
       }}
     />
+
     <Tab.Screen
       name="Insect"
       component={InsectScreen}
       options={{
         tabBarLabel: 'Insect',
-        tabBarColor: '#d02860',
+        tabBarColor: '#e76f51',
         tabBarIcon: ({color}) => (
           <Icon name="ios-aperture" color={color} size={26} />
         ),
