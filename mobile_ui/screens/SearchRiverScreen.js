@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-import {View, Text, Button, StyleSheet, TextInput, Switch} from 'react-native';
+import {View, StyleSheet, TextInput, Switch} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {Text} from 'react-native-elements';
+import {Button} from 'react-native-elements';
+import LinearGradient from 'react-native-linear-gradient';
 
 const SearchRiverScreen = ({navigation}) => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -13,8 +16,10 @@ const SearchRiverScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text>SearchRiver Screen</Text>
-      <Text>Locate and search river here.</Text>
+      {/* <Text>SearchRiver Screen</Text> */}
+      <Text h3 h3Style={styles.title}>
+        Search and choose the river.
+      </Text>
 
       <View style={styles.searchSection}>
         {/* <Switch
@@ -52,16 +57,30 @@ const SearchRiverScreen = ({navigation}) => {
         />
       </View>
 
-      <Text>
-        {/* Textinput to insert coordinate/river name, then search through api, then
-        pass full details to the next screen (ChooseRiver.js) */}
-        Search: {searchString}
-      </Text>
+      <Text h4>Results found:</Text>
       <Button
+        ViewComponent={LinearGradient} // Don't forget this!
+        linearGradientProps={{
+          colors: ['#012a4a', '#013a63', '#01497c'],
+          start: {x: 0, y: 0},
+          end: {x: 1, y: 0},
+        }}
         title="Stream Liffey"
         onPress={() => navigation.navigate('SearchRiverScreen2')}
+        titleStyle={styles.buttonText}
+        containerStyle={styles.buttonContainer}
       />
-      <Button title="River Bryan" />
+      <Button
+        ViewComponent={LinearGradient} // Don't forget this!
+        linearGradientProps={{
+          colors: ['#012a4a', '#013a63', '#01497c'],
+          start: {x: 0, y: 0},
+          end: {x: 1, y: 0},
+        }}
+        title="River Bryan"
+        titleStyle={styles.buttonText}
+        containerStyle={styles.buttonContainer}
+      />
     </View>
   );
 };
@@ -80,6 +99,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
+    paddingBottom: 30,
   },
   searchIcon: {
     padding: 10,
@@ -92,5 +112,15 @@ const styles = StyleSheet.create({
     paddingLeft: 0,
     backgroundColor: '#fff',
     color: '#424242',
+  },
+  buttonText: {
+    fontSize: 25,
+  },
+  buttonContainer: {
+    width: 200,
+    marginVertical: 10,
+  },
+  title: {
+    paddingBottom: 70,
   },
 });
