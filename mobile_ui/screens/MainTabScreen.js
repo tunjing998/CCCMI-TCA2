@@ -9,8 +9,9 @@ import DetailsScreen from './DetailsScreen';
 import InsectScreen from './InsectScreen';
 import ArduinoScreen from './ArduinoScreen';
 
-const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
+const ArduinoStack = createStackNavigator();
+const InsectStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -30,7 +31,7 @@ const MainTabScreen = () => (
 
     <Tab.Screen
       name="Arduino"
-      component={ArduinoScreen}
+      component={ArduinoStackScreen}
       options={{
         tabBarLabel: 'Arduino',
         tabBarColor: '#694fad',
@@ -42,7 +43,7 @@ const MainTabScreen = () => (
 
     <Tab.Screen
       name="Insect"
-      component={InsectScreen}
+      component={InsectStackScreen}
       options={{
         tabBarLabel: 'Insect',
         tabBarColor: '#e76f51',
@@ -86,6 +87,34 @@ export default MainTabScreen;
 //   </HomeStack.Navigator>
 // );
 
+const ArduinoStackScreen = ({navigation}) => (
+  <ArduinoStack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: '#694fad',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }}>
+    <ArduinoStack.Screen
+      name="Arduino"
+      component={ArduinoScreen}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#694fad"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+      }}
+    />
+  </ArduinoStack.Navigator>
+);
+
 const DetailsStackScreen = ({navigation}) => (
   <DetailsStack.Navigator
     screenOptions={{
@@ -112,4 +141,32 @@ const DetailsStackScreen = ({navigation}) => (
       }}
     />
   </DetailsStack.Navigator>
+);
+
+const InsectStackScreen = ({navigation}) => (
+  <InsectStack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: '#e76f51',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }}>
+    <InsectStack.Screen
+      name="Insect"
+      component={InsectScreen}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#e76f51"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+      }}
+    />
+  </InsectStack.Navigator>
 );
