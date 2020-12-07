@@ -11,8 +11,9 @@ const SearchRiverScreen = ({navigation}) => {
   const [searchString, setSearchString] = useState(null);
 
   const handleSearch = () => {
-    //pass data to search from api
+    console.log('search button pressed');
   };
+
   const {colors} = useTheme();
   const styles = StyleSheet.create({
     container: {
@@ -63,14 +64,6 @@ const SearchRiverScreen = ({navigation}) => {
       </Text>
 
       <View style={styles.searchSection}>
-        {/* <Switch
-          trackColor={{false: '#767577', true: '#81b0ff'}}
-          thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-          ios_backgroundColor="#3e3e3e"
-          onValueChange={toggleSwitch}
-          value={isEnabled}
-        /> */}
-
         <Icon.Button
           style={styles.searchIcon}
           name={isEnabled ? 'crosshairs' : 'crosshairs-gps'}
@@ -78,7 +71,7 @@ const SearchRiverScreen = ({navigation}) => {
           color="#000"
           backgroundColor="transparent"
           onPress={() => {
-            toggleSwitch(), console.log(isEnabled);
+            toggleSwitch();
           }}
         />
 
@@ -95,6 +88,7 @@ const SearchRiverScreen = ({navigation}) => {
           backgroundColor="transparent"
           size={20}
           color="#000"
+          onPress={() => handleSearch()}
         />
       </View>
 
@@ -123,6 +117,10 @@ const SearchRiverScreen = ({navigation}) => {
         title="River Bryan"
         titleStyle={styles.buttonText}
         containerStyle={styles.buttonContainer}
+      />
+      <Button
+        title="fetch rivers from api"
+        onPress={() => navigation.navigate('fetchApi')}
       />
     </View>
   );

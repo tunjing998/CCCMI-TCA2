@@ -28,7 +28,7 @@ import SupportScreen from './screens/SupportScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import SearchRiverScreen from './screens/SearchRiverScreen';
 import SearchRiverScreen2 from './screens/SearchRiverScreen2';
-
+import fetchApi from './screens/fetchApi';
 import {AuthContext} from './components/context';
 
 import RootStackScreen from './screens/RootStackScreen';
@@ -222,7 +222,7 @@ const App = () => {
                 component={SearchRiverScreen2}
               />
               <Drawer.Screen name="MainTabScreen" component={MainTabScreen} />
-
+              <Drawer.Screen name="fetchApi" component={fetchApi} />
               {/* END  OF  SAMPLE  SCREEN */}
             </Drawer.Navigator>
           ) : (
