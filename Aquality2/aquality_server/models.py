@@ -1,5 +1,5 @@
-from django.db import models
-from django.utils import timezone
+from django.contrib.gis.db import models
+from django.contrib.gis.geos import Point
 # Create your models here.
 
 # Login Account Model
@@ -29,14 +29,13 @@ class River(models.Model):
     river_name = models.CharField(max_length = 200)
     river_catchments_code = models.CharField(max_length = 20)
     river_catchments = models.CharField(max_length = 200)
-    longitute = models.FloatField(null=True)
-    langitute = models.FloatField(null=True)
+    location = models.PointField(geography=True, default=Point(0.0, 0.0),null=True)
     local_authority = models.CharField(max_length = 200)
     water_body_category  = models.CharField(max_length = 200)
     protected_area = models.CharField(max_length = 20,null=True)
     transboundary = models.CharField(max_length = 20)
     canal = models.CharField(max_length = 20)
-
+    
 #Data Collected Model
 class Data(models.Model):
     data_id = models.AutoField(primary_key = True) 

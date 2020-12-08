@@ -1,23 +1,22 @@
 from django.shortcuts import get_object_or_404, render
 from aquality_server.actions import *
-<<<<<<< HEAD
 from rest_framework import viewsets
 from .serializers import RiverSerializer
 from .models import River
-=======
->>>>>>> 9c6e19559ebd29d5a324dd31e2d6a958c6ca809d
+from rest_framework.response import responses
+from rest_framework.decorators import api_view
 
 # Controlling The View Access To
 def index(request):
     return render(request, 'aquality_server/index.html', {})
 
-<<<<<<< HEAD
 class RiverViewSet(viewsets.ModelViewSet):
     queryset = River.objects.all().order_by('river_id')
     serializer_class = RiverSerializer
+    def get_queryset(self):
+        return River.objects.all().order_by('river_id')
 
-=======
->>>>>>> 9c6e19559ebd29d5a324dd31e2d6a958c6ca809d
-# def addData(request):
-#     returnMessage = saveRiverListToDbFromWFA()
-#     return render(request, 'aquality_server/addData.html',{'returnMessage': returnMessage})
+
+def addData(request):
+    returnMessage = saveRiverListToDbFromWFA()
+    return render(request, 'aquality_server/addData.html',{'returnMessage': returnMessage})
