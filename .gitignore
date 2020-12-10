@@ -1,2 +1,4 @@
 AI_Model/boundary_boxes/group_1_boundary_boxes/**/vott-csv-export/*.jpg
 AI_Model/images/
+AI_Model/yolov3/*.jpg
+AI_Model/yolov3/*.zip
