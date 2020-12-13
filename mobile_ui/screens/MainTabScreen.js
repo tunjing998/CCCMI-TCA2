@@ -8,6 +8,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import DetailsScreen from './DetailsScreen';
 import InsectScreen from './InsectScreen';
 import ArduinoScreen from './ArduinoScreen';
+import ArduinoScreen2 from './ArduinoScreen2';
+
 import ChooseInsectScreen from './ChooseInsectScreen';
 
 const DetailsStack = createStackNavigator();
@@ -113,8 +115,8 @@ const ArduinoStackScreen = ({navigation}) => (
         ),
       }}
     />
-    {/* <ArduinoStack.Screen
-      name="Arduino2"
+    <ArduinoStack.Screen
+      name="ArduinoScreen2"
       component={ArduinoScreen2}
       options={{
         headerLeft: () => (
@@ -126,7 +128,7 @@ const ArduinoStackScreen = ({navigation}) => (
           />
         ),
       }}
-    /> */}
+    />
   </ArduinoStack.Navigator>
 );
 

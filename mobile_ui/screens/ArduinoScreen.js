@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Button, StyleSheet, TextInput} from 'react-native';
+import {View, StyleSheet, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Text} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
+import {Button} from 'react-native-elements';
 
-const ArduinoScreen = () => {
+const ArduinoScreen = ({navigation}) => {
   const {colors} = useTheme();
   const theme = useTheme();
   const styles = StyleSheet.create({
@@ -50,8 +51,10 @@ const ArduinoScreen = () => {
           backgroundColor="transparent"
           size={20}
           color="#000"
+          onPress={() => navigation.navigate('ArduinoScreen2')}
         />
       </View>
+      {/* <Button title="Turn On Bluetooth" type="outline" /> */}
     </View>
   );
 };

@@ -11,8 +11,6 @@ import {
 const riverURL =
   'http://django-env.eba-9eikjyb6.us-west-2.elasticbeanstalk.com/aquality_server/rivers/';
 
-const moviesURL = 'https://reactnative.dev/movies.json';
-
 const fetchApi = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
