@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import DetailsScreen from './DetailsScreen';
 import InsectScreen from './InsectScreen';
 import ArduinoScreen from './ArduinoScreen';
+import ChooseInsectScreen from './ChooseInsectScreen';
 
 const DetailsStack = createStackNavigator();
 const ArduinoStack = createStackNavigator();
@@ -24,7 +25,7 @@ const MainTabScreen = () => (
         tabBarLabel: 'Details',
         tabBarColor: '#1f65ff',
         tabBarIcon: ({color}) => (
-          <Icon name="ios-notifications" color={color} size={26} />
+          <Icon name="information-outline" color={color} size={26} />
         ),
       }}
     />
@@ -36,7 +37,7 @@ const MainTabScreen = () => (
         tabBarLabel: 'Arduino',
         tabBarColor: '#694fad',
         tabBarIcon: ({color}) => (
-          <Icon name="ios-person" color={color} size={26} />
+          <Icon name="cube-outline" color={color} size={26} />
         ),
       }}
     />
@@ -48,7 +49,7 @@ const MainTabScreen = () => (
         tabBarLabel: 'Insect',
         tabBarColor: '#e76f51',
         tabBarIcon: ({color}) => (
-          <Icon name="ios-aperture" color={color} size={26} />
+          <Icon name="bug-outline" color={color} size={26} />
         ),
       }}
     />
@@ -112,6 +113,20 @@ const ArduinoStackScreen = ({navigation}) => (
         ),
       }}
     />
+    {/* <ArduinoStack.Screen
+      name="Arduino2"
+      component={ArduinoScreen2}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#694fad"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+      }}
+    /> */}
   </ArduinoStack.Navigator>
 );
 
@@ -166,6 +181,21 @@ const InsectStackScreen = ({navigation}) => (
             onPress={() => navigation.openDrawer()}
           />
         ),
+      }}
+    />
+    <InsectStack.Screen
+      name="ChooseInsectScreen"
+      component={ChooseInsectScreen}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#e76f51"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+        title: 'Select Insects Group',
       }}
     />
   </InsectStack.Navigator>

@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     paddingHorizontal: 30,
-    paddingVertical: 25,
+    paddingVertical: 10,
   },
   buttonContainer: {
     padding: 35,

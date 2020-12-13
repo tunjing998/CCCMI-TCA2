@@ -118,10 +118,11 @@ const SearchRiverScreen = ({navigation}) => {
         titleStyle={styles.buttonText}
         containerStyle={styles.buttonContainer}
       />
-      <Button
+
+      {/* <Button
         title="fetch rivers from api"
         onPress={() => navigation.navigate('fetchApi')}
-      />
+      /> */}
     </View>
   );
 };
