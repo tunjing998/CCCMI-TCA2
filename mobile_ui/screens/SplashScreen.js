@@ -46,7 +46,7 @@ const SplashScreen = ({navigation}) => {
               color: colors.text,
             },
           ]}>
-          Start sampling anytime, anywhere!
+          Search. Connect. Sample.
         </Text>
         <Text style={styles.text}>Sign in with account</Text>
         <View style={styles.button}>

@@ -5,29 +5,21 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
 import InsectScreen from './InsectScreen';
 import ArduinoScreen from './ArduinoScreen';
+import ArduinoScreen2 from './ArduinoScreen2';
 
-const HomeStack = createStackNavigator();
+import ChooseInsectScreen from './ChooseInsectScreen';
+
 const DetailsStack = createStackNavigator();
+const ArduinoStack = createStackNavigator();
+const InsectStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
 const MainTabScreen = () => (
-  <Tab.Navigator initialRouteName="Home" activeColor="#fff">
-    {/* <Tab.Screen
-      name="Home"
-      component={HomeStackScreen}
-      options={{
-        tabBarLabel: 'Home',
-        tabBarColor: '#009387',
-        tabBarIcon: ({color}) => (
-          <Icon name="ios-home" color={color} size={26} />
-        ),
-      }}
-    /> */}
+  <Tab.Navigator initialRouteName="Details" activeColor="#fff" shifting>
     <Tab.Screen
       name="Details"
       component={DetailsStackScreen}
@@ -35,29 +27,31 @@ const MainTabScreen = () => (
         tabBarLabel: 'Details',
         tabBarColor: '#1f65ff',
         tabBarIcon: ({color}) => (
-          <Icon name="ios-notifications" color={color} size={26} />
+          <Icon name="information-outline" color={color} size={26} />
         ),
       }}
     />
+
     <Tab.Screen
       name="Arduino"
-      component={ArduinoScreen}
+      component={ArduinoStackScreen}
       options={{
         tabBarLabel: 'Arduino',
         tabBarColor: '#694fad',
         tabBarIcon: ({color}) => (
-          <Icon name="ios-person" color={color} size={26} />
+          <Icon name="cube-outline" color={color} size={26} />
         ),
       }}
     />
+
     <Tab.Screen
       name="Insect"
-      component={InsectScreen}
+      component={InsectStackScreen}
       options={{
         tabBarLabel: 'Insect',
-        tabBarColor: '#d02860',
+        tabBarColor: '#e76f51',
         tabBarIcon: ({color}) => (
-          <Icon name="ios-aperture" color={color} size={26} />
+          <Icon name="bug-outline" color={color} size={26} />
         ),
       }}
     />
@@ -96,6 +90,48 @@ export default MainTabScreen;
 //   </HomeStack.Navigator>
 // );
 
+const ArduinoStackScreen = ({navigation}) => (
+  <ArduinoStack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: '#694fad',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }}>
+    <ArduinoStack.Screen
+      name="Arduino"
+      component={ArduinoScreen}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#694fad"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+      }}
+    />
+    <ArduinoStack.Screen
+      name="ArduinoScreen2"
+      component={ArduinoScreen2}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#694fad"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+      }}
+    />
+  </ArduinoStack.Navigator>
+);
+
 const DetailsStackScreen = ({navigation}) => (
   <DetailsStack.Navigator
     screenOptions={{
@@ -122,4 +158,47 @@ const DetailsStackScreen = ({navigation}) => (
       }}
     />
   </DetailsStack.Navigator>
+);
+
+const InsectStackScreen = ({navigation}) => (
+  <InsectStack.Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: '#e76f51',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }}>
+    <InsectStack.Screen
+      name="Insect"
+      component={InsectScreen}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#e76f51"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+      }}
+    />
+    <InsectStack.Screen
+      name="ChooseInsectScreen"
+      component={ChooseInsectScreen}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#e76f51"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+        title: 'Select Insects Group',
+      }}
+    />
+  </InsectStack.Navigator>
 );

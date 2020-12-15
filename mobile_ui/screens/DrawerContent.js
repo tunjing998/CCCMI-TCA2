@@ -5,7 +5,6 @@ import {
   Avatar,
   Title,
   Caption,
-  Paragraph,
   Drawer,
   Text,
   TouchableRipple,
@@ -89,7 +88,7 @@ export function DrawerContent(props) {
                         /> */}
             <DrawerItem
               icon={({color, size}) => (
-                <Icon name="settings-outline" color={color} size={size} />
+                <Icon name="cog-outline" color={color} size={size} />
               )}
               label="Settings"
               onPress={() => {

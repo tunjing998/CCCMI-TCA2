@@ -1,6 +1,8 @@
 import React from 'react';
-import {View, Text, Button, StyleSheet, StatusBar} from 'react-native';
+import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import {Button} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
+import LinearGradient from 'react-native-linear-gradient';
 
 const HomeScreen = ({navigation}) => {
   const {colors} = useTheme();
@@ -13,21 +15,33 @@ const HomeScreen = ({navigation}) => {
       accessibilityLabel="homeScreenContainer"
       testID="homeScreenContainer">
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
-      <Text style={{color: colors.text}}>Home Screen</Text>
-      {/* <Button
-        title="Go to details screen"
-        onPress={() => navigation.navigate("Details")}
-      /> */}
+
       <Button
+        ViewComponent={LinearGradient}
+        linearGradientProps={{
+          colors: ['#e76f51', '#f4a261'],
+          start: {x: 0, y: 0},
+          end: {x: 1, y: 0},
+        }}
         title="Take new sample"
+        titleStyle={styles.title}
+        containerStyle={styles.buttonContainer}
         onPress={() => navigation.navigate('SearchRiverScreen')}
         accessibilityLabel="homeScreenTakeNewSampleButton"
         testID="homeScreenTakeNewSampleButton"
       />
       <Button
-        title="View sample"
         accessibilityLabel="homeScreenViewSampleButton"
         testID="homeScreenViewSampleButton"
+        ViewComponent={LinearGradient}
+        linearGradientProps={{
+          colors: ['#e76f51', '#f4a261'],
+          start: {x: 0, y: 0},
+          end: {x: 1, y: 0},
+        }}
+        title="View sample"
+        titleStyle={styles.title}
+        containerStyle={styles.buttonContainer}
       />
     </View>
   );
@@ -40,5 +54,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontSize: 30,
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+  },
+  buttonContainer: {
+    padding: 35,
   },
 });

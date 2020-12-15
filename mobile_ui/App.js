@@ -20,16 +20,15 @@ import {
   DefaultTheme as PaperDefaultTheme,
   DarkTheme as PaperDarkTheme,
 } from 'react-native-paper';
-
+import {createStackNavigator} from '@react-navigation/stack';
 import {DrawerContent} from './screens/DrawerContent';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 import MainTabScreen from './screens/MainTabScreen';
 import SupportScreen from './screens/SupportScreen';
 import SettingsScreen from './screens/SettingsScreen';
-import BookmarkScreen from './screens/BookmarkScreen';
 import SearchRiverScreen from './screens/SearchRiverScreen';
 import SearchRiverScreen2 from './screens/SearchRiverScreen2';
-
+import fetchApi from './screens/fetchApi';
 import {AuthContext} from './components/context';
 
 import RootStackScreen from './screens/RootStackScreen';
@@ -171,6 +170,37 @@ const App = () => {
       </View>
     );
   }
+  const HomeStack = createStackNavigator();
+  const HomeStackScreen = ({navigation}) => (
+    <HomeStack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#009387',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>
+      <HomeStack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: 'Home',
+          headerLeft: () => (
+            <Icon.Button
+              name="ios-menu"
+              size={25}
+              backgroundColor="#009387"
+              onPress={() => navigation.openDrawer()}
+            />
+          ),
+        }}
+      />
+      {/* add screen here */}
+    </HomeStack.Navigator>
+  );
+
   return (
     <PaperProvider theme={theme}>
       <AuthContext.Provider value={authContext}>
@@ -178,10 +208,9 @@ const App = () => {
           {loginState.userToken !== null ? (
             <Drawer.Navigator
               drawerContent={props => <DrawerContent {...props} />}>
-              <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+              <Drawer.Screen name="HomeScreen" component={HomeStackScreen} />
               <Drawer.Screen name="SupportScreen" component={SupportScreen} />
               <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
-              {/* <Drawer.Screen name="BookmarkScreen" component={BookmarkScreen} /> */}
 
               {/* TAKE  NEW  SAMPLE */}
               <Drawer.Screen
@@ -193,7 +222,7 @@ const App = () => {
                 component={SearchRiverScreen2}
               />
               <Drawer.Screen name="MainTabScreen" component={MainTabScreen} />
-
+              <Drawer.Screen name="fetchApi" component={fetchApi} />
               {/* END  OF  SAMPLE  SCREEN */}
             </Drawer.Navigator>
           ) : (
