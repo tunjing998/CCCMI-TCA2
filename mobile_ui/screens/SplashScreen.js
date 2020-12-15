@@ -17,8 +17,11 @@ const SplashScreen = ({navigation}) => {
   const {colors} = useTheme();
 
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor="#2a9d8f" barStyle="light-content" />
+    <View
+      style={styles.container}
+      accessibilityLabel="splashContainer"
+      testID="splashContainer">
+      <StatusBar backgroundColor="#009387" barStyle="light-content" />
       <View style={styles.header}>
         <Animatable.Image
           animation="bounceIn"
@@ -47,7 +50,10 @@ const SplashScreen = ({navigation}) => {
         </Text>
         <Text style={styles.text}>Sign in with account</Text>
         <View style={styles.button}>
-          <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SignInScreen')}
+            accessibilityLabel="splashTouchableOpacityButton"
+            testID="splashTouchableOpacityButton">
             <LinearGradient
               colors={['#08d4c4', '#01ab9d']}
               style={styles.signIn}>

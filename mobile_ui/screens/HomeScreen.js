@@ -10,7 +10,10 @@ const HomeScreen = ({navigation}) => {
   const theme = useTheme();
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel="homeScreenContainer"
+      testID="homeScreenContainer">
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
 
       <Button
@@ -24,8 +27,12 @@ const HomeScreen = ({navigation}) => {
         titleStyle={styles.title}
         containerStyle={styles.buttonContainer}
         onPress={() => navigation.navigate('SearchRiverScreen')}
+        accessibilityLabel="homeScreenTakeNewSampleButton"
+        testID="homeScreenTakeNewSampleButton"
       />
       <Button
+        accessibilityLabel="homeScreenViewSampleButton"
+        testID="homeScreenViewSampleButton"
         ViewComponent={LinearGradient}
         linearGradientProps={{
           colors: ['#e76f51', '#f4a261'],

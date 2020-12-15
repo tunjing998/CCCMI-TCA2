@@ -57,3 +57,6 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+#appium test config
+/appium_automation_testing/test.conf.js
