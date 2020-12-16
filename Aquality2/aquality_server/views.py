@@ -17,8 +17,8 @@ class RiverViewSet(viewsets.ModelViewSet):
     serializer_class = RiverSerializer
     def get_queryset(self):
         # return River.objects.all().order_by('river_id')
-        if(self.request.query_params.get('longitute') and self.request.query_params.get('langitute')):
-            pnt =  GEOSGeometry('POINT(%s %s)' % (self.request.query_params.get('longitute'), self.request.query_params.get('langitute')))
+        if(self.request.query_params.get('longitute') and self.request.query_params.get('latitude')):
+            pnt =  GEOSGeometry('POINT(%s %s)' % (self.request.query_params.get('longitute'), self.request.query_params.get('latitude')))
         else:
             pnt = Point(-7.55,54.93)
         return River.objects.filter(location__distance_lt=(pnt,D(m=10000)))
