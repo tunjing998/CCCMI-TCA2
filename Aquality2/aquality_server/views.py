@@ -17,6 +17,9 @@ class RiverViewSet(viewsets.ModelViewSet):
         return River.objects.all().order_by('river_id')
 
 
-def addData(request):
-    returnMessage = saveRiverListToDbFromWFA()
-    return render(request, 'aquality_server/addData.html',{'returnMessage': returnMessage})
+# def addData(request):
+#     returnMessage = saveRiverListToDbFromWFA()
+#     return render(request, 'aquality_server/addData.html',{'returnMessage': returnMessage})
+
+def testingPage(request):
+    return render(request,'aquality_server/testing.html',{'request':request.path})

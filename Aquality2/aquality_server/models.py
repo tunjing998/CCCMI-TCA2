@@ -46,8 +46,7 @@ class Data(models.Model):
         blank=True, 
         null=True
     )   
-    longitute = models.FloatField(default=None, blank=True, null=True)
-    langitute = models.FloatField(default=None, blank=True, null=True)
+    location = models.PointField(geography=True, default=Point(0.0, 0.0),null=True)
     ph = models.FloatField(default=None, blank=True, null=True)
     temp = models.FloatField(default=None, blank=True, null=True)
     date_captured = models.DateTimeField(default=None, blank=True, null=True)
