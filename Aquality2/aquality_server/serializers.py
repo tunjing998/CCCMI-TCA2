@@ -1,7 +1,7 @@
 # serializers.py
 from rest_framework import serializers
 
-from .models import River
+from .models import River,Data
 
 class RiverSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -18,3 +18,7 @@ class RiverSerializer(serializers.HyperlinkedModelSerializer):
                   "transboundary",
                   "canal")
        
+class  DataSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Data
+        fields = "__all__"
