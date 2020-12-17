@@ -4,6 +4,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'rivers', views.RiverViewSet)
+router.register(r'data',views.DataViewSet)
 #Application Name
 app_name = 'aquality_server'
 #Controlling The Path of Application
