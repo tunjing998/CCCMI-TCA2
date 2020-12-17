@@ -12,7 +12,19 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 
+if os.name == 'nt':
+    import platform
+    OSGEO4W = r"C:\OSGeo4W"
+    if '64' in platform.architecture()[0]:
+        OSGEO4W += "64"
+    assert os.path.isdir(OSGEO4W), "Directory does not exist: " + OSGEO4W
+    os.environ['OSGEO4W_ROOT'] = OSGEO4W
+    os.environ['GDAL_DATA'] = OSGEO4W + r"\share\gdal"
+    os.environ['PROJ_LIB'] = OSGEO4W + r"\share\proj"
+    os.environ['PATH'] = OSGEO4W + r"\bin;" + os.environ['PATH']
+    
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -34,7 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aquality_server.apps.AqualityServerConfig'
+    'aquality_server.apps.AqualityServerConfig',
+    'django.contrib.gis',
+    'django_filters',
+    'rest_framework',
+    'rest_framework_gis'
 ]
 
 MIDDLEWARE = [
@@ -73,13 +89,12 @@ WSGI_APPLICATION = 'Aquality2.wsgi.application'
 
 DATABASES = {
 'default': {
-    'ENGINE': 'django.db.backends.mysql',
+    'ENGINE': 'django.contrib.gis.db.backends.postgis',
     'NAME': config('DATABASE_NAME'),
     'USER': config('DATABASE_USERNAME'),
     'PASSWORD': config('DATABASE_PASSWORD'),
     'HOST':config('DATABASE_HOST'),
-    'PORT':config('DATABASE_PORT'),
-    'init_command': config('DATABASE_INITCOMMAND')
+    'PORT':config('DATABASE_PORT')
   }
   }
 
@@ -121,3 +136,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {}
