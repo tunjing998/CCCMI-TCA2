@@ -19,7 +19,10 @@ const DetailsScreen = ({navigation}) => {
   });
 
   return (
-    <View style={styles.listContainer}>
+    <View
+      style={styles.listContainer}
+      accessibilityLabel="riverDetailScreen"
+      testID="riverDetailScreen">
       <ListItem bottomDivider containerStyle={styles.listContainer}>
         <ListItem.Content>
           <ListItem.Subtitle style={styles.title}>River Name</ListItem.Subtitle>

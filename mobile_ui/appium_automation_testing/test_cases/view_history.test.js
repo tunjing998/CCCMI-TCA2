@@ -1,31 +1,34 @@
 var expect = require('chai').expect;
+var testVariables = require('../test_variables');
 
-describe('Testing User login', () => {
+describe('Testing splash landing page', () => {
   // Adding time out to make sure the app is load prior to test is run
   beforeEach(() => {
-    $('~splashContainer').waitForDisplayed(10000, false);
+    $('~' + testVariables.splashContainer).waitForDisplayed(10000, false);
   });
 
   it('should display splash Container', async => {
-    expect($('~splashContainer').isDisplayed()).to.equal(true);
+    expect($('~' + testVariables.splashContainer).isDisplayed()).to.equal(true);
   });
   it('should display sign Screen Container after clicking splash Touchable Opacity Button', async => {
-    $('~splashTouchableOpacityButton').click();
+    $('~' + testVariables.splashTouchableOpacityButton).click();
 
     $('~signScreenContainer').waitForDisplayed(10000);
-    expect(
-      $(
-        '~signScreenContainer',
-        'sign screen container is displayed',
-      ).isDisplayed(),
-    ).to.equal(true);
+    expect($('~' + testVariables.signScreenContainer).isDisplayed()).to.equal(
+      true,
+    );
   });
+});
 
+describe('Testing Sign in activity', () => {
+  beforeEach(() => {
+    $('~' + testVariables.signScreenContainer).waitForDisplayed(10000, false);
+  });
   it('should fail on signing in (empty username or password)', async => {
-    $('~signScreenUserName').setValue('');
-    $('~signScreenPassword').setValue('');
+    $('~' + testVariables.signScreenUserName).setValue('');
+    $('~' + testVariables.signScreenPassword).setValue('');
 
-    $('~signScreenSignInButton').click();
+    $('~' + testVariables.signScreenSignInButton).click();
 
     expect(driver.getAlertText()).to.equal(
       'Wrong Input!\nUsername or password field cannot be empty.',
@@ -35,10 +38,10 @@ describe('Testing User login', () => {
   });
 
   it('should fail on signing in (username or password is incorrect)', async => {
-    $('~signScreenUserName').setValue('invalidate username');
-    $('~signScreenPassword').setValue('123456');
+    $('~' + testVariables.signScreenUserName).setValue('invalidate username');
+    $('~' + testVariables.signScreenPassword).setValue('123456');
 
-    $('~signScreenSignInButton').click();
+    $('~' + testVariables.signScreenSignInButton).click();
 
     expect(driver.getAlertText()).to.equal(
       'Invalid User!\nUsername or password is incorrect.',
@@ -48,27 +51,37 @@ describe('Testing User login', () => {
   });
 
   it('should successful on signing in and show home Screen', async => {
-    $('~signScreenUserName').setValue('user1');
-    $('~signScreenPassword').setValue('password');
+    $('~' + testVariables.signScreenUserName).setValue('user1');
+    $('~' + testVariables.signScreenPassword).setValue('password');
 
-    $('~signScreenSignInButton').click();
+    $('~' + testVariables.signScreenSignInButton).click();
 
-    $('~homeScreenContainer').waitForDisplayed(10000);
-    expect($('~homeScreenContainer').isDisplayed()).to.equal(true);
+    $('~' + testVariables.homeScreenContainer).waitForDisplayed(10000);
+    expect($('~' + testVariables.homeScreenContainer).isDisplayed()).to.equal(
+      true,
+    );
   });
 });
 
 describe('Testing user view all history', () => {
   beforeEach(() => {
-    expect($('~homeScreenContainer').isDisplayed()).to.equal(true);
+    expect($('~' + testVariables.homeScreenContainer).isDisplayed()).to.equal(
+      true,
+    );
   });
   it('should have two buttons on home screen 1.take new sample button, 2.view sample', async => {
-    expect($('~homeScreenTakeNewSampleButton').isDisplayed()).to.equal(true);
-    expect($('~homeScreenViewSampleButton').isDisplayed()).to.equal(true);
+    expect(
+      $('~' + testVariables.homeScreenTakeNewSampleButton).isDisplayed(),
+    ).to.equal(true);
+    expect(
+      $('~' + testVariables.homeScreenViewSampleButton).isDisplayed(),
+    ).to.equal(true);
   });
 
   it('should show sampling history screen after click view sample button', async => {
-    $('~homeScreenViewSampleButton').click();
-    expect($('~sampleHistotyScreenContainer').isDisplayed()).to.equal(true);
+    $('~' + testVariables.homeScreenViewSampleButton).click();
+    expect(
+      $('~' + testVariables.sampleHistoryScreenContainer).isDisplayed(),
+    ).to.equal(true);
   });
 });

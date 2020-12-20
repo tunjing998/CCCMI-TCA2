@@ -23,7 +23,10 @@ const SearchRiverScreen2 = ({navigation}) => {
   });
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel="riverDetailContainer"
+      testID="riverDetailContainer">
       <View>
         <ListItem bottomDivider containerStyle={styles.listContainer}>
           <ListItem.Content>
@@ -91,6 +94,8 @@ const SearchRiverScreen2 = ({navigation}) => {
         </ListItem>
       </View>
       <Button
+        accessibilityLabel="riverDetailChooseRiverButton"
+        testID="riverDetailChooseRiverButton"
         title="Choose this river"
         onPress={() => navigation.navigate('MainTabScreen')}
         ViewComponent={LinearGradient} // Don't forget this!
