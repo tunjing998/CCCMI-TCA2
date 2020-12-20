@@ -78,10 +78,10 @@ describe('Testing user view all history', () => {
     ).to.equal(true);
   });
 
-  // it('should show sampling history screen after click view sample button', async => {
-  //   $('~' + testVariables.homeScreenViewSampleButton).click();
-  //   expect(
-  //     $('~' + testVariables.sampleHistoryScreenContainer).isDisplayed(),
-  //   ).to.equal(true);
-  // });
+  it('should show sampling history screen after click view sample button', async => {
+    $('~' + testVariables.homeScreenViewSampleButton).click();
+    expect(
+      $('~' + testVariables.sampleHistoryScreenContainer).isDisplayed(),
+    ).to.equal(true);
+  });
 });
