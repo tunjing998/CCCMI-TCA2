@@ -5,6 +5,7 @@ import {Text} from 'react-native-elements';
 import {Button} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import {useTheme} from '@react-navigation/native';
+import testVariables from '../appium_automation_testing/test_variables';
 const SearchRiverScreen = ({navigation}) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
@@ -59,8 +60,8 @@ const SearchRiverScreen = ({navigation}) => {
   return (
     <View
       style={styles.container}
-      accessibilityLabel="searchRiverScreenContainer"
-      testID="searchRiverScreenContainer">
+      accessibilityLabel={testVariables.searchRiverScreenContainer}
+      testID={testVariables.searchRiverScreenContainer}>
       {/* <Text>SearchRiver Screen</Text> */}
       <Text h3 h3Style={styles.title}>
         Search and choose the river.
@@ -68,8 +69,8 @@ const SearchRiverScreen = ({navigation}) => {
 
       <View style={styles.searchSection}>
         <Icon.Button
-          accessibilityLabel="searchRiverLocateIcon"
-          testID="searchRiverLocateIcon"
+          accessibilityLabel={testVariables.searchRiverLocateIcon}
+          testID={testVariables.searchRiverLocateIcon}
           style={styles.searchIcon}
           name={isEnabled ? 'crosshairs' : 'crosshairs-gps'}
           size={20}
@@ -81,8 +82,8 @@ const SearchRiverScreen = ({navigation}) => {
         />
 
         <TextInput
-          accessibilityLabel="searchRiverLocateInput"
-          testID="searchRiverLocateInput"
+          accessibilityLabel={testVariables.searchRiverLocateInput}
+          testID={testVariables.searchRiverLocateInput}
           style={styles.input}
           placeholder="River name or Coordinates"
           underlineColorAndroid="transparent"
@@ -90,8 +91,8 @@ const SearchRiverScreen = ({navigation}) => {
           onChangeText={text => setSearchString(text)}
         />
         <Icon.Button
-          accessibilityLabel="searchRiverSearchIcon"
-          testID="searchRiverSearchIcon"
+          accessibilityLabel={testVariables.searchRiverSearchIcon}
+          testID={testVariables.searchRiverSearchIcon}
           style={styles.searchIcon}
           name="magnify"
           backgroundColor="transparent"
@@ -105,8 +106,8 @@ const SearchRiverScreen = ({navigation}) => {
         Results found:
       </Text>
       <Button
-        accessibilityLabel="flatlistItem"
-        testID="flatlistItem"
+        accessibilityLabel={testVariables.flatlistItem}
+        testID={testVariables.flatlistItem}
         ViewComponent={LinearGradient} // Don't forget this!
         linearGradientProps={{
           colors: ['#264653', '#2a9d8f'],
@@ -119,8 +120,8 @@ const SearchRiverScreen = ({navigation}) => {
         containerStyle={styles.buttonContainer}
       />
       <Button
-        accessibilityLabel="flatlistItem"
-        testID="flatlistItem"
+        accessibilityLabel={testVariables.flatlistItem}
+        testID={testVariables.flatlistItem}
         ViewComponent={LinearGradient} // Don't forget this!
         linearGradientProps={{
           colors: ['#264653', '#2a9d8f'],
