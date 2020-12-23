@@ -3,8 +3,9 @@ import {View, Text, Button, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import {List} from 'react-native-paper';
+import {ScrollView} from 'react-native-gesture-handler';
 
-const InsectsData = require('./Insects.json');
+const InsectsData = require('./Insects2.json');
 
 export default class App extends Component {
   constructor(props) {
@@ -23,15 +24,15 @@ export default class App extends Component {
       },
     };
   }
-  onchecked(id) {
+  onchecked(group, id) {
     const data = this.state.data;
-    const index = data.findIndex(x => x.id === id);
-    data[index].checked = !data[index].checked;
+    const index = data[group].findIndex(x => x.id === id);
+    data[group][index].checked = !data[group][index].checked;
     this.setState(data);
   }
 
-  renderInsects() {
-    return this.state.data.map((item, key) => {
+  renderInsectGroup(group, insectGroup) {
+    return insectGroup.map((item, key) => {
       const {images} = this.state;
       return (
         <TouchableOpacity
@@ -41,16 +42,17 @@ export default class App extends Component {
             justifyContent: 'space-between',
           }}
           key={key}
-          onPress={() => {
-            this.onchecked(item.id);
-          }}>
+          // onPress={() => {
+          //   this.onchecked(group, item.id);
+          // }}
+        >
           <Image source={images[item.key]} style={{width: 70, height: 70}} />
           <Text style={{fontWeight: 'bold'}}>{item.key}</Text>
           {/* 普通的 checkbox */}
           <CheckBox
             value={item.checked}
             onValueChange={() => {
-              this.onchecked(item.id);
+              this.onchecked(group, item.id);
               // if (item.checked) {
               //   console.log(item.key);
               // }
@@ -61,29 +63,77 @@ export default class App extends Component {
     });
   }
 
+  renderInsects() {
+    const keys = Object.keys(this.state.data);
+    return keys.map((group, index) => {
+      return this.renderInsectGroup(group, this.state.data[group]);
+    });
+
+    // return this.state.data[keys[0]].map((item, key) => {
+    //   const {images} = this.state;
+    //   return (
+    //     <TouchableOpacity
+    //       style={{
+    //         flexDirection: 'row',
+    //         alignItems: 'center',
+    //         justifyContent: 'space-between',
+    //       }}
+    //       key={key}
+    //       onPress={() => {
+    //         this.onchecked(item.id);
+    //       }}>
+    //       <Image source={images[item.key]} style={{width: 70, height: 70}} />
+    //       <Text style={{fontWeight: 'bold'}}>{item.key}</Text>
+    //       {/* 普通的 checkbox */}
+    //       <CheckBox
+    //         value={item.checked}
+    //         onValueChange={() => {
+    //           this.onchecked(item.id);
+    //           // if (item.checked) {
+    //           //   console.log(item.key);
+    //           // }
+    //         }}
+    //       />
+    //     </TouchableOpacity>
+    //   );
+    // });
+  }
+
   getSelectedInsects() {
-    var keys = this.state.data.map(t => t.key);
-    var checks = this.state.data.map(t => t.checked);
-    const {navigate} = this.props.navigation;
-    let Selected = [];
-    for (let i = 0; i < checks.length; i++) {
-      if (checks[i] == true) {
-        Selected.push(keys[i]);
-        this.state.selectedInsects.push(keys[i]);
+    const groups = Object.keys(this.state.data);
+    for (let group of groups) {
+      for (const index in this.state.data[group]) {
+        if (this.state.data[group][index].checked) {
+          this.state.selectedInsects.push(this.state.data[group][index].key);
+        }
       }
     }
-    alert(Selected);
-    // navigate('test3', {
-    //   list: this.state.selectedInsects,
-    // });
     this.props.navigation.navigate('test3', {
       list: this.state.selectedInsects,
     });
+
+    // var keys = this.state.data.map(t => t.key);
+    // var checks = this.state.data.map(t => t.checked);
+    // const {navigate} = this.props.navigation;
+    // let Selected = [];
+    // for (let i = 0; i < checks.length; i++) {
+    //   if (checks[i] == true) {
+    //     Selected.push(keys[i]);
+    //     this.state.selectedInsects.push(keys[i]);
+    //   }
+    // }
+    // alert(Selected);
+    // // navigate('test3', {
+    // //   list: this.state.selectedInsects,
+    // // });
+    // this.props.navigation.navigate('test3', {
+    //   list: this.state.selectedInsects,
+    // });
   }
 
   render() {
     return (
-      <View>
+      <ScrollView>
         {/* <Text>Group 1 - Mayflies</Text> */}
         {this.renderInsects()}
         <Button
@@ -92,7 +142,7 @@ export default class App extends Component {
             this.getSelectedInsects();
           }}
         />
-      </View>
+      </ScrollView>
     );
   }
 }
