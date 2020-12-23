@@ -12,4 +12,4 @@ admin.site.register(Image)
 
 @admin.register(River)
 class RiverAdmin(OSMGeoAdmin):
-    list_display = ('river_id','location')
+    list_display = ('river_id','river_name','location')
