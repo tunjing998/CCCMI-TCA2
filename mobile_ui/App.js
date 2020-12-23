@@ -36,6 +36,8 @@ import RootStackScreen from './screens/RootStackScreen';
 import AsyncStorage from '@react-native-community/async-storage';
 import HomeScreen from './screens/HomeScreen';
 
+import testVariables from './appium_automation_testing/test_variables';
+
 const Drawer = createDrawerNavigator();
 
 const App = () => {

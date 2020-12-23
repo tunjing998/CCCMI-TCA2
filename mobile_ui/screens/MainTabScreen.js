@@ -12,6 +12,8 @@ import ArduinoScreen2 from './ArduinoScreen2';
 
 import ChooseInsectScreen from './ChooseInsectScreen';
 
+import testVariables from '../appium_automation_testing/test_variables';
+
 const DetailsStack = createStackNavigator();
 const ArduinoStack = createStackNavigator();
 const InsectStack = createStackNavigator();
@@ -24,6 +26,8 @@ const MainTabScreen = () => (
       name="Details"
       component={DetailsStackScreen}
       options={{
+        tabBarAccessibilityLabel: testVariables.mainTabScreenDetailsTab,
+        tabBarTestID: testVariables.mainTabScreenDetailsTab,
         tabBarLabel: 'Details',
         tabBarColor: '#1f65ff',
         tabBarIcon: ({color}) => (
@@ -36,6 +40,8 @@ const MainTabScreen = () => (
       name="Arduino"
       component={ArduinoStackScreen}
       options={{
+        tabBarAccessibilityLabel: testVariables.mainTabScreenArduinoTab,
+        tabBarTestID: testVariables.mainTabScreenArduinoTab,
         tabBarLabel: 'Arduino',
         tabBarColor: '#694fad',
         tabBarIcon: ({color}) => (
@@ -48,6 +54,8 @@ const MainTabScreen = () => (
       name="Insect"
       component={InsectStackScreen}
       options={{
+        tabBarAccessibilityLabel: testVariables.mainTabScreenInsectTab,
+        tabBarTestID: testVariables.mainTabScreenInsectTab,
         tabBarLabel: 'Insect',
         tabBarColor: '#e76f51',
         tabBarIcon: ({color}) => (
@@ -110,6 +118,7 @@ const ArduinoStackScreen = ({navigation}) => (
             name="ios-menu"
             size={25}
             backgroundColor="#694fad"
+            accessible={true}
             onPress={() => navigation.openDrawer()}
           />
         ),

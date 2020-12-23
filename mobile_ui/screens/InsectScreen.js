@@ -3,6 +3,7 @@ import {View, StyleSheet} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {Text, Button} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
+import testVariables from '../appium_automation_testing/test_variables';
 
 const InsectScreen = ({navigation}) => {
   const {colors} = useTheme();
@@ -20,7 +21,10 @@ const InsectScreen = ({navigation}) => {
   });
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel={testVariables.insectScreenContainer}
+      testID={testVariables.insectScreenContainer}>
       <Text style={styles.desc}>Your Insects found section is empty!</Text>
       <Text style={styles.desc}>
         If insects is found, choose one of the method below to start.
@@ -28,6 +32,8 @@ const InsectScreen = ({navigation}) => {
       <Button
         // ViewComponent={LinearGradient}
         title="Select Insect"
+        accessibilityLabel={testVariables.insectScreenSelectInsectButton}
+        testID={testVariables.insectScreenSelectInsectButton}
         onPress={() => navigation.navigate('ChooseInsectScreen')}
         buttonStyle={{paddingHorizontal: 20}}
         titleStyle={{fontSize: 20}}
@@ -37,6 +43,8 @@ const InsectScreen = ({navigation}) => {
       <Text />
       <Button
         // ViewComponent={LinearGradient}
+        accessibilityLabel={testVariables.insectScreenAnalyzeInsectButton}
+        testID={testVariables.insectScreenAnalyzeInsectButton}
         title="Analyze Insect"
         onPress={() => alert('analyze insect')}
         buttonStyle={{paddingHorizontal: 20}}
