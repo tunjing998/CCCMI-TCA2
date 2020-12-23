@@ -1,7 +1,12 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import {FlatList, ScrollView} from 'react-native-gesture-handler';
+import {
+  FlatList,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native-gesture-handler';
 import {List, Avatar} from 'react-native-paper';
+import CheckBox from '@react-native-community/checkbox';
 
 const ChooseInsectScreen = () => {
   const styles = StyleSheet.create({
@@ -71,6 +76,7 @@ const ChooseInsectScreen = () => {
             left={() => <Avatar.Image source={item.avatar_url} />}
             right={props => (
               <List.Icon {...props} icon="checkbox-blank-circle-outline" />
+              // <CheckBox title="Click Here" />
             )}
           />
         )}

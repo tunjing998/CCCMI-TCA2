@@ -11,6 +11,8 @@ import ArduinoScreen from './ArduinoScreen';
 import ArduinoScreen2 from './ArduinoScreen2';
 
 import ChooseInsectScreen from './ChooseInsectScreen';
+import test from './test';
+import test3 from './test3';
 
 const DetailsStack = createStackNavigator();
 const ArduinoStack = createStackNavigator();
@@ -188,6 +190,36 @@ const InsectStackScreen = ({navigation}) => (
     <InsectStack.Screen
       name="ChooseInsectScreen"
       component={ChooseInsectScreen}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#e76f51"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+        title: 'Select Insects Group',
+      }}
+    />
+    <InsectStack.Screen
+      name="test"
+      component={test}
+      options={{
+        headerLeft: () => (
+          <Icon.Button
+            name="ios-menu"
+            size={25}
+            backgroundColor="#e76f51"
+            onPress={() => navigation.openDrawer()}
+          />
+        ),
+        title: 'Select Insects Group',
+      }}
+    />
+    <InsectStack.Screen
+      name="test3"
+      component={test3}
       options={{
         headerLeft: () => (
           <Icon.Button
