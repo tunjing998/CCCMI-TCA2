@@ -42,17 +42,16 @@ export default class App extends Component {
             justifyContent: 'space-between',
           }}
           key={key}
-          // onPress={() => {
-          //   this.onchecked(group, item.id);
-          // }}
-        >
+          onPress={() => {
+            this.onchecked(group, item.id);
+          }}>
           <Image source={images[item.key]} style={{width: 70, height: 70}} />
           <Text style={{fontWeight: 'bold'}}>{item.key}</Text>
           {/* 普通的 checkbox */}
           <CheckBox
             value={item.checked}
             onValueChange={() => {
-              this.onchecked(group, item.id);
+              // this.onchecked(group, item.id);
               // if (item.checked) {
               //   console.log(item.key);
               // }
