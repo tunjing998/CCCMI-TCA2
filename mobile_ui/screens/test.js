@@ -67,35 +67,6 @@ export default class App extends Component {
     return keys.map((group, index) => {
       return this.renderInsectGroup(group, this.state.data[group]);
     });
-
-    // return this.state.data[keys[0]].map((item, key) => {
-    //   const {images} = this.state;
-    //   return (
-    //     <TouchableOpacity
-    //       style={{
-    //         flexDirection: 'row',
-    //         alignItems: 'center',
-    //         justifyContent: 'space-between',
-    //       }}
-    //       key={key}
-    //       onPress={() => {
-    //         this.onchecked(item.id);
-    //       }}>
-    //       <Image source={images[item.key]} style={{width: 70, height: 70}} />
-    //       <Text style={{fontWeight: 'bold'}}>{item.key}</Text>
-    //       {/* 普通的 checkbox */}
-    //       <CheckBox
-    //         value={item.checked}
-    //         onValueChange={() => {
-    //           this.onchecked(item.id);
-    //           // if (item.checked) {
-    //           //   console.log(item.key);
-    //           // }
-    //         }}
-    //       />
-    //     </TouchableOpacity>
-    //   );
-    // });
   }
 
   getSelectedInsects() {
@@ -110,24 +81,6 @@ export default class App extends Component {
     this.props.navigation.navigate('test3', {
       list: this.state.selectedInsects,
     });
-
-    // var keys = this.state.data.map(t => t.key);
-    // var checks = this.state.data.map(t => t.checked);
-    // const {navigate} = this.props.navigation;
-    // let Selected = [];
-    // for (let i = 0; i < checks.length; i++) {
-    //   if (checks[i] == true) {
-    //     Selected.push(keys[i]);
-    //     this.state.selectedInsects.push(keys[i]);
-    //   }
-    // }
-    // alert(Selected);
-    // // navigate('test3', {
-    // //   list: this.state.selectedInsects,
-    // // });
-    // this.props.navigation.navigate('test3', {
-    //   list: this.state.selectedInsects,
-    // });
   }
 
   render() {
