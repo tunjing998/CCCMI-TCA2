@@ -1,21 +1,47 @@
 import React, {useState} from 'react';
-import {View, Picker, StyleSheet, Text} from 'react-native';
+import {View, Picker, StyleSheet, Text, Image, Button} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
-const test02 = () => {
+const test02 = ({navigation}) => {
   const [selectedValue, setSelectedValue] = useState('0');
 
-  // const insects = [
-  //   {name: 'caenis', amount: '0'},
-  //   {name: 'endyco', amount: '0'},
-  //   {name: 'cicak', amount: '0'},
-  //   {name: 'bug', amount: '0'},
-  // ];
-
   const [insects, setInsects] = useState([
-    {id: 1, name: 'caenis', amount: '0'},
-    {id: 2, name: 'endyco', amount: '0'},
-    {id: 3, name: 'cicak', amount: '0'},
-    {id: 4, name: 'bug', amount: '0'},
+    {
+      id: 1,
+      name: 'Caenis',
+      amount: '0',
+      image: require('../assets/insects/caenis.jpg'),
+    },
+    {
+      id: 2,
+      name: 'Ecdyonurus',
+      amount: '0',
+      image: require('../assets/insects/ecdyonurus.jpg'),
+    },
+    {
+      id: 3,
+      name: 'Ephemera Danica',
+      amount: '0',
+      image: require('../assets/insects/Ephemera_Danica.jpg'),
+    },
+    {
+      id: 4,
+      name: 'Heptagenia',
+      amount: '0',
+      image: require('../assets/insects/Heptagenia.jpg'),
+    },
+    {
+      id: 5,
+      name: 'Hydropsychidae',
+      amount: '0',
+      image: require('../assets/insects/Hydropsychidae.jpg'),
+    },
+    {
+      id: 6,
+      name: 'Leptoceridae',
+      amount: '0',
+      image: require('../assets/insects/Leptoceridae.jpg'),
+    },
   ]);
 
   const updateInsect = (index, amount) => {
@@ -30,12 +56,13 @@ const test02 = () => {
     return insects.map((insect, index) => {
       return (
         <View key={index} style={styles.container}>
+          <Image source={insect.image} style={{width: 50, height: 50}} />
           <Text>{insect.name}</Text>
           <Picker
             mode="dropdown"
             selectedValue={insect.amount}
             style={{height: 50, width: 150}}
-            onValueChange={(itemValue, itemIndex) =>
+            onValueChange={itemValue =>
               // setSelectedValue(itemValue)
               updateInsect(insect.id, itemValue)
             }>
@@ -49,13 +76,21 @@ const test02 = () => {
     });
   };
 
-  return <View style={styles.container}>{renderInsects()}</View>;
+  return (
+    <ScrollView>
+      {renderInsects()}
+      <Button
+        title="next"
+        onPress={() => navigation.navigate('test03', insects)}
+      />
+    </ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 40,
+    justifyContent: 'center',
     alignItems: 'center',
   },
 });
