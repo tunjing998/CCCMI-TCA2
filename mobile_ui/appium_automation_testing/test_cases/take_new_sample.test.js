@@ -296,4 +296,9 @@ describe('Testing tabs with screens', () => {
       'Take photo button is displayed',
     ).to.be.true;
   });
+  it('should upload photo from camera)', async () => {
+    driver.pressKeyCode(3);
+    driver.pressKeyCode(27);
+    driver.sleep(2000);
+  });
 });

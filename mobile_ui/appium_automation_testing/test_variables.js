@@ -57,6 +57,7 @@ const testVariables = {
   takePhotoButton: 'takePhotoButton',
   chooseFormLibraryButton: 'finishSelectButton',
   cancelButton: 'cancelButton',
+  uploadedPhoto: 'uploadedPhoto',
 };
 
 module.exports = testVariables;
