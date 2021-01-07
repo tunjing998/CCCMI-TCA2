@@ -116,3 +116,5 @@ media/
 
 
 requirements.txt
+
+.env2
