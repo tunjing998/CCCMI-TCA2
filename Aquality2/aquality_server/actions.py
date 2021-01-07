@@ -1,6 +1,6 @@
 import requests
 from aquality_server.models import River
-from django.contrib.gis.geos import Point
+# from django.contrib.gis.geos import Point
 
 #The Path Variable Access to wfd Api
 catchmentsUrl = "https://wfdapi.edenireland.ie/api/"
@@ -80,7 +80,9 @@ def saveRiverListToDb(waterbodyList):
                 river_name = waterbody.get("Name"),
                 river_catchments_code =waterbody.get("Catchment")[0].get("Code"),
                 river_catchments =waterbody.get("Catchment")[0].get("Name"),
-                location = Point(waterbody.get("Longitude"),waterbody.get("Latitude") ),
+                # location = Point(waterbody.get("Longitude"),waterbody.get("Latitude") ),
+                latitute = waterbody.get("Latitude"),
+                longitute = waterbody.get("Longitude"),
                 local_authority = waterbody.get("LocalAuthority"),
                 water_body_category  =waterbody.get("Type") ,
                 protected_area = waterbody.get("ProtectedArea"),

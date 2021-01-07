@@ -1,6 +1,7 @@
-from django.contrib.gis.db import models
-from django.contrib.gis.geos import Point
+# from django.contrib.gis.db import models
+# from django.contrib.gis.geos import Point
 # Create your models here.
+from django.db import models
 
 # Login Account Model
 class Login_Account(models.Model):
@@ -29,7 +30,9 @@ class River(models.Model):
     river_name = models.CharField(max_length = 200)
     river_catchments_code = models.CharField(max_length = 20)
     river_catchments = models.CharField(max_length = 200)
-    location = models.PointField(geography=True, default=Point(0.0, 0.0),null=True)
+    # location = models.PointField(geography=True, default=Point(0.0, 0.0),null=True)
+    latitute = models.FloatField(default = 0,null=True)
+    longitute = models.FloatField(default = 0,null=True)
     local_authority = models.CharField(max_length = 200)
     water_body_category  = models.CharField(max_length = 200)
     protected_area = models.CharField(max_length = 20,null=True)
@@ -46,7 +49,9 @@ class Data(models.Model):
         blank=True, 
         null=True
     )   
-    location = models.PointField(geography=True, default=Point(0.0, 0.0),null=True)
+    # location = models.PointField(geography=True, default=Point(0.0, 0.0),null=True)
+    latitute = models.FloatField(default = 0,null=True)
+    longitute = models.FloatField(default = 0,null=True)
     ph = models.FloatField(default=None, blank=True, null=True)
     temp = models.FloatField(default=None, blank=True, null=True)
     date_captured = models.DateTimeField(default=None, blank=True, null=True)

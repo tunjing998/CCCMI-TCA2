@@ -6,10 +6,10 @@ from .models import River
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
-from django.contrib.gis.geos import Point
+#from django.contrib.gis.geos import Point
 from decouple import config
-from django.contrib.gis.geos import GEOSGeometry
-from django.contrib.gis.measure import D # ``D`` is a shortcut for ``Distance``
+# from django.contrib.gis.geos import GEOSGeometry
+# from django.contrib.gis.measure import D # ``D`` is a shortcut for ``Distance``
 from aquality_server.filter import *
 
 # Controlling The View Access To
@@ -39,7 +39,40 @@ class RiverViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         # return River.objects.all().order_by('river_id')
         pnt = getLocationPoint(self.request)
-        return River.objects.filter(location__distance_lt=(pnt,D(m=10000)))
+        # return River.objects.filter(location__distance_lt=(pnt,D(m=10000)))
+        query = """SELECT 
+    river_id,
+	longitute,
+	latitute,
+ 
+ 
+	ROUND(
+		6378.138 * 2 * ASIN(
+			SQRT(
+				POW(
+					SIN(
+						(
+							%f * PI() / 180 - latitute * PI() / 180
+						) / 2
+					),
+					2
+				) + COS(%f * PI() / 180) * COS(latitute * PI() / 180) * POW(
+					SIN(
+						(
+							%f * PI() / 180 - 	longitute * PI() / 180
+						) / 2
+					),
+					2
+				)
+			)
+		) * 1000
+	) AS distance
+FROM
+aquality_server_river
+ORDER BY
+	distance ASC""" % (pnt[0],pnt[0],pnt[1])
+        
+        return River.objects.raw(query)[0:5]
 
 
 # def addData(request):
