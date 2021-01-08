@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Picker, StyleSheet, Text, Image, Button} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 
-const test02 = ({navigation}) => {
+const selectInsect1 = ({navigation}) => {
   const [selectedValue, setSelectedValue] = useState('0');
 
   const [insects, setInsects] = useState([
@@ -81,7 +81,7 @@ const test02 = ({navigation}) => {
       {renderInsects()}
       <Button
         title="next"
-        onPress={() => navigation.navigate('test03', insects)}
+        onPress={() => navigation.navigate('selectInsect2', insects)}
       />
     </ScrollView>
   );
@@ -95,4 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default test02;
+export default selectInsect1;

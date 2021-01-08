@@ -28,8 +28,8 @@ const InsectScreen = ({navigation}) => {
       <Button
         // ViewComponent={LinearGradient}
         title="Select Insect"
-        onPress={() => navigation.navigate('test02')}
-        // onPress={() => navigation.navigate('ChooseInsectScreen')}
+        // test02 -> test03
+        onPress={() => navigation.navigate('selectInsect1')}
         buttonStyle={{paddingHorizontal: 20}}
         titleStyle={{fontSize: 20}}
         type="outline"

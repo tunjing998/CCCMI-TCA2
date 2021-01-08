@@ -12,11 +12,8 @@ import ArduinoScreen2 from './ArduinoScreen2';
 
 const InsectStack = createStackNavigator();
 import ChooseInsectScreen from './ChooseInsectScreen';
-import test from './test';
-import test3 from './test3';
-import test01 from './test01';
-import test02 from './test02';
-import test03 from './test03';
+import selectInsect1 from './selectInsect1';
+import selectInsect2 from './selectInsect2';
 
 const DetailsStack = createStackNavigator();
 const ArduinoStack = createStackNavigator();
@@ -205,9 +202,10 @@ const InsectStackScreen = ({navigation}) => (
         title: 'Select Insects Group',
       }}
     />
+
     <InsectStack.Screen
-      name="test"
-      component={test}
+      name="selectInsect1"
+      component={selectInsect1}
       options={{
         headerLeft: () => (
           <Icon.Button
@@ -221,53 +219,8 @@ const InsectStackScreen = ({navigation}) => (
       }}
     />
     <InsectStack.Screen
-      name="test3"
-      component={test3}
-      options={{
-        headerLeft: () => (
-          <Icon.Button
-            name="ios-menu"
-            size={25}
-            backgroundColor="#e76f51"
-            onPress={() => navigation.openDrawer()}
-          />
-        ),
-        title: 'Select Insects Group',
-      }}
-    />
-    <InsectStack.Screen
-      name="test01"
-      component={test01}
-      options={{
-        headerLeft: () => (
-          <Icon.Button
-            name="ios-menu"
-            size={25}
-            backgroundColor="#e76f51"
-            onPress={() => navigation.openDrawer()}
-          />
-        ),
-        title: 'Select Insects Group',
-      }}
-    />
-    <InsectStack.Screen
-      name="test02"
-      component={test02}
-      options={{
-        headerLeft: () => (
-          <Icon.Button
-            name="ios-menu"
-            size={25}
-            backgroundColor="#e76f51"
-            onPress={() => navigation.openDrawer()}
-          />
-        ),
-        title: 'Select Insects Group',
-      }}
-    />
-    <InsectStack.Screen
-      name="test03"
-      component={test03}
+      name="selectInsect2"
+      component={selectInsect2}
       options={{
         headerLeft: () => (
           <Icon.Button
