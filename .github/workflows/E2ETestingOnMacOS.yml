@@ -5,6 +5,10 @@ on:
     branches:
       - Aquality_Mobile_ui_Master
 
+  push:
+    branches:
+      - Aquality_Mobile_ui_Master
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"

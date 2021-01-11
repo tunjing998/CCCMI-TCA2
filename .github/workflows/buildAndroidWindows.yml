@@ -5,6 +5,10 @@ on:
     branches:
       - Aquality_Mobile_ui_Master
 
+  push:
+    branches:
+      - Aquality_Mobile_ui_Master
+
 jobs:
   install-and-test:
     runs-on: windows-latest
