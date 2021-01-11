@@ -40,39 +40,7 @@ class RiverViewSet(viewsets.ModelViewSet):
         # return River.objects.all().order_by('river_id')
         pnt = getLocationPoint(self.request)
         # return River.objects.filter(location__distance_lt=(pnt,D(m=10000)))
-        query = """SELECT 
-    river_id,
-	longitute,
-	latitute,
- 
- 
-	ROUND(
-		6378.138 * 2 * ASIN(
-			SQRT(
-				POW(
-					SIN(
-						(
-							%f * PI() / 180 - latitute * PI() / 180
-						) / 2
-					),
-					2
-				) + COS(%f * PI() / 180) * COS(latitute * PI() / 180) * POW(
-					SIN(
-						(
-							%f * PI() / 180 - 	longitute * PI() / 180
-						) / 2
-					),
-					2
-				)
-			)
-		) * 1000
-	) AS distance
-FROM
-aquality_server_river
-ORDER BY
-	distance ASC""" % (pnt[0],pnt[0],pnt[1])
-        
-        return River.objects.raw(query)[0:5]
+        return getNearbyList(pnt)
 
 
 # def addData(request):
