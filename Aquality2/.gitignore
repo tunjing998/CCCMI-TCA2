@@ -114,6 +114,7 @@ media/
 # !**/migrations
 # !**/migrations/__init__.py
 
+
 aqualityserver.session.sql
 
 .env2

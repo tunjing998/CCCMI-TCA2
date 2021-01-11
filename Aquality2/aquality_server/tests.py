@@ -1,8 +1,6 @@
 from django.test import TestCase
 from aquality_server.models import *
-from django.contrib.gis.geos import GEOSGeometry
-from django.contrib.gis.measure import D # ``D`` is a shortcut for ``Distance``
-
+from .filter import *
 # Create your tests here.
 class AccountTestCase(TestCase):
     def setUp(self):
@@ -23,7 +21,8 @@ class RiverTestCase(TestCase):
             river_name= "ST JOHNSTON_010",
             river_catchments_code= "01",
             river_catchments= "Foyle",
-            location=Point( -7.5032474,54.9246646),
+            latitute=-7.5032474,
+            longitute=54.9246646,
             local_authority= "Donegal County Council",
             water_body_category= "River",
             protected_area= None,
@@ -36,7 +35,8 @@ class RiverTestCase(TestCase):
             river_name= "SWILLY BURN_010",
             river_catchments_code= "01",
             river_catchments= "Foyle",
-            location=  Point(-7.6191557, 54.8741376),
+            latitute=-57.5032474,
+            longitute=4.9246646,
             local_authority= "Donegal County Council",
             water_body_category= "River",
             protected_area= None,
@@ -45,10 +45,8 @@ class RiverTestCase(TestCase):
         )
         
     def testFindNearBy(self):
-        pnt = Point(-7.55,54.93)
-        result = River.objects.filter(location__distance_lt=(pnt, D(m=5000)))
+        pnt = [-7.55,54.93] 
+        result = getNearbyList(pnt)
         expectResult = River.objects.get(river_id = 1)
-        if(result.count() == 1):
-            self.assertEqual(result[0],expectResult)
-        else:
-            self.assertFalse(self)
+        self.assertEqual(result[0],expectResult)
+        

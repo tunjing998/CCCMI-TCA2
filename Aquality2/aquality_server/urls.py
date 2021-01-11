@@ -11,6 +11,6 @@ app_name = 'aquality_server'
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    # path('addData', views.addData, name='addData')
+  #  path('addData', views.addData, name='addData'),
     path('testing/',views.testingPage,name='testingPage')
 ]
