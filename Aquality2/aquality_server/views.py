@@ -25,6 +25,11 @@ class DataViewSet(viewsets.ModelViewSet):
             if saveSerialize.is_valid():
                 saveSerialize.save()
                 return Response( saveSerialize.data, status=status.HTTP_201_CREATED)
+        elif request.method == 'POST':
+            saveSerialize = self.serializer_class(data = request.data)
+            if saveSerialize.is_valid():
+                saveSerialize.save()
+                return Response( saveSerialize.data, status=status.HTTP_201_CREATED)            
         return Response({
             'status': 'Bad request',
             'message': 'Account could not be created with received data.'
@@ -41,6 +46,15 @@ class RiverViewSet(viewsets.ModelViewSet):
         pnt = getLocationPoint(self.request)
         # return River.objects.filter(location__distance_lt=(pnt,D(m=10000)))
         return getNearbyList(pnt)
+
+
+class AccountUserViewSet(viewsets.ModelViewSet):
+    queryset = Login_Account.objects.all().order_by('account_id')
+    serializer_class = LoginAccountSerializer
+    def get_queryset(self):
+        return Login_Account.objects.all().order_by('account_id')
+        
+
 
 
 # def addData(request):

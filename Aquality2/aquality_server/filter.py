@@ -29,8 +29,8 @@ def getLocationPoint(request):
 def getNearbyList(pnt):
     query = """SELECT 
     river_id,
-	longitute,
-	latitute,
+	longitude,
+	latitude,
  
  
 	ROUND(
@@ -39,14 +39,14 @@ def getNearbyList(pnt):
 				POW(
 					SIN(
 						(
-							"""+str(pnt[0])+""" * PI() / 180 - latitute * PI() / 180
+							"""+str(pnt[0])+""" * PI() / 180 - latitude * PI() / 180
 						) / 2
 					),
 					2
-				) + COS("""+str(pnt[0])+""" * PI() / 180) * COS(latitute * PI() / 180) * POW(
+				) + COS("""+str(pnt[0])+""" * PI() / 180) * COS(latitude * PI() / 180) * POW(
 					SIN(
 						(
-							"""+str(pnt[1])+""" * PI() / 180 - 	longitute * PI() / 180
+							"""+str(pnt[1])+""" * PI() / 180 - 	longitude * PI() / 180
 						) / 2
 					),
 					2
