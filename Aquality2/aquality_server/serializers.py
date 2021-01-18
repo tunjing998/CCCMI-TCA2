@@ -20,8 +20,13 @@ class RiverSerializer(serializers.HyperlinkedModelSerializer):
 class DataSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Data
-        fields = ("data_id","latitude","longitude","ph","temp","date_captured")
+        fields = ("data_id","latitude","longitude","ph","temp")
         
+class DataSerializerWithDate(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Data
+        fields = ("data_id","latitude","longitude","ph","temp","date_captured")
+                
 class LoginAccountSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Login_Account

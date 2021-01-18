@@ -54,7 +54,7 @@ class Data(models.Model):
     longitude = models.FloatField(default = 0,null=True)
     ph = models.FloatField(default=None, blank=True, null=True)
     temp = models.FloatField(default=None, blank=True, null=True)
-    date_captured = models.DateTimeField(default=None, blank=True, null=True)
+    date_captured = models.DateTimeField(auto_now_add=True)
     ecological_status = models.CharField(max_length = 200,default=None, blank=True, null=True)
     score_by_insect = models.IntegerField(default=None, blank=True, null=True)
 

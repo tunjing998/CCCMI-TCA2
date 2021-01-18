@@ -1,4 +1,4 @@
-{% comment %} <h1>Scheme:{{request.scheme }}</h1>
+<h1>Scheme:{{request.scheme }}</h1>
 <h1>Body:{{request.body }}</h1>
 <h1>Path:{{request.path }}</h1>
 <h1>Path_info:{{request.path_info }}</h1>
@@ -11,7 +11,7 @@
 <h1>Cookies:{{request.COOKIES }}</h1>
 <h1>Files:{{request.FILES }}</h1>
 <h1>Meta:{{request.META }}</h1>
-<h1>Header:{{request.headers }}</h1> {% endcomment %}
+<h1>Header:{{request.headers }}</h1>
+<h1>WholeRequest:{{request}}</h1> 
 
-
-<h1>{{request}}</h1>
+{% comment %} <h1>{{request}}</h1> {% endcomment %}

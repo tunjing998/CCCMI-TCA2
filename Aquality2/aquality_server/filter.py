@@ -23,7 +23,7 @@ def getLocationPoint(request):
     else:
         latitude = 54.93
         longitute = -7.55
-    return [latitude,longitute]
+    	pnt =  [latitude,longitute]
     return pnt
     
 def getNearbyList(pnt):
