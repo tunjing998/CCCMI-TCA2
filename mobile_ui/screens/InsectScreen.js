@@ -32,9 +32,9 @@ const InsectScreen = ({navigation}) => {
       <Button
         // ViewComponent={LinearGradient}
         title="Select Insect"
+        onPress={() => navigation.navigate('selectInsect1')}
         accessibilityLabel={testVariables.insectScreenSelectInsectButton}
         testID={testVariables.insectScreenSelectInsectButton}
-        onPress={() => navigation.navigate('ChooseInsectScreen')}
         buttonStyle={{paddingHorizontal: 20}}
         titleStyle={{fontSize: 20}}
         type="outline"

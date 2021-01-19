@@ -8,8 +8,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 
-const riverURL =
-  'http://django-env.eba-9eikjyb6.us-west-2.elasticbeanstalk.com/aquality_server/rivers/';
+const riverURL = 'http://127.0.0.1:8000/aquality_server/rivers/';
 
 const fetchApi = () => {
   const [isLoading, setLoading] = useState(true);
@@ -35,10 +34,10 @@ const fetchApi = () => {
             return (
               <View>
                 <Text>ID: {item.river_id}</Text>
-                <Text>Code: {item.river_code}</Text>
-                <Text>Name: {item.river_name}</Text>
-                <Text>Longitude: {item.longitute}</Text>
-                <Text>Latitude: {item.langitute}</Text>
+                {/* <Text>Code: {item.river_code}</Text>
+                <Text>Name: {item.river_name}</Text> */}
+                {/* <Text>Longitude: {item.longitute}</Text>
+                <Text>Latitude: {item.langitute}</Text> */}
                 <Text />
               </View>
             );
@@ -51,9 +50,9 @@ const fetchApi = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

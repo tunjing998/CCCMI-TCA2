@@ -44,6 +44,10 @@ const HomeScreen = ({navigation}) => {
         titleStyle={styles.title}
         containerStyle={styles.buttonContainer}
       />
+      <Button
+        title="upload image test"
+        onPress={() => navigation.navigate('uploadImage')}
+      />
     </View>
   );
 };

@@ -1,0 +1,57 @@
+{
+  "group1": [
+    {
+      "id": 0,
+      "key": "Caenis",
+      "checked": false
+    },
+    {
+      "id": 1,
+      "key": "Ecdyonurus",
+      "checked": false
+    },
+    {
+      "id": 2,
+      "key": "EphemeraDanica",
+      "checked": false
+    },
+    {
+      "id": 3,
+      "key": "Heptagenia",
+      "checked": false
+    },
+    {
+      "id": 4,
+      "key": "Rhithrogena",
+      "checked": false
+    },
+    {
+      "id": 5,
+      "key": "SerratellaIgnita",
+      "checked": false,
+      "": {}
+    }
+  ],
+  "group2": [
+    {
+      "id": 0,
+      "key": "asdasd",
+      "checked": false
+    },
+    {
+      "id": 1,
+      "key": "asdasdasd",
+      "checked": false
+    },
+    {
+      "id": 2,
+      "key": "asdadasd",
+      "checked": false
+    },
+    {
+      "id": 3,
+      "key": "asdasdsad",
+      "checked": false
+    }
+  ]
+}
