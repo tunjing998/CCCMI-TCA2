@@ -3,7 +3,7 @@ import requests
 from .models import River
 
 def getLocationFromRequest(request):
-    longitute = request.query_params.get('longitute')
+    longitute = request.query_params.get('longitude')
     latitude  = request.query_params.get('latitude')
     return [latitude,longitute]
 
@@ -16,14 +16,14 @@ def getLocationPointFromGoogleApi(request):
     return [latitude,longitude]
 
 def getLocationPoint(request):
-    if(request.query_params.get('longitute') and request.query_params.get('latitude')):
+    if(request.query_params.get('longitude') and request.query_params.get('latitude')):
         pnt = getLocationFromRequest(request)
     elif(request.query_params.get('location')):
         pnt = getLocationPointFromGoogleApi(request)
     else:
         latitude = 54.93
         longitute = -7.55
-    	pnt =  [latitude,longitute]
+        pnt =  [latitude,longitute]
     return pnt
     
 def getNearbyList(pnt):

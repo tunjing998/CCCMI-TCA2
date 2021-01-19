@@ -47,11 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aquality_server.apps.AqualityServerConfig',
-    # 'django.contrib.gis',
     'django_filters',
     'rest_framework'
-    # ,
-    # 'rest_framework_gis'
 ]
 
 MIDDLEWARE = [

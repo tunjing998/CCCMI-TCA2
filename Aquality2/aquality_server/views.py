@@ -22,18 +22,20 @@ class DataViewSet(viewsets.ModelViewSet):
             saveSerialize = self.serializer_class_save(data = request.data)
             if saveSerialize.is_valid():
                 saveSerialize.save()
-                return Response( saveSerialize.data, status=status.HTTP_201_CREATED)
-        elif request.method == 'GET':
-            saveSerialize = self.serializer_class_save(data = request.data)
-            if saveSerialize.is_valid():
-                saveSerialize.save()
-                return Response( saveSerialize.data, status=status.HTTP_201_CREATED)            
+                return Response( saveSerialize.data, status=status.HTTP_201_CREATED)      
         return Response({
             'status': 'Bad request',
-            'message': 'Account could not be created with received data.'
+            'message': 'Data could not be created with received data.'
         }, status=status.HTTP_400_BAD_REQUEST)
     def get_queryset(self):
         return Data.objects.all()
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            self.perform_destroy(instance)
+        except status.HTTP_400_BAD_REQUEST:
+            pass
+        return Response(status=status.HTTP_204_NO_CONTENT)    
                
 
 class RiverViewSet(viewsets.ModelViewSet):
@@ -61,7 +63,13 @@ class AccountUserViewSet(viewsets.ModelViewSet):
         }, status=status.HTTP_400_BAD_REQUEST)
     def get_queryset(self):
         return Login_Account.objects.all().order_by('account_id')
-        
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            self.perform_destroy(instance)
+        except status.HTTP_400_BAD_REQUEST:
+            pass
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 # def addData(request):
 #     returnMessage = saveRiverListToDbFromWFA()
