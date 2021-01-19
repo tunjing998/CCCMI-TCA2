@@ -12,6 +12,7 @@ import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useTheme} from '@react-navigation/native';
+import testVariables from '../appium_automation_testing/test_variables';
 
 const SplashScreen = ({navigation}) => {
   const {colors} = useTheme();
@@ -19,8 +20,8 @@ const SplashScreen = ({navigation}) => {
   return (
     <View
       style={styles.container}
-      accessibilityLabel="splashContainer"
-      testID="splashContainer">
+      accessibilityLabel={testVariables.splashContainer}
+      testID={testVariables.splashContainer}>
       <StatusBar backgroundColor="#009387" barStyle="light-content" />
       <View style={styles.header}>
         <Animatable.Image
@@ -52,8 +53,8 @@ const SplashScreen = ({navigation}) => {
         <View style={styles.button}>
           <TouchableOpacity
             onPress={() => navigation.navigate('SignInScreen')}
-            accessibilityLabel="splashTouchableOpacityButton"
-            testID="splashTouchableOpacityButton">
+            accessibilityLabel={testVariables.splashTouchableOpacityButton}
+            testID={testVariables.splashTouchableOpacityButton}>
             <LinearGradient
               colors={['#08d4c4', '#01ab9d']}
               style={styles.signIn}>

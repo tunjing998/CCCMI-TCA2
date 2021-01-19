@@ -16,7 +16,9 @@
     "@wdio/spec-reporter": "^5.23.0",
     "@wdio/sync": "^5.23.0",
     "chromedriver": "^87.0.1",
+    "expect-webdriverio": "^1.4.1",
     "npm-bundle": "^3.0.3",
+    "sinon": "^9.2.2",
     "wdio-chromedriver-service": "^6.0.4"
   },
   "scripts": {

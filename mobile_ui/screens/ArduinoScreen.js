@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Text} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
 import {Button} from 'react-native-elements';
+import testVariables from '../appium_automation_testing/test_variables';
 
 const ArduinoScreen = ({navigation}) => {
   const {colors} = useTheme();
@@ -39,13 +40,23 @@ const ArduinoScreen = ({navigation}) => {
     },
   });
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel={testVariables.arduinoScreenContainer}
+      testID={testVariables.arduinoScreenContainer}>
       <Text h4 h4Style={styles.title}>
         Connect to Arduino.
       </Text>
       <View style={styles.searchSection}>
-        <TextInput placeholder="Insert Arduino ID here." style={styles.input} />
+        <TextInput
+          placeholder="Insert Arduino ID here."
+          accessibilityLabel={testVariables.arduinoScreenIDTextInput}
+          testID={testVariables.arduinoScreenIDTextInput}
+          style={styles.input}
+        />
         <Icon.Button
+          accessibilityLabel={testVariables.arduinoScreenSearchIconButton}
+          testID={testVariables.arduinoScreenSearchIconButton}
           style={styles.searchIcon}
           name="magnify"
           backgroundColor="transparent"

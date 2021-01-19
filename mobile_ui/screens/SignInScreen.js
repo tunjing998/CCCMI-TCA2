@@ -19,6 +19,7 @@ import {useTheme} from 'react-native-paper';
 import {AuthContext} from '../components/context';
 
 import Users from '../model/users';
+import testVariables from '../appium_automation_testing/test_variables';
 
 const SignInScreen = ({navigation}) => {
   const [data, setData] = React.useState({
@@ -115,8 +116,8 @@ const SignInScreen = ({navigation}) => {
   return (
     <View
       style={styles.container}
-      accessibilityLabel="signScreenContainer"
-      testID="signScreenContainer">
+      accessibilityLabel={testVariables.signScreenContainer}
+      testID={testVariables.signScreenContainer}>
       <StatusBar backgroundColor="#009387" barStyle="light-content" />
       <View style={styles.header}>
         <Text style={styles.text_header}>Welcome!</Text>
@@ -152,8 +153,8 @@ const SignInScreen = ({navigation}) => {
             autoCapitalize="none"
             onChangeText={val => textInputChange(val)}
             onEndEditing={e => handleValidUser(e.nativeEvent.text)}
-            accessibilityLabel="signScreenUserName"
-            testID="signScreenUserName"
+            accessibilityLabel={testVariables.signScreenUserName}
+            testID={testVariables.signScreenUserName}
           />
           {data.check_textInputChange ? (
             <Animatable.View animation="bounceIn">
@@ -193,8 +194,8 @@ const SignInScreen = ({navigation}) => {
             ]}
             autoCapitalize="none"
             onChangeText={val => handlePasswordChange(val)}
-            accessibilityLabel="signScreenPassword"
-            testID="signScreenPassword"
+            accessibilityLabel={testVariables.signScreenPassword}
+            testID={testVariables.signScreenPassword}
           />
           <TouchableOpacity onPress={updateSecureTextEntry}>
             {data.secureTextEntry ? (
@@ -223,8 +224,8 @@ const SignInScreen = ({navigation}) => {
             onPress={() => {
               loginHandle(data.username, data.password);
             }}
-            accessibilityLabel="signScreenSignInButton"
-            testID="signScreenSignInButton">
+            accessibilityLabel={testVariables.signScreenSignInButton}
+            testID={testVariables.signScreenSignInButton}>
             <LinearGradient
               colors={['#08d4c4', '#01ab9d']}
               style={styles.signIn}>

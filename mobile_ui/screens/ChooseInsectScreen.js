@@ -6,7 +6,11 @@ import {
   TouchableOpacity,
 } from 'react-native-gesture-handler';
 import {List, Avatar} from 'react-native-paper';
+
 import CheckBox from '@react-native-community/checkbox';
+
+import testVariables from '../appium_automation_testing/test_variables';
+
 
 const ChooseInsectScreen = () => {
   const styles = StyleSheet.create({
@@ -65,14 +69,20 @@ const ChooseInsectScreen = () => {
   ];
 
   return (
-    <ScrollView>
+    <ScrollView
+      accessibilityLabel={testVariables.chooseInsectScreenContainer}
+      testID={testVariables.chooseInsectScreenContainer}>
       <List.Subheader>Group 1 - Mayflies</List.Subheader>
       <FlatList
+        accessibilityLabel={testVariables.group1List}
+        testID={testVariables.group1List}
         data={group1}
         keyExtractor={item => item.name}
         renderItem={({item}) => (
           <List.Item
             title={item.name}
+            accessibilityLabel={testVariables.group1ListItem}
+            testID={testVariables.group1ListItem}
             left={() => <Avatar.Image source={item.avatar_url} />}
             right={props => (
               <List.Icon {...props} icon="checkbox-blank-circle-outline" />
@@ -83,11 +93,15 @@ const ChooseInsectScreen = () => {
       />
       <List.Subheader>Group 2 - Caddiesflies</List.Subheader>
       <FlatList
+        accessibilityLabel={testVariables.group2List}
+        testID={testVariables.group2List}
         data={group2}
         keyExtractor={item => item.name}
         renderItem={({item}) => (
           <List.Item
             title={item.name}
+            accessibilityLabel={testVariables.group2ListItem}
+            testID={testVariables.group2ListItem}
             left={() => <Avatar.Image source={item.avatar_url} />}
             right={props => (
               <List.Icon {...props} icon="checkbox-blank-circle-outline" />

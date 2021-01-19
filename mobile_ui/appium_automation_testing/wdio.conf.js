@@ -1,4 +1,7 @@
-var testConfig = require('./test.conf.js');
+var path = require('path');
+var absolutePath = path.resolve(
+  '../android/app/build/outputs/apk/debug/app-debug.apk',
+);
 
 exports.config = {
   services: ['appium'],
@@ -8,12 +11,12 @@ exports.config = {
   capabilities: [
     {
       maxInstances: 1,
-      appiumVersion: testConfig.appiumVersion,
-      platformName: testConfig.platformName,
-      platformVersion: testConfig.platformVersion,
-      deviceName: testConfig.deviceName,
-      app: testConfig.app,
-      automationName: testConfig.automationName,
+      appiumVersion: '1.13.0',
+      platformName: 'Android',
+      platformVersion: '11',
+      deviceName: 'Android 3a XL',
+      app: absolutePath,
+      automationName: 'UiAutomator2',
     },
   ],
   logLevel: 'trace',

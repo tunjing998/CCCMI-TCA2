@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, StatusBar} from 'react-native';
 import {Button} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import testVariables from '../appium_automation_testing/test_variables';
 
 const HomeScreen = ({navigation}) => {
   const {colors} = useTheme();
@@ -12,8 +13,8 @@ const HomeScreen = ({navigation}) => {
   return (
     <View
       style={styles.container}
-      accessibilityLabel="homeScreenContainer"
-      testID="homeScreenContainer">
+      accessibilityLabel={testVariables.homeScreenContainer}
+      testID={testVariables.homeScreenContainer}>
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
 
       <Button
@@ -27,12 +28,12 @@ const HomeScreen = ({navigation}) => {
         titleStyle={styles.title}
         containerStyle={styles.buttonContainer}
         onPress={() => navigation.navigate('SearchRiverScreen')}
-        accessibilityLabel="homeScreenTakeNewSampleButton"
-        testID="homeScreenTakeNewSampleButton"
+        accessibilityLabel={testVariables.homeScreenTakeNewSampleButton}
+        testID={testVariables.homeScreenTakeNewSampleButton}
       />
       <Button
-        accessibilityLabel="homeScreenViewSampleButton"
-        testID="homeScreenViewSampleButton"
+        accessibilityLabel={testVariables.homeScreenViewSampleButton}
+        testID={testVariables.homeScreenViewSampleButton}
         ViewComponent={LinearGradient}
         linearGradientProps={{
           colors: ['#e76f51', '#f4a261'],

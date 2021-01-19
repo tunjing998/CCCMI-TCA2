@@ -3,6 +3,7 @@ import {View, StyleSheet} from 'react-native';
 import {ListItem, Button, Text} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import testVariables from '../appium_automation_testing/test_variables';
 
 const SearchRiverScreen2 = ({navigation}) => {
   const {colors} = useTheme();
@@ -23,7 +24,10 @@ const SearchRiverScreen2 = ({navigation}) => {
   });
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel={testVariables.riverDetailContainer}
+      testID={testVariables.riverDetailContainer}>
       <View>
         <ListItem bottomDivider containerStyle={styles.listContainer}>
           <ListItem.Content>
@@ -91,6 +95,8 @@ const SearchRiverScreen2 = ({navigation}) => {
         </ListItem>
       </View>
       <Button
+        accessibilityLabel={testVariables.riverDetailChooseRiverButton}
+        testID={testVariables.riverDetailChooseRiverButton}
         title="Choose this river"
         onPress={() => navigation.navigate('MainTabScreen')}
         ViewComponent={LinearGradient} // Don't forget this!
