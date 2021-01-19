@@ -28,6 +28,7 @@ import SupportScreen from './screens/SupportScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import SearchRiverScreen from './screens/SearchRiverScreen';
 import SearchRiverScreen2 from './screens/SearchRiverScreen2';
+import uploadImage from './screens/uploadImage';
 import fetchApi from './screens/fetchApi';
 import {AuthContext} from './components/context';
 
@@ -198,6 +199,21 @@ const App = () => {
         }}
       />
       {/* add screen here */}
+      <HomeStack.Screen
+        name="uploadImage"
+        component={uploadImage}
+        options={{
+          title: 'uploadImage',
+          headerLeft: () => (
+            <Icon.Button
+              name="ios-menu"
+              size={25}
+              backgroundColor="#009387"
+              onPress={() => navigation.openDrawer()}
+            />
+          ),
+        }}
+      />
     </HomeStack.Navigator>
   );
 
