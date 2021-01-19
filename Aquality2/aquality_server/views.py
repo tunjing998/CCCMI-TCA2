@@ -28,7 +28,11 @@ class DataViewSet(viewsets.ModelViewSet):
             'message': 'Data could not be created with received data.'
         }, status=status.HTTP_400_BAD_REQUEST)
     def get_queryset(self):
-        return Data.objects.all()
+        if(self.request.query_params.get('arduino_id')):
+            arduino_id_get = self.request.query_params.get('arduino_id')
+            return Data.objects.filter(arduino_id=arduino_id_get).order_by('-date_captured')
+        else:
+            return Data.objects.all() 
     def destroy(self, request, *args, **kwargs):
         try:
             instance = self.get_object()
