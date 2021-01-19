@@ -20,7 +20,7 @@ class User_Account(models.Model):
         primary_key = True,
     )
     full_name = models.CharField(max_length = 200)
-    created_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
     user_group = models.CharField(max_length = 200)
 
 #River Models
@@ -50,6 +50,7 @@ class Data(models.Model):
         null=True
     )   
     # location = models.PointField(geography=True, default=Point(0.0, 0.0),null=True)
+    arduino_id = models.IntegerField()
     latitude = models.FloatField(default = 0,null=True)
     longitude = models.FloatField(default = 0,null=True)
     ph = models.FloatField(default=None, blank=True, null=True)
