@@ -1,0 +1,1342 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchRiverScreen snapShot 1`] = `
+<View
+  accessibilityLabel="searchRiverScreenContainer"
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+  testID="searchRiverScreenContainer"
+>
+  <Text
+    style={
+      Object {
+        "color": "rgb(28, 28, 30)",
+        "fontSize": 36,
+        "paddingBottom": 70,
+      }
+    }
+  >
+    Search and choose the river.
+  </Text>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginBottom": 30,
+      }
+    }
+  >
+    <View
+      accessibilityLabel="searchRiverLocateIcon"
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "borderRadius": 5,
+          },
+        ]
+      }
+      testID="searchRiverLocateIcon"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "flex-start",
+              "padding": 8,
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "borderRadius": 5,
+            },
+            Object {
+              "padding": 10,
+            },
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#000",
+                "fontSize": 20,
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          󰆤
+        </Text>
+      </View>
+    </View>
+    <TextInput
+      accessibilityLabel="searchRiverLocateInput"
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="River name or Coordinates"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderBottomColor": "rgb(28, 28, 30)",
+          "borderBottomWidth": 1,
+          "color": "#424242",
+          "flex": 1,
+          "paddingBottom": 10,
+          "paddingLeft": 0,
+          "paddingRight": 10,
+          "paddingTop": 10,
+        }
+      }
+      testID="searchRiverLocateInput"
+      underlineColorAndroid="transparent"
+      value="53.3541159578443, -6.355573949174074"
+    />
+    <View
+      accessibilityLabel="searchRiverSearchIcon"
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "transparent",
+            "borderRadius": 5,
+          },
+        ]
+      }
+      testID="searchRiverSearchIcon"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "flex-start",
+              "padding": 8,
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "borderRadius": 5,
+            },
+            Object {
+              "padding": 10,
+            },
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#000",
+                "fontSize": 20,
+              },
+              Object {
+                "marginRight": 10,
+              },
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          󰍉
+        </Text>
+      </View>
+    </View>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "rgb(28, 28, 30)",
+        "fontSize": 28.285714285714285,
+      }
+    }
+  >
+    Results found:
+  </Text>
+  <View
+    style={
+      Object {
+        "borderRadius": 3,
+        "marginVertical": 10,
+        "overflow": "hidden",
+        "width": "80%",
+      }
+    }
+  >
+    <View
+      accessibilityLabel="flatlistItem"
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="flatlistItem"
+    >
+      <BVLinearGradient
+        colors={
+          Array [
+            4280698451,
+            4280982927,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 1,
+            "y": 0,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0,
+            "y": 0,
+          }
+        }
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 20,
+              "paddingVertical": 1,
+              "textAlign": "center",
+            }
+          }
+        >
+          Stream Liffey
+        </Text>
+      </BVLinearGradient>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderRadius": 3,
+        "marginVertical": 10,
+        "overflow": "hidden",
+        "width": "80%",
+      }
+    }
+  >
+    <View
+      accessibilityLabel="flatlistItem"
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="flatlistItem"
+    >
+      <BVLinearGradient
+        colors={
+          Array [
+            4280698451,
+            4280982927,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 1,
+            "y": 0,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0,
+            "y": 0,
+          }
+        }
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 20,
+              "paddingVertical": 1,
+              "textAlign": "center",
+            }
+          }
+        >
+          River Bryan
+        </Text>
+      </BVLinearGradient>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderRadius": 3,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 18,
+              "paddingVertical": 1,
+              "textAlign": "center",
+            }
+          }
+        >
+          fetch api
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`SearchRiverScreen2 snapShot 1`] = `
+<View
+  accessibilityLabel="riverDetailContainer"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+  testID="riverDetailContainer"
+>
+  <View>
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgb(242, 242, 242)",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#bcbbc1",
+            "flexDirection": "row",
+            "padding": 14,
+          }
+        }
+        testID="padView"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "black": "#242424",
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "grey": "rgba(0, 0, 0, 0.54)",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "grey": "#7d7d7d",
+                    "primary": "#007aff",
+                    "searchBg": "#dcdce1",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                  "web": Object {
+                    "error": "#ff190c",
+                    "grey": "#393e42",
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#ca71eb",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#ca71eb",
+                "success": "#52c41a",
+                "warning": "#faad14",
+                "white": "#ffffff",
+              },
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 15,
+              }
+            }
+            testID="listItemTitle"
+          >
+            River Name
+          </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 17,
+              }
+            }
+            testID="listItemTitle"
+          >
+            River Liffey
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgb(242, 242, 242)",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#bcbbc1",
+            "flexDirection": "row",
+            "padding": 14,
+          }
+        }
+        testID="padView"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "black": "#242424",
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "grey": "rgba(0, 0, 0, 0.54)",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "grey": "#7d7d7d",
+                    "primary": "#007aff",
+                    "searchBg": "#dcdce1",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                  "web": Object {
+                    "error": "#ff190c",
+                    "grey": "#393e42",
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#ca71eb",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#ca71eb",
+                "success": "#52c41a",
+                "warning": "#faad14",
+                "white": "#ffffff",
+              },
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 15,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Latitude
+          </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 17,
+              }
+            }
+            testID="listItemTitle"
+          >
+            53.3492319
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgb(242, 242, 242)",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#bcbbc1",
+            "flexDirection": "row",
+            "padding": 14,
+          }
+        }
+        testID="padView"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "black": "#242424",
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "grey": "rgba(0, 0, 0, 0.54)",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "grey": "#7d7d7d",
+                    "primary": "#007aff",
+                    "searchBg": "#dcdce1",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                  "web": Object {
+                    "error": "#ff190c",
+                    "grey": "#393e42",
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#ca71eb",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#ca71eb",
+                "success": "#52c41a",
+                "warning": "#faad14",
+                "white": "#ffffff",
+              },
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 15,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Longitude
+          </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 17,
+              }
+            }
+            testID="listItemTitle"
+          >
+            -6.535848
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgb(242, 242, 242)",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#bcbbc1",
+            "flexDirection": "row",
+            "padding": 14,
+          }
+        }
+        testID="padView"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "black": "#242424",
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "grey": "rgba(0, 0, 0, 0.54)",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "grey": "#7d7d7d",
+                    "primary": "#007aff",
+                    "searchBg": "#dcdce1",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                  "web": Object {
+                    "error": "#ff190c",
+                    "grey": "#393e42",
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#ca71eb",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#ca71eb",
+                "success": "#52c41a",
+                "warning": "#faad14",
+                "white": "#ffffff",
+              },
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 15,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Area (km²)
+          </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 17,
+              }
+            }
+            testID="listItemTitle"
+          >
+            23.58
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgb(242, 242, 242)",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#bcbbc1",
+            "flexDirection": "row",
+            "padding": 14,
+          }
+        }
+        testID="padView"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "black": "#242424",
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "grey": "rgba(0, 0, 0, 0.54)",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "grey": "#7d7d7d",
+                    "primary": "#007aff",
+                    "searchBg": "#dcdce1",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                  "web": Object {
+                    "error": "#ff190c",
+                    "grey": "#393e42",
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#ca71eb",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#ca71eb",
+                "success": "#52c41a",
+                "warning": "#faad14",
+                "white": "#ffffff",
+              },
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 15,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Length (km)
+          </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 17,
+              }
+            }
+            testID="listItemTitle"
+          >
+            14.51
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgb(242, 242, 242)",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#bcbbc1",
+            "flexDirection": "row",
+            "padding": 14,
+          }
+        }
+        testID="padView"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "black": "#242424",
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "grey": "rgba(0, 0, 0, 0.54)",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "grey": "#7d7d7d",
+                    "primary": "#007aff",
+                    "searchBg": "#dcdce1",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                  "web": Object {
+                    "error": "#ff190c",
+                    "grey": "#393e42",
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#ca71eb",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#ca71eb",
+                "success": "#52c41a",
+                "warning": "#faad14",
+                "white": "#ffffff",
+              },
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 15,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Ecological Status
+          </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 17,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Good
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgb(242, 242, 242)",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#bcbbc1",
+            "flexDirection": "row",
+            "padding": 14,
+          }
+        }
+        testID="padView"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "black": "#242424",
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "grey": "rgba(0, 0, 0, 0.54)",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "grey": "#7d7d7d",
+                    "primary": "#007aff",
+                    "searchBg": "#dcdce1",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                  "web": Object {
+                    "error": "#ff190c",
+                    "grey": "#393e42",
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#ca71eb",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#ca71eb",
+                "success": "#52c41a",
+                "warning": "#faad14",
+                "white": "#ffffff",
+              },
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 15,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Local Authority
+          </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 17,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Kildare County Council
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgb(242, 242, 242)",
+            "borderBottomWidth": 0.5,
+            "borderColor": "#bcbbc1",
+            "flexDirection": "row",
+            "padding": 14,
+          }
+        }
+        testID="padView"
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "black": "#242424",
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "grey": "rgba(0, 0, 0, 0.54)",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "grey": "#7d7d7d",
+                    "primary": "#007aff",
+                    "searchBg": "#dcdce1",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                  "web": Object {
+                    "error": "#ff190c",
+                    "grey": "#393e42",
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#ca71eb",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#ca71eb",
+                "success": "#52c41a",
+                "warning": "#faad14",
+                "white": "#ffffff",
+              },
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 15,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Protected Area
+          </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "color": "rgb(28, 28, 30)",
+                "fontSize": 17,
+              }
+            }
+            testID="listItemTitle"
+          >
+            Yes
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderRadius": 3,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      accessibilityLabel="riverDetailChooseRiverButton"
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="riverDetailChooseRiverButton"
+    >
+      <BVLinearGradient
+        colors={
+          Array [
+            4278638240,
+            4278638240,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 1,
+            "y": 0,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0,
+            "y": 0,
+          }
+        }
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 18,
+              "paddingVertical": 1,
+              "textAlign": "center",
+            }
+          }
+        >
+          Choose this river
+        </Text>
+      </BVLinearGradient>
+    </View>
+  </View>
+</View>
+`;

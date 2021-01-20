@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home screen snapShot 1`] = `
+<View
+  accessibilityLabel="homeScreenContainer"
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+  testID="homeScreenContainer"
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 3,
+        "overflow": "hidden",
+        "padding": 35,
+      }
+    }
+  >
+    <View
+      accessibilityLabel="homeScreenTakeNewSampleButton"
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="homeScreenTakeNewSampleButton"
+    >
+      <BVLinearGradient
+        colors={
+          Array [
+            4293357393,
+            4294222433,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 1,
+            "y": 0,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0,
+            "y": 0,
+          }
+        }
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 31,
+              "paddingHorizontal": 30,
+              "paddingVertical": 10,
+              "textAlign": "center",
+            }
+          }
+        >
+          Take new sample
+        </Text>
+      </BVLinearGradient>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderRadius": 3,
+        "overflow": "hidden",
+        "padding": 35,
+      }
+    }
+  >
+    <View
+      accessibilityLabel="homeScreenViewSampleButton"
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="homeScreenViewSampleButton"
+    >
+      <BVLinearGradient
+        colors={
+          Array [
+            4293357393,
+            4294222433,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 1,
+            "y": 0,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0,
+            "y": 0,
+          }
+        }
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 31,
+              "paddingHorizontal": 30,
+              "paddingVertical": 10,
+              "textAlign": "center",
+            }
+          }
+        >
+          View sample
+        </Text>
+      </BVLinearGradient>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderRadius": 3,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 18,
+              "paddingVertical": 1,
+              "textAlign": "center",
+            }
+          }
+        >
+          upload image test
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selectInsect1 snapShot 1`] = `<selectInsect1 />`;
+
+exports[`selectInsect2 snapShot 1`] = `<selectInsect2 />`;

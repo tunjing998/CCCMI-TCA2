@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`insect screen snapShot 1`] = `
+<View
+  accessibilityLabel="insectScreenContainer"
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+  testID="insectScreenContainer"
+>
+  <Text
+    style={
+      Object {
+        "color": "rgb(28, 28, 30)",
+        "marginBottom": 20,
+      }
+    }
+  >
+    Your Insects found section is empty!
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "rgb(28, 28, 30)",
+        "marginBottom": 20,
+      }
+    }
+  >
+    If insects is found, choose one of the method below to start.
+  </Text>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderRadius": 3,
+        "overflow": "visible",
+        "shadowColor": "rgba(0,0,0, .4)",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 1,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 1,
+      }
+    }
+  >
+    <View
+      accessibilityLabel="insectScreenSelectInsectButton"
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="insectScreenSelectInsectButton"
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0.5,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+            "paddingHorizontal": 20,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#2089dc",
+              "fontSize": 20,
+              "paddingVertical": 1,
+              "textAlign": "center",
+            }
+          }
+        >
+          Select Insect
+        </Text>
+      </View>
+    </View>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#242424",
+      }
+    }
+  >
+    
+  </Text>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderRadius": 3,
+        "overflow": "visible",
+        "shadowColor": "rgba(0,0,0, .4)",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 1,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 1,
+      }
+    }
+  >
+    <View
+      accessibilityLabel="insectScreenAnalyzeInsectButton"
+      accessibilityRole="button"
+      accessibilityState={
+        Object {
+          "busy": false,
+          "disabled": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="insectScreenAnalyzeInsectButton"
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "transparent",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0.5,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+            "paddingHorizontal": 20,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#2089dc",
+              "fontSize": 20,
+              "paddingVertical": 1,
+              "textAlign": "center",
+            }
+          }
+        >
+          Analyze Insect
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

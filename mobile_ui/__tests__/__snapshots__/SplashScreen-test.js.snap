@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Splash screen snapShot 1`] = `
+<View
+  accessibilityLabel="splashContainer"
+  style={
+    Object {
+      "backgroundColor": "#009387",
+      "flex": 1,
+    }
+  }
+  testID="splashContainer"
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 2,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Image
+      duraton="1500"
+      resizeMode="center"
+      source={
+        Object {
+          "testUri": "../../../assets/2.0.png",
+        }
+      }
+      style={
+        Object {
+          "height": 533.6,
+          "opacity": 0,
+          "transform": Array [
+            Object {
+              "scale": 0.3,
+            },
+          ],
+          "width": 533.6,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgb(242, 242, 242)",
+        "borderTopLeftRadius": 30,
+        "borderTopRightRadius": 30,
+        "flex": 1,
+        "opacity": 0,
+        "paddingHorizontal": 30,
+        "paddingVertical": 50,
+        "transform": Array [
+          Object {
+            "translateY": 500,
+          },
+        ],
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#05375a",
+            "fontSize": 30,
+            "fontWeight": "bold",
+          },
+          Object {
+            "color": "rgb(28, 28, 30)",
+          },
+        ]
+      }
+    >
+      Search. Connect. Sample.
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "grey",
+          "marginTop": 5,
+        }
+      }
+    >
+      Sign in with account
+    </Text>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "marginTop": 30,
+        }
+      }
+    >
+      <View
+        accessibilityLabel="splashTouchableOpacityButton"
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID="splashTouchableOpacityButton"
+      >
+        <BVLinearGradient
+          colors={
+            Array [
+              4278768836,
+              4278299549,
+            ]
+          }
+          endPoint={
+            Object {
+              "x": 0.5,
+              "y": 1,
+            }
+          }
+          locations={null}
+          startPoint={
+            Object {
+              "x": 0.5,
+              "y": 0,
+            }
+          }
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 50,
+              "flexDirection": "row",
+              "height": 40,
+              "justifyContent": "center",
+              "width": 150,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Get Started
+          </Text>
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </BVLinearGradient>
+      </View>
+    </View>
+  </View>
+</View>
+`;

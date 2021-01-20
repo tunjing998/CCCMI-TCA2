@@ -14,10 +14,11 @@ const HomeScreen = ({navigation}) => {
     <View
       style={styles.container}
       accessibilityLabel={testVariables.homeScreenContainer}
-      testID={testVariables.homeScreenContainer}>
+      testID={'homeScreenContainer'}>
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
 
       <Button
+        testID={'homeScreenTakeNewSampleButton'}
         ViewComponent={LinearGradient}
         linearGradientProps={{
           colors: ['#e76f51', '#f4a261'],
@@ -29,7 +30,6 @@ const HomeScreen = ({navigation}) => {
         containerStyle={styles.buttonContainer}
         onPress={() => navigation.navigate('SearchRiverScreen')}
         accessibilityLabel={testVariables.homeScreenTakeNewSampleButton}
-        testID={testVariables.homeScreenTakeNewSampleButton}
       />
       <Button
         accessibilityLabel={testVariables.homeScreenViewSampleButton}
@@ -48,6 +48,10 @@ const HomeScreen = ({navigation}) => {
         title="upload image test"
         onPress={() => navigation.navigate('uploadImage')}
       />
+      <Button
+        title="upload image to server test"
+        onPress={() => navigation.navigate('uploadImageToServer')}
+      />
     </View>
   );
 };
@@ -61,7 +65,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 30,
+    fontSize: 31,
     paddingHorizontal: 30,
     paddingVertical: 10,
   },
