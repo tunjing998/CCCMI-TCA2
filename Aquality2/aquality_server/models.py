@@ -19,9 +19,13 @@ class User_Account(models.Model):
         on_delete=models.CASCADE,
         primary_key = True,
     )
-    full_name = models.CharField(max_length = 200)
+    full_name = models.CharField(max_length = 200, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    user_group = models.CharField(max_length = 200)
+    user_group = models.CharField(max_length = 200,null=True)
+    profile_pic = models.ImageField(upload_to = 'user-profile-pic',null=True)
+    date_of_birth = models.DateTimeField(default=None, blank=True, null=True)
+    occupation = models.CharField(max_length = 200, null =True)
+    bio = models.TextField(null=True)
 
 #River Models
 class River(models.Model):
