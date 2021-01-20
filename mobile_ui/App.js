@@ -29,6 +29,7 @@ import SettingsScreen from './screens/SettingsScreen';
 import SearchRiverScreen from './screens/SearchRiverScreen';
 import SearchRiverScreen2 from './screens/SearchRiverScreen2';
 import uploadImage from './screens/uploadImage';
+import uploadImageToServer from './screens/uploadImageToServer';
 import fetchApi from './screens/fetchApi';
 import {AuthContext} from './components/context';
 
@@ -36,8 +37,6 @@ import RootStackScreen from './screens/RootStackScreen';
 
 import AsyncStorage from '@react-native-community/async-storage';
 import HomeScreen from './screens/HomeScreen';
-
-import testVariables from './appium_automation_testing/test_variables';
 
 const Drawer = createDrawerNavigator();
 
@@ -206,6 +205,21 @@ const App = () => {
         component={uploadImage}
         options={{
           title: 'uploadImage',
+          headerLeft: () => (
+            <Icon.Button
+              name="ios-menu"
+              size={25}
+              backgroundColor="#009387"
+              onPress={() => navigation.openDrawer()}
+            />
+          ),
+        }}
+      />
+      <HomeStack.Screen
+        name="uploadImageToServer"
+        component={uploadImageToServer}
+        options={{
+          title: 'uploadImageToServer',
           headerLeft: () => (
             <Icon.Button
               name="ios-menu"
