@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import River,Data
+from .models import River,Data,Login_Account
 
 class RiverSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -9,8 +9,8 @@ class RiverSerializer(serializers.HyperlinkedModelSerializer):
                   "river_name",
                   "river_catchments_code",
                   "river_catchments", 
-                  "latitute", 
-                  "longitute",
+                  "latitude", 
+                  "longitude",
                   "local_authority",
                   "water_body_category",
                   "protected_area",
@@ -20,5 +20,14 @@ class RiverSerializer(serializers.HyperlinkedModelSerializer):
 class DataSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Data
-        fields = ("data_id","latitute","longitute","ph","temp","date_captured")
+        fields = ("data_id","arduino_id","latitude","longitude","ph","temp")
         
+class DataSerializerWithDate(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Data
+        fields = ("data_id","arduino_id","latitude","longitude","ph","temp","date_captured")
+                
+class LoginAccountSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Login_Account
+        fields = ("account_id","username","email","password")

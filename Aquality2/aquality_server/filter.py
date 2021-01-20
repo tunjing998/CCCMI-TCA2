@@ -3,7 +3,7 @@ import requests
 from .models import River
 
 def getLocationFromRequest(request):
-    longitute = request.query_params.get('longitute')
+    longitute = request.query_params.get('longitude')
     latitude  = request.query_params.get('latitude')
     return [latitude,longitute]
 
@@ -16,21 +16,21 @@ def getLocationPointFromGoogleApi(request):
     return [latitude,longitude]
 
 def getLocationPoint(request):
-    if(request.query_params.get('longitute') and request.query_params.get('latitude')):
+    if(request.query_params.get('longitude') and request.query_params.get('latitude')):
         pnt = getLocationFromRequest(request)
     elif(request.query_params.get('location')):
         pnt = getLocationPointFromGoogleApi(request)
     else:
         latitude = 54.93
         longitute = -7.55
-    return [latitude,longitute]
+        pnt =  [latitude,longitute]
     return pnt
     
 def getNearbyList(pnt):
     query = """SELECT 
     river_id,
-	longitute,
-	latitute,
+	longitude,
+	latitude,
  
  
 	ROUND(
@@ -39,14 +39,14 @@ def getNearbyList(pnt):
 				POW(
 					SIN(
 						(
-							"""+str(pnt[0])+""" * PI() / 180 - latitute * PI() / 180
+							"""+str(pnt[0])+""" * PI() / 180 - latitude * PI() / 180
 						) / 2
 					),
 					2
-				) + COS("""+str(pnt[0])+""" * PI() / 180) * COS(latitute * PI() / 180) * POW(
+				) + COS("""+str(pnt[0])+""" * PI() / 180) * COS(latitude * PI() / 180) * POW(
 					SIN(
 						(
-							"""+str(pnt[1])+""" * PI() / 180 - 	longitute * PI() / 180
+							"""+str(pnt[1])+""" * PI() / 180 - 	longitude * PI() / 180
 						) / 2
 					),
 					2
