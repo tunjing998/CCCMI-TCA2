@@ -8,6 +8,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from decouple import config
 from aquality_server.filter import *
+from django.http import JsonResponse
 
 # Controlling The View Access To
 def index(request):
@@ -84,3 +85,9 @@ def testingPage(request):
     # locationfound = requests.get(request_url)
     # data = locationfound.json().get("candidates")[0].get("geometry").get("location")
     return render(request,'aquality_server/testing.html',{'request':request})
+
+def testingPageForPatrick(request):
+    return JsonResponse ({
+            'status': 'Image Accepted',
+            'message': {'image': 'http//......', 'class_label': ['Ecdyonurus'],'confidence': [0.9999022483825684]}
+        })
