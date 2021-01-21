@@ -2,13 +2,17 @@ from django.shortcuts import get_object_or_404, render
 from aquality_server.actions import *
 from rest_framework import viewsets
 from .serializers import *
-from .models import River
+from .models import River,User_Account
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 from decouple import config
 from aquality_server.filter import *
 from django.http import JsonResponse
+from django.contrib.auth import authenticate, login
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
+from django.core import serializers
 
 # Controlling The View Access To
 def index(request):
@@ -91,3 +95,55 @@ def testingPageForPatrick(request):
             'status': 'Image Accepted',
             'message': {'image': 'http//......', 'class_label': ['Ecdyonurus'],'confidence': [0.9999022483825684]}
         })
+    
+@csrf_exempt
+def checkUser(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    userGet = authenticate(username=username,password = password)
+    if userGet is not None:
+        user_account = User_Account.objects.filter(user = userGet)[0]
+        return JsonResponse ({
+            'status': 'Login Success',
+            'user_username':userGet.username,
+            'date_joined' : userGet.date_joined,
+            'user_first_name' : userGet.first_name,
+            'user_last_name' : userGet.last_name,
+            'user_email':userGet.email,
+            'user_group': user_account.user_group,
+            'user_profic': str(user_account.profile_pic),
+            'user_dob':user_account.date_of_birth,
+            'user_occupation':user_account.occupation,
+            'user_bio':user_account.bio
+        })
+    else:
+        return JsonResponse ({
+            'status': 'Invalid Login',
+            'message': 'Wrong Username Or Password'
+        })
+    
+@csrf_exempt
+def registerPage(request):
+    username = request.POST['username']
+    email = request.POST['email']
+    password = request.POST['password']
+    confirm_password = request.POST['confirm_password']
+    if username is not None and email is not None and password is not None and confirm_password is not None:
+        if password == confirm_password:
+            user = User.objects.create_user(username,email,password)
+            entry = User_Account.objects.create(user=user)
+            return JsonResponse({
+                'status':'Register Sucess',
+                'Message' : 'User Created'
+            })
+        else:
+            return JsonResponse ({
+            'status': 'Register Fail',
+            'message': 'Password and Confirm Password Not Same'
+        }) 
+    else:
+        return JsonResponse({
+            'status': 'Register Fail',
+            'message': 'Field Missing'
+        })
+        

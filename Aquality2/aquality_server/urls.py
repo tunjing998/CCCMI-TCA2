@@ -14,5 +14,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
   #  path('addData', views.addData, name='addData'),
     path('testing/',views.testingPage,name='testingPage'),
-    path('testingPageForPatrick',views.testingPageForPatrick,name='testingPageForPatrick')
+    path('testingPageForPatrick',views.testingPageForPatrick,name='testingPageForPatrick'),
+    path('useraccount/loginauth',views.checkUser,name='checkUser'),
+    path('useraccount/register',views.registerPage,name='registerPage')
 ]
