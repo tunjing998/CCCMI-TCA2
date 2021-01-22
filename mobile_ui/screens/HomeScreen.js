@@ -52,6 +52,10 @@ const HomeScreen = ({navigation}) => {
         title="upload image to server test"
         onPress={() => navigation.navigate('uploadImageToServer')}
       />
+      <Button
+        title="result test"
+        onPress={() => navigation.navigate('resultPage')}
+      />
     </View>
   );
 };

@@ -21,14 +21,19 @@ const App = () => {
       data.append('name', 'Image Upload');
       data.append('file_attachment', fileToUpload);
       // Please change file upload URL
-      let res = await fetch('insert url for post here', {
-        method: 'post',
-        body: data,
-        headers: {
-          'Content-Type': 'multipart/form-data; ',
+      let res = await fetch(
+        'http://aquality-server.eba-rxqnbumy.eu-west-1.elasticbeanstalk.com/aquality_server/testingPageForPatrick',
+        {
+          method: 'post',
+          body: data,
+          headers: {
+            'Content-Type': 'multipart/form-data; ',
+          },
         },
-      });
+      );
       let responseJson = await res.json();
+      console.log('res:', res);
+      console.log('responseJson:', responseJson);
       if (responseJson.status == 1) {
         alert('Upload Successful');
       }
@@ -43,7 +48,7 @@ const App = () => {
     try {
       const res = await DocumentPicker.pick({
         // Provide which type of file you want user to pick
-        type: [DocumentPicker.types.allFiles],
+        type: [DocumentPicker.types.images],
         // There can me more options as well
         // DocumentPicker.types.allFiles
         // DocumentPicker.types.images

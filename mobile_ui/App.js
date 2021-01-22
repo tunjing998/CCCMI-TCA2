@@ -30,6 +30,7 @@ import SearchRiverScreen from './screens/SearchRiverScreen';
 import SearchRiverScreen2 from './screens/SearchRiverScreen2';
 import uploadImage from './screens/uploadImage';
 import uploadImageToServer from './screens/uploadImageToServer';
+import resultPage from './screens/resultPage';
 import fetchApi from './screens/fetchApi';
 import {AuthContext} from './components/context';
 
@@ -220,6 +221,21 @@ const App = () => {
         component={uploadImageToServer}
         options={{
           title: 'uploadImageToServer',
+          headerLeft: () => (
+            <Icon.Button
+              name="ios-menu"
+              size={25}
+              backgroundColor="#009387"
+              onPress={() => navigation.openDrawer()}
+            />
+          ),
+        }}
+      />
+      <HomeStack.Screen
+        name="resultPage"
+        component={resultPage}
+        options={{
+          title: 'resultPage',
           headerLeft: () => (
             <Icon.Button
               name="ios-menu"
