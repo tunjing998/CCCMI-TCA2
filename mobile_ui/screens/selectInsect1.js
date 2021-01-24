@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import {View, Picker, StyleSheet, Text, Image, Button} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
+import {Input} from 'react-native-elements';
 
 const selectInsect1 = ({navigation}) => {
-  const [selectedValue, setSelectedValue] = useState('0');
-
   const [insects, setInsects] = useState([
     {
       id: 1,
@@ -44,33 +43,32 @@ const selectInsect1 = ({navigation}) => {
     },
   ]);
 
-  const updateInsect = (index, amount) => {
-    const elementsIndex = insects.findIndex(element => element.id == index);
-    let newArray = [...insects];
-    newArray[elementsIndex] = {...newArray[elementsIndex], amount: amount};
+  // const update = (amount, index) => {
+  //   let newInsects = [...insects];
+  //   newInsects[index] = {...newInsects[index], amount: amount};
+  //   setInsects({newInsects});
+  // };
 
-    setInsects(newArray);
+  const handleSubmit = () => {
+    console.log(insects);
   };
 
   const renderInsects = () => {
     return insects.map((insect, index) => {
       return (
         <View key={index} style={styles.container}>
-          <Image source={insect.image} style={{width: 50, height: 50}} />
-          <Text>{insect.name}</Text>
-          <Picker
-            mode="dropdown"
-            selectedValue={insect.amount}
-            style={{height: 50, width: 150}}
-            onValueChange={itemValue =>
-              // setSelectedValue(itemValue)
-              updateInsect(insect.id, itemValue)
-            }>
-            <Picker.Item label="0" value="0" />
-            <Picker.Item label="1-99" value="1-99" />
-            <Picker.Item label="100-1000" value="100-1000" />
-            <Picker.Item label=">1000" value=">1000" />
-          </Picker>
+          <View style={styles.insectContainer}>
+            <Image source={insect.image} style={styles.insectImage} />
+            <Text style={styles.insectName}>{insect.name}</Text>
+          </View>
+          <View style={styles.inputContainer}>
+            <Input
+              style={styles.amountInput}
+              placeholder="amount"
+              // onTextInput={amount => update(amount, index)}
+              // keyboardType="numeric"
+            />
+          </View>
         </View>
       );
     });
@@ -81,7 +79,9 @@ const selectInsect1 = ({navigation}) => {
       {renderInsects()}
       <Button
         title="next"
-        onPress={() => navigation.navigate('selectInsect2', insects)}
+        onPress={() => handleSubmit()}
+
+        // onPress={() => navigation.navigate('selectInsect2', insects)}
       />
     </ScrollView>
   );
@@ -90,8 +90,24 @@ const selectInsect1 = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  insectImage: {
+    height: 80,
+    width: 80,
+  },
+  insectName: {
+    alignSelf: 'center',
+    paddingHorizontal: 40,
+  },
+  insectContainer: {
+    flex: 2,
+    flexDirection: 'row',
+  },
+  inputContainer: {
+    flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 
