@@ -84,6 +84,7 @@ class AccountUserViewSet(viewsets.ModelViewSet):
 #     returnMessage = saveRiverListToDbFromWFA()
 #     return render(request, 'aquality_server/addData.html',{'returnMessage': returnMessage})
 
+@csrf_exempt
 def testingPage(request):
     # request_url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=River&inputtype=textquery&fields=geometry&key=" + config('GOOGLEMAP_APIKEY')
     # locationfound = requests.get(request_url)
@@ -127,23 +128,37 @@ def registerPage(request):
     username = request.POST['username']
     email = request.POST['email']
     password = request.POST['password']
-    confirm_password = request.POST['confirm_password']
-    if username is not None and email is not None and password is not None and confirm_password is not None:
-        if password == confirm_password:
-            user = User.objects.create_user(username,email,password)
-            entry = User_Account.objects.create(user=user)
-            return JsonResponse({
-                'status':'Register Sucess',
-                'Message' : 'User Created'
-            })
-        else:
-            return JsonResponse ({
-            'status': 'Register Fail',
-            'message': 'Password and Confirm Password Not Same'
-        }) 
+    if username is not None and email is not None and password is not None:
+        user = User.objects.create_user(username,email,password)
+        entry = User_Account.objects.create(user=user)
+        return JsonResponse({
+            'status':'Register Sucess',
+            'Message' : 'User Created',
+            'username' : user.username
+        })
     else:
         return JsonResponse({
             'status': 'Register Fail',
             'message': 'Field Missing'
         })
-        
+
+@csrf_exempt
+def del_user(request):    
+    try:
+        username_get = request.POST['username']
+        u = User.objects.get(username = username_get)
+        u.delete()
+        return JsonResponse ({
+            'status': 'User with username : '+username_get +' Deleted'
+        })         
+
+    except User.DoesNotExist:
+        return JsonResponse ({
+            'status': 'User with username : '+username_get +' Not Found'
+        }) 
+
+    except Exception as e: 
+        return JsonResponse ({
+            'status': 'Error Occur',
+            'error' : str(e)
+        }) 
