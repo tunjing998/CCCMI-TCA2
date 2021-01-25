@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {View, Picker, StyleSheet, Text, Image, Button} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import {View, StyleSheet, Text, Image, Button} from 'react-native';
+import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import {Input} from 'react-native-elements';
 
 const selectInsect1 = ({navigation}) => {
@@ -43,16 +43,16 @@ const selectInsect1 = ({navigation}) => {
     },
   ]);
 
-  // const update = (amount, index) => {
-  //   let newInsects = [...insects];
-  //   newInsects[index] = {...newInsects[index], amount: amount};
-  //   setInsects({newInsects});
-  // };
+  const update = (amount, index) => {
+    let newInsects = [...insects];
+    newInsects[index] = {...newInsects[index], amount: amount};
+    setInsects({newInsects});
+  };
 
   const handleSubmit = () => {
     console.log(insects);
   };
-
+  const [amount, setAmount] = useState('');
   const renderInsects = () => {
     return insects.map((insect, index) => {
       return (
@@ -62,11 +62,16 @@ const selectInsect1 = ({navigation}) => {
             <Text style={styles.insectName}>{insect.name}</Text>
           </View>
           <View style={styles.inputContainer}>
-            <Input
+            <TextInput
               style={styles.amountInput}
               placeholder="amount"
-              // onTextInput={amount => update(amount, index)}
+              // onChangeText={text => setAmount(text)}
               // keyboardType="numeric"
+            />
+            <Button
+              title="add"
+              style={styles.addButton}
+              onPress={() => update(amount, index)}
             />
           </View>
         </View>
@@ -77,12 +82,7 @@ const selectInsect1 = ({navigation}) => {
   return (
     <ScrollView>
       {renderInsects()}
-      <Button
-        title="next"
-        onPress={() => handleSubmit()}
-
-        // onPress={() => navigation.navigate('selectInsect2', insects)}
-      />
+      <Button title="Back" />
     </ScrollView>
   );
 };
@@ -107,7 +107,13 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flex: 1,
-    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  amountInput: {
+    flex: 1,
+  },
+  addButton: {
+    flex: 1,
   },
 });
 
