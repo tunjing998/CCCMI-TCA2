@@ -44,17 +44,23 @@ const selectInsect1 = ({navigation}) => {
   ]);
 
   const update = (amount, index) => {
-    let newInsects = [...insects];
-    newInsects[index] = {...newInsects[index], amount: amount};
-    setInsects({newInsects});
+    console.log('update called');
+    console.log('amount: ' + amount + ' index: ' + index);
+    insects[index].amount = amount;
+    console.log(insects[index]);
+    console.log(insects);
+    // let newInsects = [...insects];
+    // newInsects[index] = {...newInsects[index], amount: amount};
+    // setInsects({newInsects});
   };
 
   const handleSubmit = () => {
     console.log(insects);
   };
-  const [amount, setAmount] = useState('');
+  // const [amount, setAmount] = useState('');
   const renderInsects = () => {
     return insects.map((insect, index) => {
+      let amount = 0;
       return (
         <View key={index} style={styles.container}>
           <View style={styles.insectContainer}>
@@ -66,7 +72,8 @@ const selectInsect1 = ({navigation}) => {
               style={styles.amountInput}
               placeholder="amount"
               // onChangeText={text => setAmount(text)}
-              // keyboardType="numeric"
+              onChangeText={text => (amount = text)}
+              keyboardType="numeric"
             />
             <Button
               title="add"
