@@ -7,8 +7,10 @@ import {
   ScrollView,
   FlatList,
   ActivityIndicator,
+  TouchableOpacity,
 } from 'react-native';
 import testVariables from '../appium_automation_testing/test_variables';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 import json_data from './history.json';
 
@@ -25,6 +27,33 @@ const SampleHistoryScreen = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
   const [filterType, setFilterType] = useState('All');
   const [data, setData] = useState([]);
+
+  // FOR DATE
+  const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+  const [time, setTime] = useState(new Date());
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+
+    setDate(currentDate);
+    setShow(Platform.OS === 'ios' ? true : false);
+  };
+
+  const showMode = currentMode => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+  };
+
+  const formatDate = date => {
+    return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+  };
+  // END FOR DATE
 
   useEffect(() => {
     // fetch(link)
@@ -181,11 +210,26 @@ const SampleHistoryScreen = ({navigation}) => {
     console.log(select);
   };
 
+  //UI
   return (
     <SafeAreaView
       accessibilityLabel={testVariables.sampleHistoryScreenContainer}
       testID={testVariables.sampleHistoryScreenContainer}>
       <Text>SampleHistoryScreen!</Text>
+      {/* FOR DATE */}
+      <TouchableOpacity onPress={showDatepicker}>
+        <Text>{formatDate(date)}</Text>
+      </TouchableOpacity>
+      {show && (
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={mode}
+          display="default"
+          onChange={onChange}
+        />
+      )}
+      {/* END OF DATE */}
       {isLoading ? <ActivityIndicator /> : renderOptions()}
 
       <Text>Results!</Text>
