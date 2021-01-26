@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import River,Data,Login_Account
+from .models import River,Data,Login_Account,User_Account
 
 class RiverSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -31,3 +31,8 @@ class LoginAccountSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Login_Account
         fields = ("account_id","username","email","password")
+
+class UserAccountSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User_Account
+        fields = ("user_group","user","occupation","bio","profile_pic","date_of_birth")

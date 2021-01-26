@@ -2,12 +2,17 @@ from django.shortcuts import get_object_or_404, render
 from aquality_server.actions import *
 from rest_framework import viewsets
 from .serializers import *
-from .models import River
+from .models import River,User_Account
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 from decouple import config
 from aquality_server.filter import *
+from django.http import JsonResponse
+from django.contrib.auth import authenticate, login
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
+from django.core import serializers
 
 # Controlling The View Access To
 def index(request):
@@ -79,8 +84,81 @@ class AccountUserViewSet(viewsets.ModelViewSet):
 #     returnMessage = saveRiverListToDbFromWFA()
 #     return render(request, 'aquality_server/addData.html',{'returnMessage': returnMessage})
 
+@csrf_exempt
 def testingPage(request):
     # request_url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=River&inputtype=textquery&fields=geometry&key=" + config('GOOGLEMAP_APIKEY')
     # locationfound = requests.get(request_url)
     # data = locationfound.json().get("candidates")[0].get("geometry").get("location")
     return render(request,'aquality_server/testing.html',{'request':request})
+
+def testingPageForPatrick(request):
+    return JsonResponse ({
+            'status': 'Image Accepted',
+            'message': {'image': 'http//......', 'class_label': ['Ecdyonurus'],'confidence': [0.9999022483825684]}
+        })
+    
+@csrf_exempt
+def checkUser(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    userGet = authenticate(username=username,password = password)
+    if userGet is not None:
+        user_account = User_Account.objects.filter(user = userGet)[0]
+        return JsonResponse ({
+            'status': 'Login Success',
+            'user_username':userGet.username,
+            'date_joined' : userGet.date_joined,
+            'user_first_name' : userGet.first_name,
+            'user_last_name' : userGet.last_name,
+            'user_email':userGet.email,
+            'user_group': user_account.user_group,
+            'user_profic': str(user_account.profile_pic),
+            'user_dob':user_account.date_of_birth,
+            'user_occupation':user_account.occupation,
+            'user_bio':user_account.bio
+        })
+    else:
+        return JsonResponse ({
+            'status': 'Invalid Login',
+            'message': 'Wrong Username Or Password'
+        })
+    
+@csrf_exempt
+def registerPage(request):
+    username = request.POST['username']
+    email = request.POST['email']
+    password = request.POST['password']
+    if username is not None and email is not None and password is not None:
+        user = User.objects.create_user(username,email,password)
+        entry = User_Account.objects.create(user=user)
+        return JsonResponse({
+            'status':'Register Sucess',
+            'Message' : 'User Created',
+            'username' : user.username
+        })
+    else:
+        return JsonResponse({
+            'status': 'Register Fail',
+            'message': 'Field Missing'
+        })
+
+@csrf_exempt
+def del_user(request):    
+    try:
+        username_get = request.POST['username']
+        u = User.objects.get(username = username_get)
+        u.delete()
+        return JsonResponse ({
+            'status': 'User with username : '+username_get +' Deleted'
+        })         
+
+    except User.DoesNotExist:
+        return JsonResponse ({
+            'status': 'User with username : '+username_get +' Not Found'
+        }) 
+
+    except Exception as e: 
+        return JsonResponse ({
+            'status': 'Error Occur',
+            'error' : str(e)
+        }) 
