@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import River,Data,Login_Account,User_Account
+from .models import River,Data,Login_Account,User_Account,Insect,InsectGroup
 
 class RiverSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -36,3 +36,10 @@ class UserAccountSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User_Account
         fields = ("user_group","user","occupation","bio","profile_pic","date_of_birth")
+      
+class InsectSerializer(serializers.HyperlinkedModelSerializer):
+    insect_group = serializers.PrimaryKeyRelatedField(read_only = True)
+    
+    class Meta:
+        model = Insect
+        fields = ('insect_id','insect_name','insect_desc','insect_group')

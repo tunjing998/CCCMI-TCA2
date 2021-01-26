@@ -64,5 +64,14 @@ class Image(models.Model):
     image_path = models.CharField(max_length =200)
     data = models.ForeignKey(Data,on_delete=models.CASCADE)
 
+class InsectGroup(models.Model):
+    group_id = models.IntegerField(primary_key=True)
+    group_name = models.CharField(max_length = 200, unique= True)
+
+class Insect(models.Model):
+    insect_id = models.AutoField(primary_key = True)
+    insect_name = models.CharField(max_length = 200,unique = True)
+    insect_desc = models.TextField(null=True)
+    insect_group = models.ForeignKey(InsectGroup,on_delete=models.CASCADE)
 
 
