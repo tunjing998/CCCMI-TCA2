@@ -56,6 +56,14 @@ class RiverViewSet(viewsets.ModelViewSet):
         # return River.objects.filter(location__distance_lt=(pnt,D(m=10000)))
         return getNearbyList(pnt)
 
+class InsectViewSet(viewsets.ModelViewSet):
+    queryset = Insect.objects.all().order_by('insect_id')
+    serializer_class = InsectSerializer
+    def get_queryset(self):
+        if(self.request.query_params.get('group')):
+            return Insect.objects.filter(insect_group = self.request.query_params.get('group')).order_by('insect_id')
+        else:
+            return Insect.objects.all().order_by('insect_id')
 
 class AccountUserViewSet(viewsets.ModelViewSet):
     queryset = Login_Account.objects.all().order_by('account_id')
