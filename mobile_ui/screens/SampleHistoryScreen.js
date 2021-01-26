@@ -13,6 +13,7 @@ import testVariables from '../appium_automation_testing/test_variables';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 import json_data from './history.json';
+import {TextInput} from 'react-native-gesture-handler';
 
 let riverNameList = [];
 let historyData = {};
@@ -32,6 +33,7 @@ const SampleHistoryScreen = ({navigation}) => {
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
+  const [river, setRiver] = useState('');
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -76,7 +78,6 @@ const SampleHistoryScreen = ({navigation}) => {
    *
    */
   const convertData = () => {
-    console.log('convertData called');
     historyData = JSON.parse(JSON.stringify(json_data));
     for (const el of historyData) {
       if (el.date) {
@@ -91,7 +92,6 @@ const SampleHistoryScreen = ({navigation}) => {
    *
    */
   const setValues = () => {
-    console.log('setValues called');
     historyData.forEach(ele => {
       riverNameList.push(ele.river_name);
       dateList.push(ele.newDate);
@@ -118,9 +118,9 @@ const SampleHistoryScreen = ({navigation}) => {
 
   /**
    * @function filterDate
-   * @description filter data by date or river name
+   * @description filter data by date or river names
    * @param {String} filter date or river_name
-   * @param {String} value date value or river name
+   * @param {String} value date value or river name list
    */
   const filterDate = (filter, value) => {
     console.log('filter: ' + filter + ': ' + value);
@@ -129,33 +129,15 @@ const SampleHistoryScreen = ({navigation}) => {
       setData(historyData.filter(item => item.newDate === value));
     }
     if (filter === 'riverName') {
+      let searchedRivers = [];
+      for (const val of value) {
+        searchedRivers.push(
+          historyData.filter(item => item.river_name === val)[0],
+        );
+      }
       setFilterType('river_name');
-      setData(historyData.filter(item => item.river_name === value));
+      setData(searchedRivers);
     }
-  };
-
-  /**
-   * @function renderOptions
-   * @description render options(date and river name) into screen
-   */
-  const renderOptions = () => {
-    console.log('riverNameList', riverNameList.length);
-    console.log('dateList', dateList.length);
-    let type = [];
-    type.push(<Text>Date</Text>);
-    dateList.forEach(item => {
-      type.push(
-        <Button title={item} onPress={() => filterDate('date', item)} />,
-      );
-    });
-    type.push(<Text>river name</Text>);
-    riverNameList.forEach(item => {
-      type.push(
-        <Button title={item} onPress={() => filterDate('riverName', item)} />,
-      );
-    });
-
-    return type;
   };
 
   /**
@@ -164,13 +146,11 @@ const SampleHistoryScreen = ({navigation}) => {
    *
    */
   const renderResults = () => {
-    console.log('renderResults called');
     let type = [];
     type.push(<Text>results</Text>);
 
     if (filterType === 'All' && historyData.length > 0) {
       historyData.forEach(el => {
-        console.log(typeof el.river_id);
         type.push(
           <Button
             title={el.river_id.toString()}
@@ -180,7 +160,6 @@ const SampleHistoryScreen = ({navigation}) => {
       });
     } else if (filterType !== 'All') {
       data.forEach(el => {
-        console.log(el.river_id);
         type.push(
           <Button
             title={el.river_id.toString()}
@@ -192,9 +171,38 @@ const SampleHistoryScreen = ({navigation}) => {
     return type;
   };
 
+  /**
+   * @function selectResult
+   * @param {number} riverId
+   * @description select river by id
+   */
   const selectResult = riverId => {
     let select = historyData.filter(item => item.river_id === riverId);
     console.log(select);
+  };
+
+  /**
+   * @function selectMatchItem
+   * @param {String} keyWord
+   * @description select matched rivers
+   */
+  const selectMatchItem = keyWord => {
+    let resArr = [];
+    riverNameList.filter(item => {
+      if (item.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0) {
+        resArr.push(item);
+      }
+    });
+    filterDate('riverName', resArr);
+  };
+
+  /**
+   * @function getInput
+   * @param {String} text
+   * @description get input text value
+   */
+  const getInput = text => {
+    setRiver(text);
   };
 
   //UI
@@ -217,7 +225,17 @@ const SampleHistoryScreen = ({navigation}) => {
         />
       )}
       {/* END OF DATE */}
+
       {/* {isLoading ? <ActivityIndicator /> : renderOptions()} */}
+
+      <Text>search by river name!</Text>
+      <TextInput
+        placeholder="Insert river name"
+        placeholderTextColor="#ff0000"
+        onChangeText={text => getInput(text)}
+        value={river}
+      />
+      <Button title="search" onPress={() => selectMatchItem(river)} />
 
       <Text>Results!</Text>
       {renderResults()}
