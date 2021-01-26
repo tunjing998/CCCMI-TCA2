@@ -37,7 +37,7 @@ const SampleHistoryScreen = ({navigation}) => {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios' ? true : false);
     setDate(currentDate);
-    filterDate('date', reconstructDate(date));
+    filterDate('date', reconstructDate(currentDate));
   };
 
   const showMode = currentMode => {
@@ -217,7 +217,7 @@ const SampleHistoryScreen = ({navigation}) => {
         />
       )}
       {/* END OF DATE */}
-      {isLoading ? <ActivityIndicator /> : renderOptions()}
+      {/* {isLoading ? <ActivityIndicator /> : renderOptions()} */}
 
       <Text>Results!</Text>
       {renderResults()}
