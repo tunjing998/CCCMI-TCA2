@@ -32,13 +32,12 @@ const SampleHistoryScreen = ({navigation}) => {
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
-  const [time, setTime] = useState(new Date());
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
-
-    setDate(currentDate);
     setShow(Platform.OS === 'ios' ? true : false);
+    setDate(currentDate);
+    filterDate('date', reconstructDate(date));
   };
 
   const showMode = currentMode => {
@@ -56,18 +55,6 @@ const SampleHistoryScreen = ({navigation}) => {
   // END FOR DATE
 
   useEffect(() => {
-    // fetch(link)
-    //   .then(response => response.json())
-    //   .then(json => alert(json))
-    //   .catch(error => alert(error));
-    // fetch('./history.json')
-    //   .then(response => response.json())
-    //   .then(json => console.log(json))
-    //   .catch(e => {
-    //     console.log(
-    //       'There has been a problem with your fetch operation: ' + e.message,
-    //     );
-    //   });
     fetchData();
     convertData();
     setValues();
