@@ -7,14 +7,15 @@ import {
   ScrollView,
   FlatList,
   ActivityIndicator,
+  StyleSheet,
   TouchableOpacity,
+  TextInput,
 } from 'react-native';
 import testVariables from '../appium_automation_testing/test_variables';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import json_data from './history.json';
-import {TextInput} from 'react-native-gesture-handler';
-
 let riverNameList = [];
 let historyData = {};
 let dateList = [];
@@ -147,14 +148,15 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const renderResults = () => {
     let type = [];
-    type.push(<Text>results</Text>);
+    // type.push(<Text>results</Text>);
 
     if (filterType === 'All' && historyData.length > 0) {
       historyData.forEach(el => {
         type.push(
           <Button
-            title={el.river_id.toString()}
+            title={el.river_name.toString()}
             onPress={() => selectResult(el.river_id)}
+            style={styles.resultButton}
           />,
         );
       });
@@ -162,7 +164,7 @@ const SampleHistoryScreen = ({navigation}) => {
       data.forEach(el => {
         type.push(
           <Button
-            title={el.river_id.toString()}
+            title={el.river_name.toString()}
             onPress={() => selectResult(el.river_id)}
           />,
         );
@@ -210,37 +212,95 @@ const SampleHistoryScreen = ({navigation}) => {
     <SafeAreaView
       accessibilityLabel={testVariables.sampleHistoryScreenContainer}
       testID={testVariables.sampleHistoryScreenContainer}>
-      <Text>SampleHistoryScreen!</Text>
-      {/* FOR DATE */}
-      <TouchableOpacity onPress={showDatepicker}>
-        <Text>{formatDate(date)}</Text>
-      </TouchableOpacity>
-      {show && (
-        <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          mode={mode}
-          display="default"
-          onChange={onChange}
-        />
-      )}
-      {/* END OF DATE */}
+      <View style={styles.searchContainer}>
+        {/* FOR DATE */}
+        <Text style={styles.searchTitle}>Sort by date</Text>
+        <TouchableOpacity onPress={showDatepicker} style={styles.button}>
+          <Text style={styles.btnText}>{formatDate(date)}</Text>
+        </TouchableOpacity>
+        {show && (
+          <DateTimePicker
+            testID="dateTimePicker"
+            value={date}
+            mode={mode}
+            display="default"
+            onChange={onChange}
+          />
+        )}
+        {/* END OF DATE */}
 
-      {/* {isLoading ? <ActivityIndicator /> : renderOptions()} */}
+        {/* {isLoading ? <ActivityIndicator /> : renderOptions()} */}
 
-      <Text>search by river name!</Text>
-      <TextInput
-        placeholder="Insert river name"
-        placeholderTextColor="#ff0000"
-        onChangeText={text => getInput(text)}
-        value={river}
-      />
-      <Button title="search" onPress={() => selectMatchItem(river)} />
+        <Text style={styles.searchTitle}>Search by river name</Text>
+        <View style={styles.inputContainer}>
+          <TextInput
+            placeholder="River Name"
+            placeholderTextColor="#999999"
+            onChangeText={text => getInput(text)}
+            value={river}
+            style={styles.riverNameInput}
+          />
+          {/* <Button title="search" onPress={() => selectMatchItem(river)} /> */}
+          <Icon.Button
+            accessibilityLabel={testVariables.searchRiverSearchIcon}
+            testID={testVariables.searchRiverSearchIcon}
+            style={styles.searchIcon}
+            name="magnify"
+            backgroundColor="transparent"
+            size={20}
+            color="#000"
+            onPress={() => selectMatchItem(river)}
+          />
+        </View>
+      </View>
 
-      <Text>Results!</Text>
       {renderResults()}
     </SafeAreaView>
   );
 };
 
 export default SampleHistoryScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  button: {
+    width: 200,
+    marginVertical: 10,
+    backgroundColor: 'lightblue',
+    padding: 5,
+    borderRadius: 50,
+  },
+  btnText: {
+    color: 'white',
+    fontSize: 20,
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
+  searchContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  searchTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  riverNameInput: {
+    borderBottomWidth: 1,
+    textAlign: 'center',
+    paddingBottom: -10,
+    // paddingLeft: 30,
+    // placeholderTextColor: '#999999',
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  searchIcon: {
+    paddingTop: 18,
+  },
+  resultButton: {},
+});
