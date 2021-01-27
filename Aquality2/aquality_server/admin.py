@@ -5,7 +5,11 @@ from aquality_server.models import *
 
 admin.site.register(User_Account)
 admin.site.register(Data)
-admin.site.register(Image)
+admin.site.register(DataHistoryImageImage)
 admin.site.register(River)
-admin.site.register(Insect)
 admin.site.register(InsectGroup)
+admin.site.register(InsectImage)
+
+@admin.register(Insect)
+class InsectAdmin(admin.ModelAdmin):
+    list_display = ('insect_id', 'insect_name','insect_group')
