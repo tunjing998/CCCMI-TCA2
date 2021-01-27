@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from decouple import config
 from aquality_server.filter import *
-from django.http import JsonResponse
+from django.http import HttpResponse,JsonResponse
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
@@ -170,3 +170,53 @@ def del_user(request):
             'status': 'Error Occur',
             'error' : str(e)
         }) 
+        
+@csrf_exempt
+def if_username_exist(request):
+    try:
+        username_get = request.POST['username']
+        if(username_get is not None):
+            u = User.objects.get(username = username_get)
+            if u is None:
+                return JsonResponse({
+                    'status':'Username Not Exist'
+                })
+            else:
+                return JsonResponse({
+                    'status':'Username Exist'
+                })
+        else:
+            return JsonResponse({
+                'status':'Username not Receive'
+            })
+    except User.DoesNotExist:
+        return JsonResponse ({
+            'status':'Username Not Exist'
+        }) 
+    except Exception as e: 
+        return HttpResponse(e)
+        
+@csrf_exempt
+def if_email_exist(request):
+    try:
+        email_get = request.POST['email']
+        if(email_get is not None):
+            u = User.objects.get(email = email_get)
+            if u is None:
+                return JsonResponse({
+                    'status':'email Not Exist'
+                })
+            else:
+                return JsonResponse({
+                    'status':'email Exist'
+                })
+        else:
+            return JsonResponse({
+                'status':'email not Receive'
+            })
+    except User.DoesNotExist:
+        return JsonResponse ({
+            'status':'Email Not Exist'
+        })     
+    except Exception as e: 
+        return HttpResponse(e)

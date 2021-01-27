@@ -59,9 +59,9 @@ class Data(models.Model):
     score_by_insect = models.IntegerField(default=None, blank=True, null=True)
 
 #Image Model
-class Image(models.Model):
+class DataHistoryImageImage(models.Model):
     image_id = models.AutoField(primary_key = True)
-    image_path = models.CharField(max_length =200)
+    image_path = models.ImageField(upload_to = 'data-insect-img',null=True)
     data = models.ForeignKey(Data,on_delete=models.CASCADE)
 
 class InsectGroup(models.Model):
@@ -73,5 +73,4 @@ class Insect(models.Model):
     insect_name = models.CharField(max_length = 200,unique = True)
     insect_desc = models.TextField(null=True)
     insect_group = models.ForeignKey(InsectGroup,on_delete=models.CASCADE)
-
-
+    insect_image_path = models.ImageField(upload_to='insect-img',null=True)

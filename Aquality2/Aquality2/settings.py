@@ -35,7 +35,8 @@ DEBUG = config('DEBUG')
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = config('SECRET_KEY')
 
-ALLOWED_HOSTS = ["127.0.0.1", "aquality-server.eba-rxqnbumy.eu-west-1.elasticbeanstalk.com"]
+
+ALLOWED_HOSTS = ["127.0.0.1","aquality-server.eba-rxqnbumy.eu-west-1.elasticbeanstalk.com","cccmi-aquality.tk"]
 
 # Application definition
 
@@ -132,6 +133,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
+
+MEDIA_ROOT = 'media'
+MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {}
 
