@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from decouple import config
 from aquality_server.filter import *
-from django.http import JsonResponse
+from django.http import HttpResponse,JsonResponse
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
@@ -189,11 +189,12 @@ def if_username_exist(request):
             return JsonResponse({
                 'status':'Username not Receive'
             })
-    except Exception as e: 
+    except User.DoesNotExist:
         return JsonResponse ({
-            'status': 'Error Occur',
-            'error' : str(e)
-        })
+            'status':'Username Not Exist'
+        }) 
+    except Exception as e: 
+        return HttpResponse(e)
         
 @csrf_exempt
 def if_email_exist(request):
@@ -213,8 +214,9 @@ def if_email_exist(request):
             return JsonResponse({
                 'status':'email not Receive'
             })
-    except Exception as e: 
+    except User.DoesNotExist:
         return JsonResponse ({
-            'status': 'Error Occur',
-            'error' : str(e)
-        }) 
+            'status':'Email Not Exist'
+        })     
+    except Exception as e: 
+        return HttpResponse(e)

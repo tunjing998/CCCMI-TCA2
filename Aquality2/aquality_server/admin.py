@@ -8,7 +8,6 @@ admin.site.register(Data)
 admin.site.register(DataHistoryImageImage)
 admin.site.register(River)
 admin.site.register(InsectGroup)
-admin.site.register(InsectImage)
 
 @admin.register(Insect)
 class InsectAdmin(admin.ModelAdmin):

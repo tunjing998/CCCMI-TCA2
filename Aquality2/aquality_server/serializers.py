@@ -42,4 +42,4 @@ class InsectSerializer(serializers.HyperlinkedModelSerializer):
     
     class Meta:
         model = Insect
-        fields = ('insect_id','insect_name','insect_desc','insect_group')
+        fields = ('insect_id','insect_name','insect_desc','insect_group','insect_image_path')

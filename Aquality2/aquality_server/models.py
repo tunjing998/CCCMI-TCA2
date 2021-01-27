@@ -73,9 +73,4 @@ class Insect(models.Model):
     insect_name = models.CharField(max_length = 200,unique = True)
     insect_desc = models.TextField(null=True)
     insect_group = models.ForeignKey(InsectGroup,on_delete=models.CASCADE)
-
-class InsectImage(models.Model):
-    image_id = models.AutoField(primary_key = True)
-    image_path = models.ImageField(upload_to = 'insect-img',null=True)
-    insect = models.ForeignKey(Insect,on_delete=models.CASCADE)
-    
+    insect_image_path = models.ImageField(upload_to='insect-img',null=True)
