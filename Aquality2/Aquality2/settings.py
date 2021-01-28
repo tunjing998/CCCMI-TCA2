@@ -47,10 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aquality_server.apps.AqualityServerConfig',
-    'ai_model.apps.AiModelConfig',
-    'django_filters',
-    'rest_framework'
+    'ai_model.apps.AiModelConfig'
 ]
 
 MIDDLEWARE = [
@@ -88,12 +85,8 @@ WSGI_APPLICATION = 'Aquality2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DATABASE_NAME'),
-        'USER': config('DATABASE_USERNAME'),
-        'PASSWORD': config('DATABASE_PASSWORD'),
-        'HOST': config('DATABASE_HOST'),
-        'PORT': config('DATABASE_PORT')
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'tempDB'
     }
 }
 

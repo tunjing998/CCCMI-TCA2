@@ -20,7 +20,6 @@ from django.conf import settings
 from ai_model.urls import urlpatterns
 
 urlpatterns = [
-    path('aquality_server/', include('aquality_server.urls')),
     urlpatterns[0],
     path('admin/', admin.site.urls),
 
