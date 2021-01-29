@@ -6,14 +6,95 @@ import {Button} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import {useTheme} from '@react-navigation/native';
 import testVariables from '../appium_automation_testing/test_variables';
+import json_data from './history.json';
+
 const SearchRiverScreen = ({navigation}) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   const [searchString, setSearchString] = useState(null);
+  const [data, setData] = useState([]);
+  let riverNameList = [];
+  let historyData = {};
+  const [filterType, setFilterType] = useState('All');
 
   const handleSearch = () => {
     console.log('search button pressed');
   };
+
+  const renderResults = () => {
+    let type = [];
+    // type.push(<Text>results</Text>);
+
+    if (filterType === 'All' && historyData.length > 0) {
+      historyData.forEach(el => {
+        type.push(
+          <Button
+            title={el.river_name.toString()}
+            onPress={() => selectResult(el.river_id)}
+            style={styles.resultButton}
+          />,
+        );
+      });
+    } else if (filterType !== 'All') {
+      data.forEach(el => {
+        type.push(
+          <Button
+            title={el.river_name.toString()}
+            onPress={() => selectResult(el.river_id)}
+          />,
+        );
+      });
+    }
+    return type;
+  };
+
+  const setValues = () => {
+    historyData.forEach(ele => {
+      riverNameList.push(ele.river_name);
+      dateList.push(ele.newDate);
+    });
+  };
+
+  /**
+   * @function filterDate
+   * @description filter data by date or river names
+   * @param {String} filter date or river_name
+   * @param {String} value date value or river name list
+   */
+  const filterDate = (filter, value) => {
+    console.log('filter: ' + filter + ': ' + value);
+
+    if (filter === 'riverName') {
+      let searchedRivers = [];
+      for (const val of value) {
+        searchedRivers.push(
+          historyData.filter(item => item.river_name === val)[0],
+        );
+      }
+      setFilterType('river_name');
+      setData(searchedRivers);
+    }
+  };
+
+  /**
+   * @function getInput
+   * @param {String} text
+   * @description get input text value
+   */
+  const getInput = text => {
+    setRiver(text);
+  };
+
+  const selectMatchItem = keyWord => {
+    let resArr = [];
+    riverNameList.filter(item => {
+      if (item.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0) {
+        resArr.push(item);
+      }
+    });
+    filterDate('riverName', resArr);
+  };
+  const [river, setRiver] = useState('');
 
   const {colors} = useTheme();
   const styles = StyleSheet.create({
@@ -87,8 +168,8 @@ const SearchRiverScreen = ({navigation}) => {
           style={styles.input}
           placeholder="River name or Coordinates"
           underlineColorAndroid="transparent"
-          value={isEnabled ? null : '53.3541159578443, -6.355573949174074'}
-          onChangeText={text => setSearchString(text)}
+          // value={isEnabled ? null : '53.3541159578443, -6.355573949174074'}
+          onChangeText={text => getInput(text)}
         />
         <Icon.Button
           accessibilityLabel={testVariables.searchRiverSearchIcon}
@@ -98,11 +179,11 @@ const SearchRiverScreen = ({navigation}) => {
           backgroundColor="transparent"
           size={20}
           color="#000"
-          onPress={() => handleSearch()}
+          onPress={() => selectMatchItem(river)}
         />
       </View>
 
-      <Text h4 h4Style={{color: colors.text}}>
+      {/* <Text h4 h4Style={{color: colors.text}}>
         Results found:
       </Text>
       <Button
@@ -131,12 +212,13 @@ const SearchRiverScreen = ({navigation}) => {
         title="River Bryan"
         titleStyle={styles.buttonText}
         containerStyle={styles.buttonContainer}
-      />
+      /> */}
 
-      <Button
+      {/* <Button
         title="fetch api"
         onPress={() => navigation.navigate('fetchApi')}
-      />
+      /> */}
+      {renderResults()}
     </View>
   );
 };
