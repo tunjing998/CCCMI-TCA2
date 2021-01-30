@@ -4,8 +4,10 @@ import {ListItem, Button, Text} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import testVariables from '../appium_automation_testing/test_variables';
+import {FlatList} from 'react-native-gesture-handler';
+import {List} from 'native-base';
 
-const SearchRiverScreen2 = ({navigation}) => {
+const SearchRiverScreen2 = ({navigation, route}) => {
   const {colors} = useTheme();
   const styles = StyleSheet.create({
     container: {
@@ -34,13 +36,17 @@ const SearchRiverScreen2 = ({navigation}) => {
             <ListItem.Subtitle style={styles.title}>
               River Name
             </ListItem.Subtitle>
-            <ListItem.Title style={styles.title}>River Liffey</ListItem.Title>
+            <ListItem.Title style={styles.title}>
+              {route.params.data.river_name}
+            </ListItem.Title>
           </ListItem.Content>
         </ListItem>
         <ListItem bottomDivider containerStyle={styles.listContainer}>
           <ListItem.Content>
             <ListItem.Subtitle style={styles.title}>Latitude</ListItem.Subtitle>
-            <ListItem.Title style={styles.title}>53.3492319</ListItem.Title>
+            <ListItem.Title style={styles.title}>
+              {route.params.data.latitude}
+            </ListItem.Title>
           </ListItem.Content>
         </ListItem>
         <ListItem bottomDivider containerStyle={styles.listContainer}>
@@ -48,31 +54,29 @@ const SearchRiverScreen2 = ({navigation}) => {
             <ListItem.Subtitle style={styles.title}>
               Longitude
             </ListItem.Subtitle>
-            <ListItem.Title style={styles.title}>-6.535848</ListItem.Title>
+            <ListItem.Title style={styles.title}>
+              {route.params.data.longitude}
+            </ListItem.Title>
           </ListItem.Content>
         </ListItem>
         <ListItem bottomDivider containerStyle={styles.listContainer}>
           <ListItem.Content>
             <ListItem.Subtitle style={styles.title}>
-              Area (km²)
+              River Catchments
             </ListItem.Subtitle>
-            <ListItem.Title style={styles.title}>23.58</ListItem.Title>
+            <ListItem.Title style={styles.title}>
+              {route.params.data.river_catchments}
+            </ListItem.Title>
           </ListItem.Content>
         </ListItem>
         <ListItem bottomDivider containerStyle={styles.listContainer}>
           <ListItem.Content>
             <ListItem.Subtitle style={styles.title}>
-              Length (km)
+              River Code
             </ListItem.Subtitle>
-            <ListItem.Title style={styles.title}>14.51</ListItem.Title>
-          </ListItem.Content>
-        </ListItem>
-        <ListItem bottomDivider containerStyle={styles.listContainer}>
-          <ListItem.Content>
-            <ListItem.Subtitle style={styles.title}>
-              Ecological Status
-            </ListItem.Subtitle>
-            <ListItem.Title style={styles.title}>Good</ListItem.Title>
+            <ListItem.Title style={styles.title}>
+              {route.params.data.river_code}
+            </ListItem.Title>
           </ListItem.Content>
         </ListItem>
         <ListItem bottomDivider containerStyle={styles.listContainer}>
@@ -81,16 +85,19 @@ const SearchRiverScreen2 = ({navigation}) => {
               Local Authority
             </ListItem.Subtitle>
             <ListItem.Title style={styles.title}>
-              Kildare County Council
+              {route.params.data.local_authority}
             </ListItem.Title>
           </ListItem.Content>
         </ListItem>
+
         <ListItem bottomDivider containerStyle={styles.listContainer}>
           <ListItem.Content>
             <ListItem.Subtitle style={styles.title}>
-              Protected Area
+              Transboundary
             </ListItem.Subtitle>
-            <ListItem.Title style={styles.title}>Yes</ListItem.Title>
+            <ListItem.Title style={styles.title}>
+              {route.params.data.transboundary}
+            </ListItem.Title>
           </ListItem.Content>
         </ListItem>
       </View>
@@ -101,11 +108,12 @@ const SearchRiverScreen2 = ({navigation}) => {
         onPress={() => navigation.navigate('MainTabScreen')}
         ViewComponent={LinearGradient} // Don't forget this!
         linearGradientProps={{
-          colors: ['#06d6a0', '#06d6a0'],
+          colors: ['#4c4cff', '#6666ff'],
           start: {x: 0, y: 0},
           end: {x: 1, y: 0},
         }}
       />
+      {console.log(route.params.data.canal)}
     </View>
   );
 };

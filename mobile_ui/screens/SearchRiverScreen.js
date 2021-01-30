@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, TextInput, PermissionsAndroid} from 'react-native';
+import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Text} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
 import testVariables from '../appium_automation_testing/test_variables';
+import LinearGradient from 'react-native-linear-gradient';
 
 import GetLocation from 'react-native-get-location';
+import {FlatList} from 'react-native-gesture-handler';
+import {TextPropTypes} from 'react-native';
 
 const riverURL = 'http://cccmi-aquality.tk/aquality_server/rivers/';
 
@@ -22,6 +26,8 @@ const SearchRiverScreen = ({navigation}) => {
     latitude: undefined,
     longitude: undefined,
   });
+
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     //get Location Permission, get location and set location
@@ -92,6 +98,32 @@ const SearchRiverScreen = ({navigation}) => {
       });
   };
 
+  const renderResults = () => {
+    let type = [];
+
+    if (data.length > 0) {
+      type.push(<Text style={{fontSize: 20}}>Results:</Text>);
+      data.forEach(el => {
+        type.push(
+          <Button
+            title={el.river_name.toString()}
+            onPress={() =>
+              navigation.navigate('SearchRiverScreen2', {data: el})
+            }
+            ViewComponent={LinearGradient} // Don't forget this!
+            linearGradientProps={{
+              colors: ['#4c4cff', '#6666ff'],
+              start: {x: 0, y: 0},
+              end: {x: 0, y: 1.5},
+            }}
+            buttonStyle={{margin: 5, padding: 20}}
+          />,
+        );
+      });
+    }
+    return type;
+  };
+
   const searchRiver = () => {
     let body = '';
     if (isEnabled) {
@@ -103,7 +135,10 @@ const SearchRiverScreen = ({navigation}) => {
     console.log(riverURL + body);
     fetch(riverURL + body)
       .then(response => response.json())
-      .then(json => console.log(json))
+      .then(json => {
+        console.log(json);
+        setData(json);
+      })
       .catch(error => alert(error));
   };
 
@@ -196,6 +231,7 @@ const SearchRiverScreen = ({navigation}) => {
           onPress={() => searchRiver()}
         />
       </View>
+      {renderResults()}
     </View>
   );
 };
