@@ -41,10 +41,10 @@ const ArduinoScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text h4 h4Style={styles.title}>
-        Connect to Arduino.
+        Connect to a device.
       </Text>
       <View style={styles.searchSection}>
-        <TextInput placeholder="Insert Arduino ID here." style={styles.input} />
+        <TextInput placeholder="Insert Device ID here." style={styles.input} />
         <Icon.Button
           style={styles.searchIcon}
           name="magnify"
