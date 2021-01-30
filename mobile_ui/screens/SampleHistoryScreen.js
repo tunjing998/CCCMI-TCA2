@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
-  Button,
   SafeAreaView,
   ScrollView,
   FlatList,
@@ -11,6 +10,7 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
+import {Button} from 'react-native-elements';
 import testVariables from '../appium_automation_testing/test_variables';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -156,7 +156,8 @@ const SampleHistoryScreen = ({navigation}) => {
           <Button
             title={el.river_name.toString()}
             onPress={() => selectResult(el.river_id)}
-            style={styles.resultButton}
+            buttonStyle={styles.resultButton}
+            type="outline"
           />,
         );
       });
@@ -166,6 +167,8 @@ const SampleHistoryScreen = ({navigation}) => {
           <Button
             title={el.river_name.toString()}
             onPress={() => selectResult(el.river_id)}
+            style={styles.resultButton}
+            type="outline"
           />,
         );
       });
@@ -270,7 +273,7 @@ const styles = StyleSheet.create({
   button: {
     width: 200,
     marginVertical: 10,
-    backgroundColor: 'lightblue',
+    backgroundColor: '#388fd1',
     padding: 5,
     borderRadius: 50,
   },
@@ -302,5 +305,8 @@ const styles = StyleSheet.create({
   searchIcon: {
     paddingTop: 18,
   },
-  resultButton: {},
+  resultButton: {
+    padding: 20,
+    marginTop: 5,
+  },
 });
