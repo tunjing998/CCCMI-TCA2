@@ -45,6 +45,7 @@ class InsectSerializer(serializers.HyperlinkedModelSerializer):
 
 class SampleRecordDataSerializer(serializers.HyperlinkedModelSerializer):
     sample_river = serializers.CharField(source='sample_river.river_name')
+    sample_river = RiverSerializer(sample_river)
     sample_user = serializers.CharField(source='sample_user.username')
     class Meta:
         model = SampleRecord
