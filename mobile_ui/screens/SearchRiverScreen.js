@@ -1,46 +1,122 @@
-import React, {useState} from 'react';
-import {View, StyleSheet, TextInput, Switch} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, StyleSheet, TextInput, PermissionsAndroid} from 'react-native';
+import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Text} from 'react-native-elements';
-import {Button} from 'react-native-elements';
-import LinearGradient from 'react-native-linear-gradient';
 import {useTheme} from '@react-navigation/native';
 import testVariables from '../appium_automation_testing/test_variables';
-import json_data from './history.json';
+import LinearGradient from 'react-native-linear-gradient';
+
+import GetLocation from 'react-native-get-location';
+import {FlatList} from 'react-native-gesture-handler';
+import {TextPropTypes} from 'react-native';
+
+const riverURL = 'http://cccmi-aquality.tk/aquality_server/rivers/';
 
 const SearchRiverScreen = ({navigation}) => {
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-  const [searchString, setSearchString] = useState(null);
-  const [data, setData] = useState([]);
-  let riverNameList = [];
-  let historyData = {};
-  const [filterType, setFilterType] = useState('All');
+  const toggleSwitch = () => {
+    !isEnabled && getOneTimeLocation();
+    setIsEnabled(previousState => !previousState);
+  };
+  const [locationStatus, setLocationStatus] = useState(undefined);
+  const [searchInput, setSearchInput] = useState(undefined);
+  const [textInput, setTextInput] = useState('');
+  const [location, setLocation] = useState({
+    latitude: undefined,
+    longitude: undefined,
+  });
 
-  const handleSearch = () => {
-    console.log('search button pressed');
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    //get Location Permission, get location and set location
+    if (isEnabled && locationStatus === undefined) {
+      requestLocationPermission();
+      setSearchInput(searchInput);
+    }
+  });
+
+  /**
+   * @function requestLocationPermission
+   * @description request location permission
+   * (location should be on in android settings)
+   */
+  const requestLocationPermission = async () => {
+    console.log('requestLocationPermission');
+    if (Platform.OS === 'ios') {
+      getOneTimeLocation();
+      setSearchInput(searchInput);
+    } else {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+          {
+            title: 'Location Access Required',
+            message: 'This App needs to Access your location',
+          },
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          //To Check, If Permission is granted
+          getOneTimeLocation();
+        } else {
+          setLocationStatus('Permission Denied');
+        }
+      } catch (err) {
+        console.warn('Error: ' + err);
+      }
+    }
+  };
+
+  /**
+   * @function getOneTimeLocation
+   * @description get current location once
+   *
+   */
+  const getOneTimeLocation = () => {
+    console.log('1');
+    setLocationStatus('locationStatus');
+
+    GetLocation.getCurrentPosition({
+      enableHighAccuracy: true,
+      timeout: 15000,
+    })
+      .then(position => {
+        setLocationStatus('position');
+        //getting the Longitude from the location json
+        const currentLongitude = JSON.stringify(position.longitude);
+
+        //getting the Latitude from the location json
+        const currentLatitude = JSON.stringify(position.latitude);
+
+        //Setting Longitude state
+        setLocation({latitude: currentLatitude, longitude: currentLongitude});
+        setSearchInput(currentLatitude + ',' + currentLongitude);
+      })
+      .catch(error => {
+        setLocationStatus({locationStatus: error.message});
+      });
   };
 
   const renderResults = () => {
     let type = [];
-    // type.push(<Text>results</Text>);
 
-    if (filterType === 'All' && historyData.length > 0) {
-      historyData.forEach(el => {
-        type.push(
-          <Button
-            title={el.river_name.toString()}
-            onPress={() => selectResult(el.river_id)}
-            style={styles.resultButton}
-          />,
-        );
-      });
-    } else if (filterType !== 'All') {
+    if (data.length > 0) {
+      type.push(<Text style={{fontSize: 20}}>Results:</Text>);
       data.forEach(el => {
         type.push(
           <Button
             title={el.river_name.toString()}
-            onPress={() => selectResult(el.river_id)}
+            onPress={() =>
+              navigation.navigate('SearchRiverScreen2', {data: el})
+            }
+            ViewComponent={LinearGradient} // Don't forget this!
+            linearGradientProps={{
+              colors: ['#4c4cff', '#6666ff'],
+              start: {x: 0, y: 0},
+              end: {x: 0, y: 1.5},
+            }}
+            buttonStyle={{margin: 5, padding: 20}}
           />,
         );
       });
@@ -48,54 +124,27 @@ const SearchRiverScreen = ({navigation}) => {
     return type;
   };
 
-  const setValues = () => {
-    historyData.forEach(ele => {
-      riverNameList.push(ele.river_name);
-      dateList.push(ele.newDate);
-    });
-  };
-
-  /**
-   * @function filterDate
-   * @description filter data by date or river names
-   * @param {String} filter date or river_name
-   * @param {String} value date value or river name list
-   */
-  const filterDate = (filter, value) => {
-    console.log('filter: ' + filter + ': ' + value);
-
-    if (filter === 'riverName') {
-      let searchedRivers = [];
-      for (const val of value) {
-        searchedRivers.push(
-          historyData.filter(item => item.river_name === val)[0],
-        );
-      }
-      setFilterType('river_name');
-      setData(searchedRivers);
+  const searchRiver = () => {
+    let body = '';
+    if (isEnabled) {
+      body =
+        '?latitude=' + location.latitude + '&longitude=' + location.longitude;
+    } else {
+      body = '?location=' + textInput;
     }
+    console.log(riverURL + body);
+    fetch(riverURL + body)
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        setData(json);
+      })
+      .catch(error => alert(error));
   };
 
   /**
-   * @function getInput
-   * @param {String} text
-   * @description get input text value
+   *Styles
    */
-  const getInput = text => {
-    setRiver(text);
-  };
-
-  const selectMatchItem = keyWord => {
-    let resArr = [];
-    riverNameList.filter(item => {
-      if (item.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0) {
-        resArr.push(item);
-      }
-    });
-    filterDate('riverName', resArr);
-  };
-  const [river, setRiver] = useState('');
-
   const {colors} = useTheme();
   const styles = StyleSheet.create({
     container: {
@@ -153,7 +202,7 @@ const SearchRiverScreen = ({navigation}) => {
           accessibilityLabel={testVariables.searchRiverLocateIcon}
           testID={testVariables.searchRiverLocateIcon}
           style={styles.searchIcon}
-          name={isEnabled ? 'crosshairs' : 'crosshairs-gps'}
+          name={isEnabled ? 'crosshairs-gps' : 'crosshairs'}
           size={20}
           color="#000"
           backgroundColor="transparent"
@@ -166,10 +215,10 @@ const SearchRiverScreen = ({navigation}) => {
           accessibilityLabel={testVariables.searchRiverLocateInput}
           testID={testVariables.searchRiverLocateInput}
           style={styles.input}
-          placeholder="River name or Coordinates"
+          placeholder="Location name or Coordinates"
           underlineColorAndroid="transparent"
-          // value={isEnabled ? null : '53.3541159578443, -6.355573949174074'}
-          onChangeText={text => getInput(text)}
+          value={isEnabled ? searchInput : textInput}
+          onChangeText={text => setTextInput(text)}
         />
         <Icon.Button
           accessibilityLabel={testVariables.searchRiverSearchIcon}
@@ -179,45 +228,9 @@ const SearchRiverScreen = ({navigation}) => {
           backgroundColor="transparent"
           size={20}
           color="#000"
-          onPress={() => selectMatchItem(river)}
+          onPress={() => searchRiver()}
         />
       </View>
-
-      {/* <Text h4 h4Style={{color: colors.text}}>
-        Results found:
-      </Text>
-      <Button
-        accessibilityLabel={testVariables.flatlistItem}
-        testID={testVariables.flatlistItem}
-        ViewComponent={LinearGradient} // Don't forget this!
-        linearGradientProps={{
-          colors: ['#264653', '#2a9d8f'],
-          start: {x: 0, y: 0},
-          end: {x: 1, y: 0},
-        }}
-        title="Stream Liffey"
-        onPress={() => navigation.navigate('SearchRiverScreen2')}
-        titleStyle={styles.buttonText}
-        containerStyle={styles.buttonContainer}
-      />
-      <Button
-        accessibilityLabel={testVariables.flatlistItem}
-        testID={testVariables.flatlistItem}
-        ViewComponent={LinearGradient} // Don't forget this!
-        linearGradientProps={{
-          colors: ['#264653', '#2a9d8f'],
-          start: {x: 0, y: 0},
-          end: {x: 1, y: 0},
-        }}
-        title="River Bryan"
-        titleStyle={styles.buttonText}
-        containerStyle={styles.buttonContainer}
-      /> */}
-
-      {/* <Button
-        title="fetch api"
-        onPress={() => navigation.navigate('fetchApi')}
-      /> */}
       {renderResults()}
     </View>
   );
