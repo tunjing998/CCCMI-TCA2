@@ -40,6 +40,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import HomeScreen from './screens/HomeScreen';
 
 import testVariables from './appium_automation_testing/test_variables';
+import SampleHistoryScreen from './screens/SampleHistoryScreen';
+import HistoryDetail from './screens/HistoryDetail';
 
 const Drawer = createDrawerNavigator();
 
@@ -235,6 +237,11 @@ const App = () => {
               <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
               <Drawer.Screen name="ArduinoScreen" component={ArduinoScreen} />
               <Drawer.Screen name="ArduinoScreen2" component={ArduinoScreen2} />
+              <Drawer.Screen
+                name="SampleHistoryScreen"
+                component={SampleHistoryScreen}
+              />
+              <Drawer.Screen name="HistoryDetail" component={HistoryDetail} />
 
               {/* TAKE  NEW  SAMPLE */}
               <Drawer.Screen

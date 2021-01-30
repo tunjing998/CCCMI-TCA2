@@ -13,7 +13,6 @@ import ArduinoScreen2 from './ArduinoScreen2';
 const InsectStack = createStackNavigator();
 import ChooseInsectScreen from './ChooseInsectScreen';
 import selectInsect1 from './selectInsect1';
-import selectInsect2 from './selectInsect2';
 
 import testVariables from '../appium_automation_testing/test_variables';
 
@@ -215,21 +214,6 @@ const InsectStackScreen = ({navigation}) => (
     <InsectStack.Screen
       name="selectInsect1"
       component={selectInsect1}
-      options={{
-        headerLeft: () => (
-          <Icon.Button
-            name="ios-menu"
-            size={25}
-            backgroundColor="#e76f51"
-            onPress={() => navigation.openDrawer()}
-          />
-        ),
-        title: 'Select Insects Group',
-      }}
-    />
-    <InsectStack.Screen
-      name="selectInsect2"
-      component={selectInsect2}
       options={{
         headerLeft: () => (
           <Icon.Button

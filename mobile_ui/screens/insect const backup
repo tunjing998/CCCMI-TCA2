@@ -1,10 +1,4 @@
-import React, {useState} from 'react';
-import {View, StyleSheet, Text, Image, Button} from 'react-native';
-import {ScrollView, TextInput} from 'react-native-gesture-handler';
-import {Input} from 'react-native-elements';
-
-const selectInsect1 = ({navigation}) => {
-  const [insects, setInsects] = useState([
+const [insects, setInsects] = useState([
     {
       id: 1,
       name: 'Caenis',
@@ -49,15 +43,13 @@ const selectInsect1 = ({navigation}) => {
     insects[index].amount = amount;
     console.log(insects[index]);
     console.log(insects);
-    // let newInsects = [...insects];
-    // newInsects[index] = {...newInsects[index], amount: amount};
-    // setInsects({newInsects});
   };
 
   const handleSubmit = () => {
     console.log(insects);
   };
-  // const [amount, setAmount] = useState('');
+
+  const [amount, setAmount] = useState('');
   const renderInsects = () => {
     return insects.map((insect, index) => {
       let amount = 0;
@@ -86,15 +78,7 @@ const selectInsect1 = ({navigation}) => {
     });
   };
 
-  return (
-    <ScrollView>
-      {renderInsects()}
-      <Button title="Back" />
-    </ScrollView>
-  );
-};
-
-const styles = StyleSheet.create({
+  const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
@@ -123,5 +107,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-export default selectInsect1;
