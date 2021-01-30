@@ -2372,7 +2372,7 @@ ansi-escapes@^4.2.1:
   resolved "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-4.3.1.tgz"
   integrity sha512-JWF7ocqNrp8u9oqpgV+wH5ftbt+cfvv+PTjOvKLT3AdYly/LmORARfEVT1iyjwN+4MqE5UmVKoAdIBqeoCHgLA==
   dependencies:
-    type-fest "^0.11.0"
+    type-fest "^0.8.1"
 
 ansi-fragments@^0.2.1:
   version "0.2.1"
@@ -5887,17 +5887,17 @@ inquirer@^7.0.0:
   integrity sha512-JG3eIAj5V9CwcGvuOmoo6LB9kbAYT8HXffUl6memuszlwDC/qvFAJw49XJ5NROSFNPxp3iQg1GqkFhaY/CR0IA==
   dependencies:
     ansi-escapes "^4.2.1"
-    chalk "^4.1.0"
+    chalk "^2.4.2"
     cli-cursor "^3.1.0"
-    cli-width "^3.0.0"
+    cli-width "^2.0.0"
     external-editor "^3.0.3"
     figures "^3.0.0"
-    lodash "^4.17.19"
+    lodash "^4.17.15"
     mute-stream "0.0.8"
-    run-async "^2.4.0"
-    rxjs "^6.6.0"
+    run-async "^2.2.0"
+    rxjs "^6.5.3"
     string-width "^4.1.0"
-    strip-ansi "^6.0.0"
+    strip-ansi "^5.1.0"
     through "^2.3.6"
 
 interpret@^1.0.0:
@@ -9054,7 +9054,7 @@ request-promise-core@1.1.4:
   resolved "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.4.tgz"
   integrity sha512-TTbAfBBRdWD7aNNOoVOBH4pN/KigV6LyapYNNlAPA8JwbovRti1E88m3sYAwsLi5ryhPKsE9APwnjFTgdUjTpw==
   dependencies:
-    lodash "^4.17.19"
+    lodash "^4.17.15"
 
 request-promise-native@^1.0.5:
   version "1.0.8"
