@@ -9,7 +9,7 @@ admin.site.register(DataHistoryImageImage)
 admin.site.register(River)
 admin.site.register(InsectGroup)
 admin.site.register(SampleRecord)
-admin.site.register(SampleRecordInsectDetails)
+admin.site.register(SampleRecordInsectDetail)
 
 @admin.register(Insect)
 class InsectAdmin(admin.ModelAdmin):
