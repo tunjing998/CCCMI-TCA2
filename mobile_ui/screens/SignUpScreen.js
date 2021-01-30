@@ -36,43 +36,106 @@ const SignUpScreen = ({ navigation }) => {
         isPassword: true,
         confirm_secureTextEntry: true,
         isValidInput: true,
+        notExistUser: true,
+        notExistEmail: true,
+        greenTickUser: false,
+        greenTickEmail: false,
+
     });
 
-    const textInputChange = (val) => {
-        if (val.length !== 0 && val.trim().length >= 4) {
-            setData({
-                ...data,
-                username: val,
-                check_textInputChange: true,
-                isValidUser: true,
-                isValidPassword: true,
-            });
-        } else {
-            setData({
-                ...data,
-                username: val,
-                check_textInputChange: false,
-                isValidUser: false,
-            });
+    const checkUserNameExist = async (val) => {
+        try {
+            var bodyFormData = new FormData();
+            bodyFormData.append('username', val);
+
+            let response = await axios({
+                method: 'post',
+                url: 'http://cccmi-aquality.tk/aquality_server/useraccount/checkname',
+                data: bodyFormData,
+                headers: { 'Content-Type': 'multipart/form-data' }
+            })
+
+            if (response && response.data && response.data.status) {
+                if (val.length !== 0 && val.trim().length >= 4) {
+
+                    if (response.data.status === "Username Not Exist") {
+                        setData({
+                            ...data,
+                            username: val,
+                            notExistUser: true,
+                            greenTickUser: true,
+                            isValidUser: true,
+                        });
+                    } else {
+                        setData({
+                            ...data,
+                            notExistUser: false,
+                            greenTickUser: false,
+                            isValidUser: true,
+                        });
+                    }
+                } else {
+                    setData({
+                        ...data,
+                        isValidUser: false,
+                        greenTickUser: false,
+                        notExistUser: true,
+                    });
+                }
+
+            }
+
+        } catch (e) {
+            console.error(e)
         }
     }
 
-    const handleEmailChange = (val) => {
-        const validEmail = /(?!.*\.{2})^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([\t]*\r\n)?[\t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([\t]*\r\n)?[\t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
-        if (validEmail.test(val.trim())) {
-            setData({
-                ...data,
-                email: val,
-                check_emailInputChange: true,
-                isValidEmail: true,
-            });
-        } else {
-            setData({
-                ...data,
-                email: val,
-                check_emailInputChange: false,
-                isValidEmail: false,
-            });
+    const checkUserEmailExist = async (val) => {
+        try {
+            var bodyFormData = new FormData();
+            bodyFormData.append('email', val);
+
+            let response = await axios({
+                method: 'post',
+                url: 'http://cccmi-aquality.tk/aquality_server/useraccount/checkemail',
+                data: bodyFormData,
+                headers: { 'Content-Type': 'multipart/form-data' }
+            })
+
+            const validEmail = /(?!.*\.{2})^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([\t]*\r\n)?[\t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([\t]*\r\n)?[\t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+            if (validEmail.test(val.trim())) {
+
+                if (response && response.data && response.data.status) {
+
+                    if (response.data.status === "Email Not Exist") {
+                        setData({
+                            ...data,
+                            email: val,
+                            greenTickEmail: true,
+                            isValidEmail: true,
+                            notExistEmail: true,
+                        });
+                    } else {
+                        setData({
+                            ...data,
+                            greenTickEmail: false,
+                            isValidEmail: true,
+                            notExistEmail: false,
+                        });
+                    }
+                }
+
+            } else {
+                setData({
+                    ...data,
+                    greenTickEmail: false,
+                    isValidEmail: false,
+                    notExistEmail: true,
+                });
+            }
+
+        } catch (e) {
+            console.error(e)
         }
     }
 
@@ -123,61 +186,6 @@ const SignUpScreen = ({ navigation }) => {
         });
     }
 
-    const checkUserNameExist = async (val) => {
-        try {
-            var bodyFormData = new FormData();
-            bodyFormData.append('username', val);
-
-            let response = await axios({
-                method: 'post',
-                url: 'http://cccmi-aquality.tk/aquality_server/useraccount/checkname',
-                data: bodyFormData,
-                headers: { 'Content-Type': 'multipart/form-data' }
-            })
-
-            if (response && response.data && response.data.status) {
-                if (response.data.status == USERNAME_NOT_EXITS) {
-                    setData({
-                        ...data,
-                        isValidUser: false,
-                    });
-                }
-            }
-            console.log(response.data)
-
-        } catch (e) {
-            console.error(e)
-        }
-    }
-
-    const checkUserEmailExist = async (val) => {
-        try {
-            var bodyFormData = new FormData();
-            bodyFormData.append('email', val);
-
-            let response = await axios({
-                method: 'post',
-                url: 'http://cccmi-aquality.tk/aquality_server/useraccount/checkemail',
-                data: bodyFormData,
-                headers: { 'Content-Type': 'multipart/form-data' }
-            })
-
-            if (response && response.data && response.data.status) {
-                if (response.data.status == EMAIL_NOT_EXITS) {
-                    setData({
-                        ...data,
-                        isValidEmail: false,
-                    });
-                }
-            }
-            console.log(response.data)
-
-        } catch (e) {
-            console.error(e)
-        }
-    }
-
-
 
     const handleSignUp = async () => {
         if (data.username.length == 0 || data.email.length == 0 || data.password.length == 0 || data.confirm_password.length == 0) {
@@ -186,12 +194,12 @@ const SignUpScreen = ({ navigation }) => {
                 isValidInput: false,
             });
         } else {
-            if (data.isValidEmail && data.isValidUser && data.isValidPassword && data.isPassword) {
+            if (data.isValidEmail && data.greenTickUser && data.isValidPassword && data.isPassword) {
                 try {
                     var bodyFormData = new FormData();
-                    bodyFormData.append('username', val);
-                    bodyFormData.append('email', val);
-                    bodyFormData.append('password', val);
+                    bodyFormData.append('username', data.username);
+                    bodyFormData.append('email', data.email);
+                    bodyFormData.append('password', data.password);
 
                     let response = await axios({
                         method: 'post',
@@ -201,8 +209,8 @@ const SignUpScreen = ({ navigation }) => {
                     })
 
                     if (response && response.data && response.data.status) {
-                        if (response.data.status == SUCCESS) {
-                            this.props.navigation.navigate('SignInScreen')
+                        if (response.data.status === "Register Sucess") {
+                            navigation.navigate('SignInScreen')
                         }
                     }
 
@@ -238,11 +246,10 @@ const SignUpScreen = ({ navigation }) => {
                             style={styles.textInput}
                             autoCapitalize="none"
                             onEndEditing={(val) => {
-                                textInputChange(val.nativeEvent.text);
                                 checkUserNameExist(val.nativeEvent.text);
                             }}
                         />
-                        {data.check_textInputChange ?
+                        {data.greenTickUser ?
                             <Animatable.View
                                 animation="bounceIn"
                             >
@@ -259,7 +266,11 @@ const SignUpScreen = ({ navigation }) => {
                             <Text style={styles.errorMsg}>Username must be 4 characters long.</Text>
                         </Animatable.View>
                     }
-
+                    {data.notExistUser ? null :
+                        <Animatable.View animation="fadeInLeft" duration={500}>
+                            <Text style={styles.errorMsg}>Username taken.</Text>
+                        </Animatable.View>
+                    }
                     <Text style={[styles.text_footer, {
                         marginTop: 35
                     }]}>Email Address</Text>
@@ -274,11 +285,10 @@ const SignUpScreen = ({ navigation }) => {
                             style={styles.textInput}
                             autoCapitalize="none"
                             onEndEditing={(val) => {
-                                handleEmailChange(val.nativeEvent.text);
                                 checkUserEmailExist(val.nativeEvent.text);
                             }}
                         />
-                        {data.check_emailInputChange ?
+                        {data.greenTickEmail ?
                             <Animatable.View
                                 animation="bounceIn"
                             >
@@ -293,6 +303,11 @@ const SignUpScreen = ({ navigation }) => {
                     {data.isValidEmail ? null :
                         <Animatable.View animation="fadeInLeft" duration={500}>
                             <Text style={styles.errorMsg}>Please enter a valid email address.</Text>
+                        </Animatable.View>
+                    }
+                    {data.notExistEmail ? null :
+                        <Animatable.View animation="fadeInLeft" duration={500}>
+                            <Text style={styles.errorMsg}>Email taken.</Text>
                         </Animatable.View>
                     }
 
@@ -310,12 +325,13 @@ const SignUpScreen = ({ navigation }) => {
                             secureTextEntry={data.secureTextEntry ? true : false}
                             style={styles.textInput}
                             autoCapitalize="none"
-                            onChangeText={(val) => {
+                            onEndEditing={(val) => {
                                 setData({
                                     ...data,
-                                    password: val
+                                    password: val.nativeEvent.text
                                 });
-                                handlePasswordChange(val);
+                                handlePasswordChange(val.nativeEvent.text);
+                                console.log(val.nativeEvent.text);
                             }}
                         />
 
@@ -487,7 +503,8 @@ const styles = StyleSheet.create({
     },
     color_textPrivate: {
         color: 'grey'
-    }, errorMsg: {
+    },
+    errorMsg: {
         color: '#FF0000',
         fontSize: 14,
     }

@@ -6,30 +6,32 @@
  * @flow
  */
 
-import React, {useEffect} from 'react';
-import {View, ActivityIndicator} from 'react-native';
+import React, { useEffect } from 'react';
+import { View, ActivityIndicator } from 'react-native';
 import {
   NavigationContainer,
   DefaultTheme as NavigationDefaultTheme,
   DarkTheme as NavigationDarkTheme,
 } from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import {
   Provider as PaperProvider,
   DefaultTheme as PaperDefaultTheme,
   DarkTheme as PaperDarkTheme,
 } from 'react-native-paper';
-import {createStackNavigator} from '@react-navigation/stack';
-import {DrawerContent} from './screens/DrawerContent';
+import { createStackNavigator } from '@react-navigation/stack';
+import { DrawerContent } from './screens/DrawerContent';
 import Icon from 'react-native-vector-icons/Ionicons';
 import MainTabScreen from './screens/MainTabScreen';
 import SupportScreen from './screens/SupportScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import ArduinoScreen from './screens/ArduinoScreen';
+import ArduinoScreen2 from './screens/ArduinoScreen2';
 import SearchRiverScreen from './screens/SearchRiverScreen';
 import SearchRiverScreen2 from './screens/SearchRiverScreen2';
 import fetchApi from './screens/fetchApi';
-import {AuthContext} from './components/context';
+import { AuthContext } from './components/context';
 
 import RootStackScreen from './screens/RootStackScreen';
 
@@ -46,8 +48,7 @@ const App = () => {
 
   const initialLoginState = {
     isLoading: true,
-    userName: null,
-    userToken: null,
+    username: null,
   };
 
   const CustomDefaultTheme = {
@@ -79,28 +80,25 @@ const App = () => {
       case 'RETRIEVE_TOKEN':
         return {
           ...prevState,
-          userToken: action.token,
+          username: action.username,
           isLoading: false,
         };
       case 'LOGIN':
         return {
           ...prevState,
-          userName: action.id,
-          userToken: action.token,
+          username: action.username,
           isLoading: false,
         };
       case 'LOGOUT':
         return {
           ...prevState,
-          userName: null,
-          userToken: null,
+          username: null,
           isLoading: false,
         };
       case 'REGISTER':
         return {
           ...prevState,
-          userName: action.id,
-          userToken: action.token,
+          username: action.id,
           isLoading: false,
         };
     }
@@ -113,29 +111,27 @@ const App = () => {
 
   const authContext = React.useMemo(
     () => ({
-      signIn: async foundUser => {
+      signIn: async userName => {
         // setUserToken('fgkj');
         // setIsLoading(false);
-        const userToken = String(foundUser[0].userToken);
-        const userName = foundUser[0].username;
-
         try {
-          await AsyncStorage.setItem('userToken', userToken);
+          await AsyncStorage.setItem('username', userName);
+          dispatch({ type: 'LOGIN', userName: userName });
+
         } catch (e) {
           console.log(e);
+
         }
-        // console.log('user token: ', userToken);
-        dispatch({type: 'LOGIN', id: userName, token: userToken});
       },
       signOut: async () => {
         // setUserToken(null);
         // setIsLoading(false);
         try {
-          await AsyncStorage.removeItem('userToken');
+          await AsyncStorage.removeItem('username');
         } catch (e) {
           console.log(e);
         }
-        dispatch({type: 'LOGOUT'});
+        dispatch({ type: 'LOGOUT' });
       },
       signUp: () => {
         // setUserToken('fgkj');
@@ -149,29 +145,37 @@ const App = () => {
   );
 
   useEffect(() => {
-    setTimeout(async () => {
-      // setIsLoading(false);
-      let userToken;
-      userToken = null;
+    const getData = async () => {
+      let username;
+      username = null;
       try {
-        userToken = await AsyncStorage.getItem('userToken');
+        username = await AsyncStorage.getItem('username');
+        if (username) {
+          authContext.signIn(username);
+          //TODO: call the endpoint to get user data
+        }else{
+          dispatch({ type: 'LOGOUT' });
+        }
+        // setIsLoading(false);
+
       } catch (e) {
         console.log(e);
+        // setIsLoading(false);
+        dispatch({ type: 'LOGOUT' });
       }
-      // console.log('user token: ', userToken);
-      dispatch({type: 'RETRIEVE_TOKEN', token: userToken});
-    }, 1000);
+    }
+    getData();
   }, []);
 
   if (loginState.isLoading) {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator size="large" />
       </View>
     );
   }
   const HomeStack = createStackNavigator();
-  const HomeStackScreen = ({navigation}) => (
+  const HomeStackScreen = ({ navigation }) => (
     <HomeStack.Navigator
       screenOptions={{
         headerStyle: {
@@ -205,12 +209,14 @@ const App = () => {
     <PaperProvider theme={theme}>
       <AuthContext.Provider value={authContext}>
         <NavigationContainer theme={theme}>
-          {loginState.userToken !== null ? (
+          {loginState.username !== null ? (
             <Drawer.Navigator
               drawerContent={props => <DrawerContent {...props} />}>
               <Drawer.Screen name="HomeScreen" component={HomeStackScreen} />
               <Drawer.Screen name="SupportScreen" component={SupportScreen} />
               <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
+              <Drawer.Screen name="ArduinoScreen" component={ArduinoScreen} />
+              <Drawer.Screen name="ArduinoScreen2" component={ArduinoScreen2} />
 
               {/* TAKE  NEW  SAMPLE */}
               <Drawer.Screen
@@ -226,8 +232,8 @@ const App = () => {
               {/* END  OF  SAMPLE  SCREEN */}
             </Drawer.Navigator>
           ) : (
-            <RootStackScreen />
-          )}
+              <RootStackScreen />
+            )}
         </NavigationContainer>
       </AuthContext.Provider>
     </PaperProvider>

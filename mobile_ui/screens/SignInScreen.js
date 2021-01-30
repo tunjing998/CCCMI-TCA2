@@ -7,18 +7,15 @@ import {
     Platform,
     StyleSheet,
     StatusBar,
-    Alert
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-
 import { useTheme } from 'react-native-paper';
-
 import { AuthContext } from '../components/context';
-
-import Users from '../model/users';
+import axios from 'axios';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const SignInScreen = ({ navigation }) => {
 
@@ -58,30 +55,45 @@ const SignInScreen = ({ navigation }) => {
         });
     }
 
-    const loginHandle = (userName, password) => {
-
-        const foundUser = Users.filter(item => {
-            return userName == item.username && password == item.password;
-        });
-
+    const loginHandle = async (userName, password) => {
         if (data.username.length == 0 || data.password.length == 0) {
             setData({
                 ...data,
                 isValidInput: false,
                 isValidCredential: true,
             });
-            console.log("hello");
             return;
-        }  else if (foundUser.length == 0) {
-            setData({
-                ...data,
-                isValidCredential: false,
-                isValidInput: true,
-            });
-            console.log("byebye");
-            return;
+        } else {
+            try {
+                var bodyFormData = new FormData();
+                bodyFormData.append('username', userName);
+                bodyFormData.append('password', password);
+
+                let response = await axios({
+                    method: 'post',
+                    url: 'http://aquality-server.eba-rxqnbumy.eu-west-1.elasticbeanstalk.com/aquality_server/useraccount/loginauth',
+                    data: bodyFormData,
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                })
+
+                if (response && response.data && response.data.status) {
+                    console.log(JSON.stringify(response.data))
+                    if (response.data.status === "Login Success") {
+                        await AsyncStorage.setItem('username',response.data.user_username );
+                        signIn(response.data.user_username);
+                    } else {
+                        setData({
+                            ...data,
+                            isValidCredential: false,
+                            isValidInput: true,
+                        });
+                    }
+                }
+
+            } catch (e) {
+                console.error(e)
+            }
         }
-        signIn(foundUser);
     }
 
     return (

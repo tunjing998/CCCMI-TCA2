@@ -102,7 +102,7 @@ const ArduinoStackScreen = ({navigation}) => (
       },
     }}>
     <ArduinoStack.Screen
-      name="Arduino"
+      name="ArduinoScreen1"
       component={ArduinoScreen}
       options={{
         headerLeft: () => (
@@ -121,10 +121,10 @@ const ArduinoStackScreen = ({navigation}) => (
       options={{
         headerLeft: () => (
           <Icon.Button
-            name="ios-menu"
+            name="arrow-back"
             size={25}
             backgroundColor="#694fad"
-            onPress={() => navigation.openDrawer()}
+            onPress={() => navigation.navigate("ArduinoScreen1")}
           />
         ),
       }}
