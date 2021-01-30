@@ -183,7 +183,7 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const selectResult = riverId => {
     let select = historyData.filter(item => item.river_id === riverId);
-    console.log(select);
+    navigation.navigate('HistoryDetail', {data: select});
   };
 
   /**

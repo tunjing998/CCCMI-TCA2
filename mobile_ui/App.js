@@ -39,6 +39,7 @@ import HomeScreen from './screens/HomeScreen';
 
 import testVariables from './appium_automation_testing/test_variables';
 import SampleHistoryScreen from './screens/SampleHistoryScreen';
+import HistoryDetail from './screens/HistoryDetail';
 
 const Drawer = createDrawerNavigator();
 
@@ -234,6 +235,7 @@ const App = () => {
                 name="SampleHistoryScreen"
                 component={SampleHistoryScreen}
               />
+              <Drawer.Screen name="HistoryDetail" component={HistoryDetail} />
 
               {/* TAKE  NEW  SAMPLE */}
               <Drawer.Screen
