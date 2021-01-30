@@ -35,10 +35,18 @@ const InsectScreen = ({navigation}) => {
         onPress={() => navigation.navigate('selectInsect1')}
         accessibilityLabel={testVariables.insectScreenSelectInsectButton}
         testID={testVariables.insectScreenSelectInsectButton}
-        buttonStyle={{paddingHorizontal: 20}}
-        titleStyle={{fontSize: 20}}
-        type="outline"
-        raised
+        ViewComponent={LinearGradient}
+        linearGradientProps={{
+          colors: ['#4c4cff', '#6666ff'],
+          start: {x: 0, y: 0},
+          end: {x: 0, y: 1.5},
+        }}
+        buttonStyle={{
+          margin: 5,
+          padding: 20,
+          borderRadius: 20,
+          width: 300,
+        }}
       />
       <Text />
       <Button
@@ -47,10 +55,18 @@ const InsectScreen = ({navigation}) => {
         testID={testVariables.insectScreenAnalyzeInsectButton}
         title="Analyze Insect"
         onPress={() => alert('analyze insect')}
-        buttonStyle={{paddingHorizontal: 20}}
-        titleStyle={{fontSize: 20}}
-        type="outline"
-        raised
+        ViewComponent={LinearGradient}
+        linearGradientProps={{
+          colors: ['#4c4cff', '#6666ff'],
+          start: {x: 0, y: 0},
+          end: {x: 0, y: 1.5},
+        }}
+        buttonStyle={{
+          margin: 5,
+          padding: 20,
+          borderRadius: 20,
+          width: 300,
+        }}
       />
     </View>
   );

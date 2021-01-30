@@ -45,10 +45,10 @@ const HomeScreen = ({navigation}) => {
         containerStyle={styles.buttonContainer}
         onPress={() => navigation.navigate('SampleHistoryScreen')}
       />
-      <Button
+      {/* <Button
         title="upload image test"
         onPress={() => navigation.navigate('uploadImage')}
-      />
+      /> */}
     </View>
   );
 };

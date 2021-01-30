@@ -116,7 +116,12 @@ const SearchRiverScreen = ({navigation}) => {
               start: {x: 0, y: 0},
               end: {x: 0, y: 1.5},
             }}
-            buttonStyle={{margin: 5, padding: 20}}
+            buttonStyle={{
+              margin: 5,
+              padding: 20,
+              borderRadius: 20,
+              width: 300,
+            }}
           />,
         );
       });
