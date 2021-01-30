@@ -95,7 +95,6 @@ const SignInScreen = ({ navigation }) => {
             }
         }
     }
-    signIn(foundUser);
 
     return (
         <View style={styles.container}>

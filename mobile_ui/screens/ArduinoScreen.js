@@ -3,28 +3,21 @@ import { View, StyleSheet, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Text } from 'react-native-elements';
 import { useTheme } from '@react-navigation/native';
-import testVariables from '../appium_automation_testing/test_variables';
 import axios from 'axios';
 import * as Animatable from 'react-native-animatable';
-
 const ArduinoScreen = ({ navigation }) => {
-
   const [data, setData] = React.useState({
     arduinoId: '',
     notValidDeviceId: true,
     notEmptyDeviceId: true,
   });
-
   const textInputChange = (val) => {
     setData({
       ...data,
       arduinoId: val,
     });
   }
-
   const { colors } = useTheme();
-
-
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -59,7 +52,6 @@ const ArduinoScreen = ({ navigation }) => {
       fontSize: 14,
     },
   });
-
   const checkDeviceId = async () => {
     if (data.arduinoId.length == 0) {
       setData({
@@ -73,8 +65,7 @@ const ArduinoScreen = ({ navigation }) => {
             arduino_id: data.arduinoId
           }
         })
-
-        if (response && response.data) {
+        if (response && response.data && response.data.length == 1) {
           if (response.data[0].arduino_id == data.arduinoId) {
             setData({
               ...data,
@@ -82,70 +73,60 @@ const ArduinoScreen = ({ navigation }) => {
               notEmptyDeviceId: true,
             });
             navigation.navigate('ArduinoScreen2', response.data[0])
-          } else {
-            setData({
-              ...data,
-              notValidDeviceId: false,
-              notEmptyDeviceId: true,
-            });
           }
+        } else {
+          setData({
+            ...data,
+            notValidDeviceId: false,
+            notEmptyDeviceId: true,
+          });
         }
-
       } catch (e) {
         console.error(e)
       }
     }
   }
 
+
   return (
-    <View
-      style={styles.container}
-      accessibilityLabel={testVariables.arduinoScreenContainer}
-      testID={testVariables.arduinoScreenContainer}>
+    <View style={styles.container}>
       <Text h4 h4Style={styles.title}>
         Connect to a device.
       </Text>
       <View style={styles.searchSection}>
         <TextInput placeholder="Insert Device ID here."
-        accessibilityLabel={testVariables.arduinoScreenIDTextInput}
-          testID={testVariables.arduinoScreenIDTextInput}
           style={styles.input}
           onChangeText={(val) => {
             textInputChange(val)
           }}
-      />
-      <Icon.Button
-        accessibilityLabel={testVariables.arduinoScreenSearchIconButton}
-        testID={testVariables.arduinoScreenSearchIconButton}
-        style={styles.searchIcon}
-        name="magnify"
-        backgroundColor="transparent"
-        size={20}
-        color="#000"
-        onPress={() => {
-          checkDeviceId()
-        }}
-      />
+        />
+        <Icon.Button
+          style={styles.searchIcon}
+          name="magnify"
+          backgroundColor="transparent"
+          size={20}
+          color="#000"
+          onPress={() => {
+            checkDeviceId()
+          }}
+        />
+      </View>
+      {data.notEmptyDeviceId ? null :
+        <Animatable.View animation="fadeInLeft" duration={500}>
+          <Text style={styles.errorMsg}>
+            Device ID field connot be empty.
+          </Text>
+        </Animatable.View>
+      }
+      {data.notValidDeviceId ? null :
+        <Animatable.View animation="fadeInLeft" duration={500}>
+          <Text style={styles.errorMsg}>
+            Device with device ID not found.
+          </Text>
+        </Animatable.View>
+      }
+      {/* <Button title="Turn On Bluetooth" type="outline" /> */}
     </View>
-      {
-    data.notEmptyDeviceId ? null :
-    <Animatable.View animation="fadeInLeft" duration={500}>
-      <Text style={styles.errorMsg}>
-        Device ID field connot be empty.
-          </Text>
-    </Animatable.View>
-  }
-  {
-    data.notValidDeviceId ? null :
-    <Animatable.View animation="fadeInLeft" duration={500}>
-      <Text style={styles.errorMsg}>
-        Device with device ID not found.
-          </Text>
-    </Animatable.View>
-  }
-  {/* <Button title="Turn On Bluetooth" type="outline" /> */ }
-    </View >
   );
 };
-
 export default ArduinoScreen;
