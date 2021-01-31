@@ -43,7 +43,6 @@ const SearchRiverScreen = ({navigation}) => {
    * (location should be on in android settings)
    */
   const requestLocationPermission = async () => {
-    console.log('requestLocationPermission');
     if (Platform.OS === 'ios') {
       getOneTimeLocation();
       setSearchInput(searchInput);
@@ -74,7 +73,6 @@ const SearchRiverScreen = ({navigation}) => {
    *
    */
   const getOneTimeLocation = () => {
-    console.log('1');
     setLocationStatus('locationStatus');
 
     GetLocation.getCurrentPosition({
@@ -137,11 +135,9 @@ const SearchRiverScreen = ({navigation}) => {
     } else {
       body = '?location=' + textInput;
     }
-    console.log(riverURL + body);
     fetch(riverURL + body)
       .then(response => response.json())
       .then(json => {
-        console.log(json);
         setData(json);
       })
       .catch(error => alert(error));

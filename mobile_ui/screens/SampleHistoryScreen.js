@@ -130,7 +130,6 @@ const SampleHistoryScreen = ({navigation}) => {
    * @param {String} value date value or river name list
    */
   const filterDate = (filter, value) => {
-    // console.log('filter: ' + filter + ': ' + value);
     if (filter === 'date') {
       setFilterType('date');
       setData(historyData.filter(item => item.newDate === value));
@@ -191,7 +190,6 @@ const SampleHistoryScreen = ({navigation}) => {
     let select = historyData.filter(
       item => item.sample_river.river_id === riverId,
     );
-    // console.log(select);
     navigation.navigate('HistoryDetail', {data: select});
   };
 
