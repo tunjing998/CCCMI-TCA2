@@ -1,0 +1,49 @@
+name: api testing with postman collection
+
+on:
+  pull_request:
+    branches:
+      - AqualityServer_Master
+  push:
+    branches:
+      - AqualityServer_Master
+
+# three job definition
+jobs:
+  API-collection-testing-job: # health check job for testing and code formatting check
+    runs-on: ubuntu-latest # os for running the job
+    steps:
+      - name: Checkout code # checking our the code at current commit that triggers the workflow
+        uses: actions/checkout@v2
+        with:
+          ref: AqualityServer_Master
+
+      # INstall Node on the runner
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      # Install the newman command line utility and also install the html extra reporter
+      - name: Install newman
+        run: |
+          npm i newman -g;
+          npm install -g newman-reporter-htmlextra
+
+      # Make directory to upload the test results
+      - name: Make Directory for results
+        run: |
+          cd Aquality2
+          mkdir -p testResults
+
+      # Run the POSTMAN collection
+      - name: Run POSTMAN collection
+        run: |
+          cd Aquality2
+          newman run "https://www.postman.com/collections/${{secrets.COLLECTIONID}}?apikey=${{secrets.POSTMANAPIKEY}}" -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+
+      - name: Output the run Details
+        uses: actions/upload-artifact@v2
+        with:
+          name: RunReports
+          path: Aquality2/testResults
