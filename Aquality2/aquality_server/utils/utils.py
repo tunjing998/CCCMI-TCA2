@@ -20,7 +20,6 @@ def count_score_by_insect(dict_of_insect):
     dict_for_insect_group_4 = extract_dict_using_keylist(dictionary, insect_in_group_4)
     dict_for_insect_group_5 = extract_dict_using_keylist(dictionary, insect_in_group_5)
 
-    print(dict_for_insect_group_5)
     num_of_type1, total1 = calculate_type_and_relative_abundance(dict_for_insect_group_1)
     num_of_type2, total2 = calculate_type_and_relative_abundance(dict_for_insect_group_2)
     num_of_type3, total3 = calculate_type_and_relative_abundance(dict_for_insect_group_3)
