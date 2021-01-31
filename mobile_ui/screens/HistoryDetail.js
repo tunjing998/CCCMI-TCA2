@@ -7,18 +7,18 @@ const HistoryDetail = ({route}) => {
       {/* <Text>{route.params.data}</Text> */}
       <FlatList
         data={route.params.data}
-        keyExtractor={item => item.river_id}
+        keyExtractor={item => item.sample_river.river_id}
         renderItem={({item}) => (
           <View>
             <Text>{item.date}</Text>
             <Text />
-            <Text>{item.river_id}</Text>
-            <Text>{item.latitude}</Text>
-            <Text>{item.longitude}</Text>
-            <Text>{item.local_authority}</Text>
+            <Text>{item.sample_river.river_id}</Text>
+            <Text>{item.sample_river.latitude}</Text>
+            <Text>{item.sample_river.longitude}</Text>
+            <Text>{item.sample_river.local_authority}</Text>
             <Text />
             <Text />
-            <Text>{item.ph}</Text>
+            <Text>{item.sample_ph}</Text>
             <Text>{item.newDate}</Text>
           </View>
         )}
