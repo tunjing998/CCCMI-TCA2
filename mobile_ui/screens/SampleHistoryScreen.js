@@ -14,7 +14,7 @@ import {Button} from 'react-native-elements';
 import testVariables from '../appium_automation_testing/test_variables';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import LinearGradient from 'react-native-linear-gradient';
 import json_data from './history.json';
 let riverNameList = [];
 let historyData = {};
@@ -148,27 +148,49 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const renderResults = () => {
     let type = [];
-    // type.push(<Text>results</Text>);
-
     if (filterType === 'All' && historyData.length > 0) {
+      // type.push(<Text style={{fontSize: 30}}>Results</Text>);
       historyData.forEach(el => {
         type.push(
           <Button
+            key={el.river_id}
             title={el.river_name.toString()}
             onPress={() => selectResult(el.river_id)}
-            buttonStyle={styles.resultButton}
-            type="outline"
+            ViewComponent={LinearGradient} // Don't forget this!
+            linearGradientProps={{
+              colors: ['#4c4cff', '#6666ff'],
+              start: {x: 0, y: 0},
+              end: {x: 0, y: 1.5},
+            }}
+            buttonStyle={{
+              margin: 5,
+              padding: 20,
+              borderRadius: 20,
+              width: 300,
+            }}
           />,
         );
       });
     } else if (filterType !== 'All') {
+      type.push(<Text style={{fontSize: 20}}>Results :</Text>);
       data.forEach(el => {
         type.push(
           <Button
+            key={el.river_id}
             title={el.river_name.toString()}
             onPress={() => selectResult(el.river_id)}
-            style={styles.resultButton}
-            type="outline"
+            ViewComponent={LinearGradient} // Don't forget this!
+            linearGradientProps={{
+              colors: ['#4c4cff', '#6666ff'],
+              start: {x: 0, y: 0},
+              end: {x: 0, y: 1.5},
+            }}
+            buttonStyle={{
+              margin: 5,
+              padding: 20,
+              borderRadius: 20,
+              width: 300,
+            }}
           />,
         );
       });
@@ -255,9 +277,10 @@ const SampleHistoryScreen = ({navigation}) => {
             onPress={() => selectMatchItem(river)}
           />
         </View>
+        <ScrollView style={styles.resultsContainer}>
+          {renderResults()}
+        </ScrollView>
       </View>
-
-      {renderResults()}
     </SafeAreaView>
   );
 };
@@ -273,7 +296,7 @@ const styles = StyleSheet.create({
   button: {
     width: 200,
     marginVertical: 10,
-    backgroundColor: '#388fd1',
+    backgroundColor: '#4c4cff',
     padding: 5,
     borderRadius: 50,
   },
@@ -308,5 +331,8 @@ const styles = StyleSheet.create({
   resultButton: {
     padding: 20,
     marginTop: 5,
+  },
+  resultsContainer: {
+    marginTop: 40,
   },
 });

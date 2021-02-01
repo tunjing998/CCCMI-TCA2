@@ -105,7 +105,12 @@ const SearchRiverScreen2 = ({navigation, route}) => {
         accessibilityLabel={testVariables.riverDetailChooseRiverButton}
         testID={testVariables.riverDetailChooseRiverButton}
         title="Choose this river"
-        onPress={() => navigation.navigate('MainTabScreen')}
+        onPress={() =>
+          navigation.navigate('MainTabScreen', {
+            itemId: 86,
+            otherParam: 'anything you want here',
+          })
+        }
         ViewComponent={LinearGradient} // Don't forget this!
         linearGradientProps={{
           colors: ['#4c4cff', '#6666ff'],
@@ -113,7 +118,6 @@ const SearchRiverScreen2 = ({navigation, route}) => {
           end: {x: 1, y: 0},
         }}
       />
-      {console.log(route.params.data.canal)}
     </View>
   );
 };

@@ -1,127 +1,101 @@
-import React, {useState} from 'react';
-import {View, StyleSheet, Text, Image, Button} from 'react-native';
+import React, {useEffect, useState, Component} from 'react';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
+import {Button} from 'react-native-elements';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import {Input} from 'react-native-elements';
+import axios from 'axios';
 
 const selectInsect1 = ({navigation}) => {
-  const [insects, setInsects] = useState([
-    {
-      id: 1,
-      name: 'Caenis',
-      amount: '0',
-      image: require('../assets/insects/caenis.jpg'),
-    },
-    {
-      id: 2,
-      name: 'Ecdyonurus',
-      amount: '0',
-      image: require('../assets/insects/ecdyonurus.jpg'),
-    },
-    {
-      id: 3,
-      name: 'Ephemera Danica',
-      amount: '0',
-      image: require('../assets/insects/Ephemera_Danica.jpg'),
-    },
-    {
-      id: 4,
-      name: 'Heptagenia',
-      amount: '0',
-      image: require('../assets/insects/Heptagenia.jpg'),
-    },
-    {
-      id: 5,
-      name: 'Hydropsychidae',
-      amount: '0',
-      image: require('../assets/insects/Hydropsychidae.jpg'),
-    },
-    {
-      id: 6,
-      name: 'Leptoceridae',
-      amount: '0',
-      image: require('../assets/insects/Leptoceridae.jpg'),
-    },
-  ]);
+  const [insectList, setInsectList] = useState([]);
 
-  const update = (amount, index) => {
-    console.log('update called');
-    console.log('amount: ' + amount + ' index: ' + index);
-    insects[index].amount = amount;
-    console.log(insects[index]);
-    console.log(insects);
-    // let newInsects = [...insects];
-    // newInsects[index] = {...newInsects[index], amount: amount};
-    // setInsects({newInsects});
-  };
+  useEffect(() => {
+    getInsect();
+  });
 
-  const handleSubmit = () => {
-    console.log(insects);
-  };
-  // const [amount, setAmount] = useState('');
-  const renderInsects = () => {
-    return insects.map((insect, index) => {
-      let amount = 0;
-      return (
-        <View key={index} style={styles.container}>
-          <View style={styles.insectContainer}>
-            <Image source={insect.image} style={styles.insectImage} />
-            <Text style={styles.insectName}>{insect.name}</Text>
-          </View>
-          <View style={styles.inputContainer}>
-            <TextInput
-              style={styles.amountInput}
-              placeholder="amount"
-              // onChangeText={text => setAmount(text)}
-              onChangeText={text => (amount = text)}
-              keyboardType="numeric"
-            />
-            <Button
-              title="add"
-              style={styles.addButton}
-              onPress={() => update(amount, index)}
-            />
-          </View>
-        </View>
+  const getInsect = async () => {
+    try {
+      let response = await axios.get(
+        'http://cccmi-aquality.tk/aquality_server/insect',
       );
-    });
+      // console.log('response data:' + JSON.stringify(response.data));
+      setInsectList(response.data);
+      // console.log('insect list:' + insectList);
+      // console.log(response.data);
+    } catch (e) {
+      console.error(e);
+    }
   };
+
+  // const renderInsect = () => {
+  //   return (
+  //     <FlatList
+  //       data={insectList}
+  //       renderItem={({insect}) => <Text>{insect.insect_name}</Text>}
+  //     />
+  //     // <Text>asd</Text>
+  //   );
+  // };
+
+  // const render = () => {
+  //   {
+  //     console.log("hello"+insectList);
+  //     insectList.map((insect,key) => {
+  //       // return <Text>{insect.insect_name}</Text>;
+  //       console.log("this is insect"+insect.insect_name);
+  //     });
+  //   }
+  // };
+
+  const [image, setImage] = useState('');
 
   return (
     <ScrollView>
-      {renderInsects()}
-      <Button title="Back" />
+      {insectList.map((item, key) => (
+        <View key={key} style={styles.container}>
+          <Image
+            style={styles.tinyLogo}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+              // uri: item.insect_image_path
+            }}
+          />
+          <Text style={{fontSize: 20, width: 150}}>{item.insect_name}</Text>
+
+          
+          <TextInput placeholder="amount" style={styles.input} />
+        </View>
+      ))}
+      <FlatList
+        data={insectList}
+        renderItem={({insect}) => <Text>{insect}</Text>}
+      />
     </ScrollView>
   );
 };
 
+export default selectInsect1;
+
 const styles = StyleSheet.create({
+  tinyLogo: {
+    width: 80,
+    height: 80,
+  },
   container: {
     flex: 1,
+    width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  insectImage: {
-    height: 80,
-    width: 80,
-  },
-  insectName: {
-    alignSelf: 'center',
-    paddingHorizontal: 40,
-  },
-  insectContainer: {
-    flex: 2,
-    flexDirection: 'row',
-  },
-  inputContainer: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  amountInput: {
-    flex: 1,
-  },
-  addButton: {
-    flex: 1,
+  input: {
+    width: 100,
+    // borderBottomWidth: 1,
   },
 });
-
-export default selectInsect1;

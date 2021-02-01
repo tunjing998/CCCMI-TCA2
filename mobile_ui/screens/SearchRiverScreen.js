@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, TextInput, PermissionsAndroid} from 'react-native';
+import {View, StyleSheet, TextInput, PermissionsAndroid, ScrollView} from 'react-native';
 import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Text} from 'react-native-elements';
@@ -106,6 +106,7 @@ const SearchRiverScreen = ({navigation}) => {
       data.forEach(el => {
         type.push(
           <Button
+            key={el.river_id}
             title={el.river_name.toString()}
             onPress={() =>
               navigation.navigate('SearchRiverScreen2', {data: el})
@@ -187,7 +188,8 @@ const SearchRiverScreen = ({navigation}) => {
       marginVertical: 10,
     },
     title: {
-      paddingBottom: 70,
+      marginTop: 30,
+      paddingBottom: 35,
       color: colors.text,
     },
   });
@@ -236,7 +238,8 @@ const SearchRiverScreen = ({navigation}) => {
           onPress={() => searchRiver()}
         />
       </View>
-      {renderResults()}
+      <ScrollView>{renderResults()}</ScrollView>
+      
     </View>
   );
 };

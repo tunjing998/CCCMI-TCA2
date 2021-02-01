@@ -27,6 +27,7 @@ const MainTabScreen = () => (
       name="Details"
       component={DetailsStackScreen}
       options={{
+        
         tabBarAccessibilityLabel: testVariables.mainTabScreenDetailsTab,
         tabBarTestID: testVariables.mainTabScreenDetailsTab,
         tabBarLabel: 'Details',
@@ -114,6 +115,7 @@ const ArduinoStackScreen = ({navigation}) => (
       name="ArduinoScreen1"
       component={ArduinoScreen}
       options={{
+        title: 'Arduino',
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
@@ -129,12 +131,13 @@ const ArduinoStackScreen = ({navigation}) => (
       name="ArduinoScreen2"
       component={ArduinoScreen2}
       options={{
+        title: 'Arduino',
         headerLeft: () => (
           <Icon.Button
             name="arrow-back"
             size={25}
             backgroundColor="#694fad"
-            onPress={() => navigation.navigate("ArduinoScreen1")}
+            onPress={() => navigation.navigate('ArduinoScreen1')}
           />
         ),
       }}
