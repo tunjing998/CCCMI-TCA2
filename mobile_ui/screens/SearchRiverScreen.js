@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, TextInput, PermissionsAndroid, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TextInput,
+  PermissionsAndroid,
+  ScrollView,
+} from 'react-native';
 import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Text} from 'react-native-elements';
@@ -104,6 +110,8 @@ const SearchRiverScreen = ({navigation}) => {
       data.forEach(el => {
         type.push(
           <Button
+            accessibilityLabel={testVariables.flatlistItem}
+            testID={testVariables.flatlistItem}
             key={el.river_id}
             title={el.river_name.toString()}
             onPress={() =>
@@ -235,7 +243,6 @@ const SearchRiverScreen = ({navigation}) => {
         />
       </View>
       <ScrollView>{renderResults()}</ScrollView>
-      
     </View>
   );
 };

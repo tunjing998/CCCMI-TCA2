@@ -17,6 +17,7 @@ exports.config = {
       deviceName: 'Android 3a XL',
       app: absolutePath,
       automationName: 'UiAutomator2',
+      gpsEnabled: true,
     },
   ],
   logLevel: 'trace',

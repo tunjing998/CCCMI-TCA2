@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - Aquality_Mobile_ui_Master
+      - 31837_Check_CI_pipeline
 
 jobs:
   install-and-test:

@@ -3,15 +3,6 @@ require('expect-webdriverio');
 const sinon = require('sinon');
 var testVariables = require('../test_variables');
 
-async function getRivers(coordinateString) {
-  // url ?latitute=7.5&longitute=12
-  var rivers = await fetch(
-    'http://django-env.eba-9eikjyb6.us-west-2.elasticbeanstalk.com/aquality_server/rivers/' +
-      coordinateString,
-  );
-  return rivers.json();
-}
-
 describe('Testing user Landing page', () => {
   before(() => {
     $('~' + testVariables.splashTouchableOpacityButton).click();
@@ -52,26 +43,29 @@ describe('Testing search river screen', () => {
 
   it('should show empty locate text input before locate icon is clicked', async => {
     expect($('~' + testVariables.searchRiverLocateInput).getText()).to.equal(
-      null,
+      'Location name or Coordinates',
     );
   });
+
   it('should show locate text after locate icon is clicked', async => {
+    driver.pause(1000);
     driver.setGeoLocation({
-      latitude: '53.3541159578443',
-      longitude: '-6.355573949174074',
+      latitude: '53.3542',
+      longitude: '-6.35558',
     });
     driver.pause(1000);
     $('~' + testVariables.searchRiverLocateIcon).click();
     driver.pause(1000);
-    expect($('~' + testVariables.searchRiverLocateInput).getText()).to.equal(
-      '53.3541159578443, -6.355573949174074',
-    );
+    driver.execute('mobile:acceptAlert', {action: 'accept'});
+    driver.pause(1000);
   });
+
   it('should click a button and show river detail screen', async => {
+    driver.pause(1000);
     $('~' + testVariables.searchRiverSearchIcon).click();
     driver.pause(1000);
-    const listCells = $$('~flatlistItem');
-    expect(listCells).to.have.lengthOf(2);
+    const listCells = $$('~' + testVariables.flatlistItem);
+    expect(listCells).to.have.length.above(1);
     listCells[0].click();
     $('~' + testVariables.riverDetailContainer).waitForDisplayed(10000, false);
     expect($('~' + testVariables.riverDetailContainer).isDisplayed()).to.equal(
@@ -86,6 +80,13 @@ describe('Testing tabs with screens', () => {
   });
 
   it('should display 3 tabs and default river details screen after click choose button', async => {
+    expect($('~' + testVariables.riverDetailContainer).isDisplayed()).to.equal(
+      true,
+    );
+    expect(
+      $('~' + testVariables.riverDetailChooseRiverButton).isDisplayed(),
+    ).to.equal(true);
+
     $('~' + testVariables.riverDetailChooseRiverButton).click();
     $('~' + testVariables.riverDetailScreen).waitForDisplayed(10000, false);
     expect(
@@ -108,14 +109,19 @@ describe('Testing tabs with screens', () => {
       'Insect tab should be displayed',
     ).to.be.true;
   });
+
   it('should display arduino screen after clicking Arduino tab, ', () => {
+    driver.pause(1000);
     expect(
       $('~' + testVariables.mainTabScreenArduinoTab).isDisplayed(),
       'Arduino tab should be displayed',
     ).to.be.true;
 
     $('~' + testVariables.mainTabScreenArduinoTab).click();
-    driver.pause(1000);
+    $('~' + testVariables.arduinoScreenContainer).waitForDisplayed(
+      10000,
+      false,
+    );
     expect(
       $('~' + testVariables.arduinoScreenContainer).isDisplayed(),
       'Arduino Connected Screen is displayed',
@@ -128,12 +134,12 @@ describe('Testing tabs with screens', () => {
       'arduino ID Text Input should be displayed',
     ).to.be.true;
 
-    $('~' + testVariables.arduinoScreenIDTextInput).setValue('#01');
+    $('~' + testVariables.arduinoScreenIDTextInput).setValue('1');
 
     expect(
       $('~' + testVariables.arduinoScreenIDTextInput).getText(),
-      'Arduino id should be #01',
-    ).to.equal('#01');
+      'Arduino id should be 1',
+    ).to.equal('1');
   });
 
   it('should show Arduino connect screen after press search icon button', () => {
@@ -143,8 +149,10 @@ describe('Testing tabs with screens', () => {
     ).to.be.true;
 
     $('~' + testVariables.arduinoScreenSearchIconButton).click();
-    driver.pause(1000);
-
+    $('~' + testVariables.arduinoConnectScreenContainer).waitForDisplayed(
+      10000,
+      false,
+    );
     expect(
       $('~' + testVariables.arduinoConnectScreenContainer).isDisplayed(),
       'Arduino connect screen should be displayed',
@@ -153,11 +161,11 @@ describe('Testing tabs with screens', () => {
 
   it('should show sensors data', () => {
     expect(
-      $('~' + testVariables.arduinoConnectScreenTemperatureValue).getValue(),
+      $('~' + testVariables.arduinoConnectScreenTemperatureValue).getText(),
       'Temperature Value is not null',
     ).to.not.equal(null);
     expect(
-      $('~' + testVariables.arduinoConnectScreenPHValue).getValue(),
+      $('~' + testVariables.arduinoConnectScreenPHValue).getText(),
       'PH Value is not null',
     ).to.not.equal(null);
   });
@@ -172,13 +180,15 @@ describe('Testing tabs with screens', () => {
   });
 
   it('should show insect screen after press insect tab', () => {
+    driver.pause(1000);
     expect(
       $('~' + testVariables.mainTabScreenInsectTab).isDisplayed(),
       'insect tab should be displayed',
     ).to.be.true;
 
     $('~' + testVariables.mainTabScreenInsectTab).click();
-    driver.pause(1000);
+
+    $('~' + testVariables.insectScreenContainer).waitForDisplayed(10000, false);
 
     expect(
       $('~' + testVariables.insectScreenContainer).isDisplayed(),
@@ -195,110 +205,94 @@ describe('Testing tabs with screens', () => {
     ).to.be.true;
   });
 
-  it('should show display select insects screen', () => {
-    $('~' + testVariables.insectScreenSelectInsectButton).click();
+  it('should show display choose insects screen', () => {
     driver.pause(1000);
+    $('~' + testVariables.insectScreenSelectInsectButton).click();
 
+    $('~' + testVariables.chooseInsectScreenContainer).waitForDisplayed(
+      10000,
+      false,
+    );
     expect(
       $('~' + testVariables.chooseInsectScreenContainer).isDisplayed(),
-      'Select insect screen should be displayed',
+      'Choose insect screen should be displayed',
     ).to.be.true;
   });
 
-  it('should display insects groups', () => {
-    expect(
-      $('~' + testVariables.group1List).isDisplayed(),
-      'Insect group 1 is displayed',
-    ).to.be.true;
-    expect(
-      $('~' + testVariables.group2List).isDisplayed(),
-      'Insect group 2 is displayed',
-    ).to.be.true;
-    expect(
-      $$('~' + testVariables.group1ListItem),
-      'group 1 List items length > 1',
-    ).to.have.length.above(1);
-    expect(
-      $$('~' + testVariables.group2ListItem),
-      'group 2 List items length > 1',
-    ).to.have.length.above(1);
-  });
+  // it('should display insects groups', () => {
+  //   expect(
+  //     $('~' + testVariables.group1List).isDisplayed(),
+  //     'Insect group 1 is displayed',
+  //   ).to.be.true;
+  //   expect(
+  //     $$('~' + testVariables.group1List),
+  //     'group 1 List items length > 5',
+  //   ).to.have.length.above(5);
+  // });
 
-  it('should display insects groups', () => {
-    expect(
-      $('~' + testVariables.group1List).isDisplayed(),
-      'Insect group 1 is displayed',
-    ).to.be.true;
-    expect(
-      $('~' + testVariables.group2List).isDisplayed(),
-      'Insect group 2 is displayed',
-    ).to.be.true;
-    expect(
-      $$('~' + testVariables.group1ListItem),
-      'group 1 List items length > 1',
-    ).to.have.length.above(1);
-    expect(
-      $$('~' + testVariables.group2ListItem),
-      'group 2 List items length > 1',
-    ).to.have.length.above(1);
-  });
+  // it('should display entered number for an insect item', () => {
+  //   const amountTextInput = $$('~' + testVariables.amountTextInput);
+  //   const addAmountButton = $$('~' + testVariables.addAmountButton);
 
-  it('should display entered number for an insect item', () => {
-    const group1ListItem = $$('~' + testVariables.group1ListItem);
-    const extendBarTextInput = $('~' + testVariables.extendBarTextInput);
-    group1ListItem[0].click();
-    driver.pause(1000);
-    expect(extendBarTextInput.isDisplayed(), 'Extend bar is displayed').to.be
-      .true;
-    extendBarTextInput.setValue(10);
-    driver.pause(1000);
-  });
+  //   expect(amountTextInput, 'amountTextInput length > 5').to.have.length.above(
+  //     5,
+  //   );
+  //   expect(addAmountButton, 'addAmountButton length > 5').to.have.length.above(
+  //     5,
+  //   );
 
-  it('should display insect screen after press finish button', async () => {
-    driver.touchScroll(10, 1000);
+  //   amountTextInput[0].setValue(10);
+  //   addAmountButton[0].click();
+  //   driver.pause(1000);
+  //   expect(amountTextInput[0].getText(), 'amount shows as 10').to.equal('10');
+  //   driver.pause(1000);
+  // });
 
-    const finishSelectButton = $('~' + testVariables.finishSelectButton);
-    expect(
-      finishSelectButton.isDisplayed(),
-      'Finish select button is displayed',
-    ).to.be.true;
+  //   it('should display insect screen after press finish button', async () => {
+  //     driver.touchScroll(10, 1000);
 
-    finishSelectButton.click();
-    driver.pause(1000);
-    expect(
-      testVariables.insectScreenContainer.isDisplayed(),
-      'Insect screen is displayed',
-    ).to.be.true;
-  });
+  //     const finishSelectButton = $('~' + testVariables.finishSelectButton);
+  //     expect(
+  //       finishSelectButton.isDisplayed(),
+  //       'Finish select button is displayed',
+  //     ).to.be.true;
 
-  it('should pop out three options(take photo, choose form library, and cancel)', async () => {
-    $('~' + testVariables.insectScreenAnalyzeInsectButton).click();
-    driver.pause(1000);
-    expect(
-      testVariables.takePhotoButton.isDisplayed(),
-      'Take photo button is displayed',
-    ).to.be.true;
-    expect(
-      testVariables.chooseFormLibraryButton.isDisplayed(),
-      'Choose from library button is displayed',
-    ).to.be.true;
-    expect(
-      testVariables.cancelButton.isDisplayed(),
-      'Cancel button is displayed',
-    ).to.be.true;
-  });
+  //     finishSelectButton.click();
+  //     driver.pause(1000);
+  //     expect(
+  //       testVariables.insectScreenContainer.isDisplayed(),
+  //       'Insect screen is displayed',
+  //     ).to.be.true;
+  //   });
 
-  it('should open camera after clicking take photo button)', async () => {
-    $('~' + testVariables.takePhotoButton).click();
-    driver.pause(1000);
-    expect(
-      testVariables.takePhotoButton.isDisplayed(),
-      'Take photo button is displayed',
-    ).to.be.true;
-  });
-  it('should upload photo from camera)', async () => {
-    driver.pressKeyCode(3);
-    driver.pressKeyCode(27);
-    driver.sleep(2000);
-  });
+  //   it('should pop out three options(take photo, choose form library, and cancel)', async () => {
+  //     $('~' + testVariables.insectScreenAnalyzeInsectButton).click();
+  //     driver.pause(1000);
+  //     expect(
+  //       testVariables.takePhotoButton.isDisplayed(),
+  //       'Take photo button is displayed',
+  //     ).to.be.true;
+  //     expect(
+  //       testVariables.chooseFormLibraryButton.isDisplayed(),
+  //       'Choose from library button is displayed',
+  //     ).to.be.true;
+  //     expect(
+  //       testVariables.cancelButton.isDisplayed(),
+  //       'Cancel button is displayed',
+  //     ).to.be.true;
+  //   });
+
+  //   it('should open camera after clicking take photo button)', async () => {
+  //     $('~' + testVariables.takePhotoButton).click();
+  //     driver.pause(1000);
+  //     expect(
+  //       testVariables.takePhotoButton.isDisplayed(),
+  //       'Take photo button is displayed',
+  //     ).to.be.true;
+  //   });
+  //   it('should upload photo from camera)', async () => {
+  //     driver.pressKeyCode(3);
+  //     driver.pressKeyCode(27);
+  //     driver.sleep(2000);
+  //   });
 });

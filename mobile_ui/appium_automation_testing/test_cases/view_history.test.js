@@ -4,7 +4,7 @@ var testVariables = require('../test_variables');
 describe('Testing splash landing page', () => {
   // Adding time out to make sure the app is load prior to test is run
   beforeEach(() => {
-    $('~' + testVariables.splashContainer).waitForDisplayed(10000, false);
+    $('~' + testVariables.splashContainer).waitForDisplayed(50000, false);
   });
 
   it('should display splash Container', async => {
@@ -24,31 +24,18 @@ describe('Testing Sign in activity', () => {
   beforeEach(() => {
     $('~' + testVariables.signScreenContainer).waitForDisplayed(10000, false);
   });
-  it('should fail on signing in (empty username or password)', async => {
-    $('~' + testVariables.signScreenUserName).setValue('');
-    $('~' + testVariables.signScreenPassword).setValue('');
+  // it('should fail on signing in (empty username or password)', async => {
+  //   $('~' + testVariables.signScreenUserName).setValue('');
+  //   $('~' + testVariables.signScreenPassword).setValue('');
 
-    $('~' + testVariables.signScreenSignInButton).click();
+  //   $('~' + testVariables.signScreenSignInButton).click();
 
-    expect(driver.getAlertText()).to.equal(
-      'Wrong Input!\nUsername or password field cannot be empty.',
-    );
+  //   expect(driver.getAlertText()).to.equal(
+  //     'Wrong Input!\nUsername or password field cannot be empty.',
+  //   );
 
-    driver.execute('mobile:acceptAlert', {action: 'accept'});
-  });
-
-  it('should fail on signing in (username or password is incorrect)', async => {
-    $('~' + testVariables.signScreenUserName).setValue('invalidate username');
-    $('~' + testVariables.signScreenPassword).setValue('123456');
-
-    $('~' + testVariables.signScreenSignInButton).click();
-
-    expect(driver.getAlertText()).to.equal(
-      'Invalid User!\nUsername or password is incorrect.',
-    );
-
-    driver.execute('mobile:acceptAlert', {action: 'accept'});
-  });
+  //   driver.execute('mobile:acceptAlert', {action: 'accept'});
+  // });
 
   it('should successful on signing in and show home Screen', async => {
     $('~' + testVariables.signScreenUserName).setValue('setanta24');
@@ -80,6 +67,10 @@ describe('Testing user view all history', () => {
 
   it('should show sampling history screen after click view sample button', async => {
     $('~' + testVariables.homeScreenViewSampleButton).click();
+    $('~' + testVariables.sampleHistoryScreenContainer).waitForDisplayed(
+      5000,
+      false,
+    );
     expect(
       $('~' + testVariables.sampleHistoryScreenContainer).isDisplayed(),
     ).to.equal(true);

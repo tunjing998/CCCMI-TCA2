@@ -12,6 +12,8 @@ import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import {Input} from 'react-native-elements';
 import axios from 'axios';
 
+import testVariables from '../appium_automation_testing/test_variables';
+
 const selectInsect1 = ({navigation}) => {
   const [insectList, setInsectList] = useState([]);
 
@@ -56,7 +58,9 @@ const selectInsect1 = ({navigation}) => {
   const [image, setImage] = useState('');
 
   return (
-    <ScrollView>
+    <ScrollView
+      accessibilityLabel={testVariables.chooseInsectScreenContainer}
+      testID={testVariables.chooseInsectScreenContainer}>
       {insectList.map((item, key) => (
         <View key={key} style={styles.container}>
           <Image
@@ -68,8 +72,12 @@ const selectInsect1 = ({navigation}) => {
           />
           <Text style={{fontSize: 20, width: 150}}>{item.insect_name}</Text>
 
-          
-          <TextInput placeholder="amount" style={styles.input} />
+          <TextInput
+            accessibilityLabel={testVariables.group1ListItem}
+            testID={testVariables.group1ListItem}
+            placeholder="amount"
+            style={styles.input}
+          />
         </View>
       ))}
       <FlatList
