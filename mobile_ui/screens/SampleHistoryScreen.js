@@ -15,10 +15,11 @@ import testVariables from '../appium_automation_testing/test_variables';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient';
-import json_data from './history.json';
+
 let riverNameList = [];
-let historyData = {};
 let dateList = [];
+let historyData = [];
+let url = 'http://cccmi-aquality.tk/aquality_server/samplerecord/?username=';
 
 /**
  * @param {*} {navigation}
@@ -26,9 +27,11 @@ let dateList = [];
  * @return {SampleHistoryScreen}
  */
 const SampleHistoryScreen = ({navigation}) => {
+  const userName = 'kobe24';
   const [isLoading, setLoading] = useState(true);
   const [filterType, setFilterType] = useState('All');
   const [data, setData] = useState([]);
+  // const [historyData, setHistoryData] = useState([]);
 
   // FOR DATE
   const [date, setDate] = useState(new Date());
@@ -57,20 +60,25 @@ const SampleHistoryScreen = ({navigation}) => {
   };
   // END FOR DATE
 
-  useEffect(() => {
-    fetchData();
-    convertData();
-    setValues();
-    setLoading(false);
-  }, []);
-
   /**
-   * @function fetchData
-   * @description fetch data from API
+   * @description life hook
    */
-  const fetchData = () => {
-    console.log('fetch data called');
-  };
+  useEffect(() => {
+    fetch(url + userName)
+      .then(response => {
+        if (response.status === 200) {
+          return response.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(json => {
+        historyData = json;
+      })
+      .then(() => convertData())
+      .then(() => setValues())
+      .then(() => setLoading(false))
+      .catch(error => alert(error));
+  }, []);
 
   /**
    * @function convertData
@@ -79,10 +87,9 @@ const SampleHistoryScreen = ({navigation}) => {
    *
    */
   const convertData = () => {
-    historyData = JSON.parse(JSON.stringify(json_data));
     for (const el of historyData) {
-      if (el.date) {
-        el.newDate = reconstructDate(el.date);
+      if (el.sample_date) {
+        el.newDate = reconstructDate(el.sample_date);
       }
     }
   };
@@ -94,7 +101,7 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const setValues = () => {
     historyData.forEach(ele => {
-      riverNameList.push(ele.river_name);
+      riverNameList.push(ele.sample_river.river_name);
       dateList.push(ele.newDate);
     });
   };
@@ -124,7 +131,6 @@ const SampleHistoryScreen = ({navigation}) => {
    * @param {String} value date value or river name list
    */
   const filterDate = (filter, value) => {
-    console.log('filter: ' + filter + ': ' + value);
     if (filter === 'date') {
       setFilterType('date');
       setData(historyData.filter(item => item.newDate === value));
@@ -133,7 +139,7 @@ const SampleHistoryScreen = ({navigation}) => {
       let searchedRivers = [];
       for (const val of value) {
         searchedRivers.push(
-          historyData.filter(item => item.river_name === val)[0],
+          historyData.filter(item => item.sample_river.river_name === val)[0],
         );
       }
       setFilterType('river_name');
@@ -153,9 +159,11 @@ const SampleHistoryScreen = ({navigation}) => {
       historyData.forEach(el => {
         type.push(
           <Button
-            key={el.river_id}
-            title={el.river_name.toString()}
-            onPress={() => selectResult(el.river_id)}
+            title={el.sample_river.river_name.toString()}
+            onPress={() => selectResult(el.sample_river.river_id)}
+            buttonStyle={styles.resultButton}
+            type="outline"
+            key={el.sample_river.river_id}
             ViewComponent={LinearGradient} // Don't forget this!
             linearGradientProps={{
               colors: ['#4c4cff', '#6666ff'],
@@ -176,9 +184,11 @@ const SampleHistoryScreen = ({navigation}) => {
       data.forEach(el => {
         type.push(
           <Button
-            key={el.river_id}
-            title={el.river_name.toString()}
-            onPress={() => selectResult(el.river_id)}
+            title={el.sample_river.river_name.toString()}
+            onPress={() => selectResult(el.sample_river.river_id)}
+            style={styles.resultButton}
+            type="outline"
+            key={el.sample_river.river_id}
             ViewComponent={LinearGradient} // Don't forget this!
             linearGradientProps={{
               colors: ['#4c4cff', '#6666ff'],
@@ -204,7 +214,9 @@ const SampleHistoryScreen = ({navigation}) => {
    * @description select river by id
    */
   const selectResult = riverId => {
-    let select = historyData.filter(item => item.river_id === riverId);
+    let select = historyData.filter(
+      item => item.sample_river.river_id === riverId,
+    );
     navigation.navigate('HistoryDetail', {data: select});
   };
 

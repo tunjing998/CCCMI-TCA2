@@ -51,8 +51,8 @@ describe('Testing Sign in activity', () => {
   });
 
   it('should successful on signing in and show home Screen', async => {
-    $('~' + testVariables.signScreenUserName).setValue('user1');
-    $('~' + testVariables.signScreenPassword).setValue('password');
+    $('~' + testVariables.signScreenUserName).setValue('setanta24');
+    $('~' + testVariables.signScreenPassword).setValue('Password_123');
 
     $('~' + testVariables.signScreenSignInButton).click();
 
