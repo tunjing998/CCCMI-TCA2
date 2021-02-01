@@ -15,8 +15,8 @@ async function getRivers(coordinateString) {
 describe('Testing user Landing page', () => {
   before(() => {
     $('~' + testVariables.splashTouchableOpacityButton).click();
-    $('~' + testVariables.signScreenUserName).setValue('user1');
-    $('~' + testVariables.signScreenPassword).setValue('password');
+    $('~' + testVariables.signScreenUserName).setValue('setanta24');
+    $('~' + testVariables.signScreenPassword).setValue('Password_123');
     $('~' + testVariables.signScreenSignInButton).click();
   });
 
