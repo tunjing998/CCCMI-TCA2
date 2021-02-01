@@ -19,7 +19,7 @@ jobs:
         run: |
           cd mobile_ui
           yarn install
-          yarn test
+        # yarn test
 
   build-android:
     needs: install-and-test
