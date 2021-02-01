@@ -6,22 +6,22 @@
  * @flow
  */
 
-import React, { useEffect } from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import React, {useEffect} from 'react';
+import {View, ActivityIndicator} from 'react-native';
 import {
   NavigationContainer,
   DefaultTheme as NavigationDefaultTheme,
   DarkTheme as NavigationDarkTheme,
 } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import {
   Provider as PaperProvider,
   DefaultTheme as PaperDefaultTheme,
   DarkTheme as PaperDarkTheme,
 } from 'react-native-paper';
-import { createStackNavigator } from '@react-navigation/stack';
-import { DrawerContent } from './screens/DrawerContent';
+import {createStackNavigator} from '@react-navigation/stack';
+import {DrawerContent} from './screens/DrawerContent';
 import Icon from 'react-native-vector-icons/Ionicons';
 import MainTabScreen from './screens/MainTabScreen';
 import SupportScreen from './screens/SupportScreen';
@@ -32,7 +32,7 @@ import SearchRiverScreen from './screens/SearchRiverScreen';
 import SearchRiverScreen2 from './screens/SearchRiverScreen2';
 import uploadImage from './screens/uploadImage';
 import fetchApi from './screens/fetchApi';
-import { AuthContext } from './components/context';
+import {AuthContext} from './components/context';
 
 import RootStackScreen from './screens/RootStackScreen';
 
@@ -121,11 +121,9 @@ const App = () => {
         // setIsLoading(false);
         try {
           await AsyncStorage.setItem('username', userName);
-          dispatch({ type: 'LOGIN', userName: userName });
-
+          dispatch({type: 'LOGIN', userName: userName});
         } catch (e) {
           console.log(e);
-
         }
       },
       signOut: async () => {
@@ -136,7 +134,7 @@ const App = () => {
         } catch (e) {
           console.log(e);
         }
-        dispatch({ type: 'LOGOUT' });
+        dispatch({type: 'LOGOUT'});
       },
       signUp: () => {
         // setUserToken('fgkj');
@@ -158,29 +156,28 @@ const App = () => {
         if (username) {
           authContext.signIn(username);
           //TODO: call the endpoint to get user data
-        }else{
-          dispatch({ type: 'LOGOUT' });
+        } else {
+          dispatch({type: 'LOGOUT'});
         }
         // setIsLoading(false);
-
       } catch (e) {
         console.log(e);
         // setIsLoading(false);
-        dispatch({ type: 'LOGOUT' });
+        dispatch({type: 'LOGOUT'});
       }
-    }
+    };
     getData();
   }, []);
 
   if (loginState.isLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <ActivityIndicator size="large" />
       </View>
     );
   }
   const HomeStack = createStackNavigator();
-  const HomeStackScreen = ({ navigation }) => (
+  const HomeStackScreen = ({navigation}) => (
     <HomeStack.Navigator
       screenOptions={{
         headerStyle: {
@@ -222,6 +219,62 @@ const App = () => {
           ),
         }}
       />
+      <HomeStack.Screen
+        name="SampleHistoryScreen"
+        component={SampleHistoryScreen}
+        options={{
+          title: 'History Samples',
+          headerStyle: {
+            backgroundColor: '#009387',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <HomeStack.Screen
+        name="HistoryDetail"
+        component={HistoryDetail}
+        options={{
+          title: 'History Sample Details',
+          headerStyle: {
+            backgroundColor: '#009387',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <HomeStack.Screen
+        name="SearchRiverScreen"
+        component={SearchRiverScreen}
+        options={{
+          title: 'Locate River',
+          headerStyle: {
+            backgroundColor: '#009387',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <HomeStack.Screen
+        name="SearchRiverScreen2"
+        component={SearchRiverScreen2}
+        options={{
+          title: 'Confirm river',
+          headerStyle: {
+            backgroundColor: '#009387',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
     </HomeStack.Navigator>
   );
 
@@ -237,28 +290,16 @@ const App = () => {
               <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
               <Drawer.Screen name="ArduinoScreen" component={ArduinoScreen} />
               <Drawer.Screen name="ArduinoScreen2" component={ArduinoScreen2} />
-              <Drawer.Screen
-                name="SampleHistoryScreen"
-                component={SampleHistoryScreen}
-              />
-              <Drawer.Screen name="HistoryDetail" component={HistoryDetail} />
 
               {/* TAKE  NEW  SAMPLE */}
-              <Drawer.Screen
-                name="SearchRiverScreen"
-                component={SearchRiverScreen}
-              />
-              <Drawer.Screen
-                name="SearchRiverScreen2"
-                component={SearchRiverScreen2}
-              />
+
               <Drawer.Screen name="MainTabScreen" component={MainTabScreen} />
               <Drawer.Screen name="fetchApi" component={fetchApi} />
               {/* END  OF  SAMPLE  SCREEN */}
             </Drawer.Navigator>
           ) : (
-              <RootStackScreen />
-            )}
+            <RootStackScreen />
+          )}
         </NavigationContainer>
       </AuthContext.Provider>
     </PaperProvider>

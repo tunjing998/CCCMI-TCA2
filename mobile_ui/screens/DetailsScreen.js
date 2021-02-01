@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import {ListItem} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
 import testVariables from '../appium_automation_testing/test_variables';
 
-const DetailsScreen = ({navigation}) => {
+const DetailsScreen = ({navigation, route}) => {
   const {colors} = useTheme();
   const theme = useTheme();
   const styles = StyleSheet.create({
@@ -24,6 +24,7 @@ const DetailsScreen = ({navigation}) => {
       style={styles.listContainer}
       accessibilityLabel={testVariables.riverDetailScreen}
       testID={testVariables.riverDetailScreen}>
+      <Text>{route.params}</Text>
       <ListItem bottomDivider containerStyle={styles.listContainer}>
         <ListItem.Content>
           <ListItem.Subtitle style={styles.title}>River Name</ListItem.Subtitle>
