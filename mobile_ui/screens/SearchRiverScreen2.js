@@ -6,6 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import testVariables from '../appium_automation_testing/test_variables';
 import {FlatList} from 'react-native-gesture-handler';
 import {List} from 'native-base';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const SearchRiverScreen2 = ({navigation, route}) => {
   const {colors} = useTheme();
@@ -24,6 +25,16 @@ const SearchRiverScreen2 = ({navigation, route}) => {
       textAlign: 'center',
     },
   });
+
+  const storeData = async value => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem('river', jsonValue);
+      console.log('stored data: ' + jsonValue);
+    } catch (e) {
+      // saving error
+    }
+  };
 
   return (
     <View
@@ -105,15 +116,13 @@ const SearchRiverScreen2 = ({navigation, route}) => {
         accessibilityLabel={testVariables.riverDetailChooseRiverButton}
         testID={testVariables.riverDetailChooseRiverButton}
         title="Choose this river"
-        onPress={() =>
-          navigation.navigate('MainTabScreen', {
-            itemId: 86,
-            otherParam: 'anything you want here',
-          })
-        }
-        ViewComponent={LinearGradient} // Don't forget this!
+        onPress={() => {
+          navigation.navigate('MainTabScreen');
+          storeData(route.params.data);
+        }}
+        ViewComponent={LinearGradient}
         linearGradientProps={{
-          colors: ['#4c4cff', '#6666ff'],
+          colors: ['#FFCA93', '#FFCA93'],
           start: {x: 0, y: 0},
           end: {x: 1, y: 0},
         }}

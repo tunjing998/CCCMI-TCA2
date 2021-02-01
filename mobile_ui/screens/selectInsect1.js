@@ -9,11 +9,12 @@ import {
 } from 'react-native';
 import {Button} from 'react-native-elements';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
-import {Input} from 'react-native-elements';
 import axios from 'axios';
+import {useTheme} from '@react-navigation/native';
 
 const selectInsect1 = ({navigation}) => {
   const [insectList, setInsectList] = useState([]);
+  const {colors} = useTheme();
 
   useEffect(() => {
     getInsect();
@@ -24,36 +25,16 @@ const selectInsect1 = ({navigation}) => {
       let response = await axios.get(
         'http://cccmi-aquality.tk/aquality_server/insect',
       );
-      // console.log('response data:' + JSON.stringify(response.data));
       setInsectList(response.data);
-      // console.log('insect list:' + insectList);
-      // console.log(response.data);
+
     } catch (e) {
       console.error(e);
     }
-  };
+  }
 
-  // const renderInsect = () => {
-  //   return (
-  //     <FlatList
-  //       data={insectList}
-  //       renderItem={({insect}) => <Text>{insect.insect_name}</Text>}
-  //     />
-  //     // <Text>asd</Text>
-  //   );
-  // };
-
-  // const render = () => {
-  //   {
-  //     console.log("hello"+insectList);
-  //     insectList.map((insect,key) => {
-  //       // return <Text>{insect.insect_name}</Text>;
-  //       console.log("this is insect"+insect.insect_name);
-  //     });
-  //   }
-  // };
-
-  const [image, setImage] = useState('');
+  const handleSubmit = () => {
+    navigation.navigate('Insect')
+  }
 
   return (
     <ScrollView>
@@ -62,20 +43,17 @@ const selectInsect1 = ({navigation}) => {
           <Image
             style={styles.tinyLogo}
             source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
-              // uri: item.insect_image_path
+              uri: item.insect_image_path
             }}
           />
-          <Text style={{fontSize: 20, width: 150}}>{item.insect_name}</Text>
+          <Text style={{fontSize: 15, width: 150, textAlign: 'center',color: colors.text}}>{item.insect_name}</Text>
 
           
-          <TextInput placeholder="amount" style={styles.input} />
+          <TextInput placeholder="amount" style={styles.input} keyboardType='numeric' placeholderTextColor={colors.text} />
+          <Button title='add' buttonStyle={{width:50, marginRight: 10, backgroundColor: '#33cccc'}}/>
         </View>
       ))}
-      <FlatList
-        data={insectList}
-        renderItem={({insect}) => <Text>{insect}</Text>}
-      />
+      <Button title='Done' buttonStyle={{backgroundColor: '#009999', marginVertical: 30}} onPress={()=>handleSubmit()}/>
     </ScrollView>
   );
 };
@@ -96,6 +74,6 @@ const styles = StyleSheet.create({
   },
   input: {
     width: 100,
-    // borderBottomWidth: 1,
+    
   },
 });

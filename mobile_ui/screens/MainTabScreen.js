@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Button} from 'react-native-elements'
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -70,36 +70,6 @@ const MainTabScreen = () => (
 
 export default MainTabScreen;
 
-// const HomeStackScreen = ({navigation}) => (
-//   <HomeStack.Navigator
-//     screenOptions={{
-//       headerStyle: {
-//         backgroundColor: '#009387',
-//       },
-//       headerTintColor: '#fff',
-//       headerTitleStyle: {
-//         fontWeight: 'bold',
-//       },
-//     }}>
-//     <HomeStack.Screen
-//       name="Home"
-//       component={HomeScreen}
-//       options={{
-//         title: 'Overview',
-//         headerLeft: () => (
-//           <Icon.Button
-//             name="ios-menu"
-//             size={25}
-//             backgroundColor="#009387"
-//             onPress={() => navigation.openDrawer()}
-//           />
-//         ),
-//       }}
-//     />
-//     {/* add screen here */}
-//   </HomeStack.Navigator>
-// );
-
 const ArduinoStackScreen = ({navigation}) => (
   <ArduinoStack.Navigator
     screenOptions={{
@@ -116,6 +86,7 @@ const ArduinoStackScreen = ({navigation}) => (
       component={ArduinoScreen}
       options={{
         title: 'Arduino',
+        
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
@@ -188,6 +159,7 @@ const InsectStackScreen = ({navigation}) => (
       name="Insect"
       component={InsectScreen}
       options={{
+        headerRight: () => (<Button title='Finish' buttonStyle={{backgroundColor: 'lightgreen', marginRight:10, borderRadius: 10, width: 100}} titleStyle={{color:'black'}}/>),
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
