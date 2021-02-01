@@ -16,7 +16,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient';
 import {useTheme} from '@react-navigation/native';
-import json_data from './history.json';
+
 let riverNameList = [];
 let dateList = [];
 let historyData = [];
@@ -236,9 +236,8 @@ const SampleHistoryScreen = ({navigation}) => {
             title={el.sample_river.river_name.toString()}
             onPress={() => selectResult(el.sample_river.river_id)}
             style={styles.resultButton}
-            type="outline"
             key={el.sample_river.river_id}
-            ViewComponent={LinearGradient} // Don't forget this!
+            ViewComponent={LinearGradient} 
             linearGradientProps={{
               colors: ['#4c4cff', '#6666ff'],
               start: {x: 0, y: 0},
