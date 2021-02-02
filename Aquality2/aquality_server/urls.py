@@ -1,8 +1,7 @@
-from django.urls import include,path
+from django.urls import include, path
 from rest_framework import routers
 from . import views
 from django.conf import settings
-
 
 router = routers.DefaultRouter()
 router.register(r'rivers', views.RiverViewSet)
@@ -11,15 +10,17 @@ router.register(r'insect',views.InsectViewSet)
 router.register(r'samplerecord',views.SampleRecordViewSet)
 router.register(r'recordinsect',views.SampleRecordInsectViewSet)
 #Application Name
+
 app_name = 'aquality_server'
-#Controlling The Path of Application
+# Controlling The Path of Application
 
 useraccount = [
-    path('useraccount/loginauth',views.checkUser,name='checkUser'),
-    path('useraccount/register',views.registerPage,name='registerPage'),
-    path('useraccount/delete',views.del_user,name='del_user'),
-    path('useraccount/checkname',views.if_username_exist,name='checkName'),
-    path('useraccount/checkemail',views.if_email_exist,name='checkEmail')
+    path('useraccount/loginauth', views.checkUser, name='checkUser'),
+    path('useraccount/register', views.registerPage, name='registerPage'),
+    path('useraccount/delete', views.del_user, name='del_user'),
+    path('useraccount/checkname', views.if_username_exist, name='checkName'),
+    path('useraccount/checkemail', views.if_email_exist, name='checkEmail'),
+    path('insect_score/score', views.calculate_score_insect, name='get_score'),
 ]
 
 urlpatterns = [
@@ -29,5 +30,4 @@ urlpatterns = [
     path('testing/',views.testingPage,name='testingPage'),
     path('testingPageForPatrick',views.testingPageForPatrick,name='testingPageForPatrick'),
     path('sampledetail',views.getSampleRecord,name='sampledetail')
-
 ] + useraccount
