@@ -74,3 +74,19 @@ class Insect(models.Model):
     insect_desc = models.TextField(null=True)
     insect_group = models.ForeignKey(InsectGroup,on_delete=models.CASCADE)
     insect_image_path = models.ImageField(upload_to='insect-img',null=True)
+
+class SampleRecord(models.Model):
+    sample_id = models.AutoField(primary_key = True)
+    sample_date = models.DateTimeField(auto_now_add=True)
+    sample_score = models.IntegerField()
+    sample_user = models.ForeignKey(User,on_delete=models.DO_NOTHING)
+    sample_ph = models.FloatField()
+    sample_tmp = models.FloatField()
+    sample_river = models.ForeignKey(River,on_delete=models.CASCADE)
+
+class SampleRecordInsectDetail(models.Model):
+    class Meta:
+        unique_together = (('sample_record_data','sample_record_insect'))
+    sample_record_data = models.ForeignKey(SampleRecord,on_delete=models.CASCADE)
+    sample_record_insect = models.ForeignKey(Insect,on_delete=models.CASCADE)
+    insect_number = models.IntegerField()

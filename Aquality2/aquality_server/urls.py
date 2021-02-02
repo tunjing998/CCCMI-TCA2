@@ -5,9 +5,12 @@ from django.conf import settings
 
 router = routers.DefaultRouter()
 router.register(r'rivers', views.RiverViewSet)
-router.register(r'data', views.DataViewSet)
-router.register(r'insect', views.InsectViewSet)
-# Application Name
+router.register(r'data',views.DataViewSet)
+router.register(r'insect',views.InsectViewSet)
+router.register(r'samplerecord',views.SampleRecordViewSet)
+router.register(r'recordinsect',views.SampleRecordInsectViewSet)
+#Application Name
+
 app_name = 'aquality_server'
 # Controlling The Path of Application
 
@@ -21,10 +24,10 @@ useraccount = [
 ]
 
 urlpatterns = [
-                  path('', include(router.urls)),
-                  path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-                  #  path('addData', views.addData, name='addData'),
-                  path('testing/', views.testingPage, name='testingPage'),
-                  path('testingPageForPatrick', views.testingPageForPatrick, name='testingPageForPatrick'),
-
-              ] + useraccount
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+  #  path('addData', views.addData, name='addData'),
+    path('testing/',views.testingPage,name='testingPage'),
+    path('testingPageForPatrick',views.testingPageForPatrick,name='testingPageForPatrick'),
+    path('sampledetail',views.getSampleRecord,name='sampledetail')
+] + useraccount

@@ -16,6 +16,8 @@ from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from django.core import serializers
+import json
+from django.core.serializers.json import DjangoJSONEncoder
 
 # Controlling The View Access To
 from .utils.utils import count_score_by_insect
@@ -44,7 +46,7 @@ class DataViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         if (self.request.query_params.get('arduino_id')):
             arduino_id_get = self.request.query_params.get('arduino_id')
-            return Data.objects.filter(arduino_id=arduino_id_get).order_by('-date_captured')
+            return Data.objects.filter(arduino_id=arduino_id_get).order_by('-date_captured')[0:1]
         else:
             return Data.objects.all()
 
@@ -66,7 +68,6 @@ class RiverViewSet(viewsets.ModelViewSet):
         pnt = getLocationPoint(self.request)
         # return River.objects.filter(location__distance_lt=(pnt,D(m=10000)))
         return getNearbyList(pnt)
-
 
 class InsectViewSet(viewsets.ModelViewSet):
     queryset = Insect.objects.all().order_by('insect_id')
@@ -239,11 +240,47 @@ def if_email_exist(request):
                 'status': 'email not Receive'
             })
     except User.DoesNotExist:
-        return JsonResponse({
-            'status': 'Email Not Exist'
-        })
-    except Exception as e:
+        return JsonResponse ({
+            'status':'Email Not Exist'
+        })     
+    except Exception as e: 
         return HttpResponse(e)
+
+class SampleRecordViewSet(viewsets.ModelViewSet):
+    queryset = SampleRecord.objects.all()
+    serializer_class = SampleRecordDataSerializer
+    def get_queryset(self):
+        if(self.request.query_params.get('username')):
+            username_get = self.request.GET['username']
+            user_get = User.objects.get(username=username_get)
+            if(self.request.query_params.get('rivername')):
+                river_name = self.request.GET['rivername']
+                river_get = River.objects.get(river_name=river_name)
+                return SampleRecord.objects.filter(sample_user=user_get,sample_river=river_get)
+            else:
+                return SampleRecord.objects.filter(sample_user = user_get)
+        else:
+            return SampleRecord.objects.none()
+
+class SampleRecordInsectViewSet(viewsets.ModelViewSet):
+    queryset = SampleRecordInsectDetail.objects.all()
+    serializer_class = SampleRecordInsectDetailSerializer
+    def get_queryset(self):
+        if(self.request.query_params.get('sample_id')):
+            sample_id_get = self.request.GET('sample_id')
+            sample_record = SampleRecord.objects.get(sample_id = sample_id_get)
+            return SampleRecordInsectDetail.objects.filter(sample_record_data = sample_record)
+        return SampleRecordInsectDetail.objects.all()
+    
+@csrf_exempt
+def getSampleRecord(request):
+        sample_id_get = request.POST['sample_id']
+        sample_record = SampleRecord.objects.get(sample_id=sample_id_get)
+        insect_list = SampleRecordInsectDetail.objects.filter(sample_record_data = sample_record)
+        return JsonResponse({
+            'data_get' :SampleRecordDataSerializer(sample_record).data,
+            'insect_list' : SampleRecordInsectDetailSerializer(insect_list,many=True).data
+        })
 
 @csrf_exempt
 def calculate_score_insect(request):
