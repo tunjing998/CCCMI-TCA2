@@ -239,7 +239,7 @@ class SampleRecordViewSet(viewsets.ModelViewSet):
             else:
                 return SampleRecord.objects.filter(sample_user = user_get)
         else:
-            return SampleRecord.objects.all()
+            return SampleRecord.objects.none()
 
 class SampleRecordInsectViewSet(viewsets.ModelViewSet):
     queryset = SampleRecordInsectDetail.objects.all()
