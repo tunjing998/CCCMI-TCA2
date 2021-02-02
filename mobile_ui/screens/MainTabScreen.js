@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'react-native-elements'
+import {Button} from 'react-native-elements';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -27,7 +27,6 @@ const MainTabScreen = () => (
       name="Details"
       component={DetailsStackScreen}
       options={{
-        
         tabBarAccessibilityLabel: testVariables.mainTabScreenDetailsTab,
         tabBarTestID: testVariables.mainTabScreenDetailsTab,
         tabBarLabel: 'Details',
@@ -85,14 +84,11 @@ const ArduinoStackScreen = ({navigation}) => (
       name="ArduinoScreen1"
       component={ArduinoScreen}
       options={{
-        title: 'Arduino',
-        
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
             size={25}
             backgroundColor="#694fad"
-            accessible={true}
             onPress={() => navigation.openDrawer()}
           />
         ),
@@ -103,14 +99,6 @@ const ArduinoStackScreen = ({navigation}) => (
       component={ArduinoScreen2}
       options={{
         title: 'Arduino',
-        headerLeft: () => (
-          <Icon.Button
-            name="arrow-back"
-            size={25}
-            backgroundColor="#694fad"
-            onPress={() => navigation.navigate('ArduinoScreen1')}
-          />
-        ),
       }}
     />
   </ArduinoStack.Navigator>
@@ -127,10 +115,7 @@ const DetailsStackScreen = ({navigation}) => (
         fontWeight: 'bold',
       },
     }}>
-    <DetailsStack.Screen
-      name="Details"
-      component={DetailsScreen}
-      options={{
+    <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
@@ -139,8 +124,7 @@ const DetailsStackScreen = ({navigation}) => (
             onPress={() => navigation.openDrawer()}
           />
         ),
-      }}
-    />
+      }}/>
   </DetailsStack.Navigator>
 );
 
@@ -159,7 +143,6 @@ const InsectStackScreen = ({navigation}) => (
       name="Insect"
       component={InsectScreen}
       options={{
-        headerRight: () => (<Button title='Finish' buttonStyle={{backgroundColor: 'lightgreen', marginRight:10, borderRadius: 10, width: 100}} titleStyle={{color:'black'}}/>),
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
@@ -173,31 +156,12 @@ const InsectStackScreen = ({navigation}) => (
     <InsectStack.Screen
       name="ChooseInsectScreen"
       component={ChooseInsectScreen}
-      options={{
-        headerLeft: () => (
-          <Icon.Button
-            name="ios-menu"
-            size={25}
-            backgroundColor="#e76f51"
-            onPress={() => navigation.openDrawer()}
-          />
-        ),
-        title: 'Select Insects Group',
-      }}
     />
 
     <InsectStack.Screen
       name="selectInsect1"
       component={selectInsect1}
       options={{
-        headerLeft: () => (
-          <Icon.Button
-            name="ios-menu"
-            size={25}
-            backgroundColor="#e76f51"
-            onPress={() => navigation.openDrawer()}
-          />
-        ),
         title: 'Select Insects Group',
       }}
     />

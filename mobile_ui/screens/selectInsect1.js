@@ -38,7 +38,9 @@ const selectInsect1 = ({navigation}) => {
 
   return (
     <ScrollView>
+      
       {insectList.map((item, key) => (
+        
         <View key={key} style={styles.container}>
           <Image
             style={styles.tinyLogo}
@@ -47,13 +49,11 @@ const selectInsect1 = ({navigation}) => {
             }}
           />
           <Text style={{fontSize: 15, width: 150, textAlign: 'center',color: colors.text}}>{item.insect_name}</Text>
-
-          
-          <TextInput placeholder="amount" style={styles.input} keyboardType='numeric' placeholderTextColor={colors.text} />
+          <TextInput placeholder="amount" style={styles.input} keyboardType='numeric'  />
           <Button title='add' buttonStyle={{width:50, marginRight: 10, backgroundColor: '#33cccc'}}/>
         </View>
       ))}
-      <Button title='Done' buttonStyle={{backgroundColor: '#009999', marginVertical: 30}} onPress={()=>handleSubmit()}/>
+      <Button title='Done' buttonStyle={{backgroundColor: '#009999', padding: 25}} onPress={()=>handleSubmit()}/>
     </ScrollView>
   );
 };

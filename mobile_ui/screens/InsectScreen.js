@@ -68,6 +68,16 @@ const InsectScreen = ({navigation}) => {
           width: 300,
         }}
       />
+      <Button
+        title="Finish"
+        buttonStyle={{
+          backgroundColor: 'lightgreen',
+          marginTop: 30,
+          borderRadius: 10,
+          width: 100,
+        }}
+        titleStyle={{color: 'black'}}
+      />
     </View>
   );
 };

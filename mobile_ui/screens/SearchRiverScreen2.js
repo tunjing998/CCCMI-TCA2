@@ -122,7 +122,7 @@ const SearchRiverScreen2 = ({navigation, route}) => {
         }}
         ViewComponent={LinearGradient}
         linearGradientProps={{
-          colors: ['#FFCA93', '#FFCA93'],
+          colors: ['#ffae1a', '#ffae1a'],
           start: {x: 0, y: 0},
           end: {x: 1, y: 0},
         }}
