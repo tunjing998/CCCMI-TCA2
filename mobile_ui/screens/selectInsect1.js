@@ -26,54 +26,83 @@ const selectInsect1 = ({navigation}) => {
         'http://cccmi-aquality.tk/aquality_server/insect',
       );
       setInsectList(response.data);
-
     } catch (e) {
       console.error(e);
     }
-  }
+  };
 
   const handleSubmit = () => {
-    navigation.navigate('Insect')
-  }
+    navigation.navigate('Insect');
+  };
 
   return (
-    <ScrollView>
-      
-      {insectList.map((item, key) => (
-        
-        <View key={key} style={styles.container}>
-          <Image
-            style={styles.tinyLogo}
-            source={{
-              uri: item.insect_image_path
-            }}
-          />
-          <Text style={{fontSize: 15, width: 150, textAlign: 'center',color: colors.text}}>{item.insect_name}</Text>
-          <TextInput placeholder="amount" style={styles.input} keyboardType='numeric'  />
-          <Button title='add' buttonStyle={{width:50, marginRight: 10, backgroundColor: '#33cccc'}}/>
-        </View>
-      ))}
-      <Button title='Done' buttonStyle={{backgroundColor: '#009999', padding: 25}} onPress={()=>handleSubmit()}/>
-    </ScrollView>
+    <View style={styles.viewContainer}>
+      <ScrollView>
+        {insectList.map((item, key) => (
+          <View key={key} style={styles.container}>
+            <Image
+              style={styles.tinyLogo}
+              source={{
+                uri: item.insect_image_path,
+              }}
+            />
+            <Text
+              style={{
+                fontSize: 15,
+                width: 150,
+                textAlign: 'center',
+                color: colors.text,
+              }}>
+              {item.insect_name}
+            </Text>
+            <TextInput
+              placeholder="amount"
+              style={styles.input}
+              keyboardType="numeric"
+            />
+            <Button
+              title="add"
+              buttonStyle={{
+                width: 50,
+                marginRight: 10,
+                backgroundColor: '#33cccc',
+              }}
+            />
+          </View>
+        ))}
+      </ScrollView>
+
+      <Button
+        title="Done"
+        buttonStyle={styles.submitButton}
+        onPress={() => handleSubmit()}
+      />
+    </View>
   );
 };
 
 export default selectInsect1;
 
 const styles = StyleSheet.create({
+  viewContainer: {
+    flex: 1,
+    flexDirection: 'column',
+  },
   tinyLogo: {
     width: 80,
     height: 80,
   },
   container: {
-    flex: 1,
-    width: '100%',
+    // width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   input: {
     width: 100,
-    
+  },
+  submitButton: {
+    backgroundColor: '#009999',
+    padding: 25,
   },
 });
