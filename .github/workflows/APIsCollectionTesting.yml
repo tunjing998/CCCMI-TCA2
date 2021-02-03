@@ -27,20 +27,23 @@ jobs:
       # Install the newman command line utility and also install the html extra reporter
       - name: Install newman
         run: |
-          npm i newman -g;
+          npm install -g newman
           npm install -g newman-reporter-htmlextra
 
       # Make directory to upload the test results
       - name: Make Directory for results
         run: |
-          cd Aquality2
-          mkdir -p testResults
+          mkdir -p Aquality2/testResults
 
       # Run the POSTMAN collection
       - name: Run POSTMAN collection
         run: |
-          cd Aquality2
-          newman run "https://www.postman.com/collections/${{secrets.COLLECTIONID}}?apikey=${{secrets.POSTMANAPIKEY}}" -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+          FOLDER=Aquality2/testResults
+          if [ -d "$FOLDER" ]; then
+              newman run "https://www.postman.com/collections/${{secrets.COLLECTIONID}}?apikey=${{secrets.POSTMANAPIKEY}}" --suppress-exit-code -r htmlextra --reporter-htmlextra-export Aquality2/testResults/htmlreport.html --reporter-htmlextra-darkTheme  > Aquality2/testResults/runreport1.html
+          else 
+              echo "$FOLDER folder does not exist."
+          fi
 
       - name: Output the run Details
         uses: actions/upload-artifact@v2
