@@ -7,6 +7,7 @@ import {
   FlatList,
   TouchableHighlight,
   Modal,
+  ToastAndroid
 } from 'react-native';
 import {Button} from 'react-native-elements';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
@@ -20,13 +21,6 @@ const selectInsect1 = ({navigation}) => {
   const textInput = React.useRef();
   const [selectedInsectList, setSelectedInsectList] = useState([]);
 
-  const handleUpdate = todo => {
-    const newSelectedInsectList = [...selectedInsectList];
-    newSelectedInsectList.push(todo);
-    setSelectedInsectList(newSelectedInsectList);
-    console.log('selected insect list: ' + selectedInsectList);
-  };
-
   const [selectedInsect, setSelectedInsect] = useState({
     insect_name: '',
     amount: null,
@@ -38,7 +32,29 @@ const selectInsect1 = ({navigation}) => {
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
 
+  const showToast = (val) => {
+    ToastAndroid.show(val + " has been added.", ToastAndroid.SHORT);
+  };
+
   const handleAdd = insectName => {
+    if (!selecTedAmount.trim()) {
+      alert('Please Enter amount');
+      return;
+    }
+    const newSelectedInsect = Object.assign({}, selectedInsect);
+    newSelectedInsect.insect_name = insectName;
+    newSelectedInsect.amount = selecTedAmount;
+    setSelectedInsect(newSelectedInsect);
+    console.log('new insect:' + newSelectedInsect);
+    handleUpdate(newSelectedInsect);
+    setSelectedAmount('');
+    showToast(insectName)
+  };
+
+  const handleUpdate = todo => {
+    const newSelectedInsectList = [...selectedInsectList];
+    newSelectedInsectList.push(todo);
+    setSelectedInsectList(newSelectedInsectList);
     
   };
 
@@ -128,13 +144,20 @@ const selectInsect1 = ({navigation}) => {
             />
             <Text>{actionTriggered}</Text>
             <Text>{description}</Text>
-            <View style={{ flexDirection: 'row', alignItems: 'center'}}>
-              <TextInput placeholder="amount" onChangeText={(val)=>setSelectedAmount(val)} keyboardType='numeric'/>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <TextInput
+                placeholder="amount"
+                onChangeText={val => setSelectedAmount(val)}
+                keyboardType="numeric"
+              />
               <IconButton
                 icon="check-circle"
                 color={Colors.green500}
                 size={20}
-                onPress={() => {handleAdd();setModalVisible(!modalVisible)}}
+                onPress={() => {
+                  handleAdd(actionTriggered);
+                  setModalVisible(!modalVisible);
+                }}
               />
             </View>
 
@@ -147,6 +170,7 @@ const selectInsect1 = ({navigation}) => {
           </View>
         </View>
       </Modal>
+      {selectedInsectList.map((item)=> console.log(item))}
     </View>
   );
 };
