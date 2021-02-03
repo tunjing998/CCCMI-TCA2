@@ -7,13 +7,11 @@ import {
   FlatList,
   TouchableHighlight,
   Modal,
-  ToastAndroid
 } from 'react-native';
 import {Button} from 'react-native-elements';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import axios from 'axios';
 import {useTheme} from '@react-navigation/native';
-import {IconButton, Colors} from 'react-native-paper';
 
 const selectInsect1 = ({navigation}) => {
   const [insectList, setInsectList] = useState([]);
@@ -21,20 +19,19 @@ const selectInsect1 = ({navigation}) => {
   const textInput = React.useRef();
   const [selectedInsectList, setSelectedInsectList] = useState([]);
 
+  const handleUpdate = todo => {
+    const newSelectedInsectList = [...selectedInsectList];
+    newSelectedInsectList.push(todo);
+    setSelectedInsectList(newSelectedInsectList);
+    console.log('selected insect list: ' + selectedInsectList);
+  };
+
   const [selectedInsect, setSelectedInsect] = useState({
     insect_name: '',
     amount: null,
   });
 
   const [selecTedAmount, setSelectedAmount] = useState('');
-  const [modalVisible, setModalVisible] = useState(false);
-  const [actionTriggered, setActionTriggered] = useState('');
-  const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
-
-  const showToast = (val) => {
-    ToastAndroid.show(val + " has been added.", ToastAndroid.SHORT);
-  };
 
   const handleAdd = insectName => {
     if (!selecTedAmount.trim()) {
@@ -45,17 +42,8 @@ const selectInsect1 = ({navigation}) => {
     newSelectedInsect.insect_name = insectName;
     newSelectedInsect.amount = selecTedAmount;
     setSelectedInsect(newSelectedInsect);
-    console.log('new insect:' + newSelectedInsect);
+    console.log(newSelectedInsect);
     handleUpdate(newSelectedInsect);
-    setSelectedAmount('');
-    showToast(insectName)
-  };
-
-  const handleUpdate = todo => {
-    const newSelectedInsectList = [...selectedInsectList];
-    newSelectedInsectList.push(todo);
-    setSelectedInsectList(newSelectedInsectList);
-    
   };
 
   useEffect(() => {
@@ -76,12 +64,13 @@ const selectInsect1 = ({navigation}) => {
   const handleSubmit = () => {
     navigation.navigate('Insect');
   };
-
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.viewContainer}>
       <ScrollView>
         {insectList.map((item, key) => (
           <View key={key} style={styles.container}>
+            
             <Image
               style={styles.tinyLogo}
               source={{
@@ -97,12 +86,18 @@ const selectInsect1 = ({navigation}) => {
               }}>
               {item.insect_name}
             </Text>
+            <TextInput
+              ref={textInput}
+              placeholder="amount"
+              style={styles.input}
+              keyboardType="numeric"
+              onChangeText={val => {
+                setSelectedAmount(val);
+              }}
+            />
             <Button
               onPress={() => {
-                setModalVisible(true);
-                setActionTriggered(item.insect_name); // HERE
-                setDescription(item.insect_desc);
-                setImage(item.insect_image_path);
+                handleAdd(item.insect_name);
               }}
               title="add"
               buttonStyle={{
@@ -129,49 +124,6 @@ const selectInsect1 = ({navigation}) => {
         onPress={() => handleSubmit()}
         type="outline"
       />
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {}}>
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Image
-              style={styles.tinyLogo}
-              source={{
-                uri: image,
-              }}
-            />
-            <Text>{actionTriggered}</Text>
-            <Text>{description}</Text>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <TextInput
-                placeholder="amount"
-                onChangeText={val => setSelectedAmount(val)}
-                keyboardType="numeric"
-              />
-              <IconButton
-                icon="check-circle"
-                color={Colors.green500}
-                size={20}
-                onPress={() => {
-                  handleAdd(actionTriggered);
-                  setModalVisible(!modalVisible);
-                }}
-              />
-            </View>
-
-            <IconButton
-              icon="close-circle"
-              color={Colors.red500}
-              size={20}
-              onPress={() => setModalVisible(!modalVisible)}
-            />
-          </View>
-        </View>
-      </Modal>
-      {/* {selectedInsectList.map((item)=> console.log(item))} */}
-      {selectedInsectList && console.log(selectedInsectList)}
     </View>
   );
 };
@@ -188,6 +140,7 @@ const styles = StyleSheet.create({
     height: 80,
   },
   container: {
+    // width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -196,36 +149,8 @@ const styles = StyleSheet.create({
     width: 100,
   },
   submitButton: {
+    // backgroundColor: '#009999',
     padding: 10,
-    borderWidth: 2,
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 22,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    width: 300,
-    height: 'auto',
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    backgroundColor: 'red',
+    borderWidth: 3,
   },
 });
