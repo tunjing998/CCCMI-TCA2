@@ -42,6 +42,7 @@ import HomeScreen from './screens/HomeScreen';
 import testVariables from './appium_automation_testing/test_variables';
 import SampleHistoryScreen from './screens/SampleHistoryScreen';
 import HistoryDetail from './screens/HistoryDetail';
+import HistoryList from './screens/HistoryList';
 
 const Drawer = createDrawerNavigator();
 
@@ -238,6 +239,20 @@ const App = () => {
         component={HistoryDetail}
         options={{
           title: 'History Sample Details',
+          headerStyle: {
+            backgroundColor: '#009387',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <HomeStack.Screen
+        name="HistoryList"
+        component={HistoryList}
+        options={{
+          title: 'History List',
           headerStyle: {
             backgroundColor: '#009387',
           },
