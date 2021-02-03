@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code # checking our the code at current commit that triggers the workflow
         uses: actions/checkout@v2
         with:
-          ref: server
+          ref: AqualityServer_Master
       - name: Cache dependency # caching dependency will make our build faster.
         uses: actions/cache@v2 # for more info checkout pip section documentation at https://github.com/actions/cache
         with:
