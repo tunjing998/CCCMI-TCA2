@@ -170,7 +170,8 @@ const selectInsect1 = ({navigation}) => {
           </View>
         </View>
       </Modal>
-      {selectedInsectList.map((item)=> console.log(item))}
+      {/* {selectedInsectList.map((item)=> console.log(item))} */}
+      {selectedInsectList && console.log(selectedInsectList)}
     </View>
   );
 };
