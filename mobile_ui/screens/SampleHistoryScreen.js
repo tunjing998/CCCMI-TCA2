@@ -264,7 +264,7 @@ const SampleHistoryScreen = ({navigation}) => {
     let select = historyData.filter(
       item => item.sample_river.river_id === riverId,
     );
-    navigation.navigate('HistoryDetail', {data: select});
+    navigation.navigate('HistoryList', {data: select});
   };
 
   /**
