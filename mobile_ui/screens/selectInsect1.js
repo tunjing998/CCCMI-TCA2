@@ -4,10 +4,8 @@ import {
   StyleSheet,
   Text,
   Image,
-  FlatList,
-  TouchableHighlight,
   Modal,
-  ToastAndroid
+  ToastAndroid,
 } from 'react-native';
 import {Button} from 'react-native-elements';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
@@ -18,7 +16,6 @@ import {IconButton, Colors} from 'react-native-paper';
 const selectInsect1 = ({navigation}) => {
   const [insectList, setInsectList] = useState([]);
   const {colors} = useTheme();
-  const textInput = React.useRef();
   const [selectedInsectList, setSelectedInsectList] = useState([]);
 
   const [selectedInsect, setSelectedInsect] = useState({
@@ -32,8 +29,8 @@ const selectInsect1 = ({navigation}) => {
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
 
-  const showToast = (val) => {
-    ToastAndroid.show(val + " has been added.", ToastAndroid.SHORT);
+  const showToast = val => {
+    ToastAndroid.show(val + ' has been added.', ToastAndroid.SHORT);
   };
 
   const handleAdd = insectName => {
@@ -48,14 +45,13 @@ const selectInsect1 = ({navigation}) => {
     console.log('new insect:' + newSelectedInsect);
     handleUpdate(newSelectedInsect);
     setSelectedAmount('');
-    showToast(insectName)
+    showToast(insectName);
   };
 
   const handleUpdate = todo => {
     const newSelectedInsectList = [...selectedInsectList];
     newSelectedInsectList.push(todo);
     setSelectedInsectList(newSelectedInsectList);
-    
   };
 
   useEffect(() => {
@@ -170,7 +166,6 @@ const selectInsect1 = ({navigation}) => {
           </View>
         </View>
       </Modal>
-      {/* {selectedInsectList.map((item)=> console.log(item))} */}
       {selectedInsectList && console.log(selectedInsectList)}
     </View>
   );
