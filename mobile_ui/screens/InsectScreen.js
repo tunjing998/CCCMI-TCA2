@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {View, StyleSheet} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {Text, Button} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import testVariables from '../appium_automation_testing/test_variables';
+import axios from 'axios';
 
 const InsectScreen = ({navigation}) => {
   const {colors} = useTheme();
@@ -22,6 +23,7 @@ const InsectScreen = ({navigation}) => {
 
   return (
     <View
+    
       style={styles.container}
       accessibilityLabel={testVariables.insectScreenContainer}
       testID={testVariables.insectScreenContainer}>
