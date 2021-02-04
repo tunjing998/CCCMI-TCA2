@@ -30,7 +30,7 @@ const SearchRiverScreen2 = ({navigation, route}) => {
     try {
       const jsonValue = JSON.stringify(value);
       await AsyncStorage.setItem('river', jsonValue);
-      console.log('stored data: ' + jsonValue);
+      // console.log('stored data: ' + jsonValue);
     } catch (e) {
       // saving error
     }
