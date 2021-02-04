@@ -28,6 +28,8 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
   #  path('addData', views.addData, name='addData'),
     path('testing/',views.testingPage,name='testingPage'),
+    path('testingInsect/',views.testingInsectPage,name='testingInsectPage'),
     path('testingPageForPatrick',views.testingPageForPatrick,name='testingPageForPatrick'),
-    path('sampledetail',views.getSampleRecord,name='sampledetail')
+    path('sampledetail',views.getSampleRecord,name='sampledetail'),
+    path('samplesave',views.storeRecordResult,name='samplesave')
 ] + useraccount

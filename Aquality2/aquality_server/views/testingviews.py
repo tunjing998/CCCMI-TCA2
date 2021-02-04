@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import json
 
 def index(request):
     return render(request, 'aquality_server/index.html', {})
@@ -16,6 +17,13 @@ def testingPage(request):
     # locationfound = requests.get(request_url)
     # data = locationfound.json().get("candidates")[0].get("geometry").get("location")
     return render(request, 'aquality_server/testing.html', {'request': request})
+
+@csrf_exempt
+def testingInsectPage(request):
+    data = json.loads(request.body)
+    dataTo = data['data_get']
+    insectList = data['insect_list']
+    return render(request, 'aquality_server/testingInsectSave.html', {'data': dataTo,'insectList':insectList})
 
 
 def testingPageForPatrick(request):
