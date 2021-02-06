@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import {useTheme} from 'react-native-paper';
-
+import axios from 'axios';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
@@ -20,11 +20,11 @@ import Animated from 'react-native-reanimated';
 
 import ImagePicker from 'react-native-image-crop-picker';
 
-const AnalyzeScreen = () => {
-  const [image, setImage] = useState(
-    'https://i.picsum.photos/id/1062/5092/3395.jpg?hmac=o9m7qeU51uOLfXvepXcTrk2ZPiSBJEkiiOp-Qvxja-k',
-  );
+const AnalyzeScreen = ({navigation}) => {
+  const [image, setImage] = useState('https://i.imgur.com/cKIaH7q.png');
   const {colors} = useTheme();
+  const bs = React.createRef();
+  const fall = new Animated.Value(1);
 
   useEffect(() => {
     requestCameraPermission();
@@ -44,11 +44,11 @@ const AnalyzeScreen = () => {
           buttonPositive: 'OK',
         },
       );
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        console.log('You can use the camera');
-      } else {
-        console.log('Camera permission denied');
-      }
+      // if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      //   console.log('You can use the camera');
+      // } else {
+      //   console.log('Camera permission denied');
+      // }
     } catch (err) {
       console.warn(err);
     }
@@ -63,7 +63,6 @@ const AnalyzeScreen = () => {
     }).then(image => {
       console.log(image);
       setImage(image.path);
-      bs.current.snapTo(1);
     });
   };
 
@@ -74,10 +73,37 @@ const AnalyzeScreen = () => {
       cropping: true,
       compressImageQuality: 0.7,
     }).then(image => {
-      console.log(image);
       setImage(image.path);
-      bs.current.snapTo(1);
+      // bs.current.snapTo(1);
     });
+  };
+
+  const uploadImage = async () => {
+    try {
+      var photo = {
+        uri: image,
+        type: 'image/jpeg',
+        name: 'photo.jpg',
+      };
+      var form = new FormData();
+      form.append('image', photo);
+
+      let response = await axios({
+        method: 'post',
+        url: 'https://aquality2.nw.r.appspot.com/ai_model/detect_image/',
+        data: form,
+        headers: {'Content-Type': 'multipart/form-data'},
+      });
+
+      if(response) {console.log(response.data)}
+      if (response.data.object.detected_image == false) {
+        alert('No insect is detected.')
+      } else {
+        alert(response.data.object.class_label + ' ' + response.data.object.predicted_count)
+      }
+    } catch (e) {
+      alert('Please insert image.')
+    }
   };
 
   const renderInner = () => (
@@ -111,9 +137,6 @@ const AnalyzeScreen = () => {
       </View>
     </View>
   );
-
-  const bs = React.createRef();
-  const fall = new Animated.Value(1);
 
   return (
     <View style={styles.container}>
@@ -159,7 +182,11 @@ const AnalyzeScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.commandButton} onPress={() => {}}>
+        <TouchableOpacity
+          style={styles.commandButton}
+          onPress={() => {
+            uploadImage();
+          }}>
           <Text style={styles.panelButtonTitle}>Submit</Text>
         </TouchableOpacity>
       </Animated.View>
@@ -184,12 +211,6 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#FFFFFF',
     paddingTop: 20,
-    // borderTopLeftRadius: 20,
-    // borderTopRightRadius: 20,
-    // shadowColor: '#000000',
-    // shadowOffset: {width: 0, height: 0},
-    // shadowRadius: 5,
-    // shadowOpacity: 0.4,
   },
   header: {
     backgroundColor: '#FFFFFF',

@@ -15,7 +15,7 @@ const selectInsect1 = ({navigation}) => {
   const [selectedInsect, setSelectedInsect] = useState({
     insect_name: '',
     amount: null,
-    insect_image: ''
+    insect_image: '',
   });
 
   const [selecTedAmount, setSelectedAmount] = useState('');
@@ -41,14 +41,22 @@ const selectInsect1 = ({navigation}) => {
     console.log('new insect:' + newSelectedInsect);
     handleUpdate(newSelectedInsect);
     setSelectedAmount('');
-    showToast(insectName);
   };
 
   const handleUpdate = todo => {
-    const newSelectedInsectList = [...selectedInsectList];
-    newSelectedInsectList.push(todo);
-    setSelectedInsectList(newSelectedInsectList);
-    // storeData(newSelectedInsectList);
+    const found = selectedInsectList.some(
+      el => el.insect_name === todo.insect_name,
+    );
+    if (!found) {
+      const newSelectedInsectList = [...selectedInsectList];
+      newSelectedInsectList.push(todo);
+      setSelectedInsectList(newSelectedInsectList);
+      showToast(todo.insect_name);
+    } else {
+      alert('Error: duplicate insect detected.');
+      // showToast('error: duplicated')
+      return;
+    }
   };
 
   useEffect(() => {
@@ -67,18 +75,8 @@ const selectInsect1 = ({navigation}) => {
   };
 
   const handleSubmit = () => {
-    navigation.navigate('Insect', { post: selectedInsectList});
+    navigation.navigate('Insect', {post: selectedInsectList});
   };
-
-  // const storeData = async value => {
-  //   try {
-  //     const jsonValue = JSON.stringify(value);
-  //     await AsyncStorage.setItem('selectedInsectList', jsonValue);
-  //     console.log('stored data: ' + jsonValue);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
 
   return (
     <View style={styles.viewContainer}>
@@ -103,7 +101,7 @@ const selectInsect1 = ({navigation}) => {
             <Button
               onPress={() => {
                 setModalVisible(true);
-                setActionTriggered(item.insect_name); // HERE
+                setActionTriggered(item.insect_name);
                 setDescription(item.insect_desc);
                 setImage(item.insect_image_path);
               }}
@@ -173,7 +171,6 @@ const selectInsect1 = ({navigation}) => {
           </View>
         </View>
       </Modal>
-      
     </View>
   );
 };
