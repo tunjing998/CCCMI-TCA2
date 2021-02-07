@@ -155,7 +155,6 @@ const SearchRiverScreen = ({navigation}) => {
       justifyContent: 'center',
     },
     searchSection: {
-      // flex: 1,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
