@@ -73,7 +73,6 @@ const SampleHistoryScreen = ({navigation}) => {
       justifyContent: 'center',
     },
     resultButton: {
-      padding: 20,
       marginTop: 5,
     },
     resultsContainer: {
