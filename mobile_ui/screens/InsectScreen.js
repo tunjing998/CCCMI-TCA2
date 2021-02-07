@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image, ScrollView} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {Text, Button} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
@@ -11,6 +11,7 @@ const InsectScreen = ({navigation, route}) => {
   const theme = useTheme();
   const [insectList, setInsectList] = useState([]);
   const [image, setImage] = useState('');
+  const [analysedInsect, setAnalysedInsect] = useState([]);
 
   const styles = StyleSheet.create({
     container: {
@@ -28,14 +29,14 @@ const InsectScreen = ({navigation, route}) => {
     },
   });
 
-  const renderInsect = () => {
+  const renderSelectedInsect = () => {
     if (insectList.length > 0) {
-      console.log(insectList);
+      console.log(insectList);    //selected insect list
       let comp = [];
-      comp.push(<Text style={{alignSelf: 'flex-start'}}>Selected Insects:</Text>)
+      comp.push(<Text style={{alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold'}}>Selected :</Text>)
       insectList.map(item => {
         comp.push(
-          <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Image
               style={styles.tinyLogo}
               source={{
@@ -67,18 +68,61 @@ const InsectScreen = ({navigation, route}) => {
     }
   };
 
+
+  const renderAnalysedInsect = () => {
+    if (analysedInsect.length > 0) {
+      console.log('analysed insect list:' + analysedInsect);
+      let comp = [];
+      comp.push(<Text style={{alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold'}}>Analysed Insects:</Text>)
+      analysedInsect.map(item => {
+        comp.push(
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Image
+              style={styles.tinyLogo}
+              source={{
+                uri: item.image,
+              }}
+            />
+            <Text
+              style={{
+                fontSize: 15,
+                width: 150,
+                textAlign: 'center',
+                color: colors.text,
+              }}>
+              {item.insect_name}
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                width: 150,
+                textAlign: 'center',
+                color: colors.text,
+              }}>
+              {item.count}
+            </Text>
+          </View>,
+        );
+      });
+      return comp;
+    }
+  };
+
   useEffect(() => {
     if (route.params?.post) {
       setInsectList(route.params.post);
     }
-  }, [route.params?.post]);
+    if (route.params?.insect) {
+      setAnalysedInsect(route.params.insect)
+    }
+  }, [route.params?.post, route.params?.insect]);
 
   return (
     <View
       style={styles.container}
       accessibilityLabel={testVariables.insectScreenContainer}
       testID={testVariables.insectScreenContainer}>
-      {renderInsect()}
+
       <Button
         title="Select Insect"
         onPress={() => navigation.navigate('selectInsect1')}
@@ -95,6 +139,7 @@ const InsectScreen = ({navigation, route}) => {
           padding: 20,
           borderRadius: 20,
           width: 300,
+          marginTop: 50
         }}
       />
       <Button
@@ -113,9 +158,10 @@ const InsectScreen = ({navigation, route}) => {
           padding: 20,
           borderRadius: 20,
           width: 300,
+          marginBottom: 50
         }}
       />
-      <Button
+      {/* <Button
         title="Finish"
         buttonStyle={{
           backgroundColor: 'lightgreen',
@@ -124,7 +170,12 @@ const InsectScreen = ({navigation, route}) => {
           width: 100,
         }}
         titleStyle={{color: 'black'}}
-      />
+      /> */}
+
+      <ScrollView>
+      {renderSelectedInsect()}
+      {renderAnalysedInsect()}
+      </ScrollView>
     </View>
   );
 };

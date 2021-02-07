@@ -10,8 +10,10 @@ import {
   Modal,
   Image,
   ActivityIndicator,
+  ScrollView,
 } from 'react-native';
 
+import { Button } from 'react-native-elements'
 import {useTheme} from 'react-native-paper';
 import axios from 'axios';
 import {IconButton, Colors} from 'react-native-paper';
@@ -26,10 +28,11 @@ const AnalyzeScreen = ({navigation}) => {
   const bs = React.createRef();
   const fall = new Animated.Value(1);
   const [modalVisible, setModalVisible] = useState(false);
-  const [actionTriggered, setActionTriggered] = useState('');
   const [detectedInsect, setDetectedInsect] = useState('');
   const [count, setCount] = useState();
+  const [confidence, setConfidence] = useState('')
   const [loading, setLoading] = useState(false);
+  const [insectList, setInsectList] = useState([]);
 
   useEffect(() => {
     requestCameraPermission();
@@ -102,7 +105,7 @@ const AnalyzeScreen = ({navigation}) => {
       });
 
       if (response) {
-        console.log(response.data);
+        console.log(response);
       }
       if (response.data.object.detected_image == false) {
         alert('No insect is detected.');
@@ -110,10 +113,11 @@ const AnalyzeScreen = ({navigation}) => {
         // alert(response.data.object.class_label + ' ' + response.data.object.predicted_count)
         setDetectedInsect(response.data.object.class_label);
         setCount(response.data.object.predicted_count);
+        setConfidence(response.data.object.confidence)
         setModalVisible(true);
       }
     } catch (e) {
-      alert('Please insert image.');
+     console.log(e)
     }
     setLoading(false);
   };
@@ -156,15 +160,75 @@ const AnalyzeScreen = ({navigation}) => {
         <ActivityIndicator
           animating={true}
           style={styles.indicator}
-          size='large'
+          size="large"
         />
       );
     }
   };
 
+  const handleConfirm = () => {
+    const insect = {
+      insect_name: detectedInsect,
+      count: count,
+      image: image,
+    };
+    insectList.push(insect);
+    setModalVisible(!modalVisible);
+    // navigation.navigate('Insect', {
+    //   insect: insect
+    // });
+  };
+
+  const renderAnalysedInsect = () => {
+    if (insectList.length > 0) {
+      console.log('analysed insect list:' + insectList);
+      let comp = [];
+      comp.push(
+        <Text style={{alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 20}}>Analysed Insects:</Text>,
+      );
+      insectList.map(item => {
+        comp.push(
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Image
+              style={styles.tinyLogo}
+              source={{
+                uri: item.image,
+              }}
+            />
+            <Text
+              style={{
+                fontSize: 15,
+                width: 150,
+                textAlign: 'center',
+                color: colors.text,
+              }}>
+              {item.insect_name}
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                width: 150,
+                textAlign: 'center',
+                color: colors.text,
+              }}>
+              {item.count}
+            </Text>
+          </View>,
+        );
+      });
+      return comp;
+    }
+  };
+
+  const handleSave = () => {
+    navigation.navigate('Insect', {
+      insect: insectList
+    })
+  }
+
   return (
     <View style={styles.container}>
-      
+      {console.log(insectList)}
       <Modal
         animationType="slide"
         transparent={true}
@@ -172,14 +236,17 @@ const AnalyzeScreen = ({navigation}) => {
         onRequestClose={() => {}}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text>Detected: {detectedInsect}</Text>
-            <Text>Count: {count}</Text>
-            <IconButton
+            <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>Detected: {detectedInsect}</Text>
+            <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>Count: {count}</Text>
+            {/* <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>Confidence: {confidence}</Text> */}
+            <Button title="Confirm" onPress={() => handleConfirm()} buttonStyle={{backgroundColor: 'green', margin: 5}}/>
+            <Button title="Cancel" onPress={() => setModalVisible(!modalVisible)} buttonStyle={{backgroundColor: 'red', margin: 5}}/>
+            {/* <IconButton
               icon="close-circle"
               color={Colors.red500}
               size={20}
               onPress={() => setModalVisible(!modalVisible)}
-            />
+            /> */}
           </View>
         </View>
       </Modal>
@@ -231,10 +298,14 @@ const AnalyzeScreen = ({navigation}) => {
           onPress={() => {
             uploadImage();
           }}>
-          <Text style={styles.panelButtonTitle}>Submit</Text>
+          <Text style={styles.panelButtonTitle}>Upload For AI Recognition</Text>
         </TouchableOpacity>
       </Animated.View>
-      {renderModal()}
+          <Button title='Save' buttonStyle={{backgroundColor:'green', width: 200, alignSelf: 'center', marginBottom: 20}} onPress={() => handleSave()}/>
+      <ScrollView>
+        {renderModal()}
+        {renderAnalysedInsect()}
+      </ScrollView>
     </View>
   );
 };
@@ -343,5 +414,9 @@ const styles = StyleSheet.create({
     elevation: 5,
     width: 300,
     height: 'auto',
+  },
+  tinyLogo: {
+    width: 80,
+    height: 80,
   },
 });
