@@ -7,14 +7,14 @@ import {
   TextInput,
   StyleSheet,
   PermissionsAndroid,
+  Modal,
+  Image,
+  ActivityIndicator,
 } from 'react-native';
 
 import {useTheme} from 'react-native-paper';
 import axios from 'axios';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Feather from 'react-native-vector-icons/Feather';
-
+import {IconButton, Colors} from 'react-native-paper';
 import BottomSheet from 'reanimated-bottom-sheet';
 import Animated from 'react-native-reanimated';
 
@@ -25,6 +25,11 @@ const AnalyzeScreen = ({navigation}) => {
   const {colors} = useTheme();
   const bs = React.createRef();
   const fall = new Animated.Value(1);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [actionTriggered, setActionTriggered] = useState('');
+  const [detectedInsect, setDetectedInsect] = useState('');
+  const [count, setCount] = useState();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     requestCameraPermission();
@@ -79,6 +84,7 @@ const AnalyzeScreen = ({navigation}) => {
   };
 
   const uploadImage = async () => {
+    setLoading(true);
     try {
       var photo = {
         uri: image,
@@ -95,15 +101,21 @@ const AnalyzeScreen = ({navigation}) => {
         headers: {'Content-Type': 'multipart/form-data'},
       });
 
-      if(response) {console.log(response.data)}
+      if (response) {
+        console.log(response.data);
+      }
       if (response.data.object.detected_image == false) {
-        alert('No insect is detected.')
+        alert('No insect is detected.');
       } else {
-        alert(response.data.object.class_label + ' ' + response.data.object.predicted_count)
+        // alert(response.data.object.class_label + ' ' + response.data.object.predicted_count)
+        setDetectedInsect(response.data.object.class_label);
+        setCount(response.data.object.predicted_count);
+        setModalVisible(true);
       }
     } catch (e) {
-      alert('Please insert image.')
+      alert('Please insert image.');
     }
+    setLoading(false);
   };
 
   const renderInner = () => (
@@ -138,8 +150,39 @@ const AnalyzeScreen = ({navigation}) => {
     </View>
   );
 
+  const renderModal = () => {
+    if (loading) {
+      return (
+        <ActivityIndicator
+          animating={true}
+          style={styles.indicator}
+          size='large'
+        />
+      );
+    }
+  };
+
   return (
     <View style={styles.container}>
+      
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {}}>
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text>Detected: {detectedInsect}</Text>
+            <Text>Count: {count}</Text>
+            <IconButton
+              icon="close-circle"
+              color={Colors.red500}
+              size={20}
+              onPress={() => setModalVisible(!modalVisible)}
+            />
+          </View>
+        </View>
+      </Modal>
       <BottomSheet
         ref={bs}
         snapPoints={[330, 0]}
@@ -154,7 +197,7 @@ const AnalyzeScreen = ({navigation}) => {
           margin: 20,
           opacity: Animated.add(0.1, Animated.multiply(fall, 1.0)),
         }}>
-        <View style={{alignItems: 'center'}}>
+        <View style={{alignItems: 'center', marginTop: 20}}>
           <TouchableOpacity onPress={() => bs.current.snapTo(0)}>
             <View
               style={{
@@ -175,6 +218,7 @@ const AnalyzeScreen = ({navigation}) => {
                     flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center',
+                    borderWidth: 1,
                   }}
                 />
               </ImageBackground>
@@ -190,6 +234,7 @@ const AnalyzeScreen = ({navigation}) => {
           <Text style={styles.panelButtonTitle}>Submit</Text>
         </TouchableOpacity>
       </Animated.View>
+      {renderModal()}
     </View>
   );
 };
@@ -205,7 +250,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#FF6347',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 30,
   },
   panel: {
     padding: 20,
@@ -275,5 +320,28 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === 'ios' ? 0 : -12,
     paddingLeft: 10,
     color: '#05375a',
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    width: 300,
+    height: 'auto',
   },
 });
