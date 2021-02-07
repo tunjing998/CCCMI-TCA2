@@ -7,6 +7,8 @@ import {useTheme} from '@react-navigation/native';
 import {IconButton, Colors} from 'react-native-paper';
 import AsyncStorage from '@react-native-community/async-storage';
 
+import testVariables from '../appium_automation_testing/test_variables';
+
 const selectInsect1 = ({navigation}) => {
   const [insectList, setInsectList] = useState([]);
   const {colors} = useTheme();
@@ -79,7 +81,9 @@ const selectInsect1 = ({navigation}) => {
   };
 
   return (
-    <View style={styles.viewContainer}>
+    <View style={styles.viewContainer  
+      accessibilityLabel={testVariables.chooseInsectScreenContainer}
+      testID={testVariables.chooseInsectScreenContainer}}>
       <ScrollView>
         {insectList.map((item, key) => (
           <View key={key} style={styles.container}>
