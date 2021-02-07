@@ -81,9 +81,10 @@ const selectInsect1 = ({navigation}) => {
   };
 
   return (
-    <View style={styles.viewContainer  
+    <View
+      style={styles.viewContainer}
       accessibilityLabel={testVariables.chooseInsectScreenContainer}
-      testID={testVariables.chooseInsectScreenContainer}}>
+      testID={testVariables.chooseInsectScreenContainer}>
       <ScrollView>
         {insectList.map((item, key) => (
           <View key={key} style={styles.container}>
