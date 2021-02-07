@@ -120,21 +120,22 @@ const SampleHistoryScreen = ({navigation}) => {
         throw new Error('Network response was not ok.');
       })
       .then(json => {
+        // setHistoryData(json);
         historyData = json;
       })
-      .then(() => convertData())
+      .then(() => convertDate())
       .then(() => setValues())
       .then(() => setLoading(false))
       .catch(error => alert(error));
   }, []);
 
   /**
-   * @function convertData
+   * @function convertDate
    * @description convert fetched data into local data list,
    *              add a new filed called newDate.
    *
    */
-  const convertData = () => {
+  const convertDate = () => {
     for (const el of historyData) {
       if (el.sample_date) {
         el.newDate = reconstructDate(el.sample_date);
@@ -149,8 +150,8 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const setValues = () => {
     historyData.forEach(ele => {
-      riverNameList.push(ele.sample_river.river_name);
-      dateList.push(ele.newDate);
+      riverNameList.pushNoRepeat(ele.sample_river.river_name);
+      dateList.pushNoRepeat(ele.newDate);
     });
   };
 
@@ -186,7 +187,7 @@ const SampleHistoryScreen = ({navigation}) => {
     if (filter === 'riverName') {
       let searchedRivers = [];
       for (const val of value) {
-        searchedRivers.push(
+        searchedRivers.pushNoRepeat(
           historyData.filter(item => item.sample_river.river_name === val)[0],
         );
       }
@@ -203,15 +204,24 @@ const SampleHistoryScreen = ({navigation}) => {
   const renderResults = () => {
     let type = [];
     if (filterType === 'All' && historyData.length > 0) {
-      // type.push(<Text style={{fontSize: 30}}>Results</Text>);
+      let riversNotRepeat = [];
       historyData.forEach(el => {
+        let river = {
+          river_name: el.sample_river.river_name,
+          river_id: el.sample_river.river_id,
+        };
+        riversNotRepeat.pushNoRepeat(JSON.stringify(river));
+      });
+      // type.push(<Text style={{fontSize: 30}}>Results</Text>);
+      riversNotRepeat.forEach(el => {
+        el = JSON.parse(el);
         type.push(
           <Button
-            title={el.sample_river.river_name.toString()}
-            onPress={() => selectResult(el.sample_river.river_id)}
+            title={el.river_name}
+            onPress={() => selectResult(el.river_id)}
             buttonStyle={styles.resultButton}
             type="outline"
-            key={el.sample_river.river_id}
+            key={el.river_id}
             ViewComponent={LinearGradient} // Don't forget this!
             linearGradientProps={{
               colors: ['#4c4cff', '#6666ff'],
@@ -227,7 +237,7 @@ const SampleHistoryScreen = ({navigation}) => {
           />,
         );
       });
-    } else if (filterType !== 'All') {
+    } else if (filterType === 'riverName') {
       // type.push(<Text style={{fontSize: 20}}>Results :</Text>);
       data.forEach(el => {
         type.push(
@@ -236,6 +246,41 @@ const SampleHistoryScreen = ({navigation}) => {
             onPress={() => selectResult(el.sample_river.river_id)}
             style={styles.resultButton}
             key={el.sample_river.river_id}
+            ViewComponent={LinearGradient}
+            linearGradientProps={{
+              colors: ['#4c4cff', '#6666ff'],
+              start: {x: 0, y: 0},
+              end: {x: 0, y: 1.5},
+            }}
+            buttonStyle={{
+              margin: 5,
+              padding: 20,
+              borderRadius: 20,
+              width: 300,
+            }}
+          />,
+        );
+      });
+    } else {
+      // type.push(<Text style={{fontSize: 20}}>Results :</Text>);
+      let riversNotRepeat = [];
+      data.forEach(el => {
+        let river = {
+          river_name: el.sample_river.river_name,
+          river_id: el.sample_river.river_id,
+          newDate: el.newDate,
+        };
+        riversNotRepeat.pushNoRepeat(JSON.stringify(river));
+      });
+      riversNotRepeat.forEach(el => {
+        el = JSON.parse(el);
+        type.push(
+          <Button
+            // title={el.sample_river.river_name.toString()}
+            title={el.river_name.toString()}
+            onPress={() => selectResult(el.river_id, el.newDate)}
+            style={styles.resultButton}
+            key={el.river_id}
             ViewComponent={LinearGradient}
             linearGradientProps={{
               colors: ['#4c4cff', '#6666ff'],
@@ -260,10 +305,22 @@ const SampleHistoryScreen = ({navigation}) => {
    * @param {number} riverId
    * @description select river by id
    */
-  const selectResult = riverId => {
-    let select = historyData.filter(
-      item => item.sample_river.river_id === riverId,
-    );
+  const selectResult = (riverId, date) => {
+    let select = [];
+    if (date === undefined) {
+      select = historyData.filter(
+        item => item.sample_river.river_id === riverId,
+      );
+    } else {
+      select = historyData.filter(item => {
+        if (
+          item.sample_river.river_id === riverId &&
+          reconstructDate(item.sample_date) == date
+        )
+          return item;
+      });
+    }
+
     navigation.navigate('HistoryList', {data: select});
   };
 
@@ -274,11 +331,12 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const selectMatchItem = keyWord => {
     let resArr = [];
-    riverNameList.filter(item => {
-      if (item.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0) {
-        resArr.push(item);
-      }
-    });
+    keyWord &&
+      riverNameList.filter(item => {
+        if (item.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0) {
+          resArr.push(item);
+        }
+      });
     filterDate('riverName', resArr);
   };
 
@@ -289,6 +347,18 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const getInput = text => {
     setRiver(text);
+  };
+
+  /**
+   * push item into array without repeat
+   */
+  Array.prototype.pushNoRepeat = function() {
+    for (var i = 0; i < arguments.length; i++) {
+      var ele = arguments[i];
+      if (this.indexOf(ele) == -1) {
+        this.push(ele);
+      }
+    }
   };
 
   //UI
