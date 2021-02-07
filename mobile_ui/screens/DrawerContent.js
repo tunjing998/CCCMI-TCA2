@@ -75,17 +75,6 @@ export function DrawerContent(props) {
                 props.navigation.navigate('Profile');
               }}
             /> */}
-            {/* <DrawerItem 
-                            icon={({color, size}) => (
-                                <Icon 
-                                name="bookmark-outline" 
-                                color={color}
-                                size={size}
-                                />
-                            )}
-                            label="Bookmarks"
-                            onPress={() => {props.navigation.navigate('BookmarkScreen')}}
-                        /> */}
             <DrawerItem
               icon={({color, size}) => (
                 <Icon name="cog-outline" color={color} size={size} />

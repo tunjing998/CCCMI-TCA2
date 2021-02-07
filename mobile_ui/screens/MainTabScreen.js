@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Button} from 'react-native-elements';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -11,8 +11,8 @@ import ArduinoScreen from './ArduinoScreen';
 import ArduinoScreen2 from './ArduinoScreen2';
 
 const InsectStack = createStackNavigator();
-import ChooseInsectScreen from './ChooseInsectScreen';
 import selectInsect1 from './selectInsect1';
+import AnalyzeInsect from './AnalyzeInsect';
 
 import testVariables from '../appium_automation_testing/test_variables';
 
@@ -27,7 +27,6 @@ const MainTabScreen = () => (
       name="Details"
       component={DetailsStackScreen}
       options={{
-        
         tabBarAccessibilityLabel: testVariables.mainTabScreenDetailsTab,
         tabBarTestID: testVariables.mainTabScreenDetailsTab,
         tabBarLabel: 'Details',
@@ -70,36 +69,6 @@ const MainTabScreen = () => (
 
 export default MainTabScreen;
 
-// const HomeStackScreen = ({navigation}) => (
-//   <HomeStack.Navigator
-//     screenOptions={{
-//       headerStyle: {
-//         backgroundColor: '#009387',
-//       },
-//       headerTintColor: '#fff',
-//       headerTitleStyle: {
-//         fontWeight: 'bold',
-//       },
-//     }}>
-//     <HomeStack.Screen
-//       name="Home"
-//       component={HomeScreen}
-//       options={{
-//         title: 'Overview',
-//         headerLeft: () => (
-//           <Icon.Button
-//             name="ios-menu"
-//             size={25}
-//             backgroundColor="#009387"
-//             onPress={() => navigation.openDrawer()}
-//           />
-//         ),
-//       }}
-//     />
-//     {/* add screen here */}
-//   </HomeStack.Navigator>
-// );
-
 const ArduinoStackScreen = ({navigation}) => (
   <ArduinoStack.Navigator
     screenOptions={{
@@ -115,13 +84,11 @@ const ArduinoStackScreen = ({navigation}) => (
       name="ArduinoScreen1"
       component={ArduinoScreen}
       options={{
-        title: 'Arduino',
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
             size={25}
             backgroundColor="#694fad"
-            accessible={true}
             onPress={() => navigation.openDrawer()}
           />
         ),
@@ -132,14 +99,6 @@ const ArduinoStackScreen = ({navigation}) => (
       component={ArduinoScreen2}
       options={{
         title: 'Arduino',
-        headerLeft: () => (
-          <Icon.Button
-            name="arrow-back"
-            size={25}
-            backgroundColor="#694fad"
-            onPress={() => navigation.navigate('ArduinoScreen1')}
-          />
-        ),
       }}
     />
   </ArduinoStack.Navigator>
@@ -156,10 +115,7 @@ const DetailsStackScreen = ({navigation}) => (
         fontWeight: 'bold',
       },
     }}>
-    <DetailsStack.Screen
-      name="Details"
-      component={DetailsScreen}
-      options={{
+    <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
@@ -168,8 +124,7 @@ const DetailsStackScreen = ({navigation}) => (
             onPress={() => navigation.openDrawer()}
           />
         ),
-      }}
-    />
+      }}/>
   </DetailsStack.Navigator>
 );
 
@@ -198,35 +153,19 @@ const InsectStackScreen = ({navigation}) => (
         ),
       }}
     />
-    <InsectStack.Screen
-      name="ChooseInsectScreen"
-      component={ChooseInsectScreen}
-      options={{
-        headerLeft: () => (
-          <Icon.Button
-            name="ios-menu"
-            size={25}
-            backgroundColor="#e76f51"
-            onPress={() => navigation.openDrawer()}
-          />
-        ),
-        title: 'Select Insects Group',
-      }}
-    />
 
     <InsectStack.Screen
       name="selectInsect1"
       component={selectInsect1}
       options={{
-        headerLeft: () => (
-          <Icon.Button
-            name="ios-menu"
-            size={25}
-            backgroundColor="#e76f51"
-            onPress={() => navigation.openDrawer()}
-          />
-        ),
         title: 'Select Insects Group',
+      }}
+    />
+    <InsectStack.Screen
+      name="AnalyzeInsect"
+      component={AnalyzeInsect}
+      options={{
+        title: 'Analyze Insect',
       }}
     />
   </InsectStack.Navigator>

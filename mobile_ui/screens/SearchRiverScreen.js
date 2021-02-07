@@ -106,7 +106,7 @@ const SearchRiverScreen = ({navigation}) => {
     let type = [];
 
     if (data.length > 0) {
-      type.push(<Text style={{fontSize: 20}}>Results:</Text>);
+      type.push(<Text style={{fontSize: 20,color: colors.text,}}>Results:</Text>);
       data.forEach(el => {
         type.push(
           <Button
@@ -163,7 +163,6 @@ const SearchRiverScreen = ({navigation}) => {
       justifyContent: 'center',
     },
     searchSection: {
-      // flex: 1,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',

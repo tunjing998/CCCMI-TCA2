@@ -31,7 +31,6 @@ import ArduinoScreen2 from './screens/ArduinoScreen2';
 import SearchRiverScreen from './screens/SearchRiverScreen';
 import SearchRiverScreen2 from './screens/SearchRiverScreen2';
 import uploadImage from './screens/uploadImage';
-import fetchApi from './screens/fetchApi';
 import {AuthContext} from './components/context';
 
 import RootStackScreen from './screens/RootStackScreen';
@@ -42,13 +41,14 @@ import HomeScreen from './screens/HomeScreen';
 import testVariables from './appium_automation_testing/test_variables';
 import SampleHistoryScreen from './screens/SampleHistoryScreen';
 import HistoryDetail from './screens/HistoryDetail';
+import HistoryList from './screens/HistoryList';
 
 const Drawer = createDrawerNavigator();
 
 const App = () => {
-  // const [isLoading, setIsLoading] = React.useState(true);
-  // const [userToken, setUserToken] = React.useState(null);
-
+  {
+    console.disableYellowBox = true;
+  }
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
 
   const initialLoginState = {
@@ -127,8 +127,6 @@ const App = () => {
         }
       },
       signOut: async () => {
-        // setUserToken(null);
-        // setIsLoading(false);
         try {
           await AsyncStorage.removeItem('username');
         } catch (e) {
@@ -136,10 +134,7 @@ const App = () => {
         }
         dispatch({type: 'LOGOUT'});
       },
-      signUp: () => {
-        // setUserToken('fgkj');
-        // setIsLoading(false);
-      },
+      signUp: () => {},
       toggleTheme: () => {
         setIsDarkTheme(isDarkTheme => !isDarkTheme);
       },
@@ -159,10 +154,8 @@ const App = () => {
         } else {
           dispatch({type: 'LOGOUT'});
         }
-        // setIsLoading(false);
       } catch (e) {
         console.log(e);
-        // setIsLoading(false);
         dispatch({type: 'LOGOUT'});
       }
     };
@@ -248,6 +241,20 @@ const App = () => {
         }}
       />
       <HomeStack.Screen
+        name="HistoryList"
+        component={HistoryList}
+        options={{
+          title: 'History List',
+          headerStyle: {
+            backgroundColor: '#009387',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <HomeStack.Screen
         name="SearchRiverScreen"
         component={SearchRiverScreen}
         options={{
@@ -291,11 +298,7 @@ const App = () => {
               <Drawer.Screen name="ArduinoScreen" component={ArduinoScreen} />
               <Drawer.Screen name="ArduinoScreen2" component={ArduinoScreen2} />
 
-              {/* TAKE  NEW  SAMPLE */}
-
               <Drawer.Screen name="MainTabScreen" component={MainTabScreen} />
-              <Drawer.Screen name="fetchApi" component={fetchApi} />
-              {/* END  OF  SAMPLE  SCREEN */}
             </Drawer.Navigator>
           ) : (
             <RootStackScreen />

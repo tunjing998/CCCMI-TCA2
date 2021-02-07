@@ -10,11 +10,12 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-import {Button} from 'react-native-elements';
+import {Button, SearchBar} from 'react-native-elements';
 import testVariables from '../appium_automation_testing/test_variables';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient';
+import {useTheme} from '@react-navigation/native';
 
 let riverNameList = [];
 let dateList = [];
@@ -27,11 +28,58 @@ let url = 'http://cccmi-aquality.tk/aquality_server/samplerecord/?username=';
  * @return {SampleHistoryScreen}
  */
 const SampleHistoryScreen = ({navigation}) => {
+  const {colors} = useTheme();
   const userName = 'kobe24';
   const [isLoading, setLoading] = useState(true);
   const [filterType, setFilterType] = useState('All');
   const [data, setData] = useState([]);
   // const [historyData, setHistoryData] = useState([]);
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignContent: 'center',
+    },
+    button: {
+      width: 200,
+      marginVertical: 10,
+      backgroundColor: '#4c4cff',
+      padding: 5,
+      borderRadius: 50,
+    },
+    btnText: {
+      color: 'white',
+      fontSize: 20,
+      justifyContent: 'center',
+      textAlign: 'center',
+    },
+    searchContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    searchTitle: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      color: colors.text,
+    },
+    riverNameInput: {
+      width: '80%',
+      textAlign: 'center',
+      marginTop: 20,
+    },
+    inputContainer: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+    },
+    resultButton: {
+      padding: 20,
+      marginTop: 5,
+    },
+    resultsContainer: {
+      marginTop: 40,
+    },
+  });
 
   // FOR DATE
   const [date, setDate] = useState(new Date());
@@ -180,16 +228,15 @@ const SampleHistoryScreen = ({navigation}) => {
         );
       });
     } else if (filterType !== 'All') {
-      type.push(<Text style={{fontSize: 20}}>Results :</Text>);
+      // type.push(<Text style={{fontSize: 20}}>Results :</Text>);
       data.forEach(el => {
         type.push(
           <Button
             title={el.sample_river.river_name.toString()}
             onPress={() => selectResult(el.sample_river.river_id)}
             style={styles.resultButton}
-            type="outline"
             key={el.sample_river.river_id}
-            ViewComponent={LinearGradient} // Don't forget this!
+            ViewComponent={LinearGradient}
             linearGradientProps={{
               colors: ['#4c4cff', '#6666ff'],
               start: {x: 0, y: 0},
@@ -217,7 +264,7 @@ const SampleHistoryScreen = ({navigation}) => {
     let select = historyData.filter(
       item => item.sample_river.river_id === riverId,
     );
-    navigation.navigate('HistoryDetail', {data: select});
+    navigation.navigate('HistoryList', {data: select});
   };
 
   /**
@@ -270,15 +317,34 @@ const SampleHistoryScreen = ({navigation}) => {
 
         <Text style={styles.searchTitle}>Search by river name</Text>
         <View style={styles.inputContainer}>
-          <TextInput
+          {/* <TextInput
             placeholder="River Name"
             placeholderTextColor="#999999"
             onChangeText={text => getInput(text)}
             value={river}
             style={styles.riverNameInput}
+          /> */}
+          <SearchBar
+            placeholder="e.g. River Liffey"
+            onChangeText={text => getInput(text)}
+            value={river}
+            containerStyle={styles.riverNameInput}
+            lightTheme={true}
+            searchIcon={
+              <Icon.Button
+                accessibilityLabel={testVariables.searchRiverSearchIcon}
+                testID={testVariables.searchRiverSearchIcon}
+                style={styles.searchIcon}
+                name="magnify"
+                backgroundColor="transparent"
+                size={20}
+                color="#000"
+                onPress={() => selectMatchItem(river)}
+              />
+            }
           />
           {/* <Button title="search" onPress={() => selectMatchItem(river)} /> */}
-          <Icon.Button
+          {/* <Icon.Button
             accessibilityLabel={testVariables.searchRiverSearchIcon}
             testID={testVariables.searchRiverSearchIcon}
             style={styles.searchIcon}
@@ -287,7 +353,7 @@ const SampleHistoryScreen = ({navigation}) => {
             size={20}
             color="#000"
             onPress={() => selectMatchItem(river)}
-          />
+          /> */}
         </View>
         <ScrollView style={styles.resultsContainer}>
           {renderResults()}
@@ -298,53 +364,3 @@ const SampleHistoryScreen = ({navigation}) => {
 };
 
 export default SampleHistoryScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignContent: 'center',
-  },
-  button: {
-    width: 200,
-    marginVertical: 10,
-    backgroundColor: '#4c4cff',
-    padding: 5,
-    borderRadius: 50,
-  },
-  btnText: {
-    color: 'white',
-    fontSize: 20,
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
-  searchContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  searchTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  riverNameInput: {
-    borderBottomWidth: 1,
-    textAlign: 'center',
-    paddingBottom: -10,
-    // paddingLeft: 30,
-    // placeholderTextColor: '#999999',
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  searchIcon: {
-    paddingTop: 18,
-  },
-  resultButton: {
-    padding: 20,
-    marginTop: 5,
-  },
-  resultsContainer: {
-    marginTop: 40,
-  },
-});
