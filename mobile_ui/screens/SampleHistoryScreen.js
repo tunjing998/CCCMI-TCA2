@@ -73,7 +73,6 @@ const SampleHistoryScreen = ({navigation}) => {
       justifyContent: 'center',
     },
     resultButton: {
-      padding: 20,
       marginTop: 5,
     },
     resultsContainer: {
@@ -274,11 +273,12 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const selectMatchItem = keyWord => {
     let resArr = [];
-    riverNameList.filter(item => {
-      if (item.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0) {
-        resArr.push(item);
-      }
-    });
+    keyWord &&
+      riverNameList.filter(item => {
+        if (item.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0) {
+          resArr.push(item);
+        }
+      });
     filterDate('riverName', resArr);
   };
 
