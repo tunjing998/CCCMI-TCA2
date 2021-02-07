@@ -1,17 +1,11 @@
 import React, {useEffect, useState, Component} from 'react';
-import {
-  View,
-  StyleSheet,
-  Text,
-  Image,
-  Modal,
-  ToastAndroid,
-} from 'react-native';
+import {View, StyleSheet, Text, Image, Modal, ToastAndroid} from 'react-native';
 import {Button} from 'react-native-elements';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import axios from 'axios';
 import {useTheme} from '@react-navigation/native';
 import {IconButton, Colors} from 'react-native-paper';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const selectInsect1 = ({navigation}) => {
   const [insectList, setInsectList] = useState([]);
@@ -21,6 +15,7 @@ const selectInsect1 = ({navigation}) => {
   const [selectedInsect, setSelectedInsect] = useState({
     insect_name: '',
     amount: null,
+    insect_image: '',
   });
 
   const [selecTedAmount, setSelectedAmount] = useState('');
@@ -33,7 +28,7 @@ const selectInsect1 = ({navigation}) => {
     ToastAndroid.show(val + ' has been added.', ToastAndroid.SHORT);
   };
 
-  const handleAdd = insectName => {
+  const handleAdd = (insectName, imageName) => {
     if (!selecTedAmount.trim()) {
       alert('Please Enter amount');
       return;
@@ -41,17 +36,27 @@ const selectInsect1 = ({navigation}) => {
     const newSelectedInsect = Object.assign({}, selectedInsect);
     newSelectedInsect.insect_name = insectName;
     newSelectedInsect.amount = selecTedAmount;
+    newSelectedInsect.insect_image = imageName;
     setSelectedInsect(newSelectedInsect);
     console.log('new insect:' + newSelectedInsect);
     handleUpdate(newSelectedInsect);
     setSelectedAmount('');
-    showToast(insectName);
   };
 
   const handleUpdate = todo => {
-    const newSelectedInsectList = [...selectedInsectList];
-    newSelectedInsectList.push(todo);
-    setSelectedInsectList(newSelectedInsectList);
+    const found = selectedInsectList.some(
+      el => el.insect_name === todo.insect_name,
+    );
+    if (!found) {
+      const newSelectedInsectList = [...selectedInsectList];
+      newSelectedInsectList.push(todo);
+      setSelectedInsectList(newSelectedInsectList);
+      showToast(todo.insect_name);
+    } else {
+      alert('Error: duplicate insect detected.');
+      // showToast('error: duplicated')
+      return;
+    }
   };
 
   useEffect(() => {
@@ -70,7 +75,7 @@ const selectInsect1 = ({navigation}) => {
   };
 
   const handleSubmit = () => {
-    navigation.navigate('Insect');
+    navigation.navigate('Insect', {post: selectedInsectList});
   };
 
   return (
@@ -96,7 +101,7 @@ const selectInsect1 = ({navigation}) => {
             <Button
               onPress={() => {
                 setModalVisible(true);
-                setActionTriggered(item.insect_name); // HERE
+                setActionTriggered(item.insect_name);
                 setDescription(item.insect_desc);
                 setImage(item.insect_image_path);
               }}
@@ -151,7 +156,7 @@ const selectInsect1 = ({navigation}) => {
                 color={Colors.green500}
                 size={20}
                 onPress={() => {
-                  handleAdd(actionTriggered);
+                  handleAdd(actionTriggered, image);
                   setModalVisible(!modalVisible);
                 }}
               />
@@ -166,7 +171,6 @@ const selectInsect1 = ({navigation}) => {
           </View>
         </View>
       </Modal>
-      {selectedInsectList && console.log(selectedInsectList)}
     </View>
   );
 };
