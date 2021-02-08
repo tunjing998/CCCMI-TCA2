@@ -48,5 +48,20 @@ class RiverTestCase(TestCase):
         pnt = [-7.55,54.93] 
         result = getNearbyList(pnt)
         expectResult = River.objects.get(river_id = 1)
+        check = River.objects.create(
+            river_id= 12,
+            river_code= "IE_NW_01S22010280",
+            river_name= "ST JOHNSTON_010",
+            river_catchments_code= "01",
+            river_catchments= "Foyle",
+            latitude=-7.5032474,
+            longitude=54.9246646,
+            local_authority= "Donegal County Council",
+            water_body_category= "River",
+            protected_area= None,
+            transboundary= "No",
+            canal= False
+        )        
+        print(check.river_id)
         self.assertEqual(result[0],expectResult)
         
