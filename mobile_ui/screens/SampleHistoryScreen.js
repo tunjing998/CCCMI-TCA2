@@ -73,7 +73,6 @@ const SampleHistoryScreen = ({navigation}) => {
       justifyContent: 'center',
     },
     resultButton: {
-      padding: 20,
       marginTop: 5,
     },
     resultsContainer: {
@@ -122,19 +121,19 @@ const SampleHistoryScreen = ({navigation}) => {
       .then(json => {
         historyData = json;
       })
-      .then(() => convertData())
+      .then(() => convertDate())
       .then(() => setValues())
       .then(() => setLoading(false))
       .catch(error => alert(error));
   }, []);
 
   /**
-   * @function convertData
+   * @function convertDate
    * @description convert fetched data into local data list,
    *              add a new filed called newDate.
    *
    */
-  const convertData = () => {
+  const convertDate = () => {
     for (const el of historyData) {
       if (el.sample_date) {
         el.newDate = reconstructDate(el.sample_date);
@@ -179,20 +178,39 @@ const SampleHistoryScreen = ({navigation}) => {
    * @param {String} value date value or river name list
    */
   const filterDate = (filter, value) => {
+    let searchedRivers = [];
     if (filter === 'date') {
       setFilterType('date');
-      setData(historyData.filter(item => item.newDate === value));
-    }
-    if (filter === 'riverName') {
-      let searchedRivers = [];
+      searchedRivers = historyData.filter(item => item.newDate === value);
+    } else {
       for (const val of value) {
         searchedRivers.push(
           historyData.filter(item => item.sample_river.river_name === val)[0],
         );
       }
       setFilterType('river_name');
-      setData(searchedRivers);
     }
+    setData(searchedRivers);
+  };
+
+  /**
+   * @function unique
+   * @description get unique river object
+   * @param {Array} rivers
+   * @param {String} filed
+   */
+  const unique = rivers => {
+    let result = {};
+    let finalResult = [];
+
+    for (let i = 0; i < rivers.length; i++) {
+      result[rivers[i].sample_river.river_name] = rivers[i].sample_river;
+    }
+
+    for (let item in result) {
+      finalResult.push(result[item]);
+    }
+    return finalResult;
   };
 
   /**
@@ -202,68 +220,61 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const renderResults = () => {
     let type = [];
+    type.push(<Text style={{fontSize: 30}}>Results</Text>);
+    let riversNotRepeat = [];
     if (filterType === 'All' && historyData.length > 0) {
-      // type.push(<Text style={{fontSize: 30}}>Results</Text>);
-      historyData.forEach(el => {
-        type.push(
-          <Button
-            title={el.sample_river.river_name.toString()}
-            onPress={() => selectResult(el.sample_river.river_id)}
-            buttonStyle={styles.resultButton}
-            type="outline"
-            key={el.sample_river.river_id}
-            ViewComponent={LinearGradient} // Don't forget this!
-            linearGradientProps={{
-              colors: ['#4c4cff', '#6666ff'],
-              start: {x: 0, y: 0},
-              end: {x: 0, y: 1.5},
-            }}
-            buttonStyle={{
-              margin: 5,
-              padding: 20,
-              borderRadius: 20,
-              width: 300,
-            }}
-          />,
-        );
-      });
-    } else if (filterType !== 'All') {
-      // type.push(<Text style={{fontSize: 20}}>Results :</Text>);
-      data.forEach(el => {
-        type.push(
-          <Button
-            title={el.sample_river.river_name.toString()}
-            onPress={() => selectResult(el.sample_river.river_id)}
-            style={styles.resultButton}
-            key={el.sample_river.river_id}
-            ViewComponent={LinearGradient}
-            linearGradientProps={{
-              colors: ['#4c4cff', '#6666ff'],
-              start: {x: 0, y: 0},
-              end: {x: 0, y: 1.5},
-            }}
-            buttonStyle={{
-              margin: 5,
-              padding: 20,
-              borderRadius: 20,
-              width: 300,
-            }}
-          />,
-        );
-      });
+      riversNotRepeat = unique(historyData);
+    } else {
+      riversNotRepeat = unique(data);
     }
+
+    riversNotRepeat.forEach(el => {
+      type.push(
+        <Button
+          title={el.river_name.toString()}
+          onPress={() => selectResult(el.river_id)}
+          buttonStyle={styles.resultButton}
+          type="outline"
+          key={el.river_id}
+          ViewComponent={LinearGradient} // Don't forget this!
+          linearGradientProps={{
+            colors: ['#4c4cff', '#6666ff'],
+            start: {x: 0, y: 0},
+            end: {x: 0, y: 1.5},
+          }}
+          buttonStyle={{
+            margin: 5,
+            padding: 20,
+            borderRadius: 20,
+            width: 300,
+          }}
+        />,
+      );
+    });
+
     return type;
   };
-
   /**
    * @function selectResult
    * @param {number} riverId
    * @description select river by id
    */
   const selectResult = riverId => {
-    let select = historyData.filter(
-      item => item.sample_river.river_id === riverId,
-    );
+    let select = [];
+    if (filterType === 'date') {
+      select = historyData.filter(item => {
+        if (
+          item.sample_river.river_id === riverId &&
+          reconstructDate(item.sample_date) == reconstructDate(date)
+        )
+          return item;
+      });
+    } else {
+      select = historyData.filter(
+        item => item.sample_river.river_id === riverId,
+      );
+    }
+
     navigation.navigate('HistoryList', {data: select});
   };
 
@@ -274,11 +285,12 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const selectMatchItem = keyWord => {
     let resArr = [];
-    riverNameList.filter(item => {
-      if (item.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0) {
-        resArr.push(item);
-      }
-    });
+    keyWord &&
+      riverNameList.filter(item => {
+        if (item.toLowerCase().indexOf(keyWord.toLowerCase()) >= 0) {
+          resArr.push(item);
+        }
+      });
     filterDate('riverName', resArr);
   };
 

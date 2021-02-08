@@ -7,14 +7,16 @@ import {
   TextInput,
   StyleSheet,
   PermissionsAndroid,
+  Modal,
+  Image,
+  ActivityIndicator,
+  ScrollView,
 } from 'react-native';
 
+import { Button } from 'react-native-elements'
 import {useTheme} from 'react-native-paper';
 import axios from 'axios';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Feather from 'react-native-vector-icons/Feather';
-
+import {IconButton, Colors} from 'react-native-paper';
 import BottomSheet from 'reanimated-bottom-sheet';
 import Animated from 'react-native-reanimated';
 
@@ -25,6 +27,12 @@ const AnalyzeScreen = ({navigation}) => {
   const {colors} = useTheme();
   const bs = React.createRef();
   const fall = new Animated.Value(1);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [detectedInsect, setDetectedInsect] = useState('');
+  const [count, setCount] = useState();
+  const [confidence, setConfidence] = useState('')
+  const [loading, setLoading] = useState(false);
+  const [insectList, setInsectList] = useState([]);
 
   useEffect(() => {
     requestCameraPermission();
@@ -79,6 +87,7 @@ const AnalyzeScreen = ({navigation}) => {
   };
 
   const uploadImage = async () => {
+    setLoading(true);
     try {
       var photo = {
         uri: image,
@@ -95,15 +104,22 @@ const AnalyzeScreen = ({navigation}) => {
         headers: {'Content-Type': 'multipart/form-data'},
       });
 
-      if(response) {console.log(response.data)}
+      if (response) {
+        console.log(response);
+      }
       if (response.data.object.detected_image == false) {
-        alert('No insect is detected.')
+        alert('No insect is detected.');
       } else {
-        alert(response.data.object.class_label + ' ' + response.data.object.predicted_count)
+        // alert(response.data.object.class_label + ' ' + response.data.object.predicted_count)
+        setDetectedInsect(response.data.object.class_label);
+        setCount(response.data.object.predicted_count);
+        setConfidence(response.data.object.confidence)
+        setModalVisible(true);
       }
     } catch (e) {
-      alert('Please insert image.')
+     console.log(e)
     }
+    setLoading(false);
   };
 
   const renderInner = () => (
@@ -138,8 +154,102 @@ const AnalyzeScreen = ({navigation}) => {
     </View>
   );
 
+  const renderModal = () => {
+    if (loading) {
+      return (
+        <ActivityIndicator
+          animating={true}
+          style={styles.indicator}
+          size="large"
+        />
+      );
+    }
+  };
+
+  const handleConfirm = () => {
+    const insect = {
+      insect_name: detectedInsect,
+      count: count,
+      image: image,
+    };
+    insectList.push(insect);
+    setModalVisible(!modalVisible);
+    // navigation.navigate('Insect', {
+    //   insect: insect
+    // });
+  };
+
+  const renderAnalysedInsect = () => {
+    if (insectList.length > 0) {
+      console.log('analysed insect list:' + insectList);
+      let comp = [];
+      comp.push(
+        <Text style={{alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 20}}>Analysed Insects:</Text>,
+      );
+      insectList.map(item => {
+        comp.push(
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Image
+              style={styles.tinyLogo}
+              source={{
+                uri: item.image,
+              }}
+            />
+            <Text
+              style={{
+                fontSize: 15,
+                width: 150,
+                textAlign: 'center',
+                color: colors.text,
+              }}>
+              {item.insect_name}
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                width: 150,
+                textAlign: 'center',
+                color: colors.text,
+              }}>
+              {item.count}
+            </Text>
+          </View>,
+        );
+      });
+      return comp;
+    }
+  };
+
+  const handleSave = () => {
+    navigation.navigate('Insect', {
+      insect: insectList
+    })
+  }
+
   return (
     <View style={styles.container}>
+      {console.log(insectList)}
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {}}>
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>Detected: {detectedInsect}</Text>
+            <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>Count: {count}</Text>
+            {/* <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>Confidence: {confidence}</Text> */}
+            <Button title="Confirm" onPress={() => handleConfirm()} buttonStyle={{backgroundColor: 'green', margin: 5}}/>
+            <Button title="Cancel" onPress={() => setModalVisible(!modalVisible)} buttonStyle={{backgroundColor: 'red', margin: 5}}/>
+            {/* <IconButton
+              icon="close-circle"
+              color={Colors.red500}
+              size={20}
+              onPress={() => setModalVisible(!modalVisible)}
+            /> */}
+          </View>
+        </View>
+      </Modal>
       <BottomSheet
         ref={bs}
         snapPoints={[330, 0]}
@@ -154,7 +264,7 @@ const AnalyzeScreen = ({navigation}) => {
           margin: 20,
           opacity: Animated.add(0.1, Animated.multiply(fall, 1.0)),
         }}>
-        <View style={{alignItems: 'center'}}>
+        <View style={{alignItems: 'center', marginTop: 20}}>
           <TouchableOpacity onPress={() => bs.current.snapTo(0)}>
             <View
               style={{
@@ -175,6 +285,7 @@ const AnalyzeScreen = ({navigation}) => {
                     flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center',
+                    borderWidth: 1,
                   }}
                 />
               </ImageBackground>
@@ -187,9 +298,14 @@ const AnalyzeScreen = ({navigation}) => {
           onPress={() => {
             uploadImage();
           }}>
-          <Text style={styles.panelButtonTitle}>Submit</Text>
+          <Text style={styles.panelButtonTitle}>Upload For AI Recognition</Text>
         </TouchableOpacity>
       </Animated.View>
+          <Button title='Save' buttonStyle={{backgroundColor:'green', width: 200, alignSelf: 'center', marginBottom: 20}} onPress={() => handleSave()}/>
+      <ScrollView>
+        {renderModal()}
+        {renderAnalysedInsect()}
+      </ScrollView>
     </View>
   );
 };
@@ -205,7 +321,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#FF6347',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 30,
   },
   panel: {
     padding: 20,
@@ -275,5 +391,32 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === 'ios' ? 0 : -12,
     paddingLeft: 10,
     color: '#05375a',
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    width: 300,
+    height: 'auto',
+  },
+  tinyLogo: {
+    width: 80,
+    height: 80,
   },
 });
