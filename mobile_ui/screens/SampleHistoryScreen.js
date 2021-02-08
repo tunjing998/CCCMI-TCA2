@@ -219,7 +219,6 @@ const SampleHistoryScreen = ({navigation}) => {
             title={el.river_name}
             onPress={() => selectResult(el.river_id)}
             buttonStyle={styles.resultButton}
-            type="outline"
             key={el.river_id}
             ViewComponent={LinearGradient} // Don't forget this!
             linearGradientProps={{
