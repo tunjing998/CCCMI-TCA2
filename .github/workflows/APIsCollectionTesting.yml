@@ -50,3 +50,4 @@ jobs:
         with:
           name: RunReports
           path: Aquality2/testResults
+# generate report
