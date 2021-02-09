@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Text} from 'react-native-elements';
 import {useTheme} from '@react-navigation/native';
 import axios from 'axios';
+import AsyncStorage from '@react-native-community/async-storage';
 import * as Animatable from 'react-native-animatable';
 import testVariables from '../appium_automation_testing/test_variables';
 
@@ -54,6 +55,17 @@ const ArduinoScreen = ({navigation}) => {
       fontSize: 14,
     },
   });
+
+  const storeData = async value => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem('arduino', jsonValue);
+      console.log('stored data: ' + jsonValue);
+    } catch (e) {
+      // saving error
+    }
+  };
+
   const checkDeviceId = async () => {
     if (data.arduinoId.length == 0) {
       setData({
@@ -77,6 +89,8 @@ const ArduinoScreen = ({navigation}) => {
               notValidDeviceId: true,
               notEmptyDeviceId: true,
             });
+            //save response to async storage
+            storeData(response.data[0]);        
             navigation.navigate('ArduinoScreen2', response.data[0]);
           }
         } else {
@@ -98,7 +112,7 @@ const ArduinoScreen = ({navigation}) => {
       accessibilityLabel={testVariables.arduinoScreenContainer}
       testID={testVariables.arduinoScreenContainer}>
       <Text h4 h4Style={styles.title}>
-        Connect to a device.
+        Connect to Arduino device.
       </Text>
       <View style={styles.searchSection}>
         <TextInput
