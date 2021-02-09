@@ -1,5 +1,4 @@
 import React from 'react';
-import {Button} from 'react-native-elements';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -9,6 +8,7 @@ import DetailsScreen from './DetailsScreen';
 import InsectScreen from './InsectScreen';
 import ArduinoScreen from './ArduinoScreen';
 import ArduinoScreen2 from './ArduinoScreen2';
+import ResultPage from './ResultPage';
 
 const InsectStack = createStackNavigator();
 import selectInsect1 from './selectInsect1';
@@ -84,6 +84,7 @@ const ArduinoStackScreen = ({navigation}) => (
       name="ArduinoScreen1"
       component={ArduinoScreen}
       options={{
+        title: 'Arduino',
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
@@ -92,6 +93,7 @@ const ArduinoStackScreen = ({navigation}) => (
             onPress={() => navigation.openDrawer()}
           />
         ),
+        
       }}
     />
     <ArduinoStack.Screen
@@ -115,7 +117,10 @@ const DetailsStackScreen = ({navigation}) => (
         fontWeight: 'bold',
       },
     }}>
-    <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
+    <DetailsStack.Screen
+      name="Details"
+      component={DetailsScreen}
+      options={{
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
@@ -124,7 +129,8 @@ const DetailsStackScreen = ({navigation}) => (
             onPress={() => navigation.openDrawer()}
           />
         ),
-      }}/>
+      }}
+    />
   </DetailsStack.Navigator>
 );
 
@@ -151,6 +157,14 @@ const InsectStackScreen = ({navigation}) => (
             onPress={() => navigation.openDrawer()}
           />
         ),
+        headerRight: () => (
+          <Icon.Button
+            name="checkmark-outline"
+            size={25}
+            backgroundColor="#e76f51"
+            onPress={() => navigation.navigate('ResultPage')}
+          />
+        ),
       }}
     />
 
@@ -166,6 +180,14 @@ const InsectStackScreen = ({navigation}) => (
       component={AnalyzeInsect}
       options={{
         title: 'Analyze Insect',
+      }}
+    />
+    {/* temporily inside insect stack */}
+    <InsectStack.Screen
+      name="ResultPage"
+      component={ResultPage}
+      options={{
+        title: 'Review',
       }}
     />
   </InsectStack.Navigator>

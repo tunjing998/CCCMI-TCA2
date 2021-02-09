@@ -295,9 +295,6 @@ const App = () => {
               <Drawer.Screen name="HomeScreen" component={HomeStackScreen} />
               <Drawer.Screen name="SupportScreen" component={SupportScreen} />
               <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
-              <Drawer.Screen name="ArduinoScreen" component={ArduinoScreen} />
-              <Drawer.Screen name="ArduinoScreen2" component={ArduinoScreen2} />
-
               <Drawer.Screen name="MainTabScreen" component={MainTabScreen} />
             </Drawer.Navigator>
           ) : (

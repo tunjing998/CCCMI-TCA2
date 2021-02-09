@@ -5,7 +5,6 @@ import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import axios from 'axios';
 import {useTheme} from '@react-navigation/native';
 import {IconButton, Colors} from 'react-native-paper';
-import AsyncStorage from '@react-native-community/async-storage';
 
 const selectInsect1 = ({navigation}) => {
   const [insectList, setInsectList] = useState([]);

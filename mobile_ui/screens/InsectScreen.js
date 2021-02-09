@@ -4,11 +4,10 @@ import {useTheme} from '@react-navigation/native';
 import {Text, Button} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import testVariables from '../appium_automation_testing/test_variables';
-import axios from 'axios';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const InsectScreen = ({navigation, route}) => {
   const {colors} = useTheme();
-  const theme = useTheme();
   const [insectList, setInsectList] = useState([]);
   const [image, setImage] = useState('');
   const [analysedInsect, setAnalysedInsect] = useState([]);
@@ -64,10 +63,22 @@ const InsectScreen = ({navigation, route}) => {
           </View>,
         );
       });
+
+      storeData(insectList);
+
       return comp;
     }
   };
 
+  const storeData = async value => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem('selected_insect', jsonValue);
+      console.log('stored data: ' + jsonValue);
+    } catch (e) {
+      // saving error
+    }
+  };
 
   const renderAnalysedInsect = () => {
     if (analysedInsect.length > 0) {
@@ -161,16 +172,7 @@ const InsectScreen = ({navigation, route}) => {
           marginBottom: 50
         }}
       />
-      {/* <Button
-        title="Finish"
-        buttonStyle={{
-          backgroundColor: 'lightgreen',
-          marginTop: 30,
-          borderRadius: 10,
-          width: 100,
-        }}
-        titleStyle={{color: 'black'}}
-      /> */}
+      
 
       <ScrollView>
       {renderSelectedInsect()}
