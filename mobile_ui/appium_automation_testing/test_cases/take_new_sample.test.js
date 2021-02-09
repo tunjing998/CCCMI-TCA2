@@ -317,4 +317,18 @@ describe('Testing tabs with screens', () => {
       'Cancel button is displayed',
     ).to.be.true;
   });
+
+  // it('should show sampling results', () => {
+  //   driver.pause(1000);
+  //   $('~' + testVariables.cancelButton).click();
+  //   driver.back();
+
+  //   $('~' + testVariables.insectScreenContainer).waitForDisplayed(10000, false);
+
+  //   $('~' + testVariables.finishSamplingButton).click();
+  //   expect(
+  //     $('~' + testVariables.finishSamplingButton).isDisplayed(),
+  //     'should display new sampling results',
+  //   ).to.be.true;
+  // });
 });

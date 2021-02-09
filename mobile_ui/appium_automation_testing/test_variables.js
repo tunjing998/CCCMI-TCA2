@@ -69,7 +69,18 @@ const testVariables = {
 
   //sample history screen
   sampleHistoryScreenContainer: 'sampleHistoryScreenContainer',
-  sampleHistorySearchIcon: 'sampleHistorySearchIcon',
+  sampleHistoryDatePickerController: 'sampleHistoryDatePickerController',
+  sampleHistoryDatePicker: 'sampleHistoryDatePicker',
+  sampleHistorySearchedSample: 'sampleHistorySearchedSample',
+  sampleHistorySearchRiverIcon: 'sampleHistorySearchRiverIcon',
+  sampleHistorySearchRiverBar: 'sampleHistorySearchRiverBar',
+
+  //history list screen
+  historyListContainer: 'historyListContainer',
+  historyListItems: 'historyListItems',
+
+  //history detail screen
+  historyDetailContainer: 'historyDetailContainer',
 };
 
 module.exports = testVariables;

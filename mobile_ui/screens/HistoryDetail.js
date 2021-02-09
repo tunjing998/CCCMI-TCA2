@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {ListItem, Icon} from 'react-native-elements';
+import testVariables from '../appium_automation_testing/test_variables';
 
 const HistoryDetail = ({route}) => {
   const {colors} = useTheme();
@@ -22,7 +23,10 @@ const HistoryDetail = ({route}) => {
   });
 
   return (
-    <View style={styles.listContainer}>
+    <View
+      style={styles.listContainer}
+      accessibilityLabel={testVariables.historyDetailContainer}
+      testID={testVariables.historyDetailContainer}>
       <ListItem bottomDivider containerStyle={styles.listContainer}>
         <ListItem.Content>
           <ListItem.Subtitle style={styles.title}>

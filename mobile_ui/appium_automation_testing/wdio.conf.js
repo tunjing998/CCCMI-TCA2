@@ -7,8 +7,7 @@ exports.config = {
   services: ['appium'],
   port: 4723,
   runner: 'local',
-  specs: ['./test_cases/take_new_sample.test.js'],
-  // specs: ['./test_cases/**/*.js'],
+  specs: ['./test_cases/**/*.js'],
   capabilities: [
     {
       maxInstances: 1,

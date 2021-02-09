@@ -50,12 +50,11 @@ describe('Testing Sign in activity', () => {
   });
 });
 
-describe('Testing user view all history', () => {
-  beforeEach(() => {
-    expect($('~' + testVariables.homeScreenContainer).isDisplayed()).to.equal(
-      true,
-    );
+describe('Testing user sampling history with filters', () => {
+  before(() => {
+    $('~' + testVariables.homeScreenContainer).waitForDisplayed(50000, false);
   });
+
   it('should have two buttons on home screen 1.take new sample button, 2.view sample', async => {
     expect(
       $('~' + testVariables.homeScreenTakeNewSampleButton).isDisplayed(),
@@ -65,7 +64,7 @@ describe('Testing user view all history', () => {
     ).to.equal(true);
   });
 
-  it('should show sampling history screen after click view sample button', async => {
+  it('should show sampling history screen after click view sample button', () => {
     $('~' + testVariables.homeScreenViewSampleButton).click();
     $('~' + testVariables.sampleHistoryScreenContainer).waitForDisplayed(
       5000,
@@ -73,6 +72,45 @@ describe('Testing user view all history', () => {
     );
     expect(
       $('~' + testVariables.sampleHistoryScreenContainer).isDisplayed(),
+    ).to.equal(true);
+    expect(
+      $$('~' + testVariables.sampleHistorySearchedSample),
+      'all results should be >= 0',
+    ).to.have.length.above(-1);
+  });
+
+  it('should filter by River Name such as ST', () => {
+    $('~' + testVariables.sampleHistorySearchRiverBar).setValue('ST');
+    driver.pause(1000);
+    $('~' + testVariables.sampleHistorySearchRiverIcon).click();
+    driver.pause(1000);
+    expect(
+      $$('~' + testVariables.sampleHistorySearchedSample),
+    ).to.have.length.above(0);
+  });
+
+  it('should show selected sample id', () => {
+    const samples = $$('~' + testVariables.sampleHistorySearchedSample);
+    samples[0].click();
+    $('~' + testVariables.historyListContainer).waitForDisplayed(10000, false);
+
+    expect(
+      $('~' + testVariables.historyListContainer).isDisplayed(),
+      'History List Container should be displayed',
+    ).to.equal(true);
+
+    const listItems = $$('~' + testVariables.historyListItems);
+
+    expect(listItems, 'List item should >=1').to.have.length.above(0);
+
+    listItems[0].click();
+    $('~' + testVariables.historyDetailContainer).waitForDisplayed(
+      10000,
+      false,
+    );
+    expect(
+      $('~' + testVariables.historyDetailContainer).isDisplayed(),
+      'Selected history item should be displayed',
     ).to.equal(true);
   });
 });

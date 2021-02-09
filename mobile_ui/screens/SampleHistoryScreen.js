@@ -231,10 +231,11 @@ const SampleHistoryScreen = ({navigation}) => {
     riversNotRepeat.forEach(el => {
       type.push(
         <Button
+          accessibilityLabel={testVariables.sampleHistorySearchedSample}
+          testID={testVariables.sampleHistorySearchedSample}
           title={el.river_name.toString()}
           onPress={() => selectResult(el.river_id)}
           buttonStyle={styles.resultButton}
-          type="outline"
           key={el.river_id}
           ViewComponent={LinearGradient} // Don't forget this!
           linearGradientProps={{
@@ -311,12 +312,17 @@ const SampleHistoryScreen = ({navigation}) => {
       <View style={styles.searchContainer}>
         {/* FOR DATE */}
         <Text style={styles.searchTitle}>Sort by date</Text>
-        <TouchableOpacity onPress={showDatepicker} style={styles.button}>
+        <TouchableOpacity
+          accessibilityLabel={testVariables.sampleHistoryDatePickerController}
+          testID={testVariables.sampleHistoryDatePickerController}
+          onPress={showDatepicker}
+          style={styles.button}>
           <Text style={styles.btnText}>{formatDate(date)}</Text>
         </TouchableOpacity>
         {show && (
           <DateTimePicker
-            testID="dateTimePicker"
+            accessibilityLabel={testVariables.sampleHistoryDatePicker}
+            testID={testVariables.sampleHistoryDatePicker}
             value={date}
             mode={mode}
             display="default"
@@ -337,6 +343,8 @@ const SampleHistoryScreen = ({navigation}) => {
             style={styles.riverNameInput}
           /> */}
           <SearchBar
+            accessibilityLabel={testVariables.sampleHistorySearchRiverBar}
+            testID={testVariables.sampleHistorySearchRiverBar}
             placeholder="e.g. River Liffey"
             onChangeText={text => getInput(text)}
             value={river}
@@ -344,8 +352,8 @@ const SampleHistoryScreen = ({navigation}) => {
             lightTheme={true}
             searchIcon={
               <Icon.Button
-                accessibilityLabel={testVariables.sampleHistorySearchIcon}
-                testID={testVariables.sampleHistorySearchIcon}
+                accessibilityLabel={testVariables.sampleHistorySearchRiverIcon}
+                testID={testVariables.sampleHistorySearchRiverIcon}
                 style={styles.searchIcon}
                 name="magnify"
                 backgroundColor="transparent"
