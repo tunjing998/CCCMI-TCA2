@@ -31,12 +31,22 @@ const InsectScreen = ({navigation, route}) => {
 
   const renderSelectedInsect = () => {
     if (insectList.length > 0) {
-      console.log(insectList);    //selected insect list
+      console.log(insectList); //selected insect list
       let comp = [];
-      comp.push(<Text style={{alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold'}}>Selected :</Text>)
+      comp.push(
+        <Text
+          accessibilityLabel={testVariables.insectScreenSelectedTitle}
+          testID={testVariables.insectScreenSelectedTitle}
+          style={{alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold'}}>
+          Selected :
+        </Text>,
+      );
       insectList.map(item => {
         comp.push(
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View
+            accessibilityLabel={testVariables.insectScreenSelectedInsects}
+            testID={testVariables.insectScreenSelectedInsects}
+            style={{flexDirection: 'row', alignItems: 'center'}}>
             <Image
               style={styles.tinyLogo}
               source={{
@@ -68,12 +78,16 @@ const InsectScreen = ({navigation, route}) => {
     }
   };
 
-
   const renderAnalysedInsect = () => {
     if (analysedInsect.length > 0) {
       console.log('analysed insect list:' + analysedInsect);
       let comp = [];
-      comp.push(<Text style={{alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold'}}>Analysed Insects:</Text>)
+      comp.push(
+        <Text
+          style={{alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold'}}>
+          Analysed Insects:
+        </Text>,
+      );
       analysedInsect.map(item => {
         comp.push(
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -113,7 +127,7 @@ const InsectScreen = ({navigation, route}) => {
       setInsectList(route.params.post);
     }
     if (route.params?.insect) {
-      setAnalysedInsect(route.params.insect)
+      setAnalysedInsect(route.params.insect);
     }
   }, [route.params?.post, route.params?.insect]);
 
@@ -122,7 +136,6 @@ const InsectScreen = ({navigation, route}) => {
       style={styles.container}
       accessibilityLabel={testVariables.insectScreenContainer}
       testID={testVariables.insectScreenContainer}>
-
       <Button
         title="Select Insect"
         onPress={() => navigation.navigate('selectInsect1')}
@@ -139,14 +152,16 @@ const InsectScreen = ({navigation, route}) => {
           padding: 20,
           borderRadius: 20,
           width: 300,
-          marginTop: 50
+          marginTop: 50,
         }}
       />
       <Button
         accessibilityLabel={testVariables.insectScreenAnalyzeInsectButton}
         testID={testVariables.insectScreenAnalyzeInsectButton}
         title="Analyze Insect"
-        onPress={() => {navigation.navigate('AnalyzeInsect')}}
+        onPress={() => {
+          navigation.navigate('AnalyzeInsect');
+        }}
         ViewComponent={LinearGradient}
         linearGradientProps={{
           colors: ['#4c4cff', '#6666ff'],
@@ -158,7 +173,7 @@ const InsectScreen = ({navigation, route}) => {
           padding: 20,
           borderRadius: 20,
           width: 300,
-          marginBottom: 50
+          marginBottom: 50,
         }}
       />
       {/* <Button
@@ -173,8 +188,8 @@ const InsectScreen = ({navigation, route}) => {
       /> */}
 
       <ScrollView>
-      {renderSelectedInsect()}
-      {renderAnalysedInsect()}
+        {renderSelectedInsect()}
+        {renderAnalysedInsect()}
       </ScrollView>
     </View>
   );

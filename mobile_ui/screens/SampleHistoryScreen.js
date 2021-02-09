@@ -344,8 +344,8 @@ const SampleHistoryScreen = ({navigation}) => {
             lightTheme={true}
             searchIcon={
               <Icon.Button
-                accessibilityLabel={testVariables.searchRiverSearchIcon}
-                testID={testVariables.searchRiverSearchIcon}
+                accessibilityLabel={testVariables.sampleHistorySearchIcon}
+                testID={testVariables.sampleHistorySearchIcon}
                 style={styles.searchIcon}
                 name="magnify"
                 backgroundColor="transparent"
