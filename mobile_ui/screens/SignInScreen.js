@@ -95,7 +95,10 @@ const SignInScreen = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel={testVariables.signScreenContainer}
+      testID={testVariables.signScreenContainer}>
       <StatusBar backgroundColor="#009387" barStyle="light-content" />
       <View style={styles.header}>
         <Text style={styles.text_header}>Welcome!</Text>
@@ -120,6 +123,8 @@ const SignInScreen = ({navigation}) => {
         <View style={styles.action}>
           <FontAwesome name="user-o" color={colors.text} size={20} />
           <TextInput
+            accessibilityLabel={testVariables.signScreenUserName}
+            testID={testVariables.signScreenUserName}
             placeholder="Your Username"
             placeholderTextColor="#666666"
             style={[
@@ -151,6 +156,8 @@ const SignInScreen = ({navigation}) => {
         <View style={styles.action}>
           <Feather name="lock" color={colors.text} size={20} />
           <TextInput
+            accessibilityLabel={testVariables.signScreenPassword}
+            testID={testVariables.signScreenPassword}
             placeholder="Your Password"
             placeholderTextColor="#666666"
             secureTextEntry={data.secureTextEntry ? true : false}
@@ -191,6 +198,8 @@ const SignInScreen = ({navigation}) => {
         )}
         <View style={styles.button}>
           <TouchableOpacity
+            accessibilityLabel={testVariables.signScreenSignInButton}
+            testID={testVariables.signScreenSignInButton}
             style={styles.signIn}
             onPress={() => {
               loginHandle(data.username, data.password);

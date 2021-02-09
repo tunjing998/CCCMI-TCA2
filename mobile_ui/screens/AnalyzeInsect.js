@@ -13,7 +13,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-import { Button } from 'react-native-elements'
+import {Button} from 'react-native-elements';
 import {useTheme} from 'react-native-paper';
 import axios from 'axios';
 import {IconButton, Colors} from 'react-native-paper';
@@ -21,6 +21,7 @@ import BottomSheet from 'reanimated-bottom-sheet';
 import Animated from 'react-native-reanimated';
 
 import ImagePicker from 'react-native-image-crop-picker';
+import testVariables from '../appium_automation_testing/test_variables';
 
 const AnalyzeScreen = ({navigation}) => {
   const [image, setImage] = useState('https://i.imgur.com/cKIaH7q.png');
@@ -30,7 +31,7 @@ const AnalyzeScreen = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [detectedInsect, setDetectedInsect] = useState('');
   const [count, setCount] = useState();
-  const [confidence, setConfidence] = useState('')
+  const [confidence, setConfidence] = useState('');
   const [loading, setLoading] = useState(false);
   const [insectList, setInsectList] = useState([]);
 
@@ -113,32 +114,41 @@ const AnalyzeScreen = ({navigation}) => {
         // alert(response.data.object.class_label + ' ' + response.data.object.predicted_count)
         setDetectedInsect(response.data.object.class_label);
         setCount(response.data.object.predicted_count);
-        setConfidence(response.data.object.confidence)
+        setConfidence(response.data.object.confidence);
         setModalVisible(true);
       }
     } catch (e) {
-     console.log(e)
+      console.log(e);
     }
     setLoading(false);
   };
 
   const renderInner = () => (
-    <View style={styles.panel}>
+    <View
+      style={styles.panel}
+      accessibilityLabel={testVariables.analysisInsectInnerView}
+      testID={testVariables.analysisInsectInnerView}>
       <View style={{alignItems: 'center'}}>
         <Text style={styles.panelTitle}>Upload Photo</Text>
         <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
       </View>
       <TouchableOpacity
+        accessibilityLabel={testVariables.takePhotoButton}
+        testID={testVariables.takePhotoButton}
         style={styles.panelButton}
         onPress={takePhotoFromCamera}>
         <Text style={styles.panelButtonTitle}>Take Photo</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        accessibilityLabel={testVariables.chooseFormLibraryButton}
+        testID={testVariables.chooseFormLibraryButton}
         style={styles.panelButton}
         onPress={choosePhotoFromLibrary}>
         <Text style={styles.panelButtonTitle}>Choose From Library</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        accessibilityLabel={testVariables.cancelButton}
+        testID={testVariables.cancelButton}
         style={styles.panelButton}
         onPress={() => bs.current.snapTo(1)}>
         <Text style={styles.panelButtonTitle}>Cancel</Text>
@@ -184,7 +194,10 @@ const AnalyzeScreen = ({navigation}) => {
       console.log('analysed insect list:' + insectList);
       let comp = [];
       comp.push(
-        <Text style={{alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 20}}>Analysed Insects:</Text>,
+        <Text
+          style={{alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 20}}>
+          Analysed Insects:
+        </Text>,
       );
       insectList.map(item => {
         comp.push(
@@ -222,13 +235,17 @@ const AnalyzeScreen = ({navigation}) => {
 
   const handleSave = () => {
     navigation.navigate('Insect', {
-      insect: insectList
-    })
-  }
+      insect: insectList,
+    });
+  };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel={testVariables.analysisInsectScreenContainer}
+      testID={testVariables.analysisInsectScreenContainer}>
       {console.log(insectList)}
+
       <Modal
         animationType="slide"
         transparent={true}
@@ -236,11 +253,23 @@ const AnalyzeScreen = ({navigation}) => {
         onRequestClose={() => {}}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>Detected: {detectedInsect}</Text>
-            <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>Count: {count}</Text>
+            <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>
+              Detected: {detectedInsect}
+            </Text>
+            <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>
+              Count: {count}
+            </Text>
             {/* <Text style={{fontWeight: 'bold', alignSelf: 'flex-start'}}>Confidence: {confidence}</Text> */}
-            <Button title="Confirm" onPress={() => handleConfirm()} buttonStyle={{backgroundColor: 'green', margin: 5}}/>
-            <Button title="Cancel" onPress={() => setModalVisible(!modalVisible)} buttonStyle={{backgroundColor: 'red', margin: 5}}/>
+            <Button
+              title="Confirm"
+              onPress={() => handleConfirm()}
+              buttonStyle={{backgroundColor: 'green', margin: 5}}
+            />
+            <Button
+              title="Cancel"
+              onPress={() => setModalVisible(!modalVisible)}
+              buttonStyle={{backgroundColor: 'red', margin: 5}}
+            />
             {/* <IconButton
               icon="close-circle"
               color={Colors.red500}
@@ -265,7 +294,10 @@ const AnalyzeScreen = ({navigation}) => {
           opacity: Animated.add(0.1, Animated.multiply(fall, 1.0)),
         }}>
         <View style={{alignItems: 'center', marginTop: 20}}>
-          <TouchableOpacity onPress={() => bs.current.snapTo(0)}>
+          <TouchableOpacity
+            accessibilityLabel={testVariables.analysisInsectShowOptions}
+            testID={testVariables.analysisInsectShowOptions}
+            onPress={() => bs.current.snapTo(0)}>
             <View
               style={{
                 height: 150,
@@ -275,6 +307,8 @@ const AnalyzeScreen = ({navigation}) => {
                 alignItems: 'center',
               }}>
               <ImageBackground
+                accessibilityLabel={testVariables.analysisInsectImageBackground}
+                testID={testVariables.analysisInsectImageBackground}
                 source={{
                   uri: image,
                 }}
@@ -294,6 +328,8 @@ const AnalyzeScreen = ({navigation}) => {
         </View>
 
         <TouchableOpacity
+          accessibilityLabel={testVariables.analysisInsectUploadedPhotoButton}
+          testID={testVariables.analysisInsectUploadedPhotoButton}
           style={styles.commandButton}
           onPress={() => {
             uploadImage();
@@ -301,7 +337,18 @@ const AnalyzeScreen = ({navigation}) => {
           <Text style={styles.panelButtonTitle}>Upload For AI Recognition</Text>
         </TouchableOpacity>
       </Animated.View>
-          <Button title='Save' buttonStyle={{backgroundColor:'green', width: 200, alignSelf: 'center', marginBottom: 20}} onPress={() => handleSave()}/>
+      <Button
+        accessibilityLabel={testVariables.analysisInsectSaveButton}
+        testID={testVariables.analysisInsectSaveButton}
+        title="Save"
+        buttonStyle={{
+          backgroundColor: 'green',
+          width: 200,
+          alignSelf: 'center',
+          marginBottom: 20,
+        }}
+        onPress={() => handleSave()}
+      />
       <ScrollView>
         {renderModal()}
         {renderAnalysedInsect()}

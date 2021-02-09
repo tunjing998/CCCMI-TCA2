@@ -6,6 +6,8 @@ import {useTheme} from '@react-navigation/native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 import * as Animatable from 'react-native-animatable';
+import testVariables from '../appium_automation_testing/test_variables';
+
 const ArduinoScreen = ({navigation}) => {
   const [data, setData] = React.useState({
     arduinoId: '',
@@ -87,10 +89,8 @@ const ArduinoScreen = ({navigation}) => {
               notValidDeviceId: true,
               notEmptyDeviceId: true,
             });
-
             //save response to async storage
-            storeData(response.data[0]);
-
+            storeData(response.data[0]);        
             navigation.navigate('ArduinoScreen2', response.data[0]);
           }
         } else {
@@ -107,12 +107,17 @@ const ArduinoScreen = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityLabel={testVariables.arduinoScreenContainer}
+      testID={testVariables.arduinoScreenContainer}>
       <Text h4 h4Style={styles.title}>
         Connect to Arduino device.
       </Text>
       <View style={styles.searchSection}>
         <TextInput
+          accessibilityLabel={testVariables.arduinoScreenIDTextInput}
+          testID={testVariables.arduinoScreenIDTextInput}
           placeholder="Insert Device ID here."
           style={styles.input}
           onChangeText={val => {
@@ -120,6 +125,8 @@ const ArduinoScreen = ({navigation}) => {
           }}
         />
         <Icon.Button
+          accessibilityLabel={testVariables.arduinoScreenSearchIconButton}
+          testID={testVariables.arduinoScreenSearchIconButton}
           style={styles.searchIcon}
           name="magnify"
           backgroundColor="transparent"
