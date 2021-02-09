@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'aquality_server.apps.AqualityServerConfig',
     'django_filters',
-    'rest_framework'
+    'rest_framework',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -117,9 +119,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
 
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'Aquality2.storage_backends.MediaStorage'
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
 
