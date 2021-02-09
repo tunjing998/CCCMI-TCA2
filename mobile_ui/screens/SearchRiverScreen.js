@@ -9,7 +9,6 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import GetLocation from 'react-native-get-location';
 import {FlatList} from 'react-native-gesture-handler';
-import {TextPropTypes} from 'react-native';
 
 const riverURL = 'http://cccmi-aquality.tk/aquality_server/rivers/';
 

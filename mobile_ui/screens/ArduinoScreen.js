@@ -1,23 +1,24 @@
 import React from 'react';
-import { View, StyleSheet, TextInput } from 'react-native';
+import {View, StyleSheet, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Text } from 'react-native-elements';
-import { useTheme } from '@react-navigation/native';
+import {Text} from 'react-native-elements';
+import {useTheme} from '@react-navigation/native';
 import axios from 'axios';
+import AsyncStorage from '@react-native-community/async-storage';
 import * as Animatable from 'react-native-animatable';
-const ArduinoScreen = ({ navigation }) => {
+const ArduinoScreen = ({navigation}) => {
   const [data, setData] = React.useState({
     arduinoId: '',
     notValidDeviceId: true,
     notEmptyDeviceId: true,
   });
-  const textInputChange = (val) => {
+  const textInputChange = val => {
     setData({
       ...data,
       arduinoId: val,
     });
-  }
-  const { colors } = useTheme();
+  };
+  const {colors} = useTheme();
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -52,6 +53,17 @@ const ArduinoScreen = ({ navigation }) => {
       fontSize: 14,
     },
   });
+
+  const storeData = async value => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem('arduino', jsonValue);
+      console.log('stored data: ' + jsonValue);
+    } catch (e) {
+      // saving error
+    }
+  };
+
   const checkDeviceId = async () => {
     if (data.arduinoId.length == 0) {
       setData({
@@ -60,11 +72,14 @@ const ArduinoScreen = ({ navigation }) => {
       });
     } else {
       try {
-        let response = await axios.get('http://cccmi-aquality.tk/aquality_server/data', {
-          params: {
-            arduino_id: data.arduinoId
-          }
-        })
+        let response = await axios.get(
+          'http://cccmi-aquality.tk/aquality_server/data',
+          {
+            params: {
+              arduino_id: data.arduinoId,
+            },
+          },
+        );
         if (response && response.data && response.data.length == 1) {
           if (response.data[0].arduino_id == data.arduinoId) {
             setData({
@@ -72,7 +87,11 @@ const ArduinoScreen = ({ navigation }) => {
               notValidDeviceId: true,
               notEmptyDeviceId: true,
             });
-            navigation.navigate('ArduinoScreen2', response.data[0])
+
+            //save response to async storage
+            storeData(response.data[0]);
+
+            navigation.navigate('ArduinoScreen2', response.data[0]);
           }
         } else {
           setData({
@@ -82,22 +101,22 @@ const ArduinoScreen = ({ navigation }) => {
           });
         }
       } catch (e) {
-        console.error(e)
+        console.error(e);
       }
     }
-  }
-
+  };
 
   return (
     <View style={styles.container}>
       <Text h4 h4Style={styles.title}>
-        Connect to a device.
+        Connect to Arduino device.
       </Text>
       <View style={styles.searchSection}>
-        <TextInput placeholder="Insert Device ID here."
+        <TextInput
+          placeholder="Insert Device ID here."
           style={styles.input}
-          onChangeText={(val) => {
-            textInputChange(val)
+          onChangeText={val => {
+            textInputChange(val);
           }}
         />
         <Icon.Button
@@ -107,24 +126,20 @@ const ArduinoScreen = ({ navigation }) => {
           size={20}
           color="#000"
           onPress={() => {
-            checkDeviceId()
+            checkDeviceId();
           }}
         />
       </View>
-      {data.notEmptyDeviceId ? null :
+      {data.notEmptyDeviceId ? null : (
         <Animatable.View animation="fadeInLeft" duration={500}>
-          <Text style={styles.errorMsg}>
-            Device ID field connot be empty.
-          </Text>
+          <Text style={styles.errorMsg}>Device ID field connot be empty.</Text>
         </Animatable.View>
-      }
-      {data.notValidDeviceId ? null :
+      )}
+      {data.notValidDeviceId ? null : (
         <Animatable.View animation="fadeInLeft" duration={500}>
-          <Text style={styles.errorMsg}>
-            Device with device ID not found.
-          </Text>
+          <Text style={styles.errorMsg}>Device with device ID not found.</Text>
         </Animatable.View>
-      }
+      )}
       {/* <Button title="Turn On Bluetooth" type="outline" /> */}
     </View>
   );
