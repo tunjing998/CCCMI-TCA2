@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { ListItem, Icon } from 'react-native-elements';
+import testVariables from '../appium_automation_testing/test_variables';
 
-const HistoryList = ({navigation, route }) => {
-  const { colors } = useTheme();
-  const { data } = route.params;
+const HistoryList = ({navigation, route}) => {
+  const {colors} = useTheme();
+  const {data} = route.params;
 
   const styles = StyleSheet.create({
     container: {
@@ -25,6 +26,8 @@ const HistoryList = ({navigation, route }) => {
     <View
     style={styles.listContainer}
     >
+      accessibilityLabel={testVariables.historyListContainer}
+      testID={testVariables.historyListContainer}>
       {
         data.map((item, i) => (
           <ListItem

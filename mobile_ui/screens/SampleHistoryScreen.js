@@ -250,6 +250,8 @@ useEffect(
     riversNotRepeat.forEach(el => {
       type.push(
         <Button
+          accessibilityLabel={testVariables.sampleHistorySearchedSample}
+          testID={testVariables.sampleHistorySearchedSample}
           title={el.river_name.toString()}
           onPress={() => selectResult(el.river_id)}
           buttonStyle={{ width: 270, height: 50, backgroundColor: "#02ab9e" }}
@@ -329,12 +331,13 @@ useEffect(
       testID={testVariables.sampleHistoryScreenContainer}>
       <View style={styles.searchContainer}>
         {/* FOR DATE */}
-        <TouchableOpacity onPress={showDatepicker} style={styles.button}>
+        <TouchableOpacity accessibilityLabel={testVariables.sampleHistoryDatePickerController} testID={testVariables.sampleHistoryDatePickerController} onPress={showDatepicker} style={styles.button}>
           <Text style={styles.btnText}>{formatDate(date)}</Text>
         </TouchableOpacity>
         {show && (
           <DateTimePicker
-            testID="dateTimePicker"
+            accessibilityLabel={testVariables.sampleHistoryDatePicker}
+            testID={testVariables.sampleHistoryDatePicker}
             value={date}
             mode={mode}
             display="default"
@@ -355,6 +358,8 @@ useEffect(
             style={styles.riverNameInput}
           /> */}
           <SearchBar
+            accessibilityLabel={testVariables.sampleHistorySearchRiverBar}
+            testID={testVariables.sampleHistorySearchRiverBar}
             placeholder="e.g. River Liffey"
             onChangeText={text => getInput(text)}
             value={river}
@@ -363,8 +368,8 @@ useEffect(
             round
             searchIcon={
               <Icon.Button
-                accessibilityLabel={testVariables.searchRiverSearchIcon}
-                testID={testVariables.searchRiverSearchIcon}
+                accessibilityLabel={testVariables.sampleHistorySearchRiverIcon}
+                testID={testVariables.sampleHistorySearchRiverIcon}
                 style={styles.searchIcon}
                 name="magnify"
                 backgroundColor="transparent"

@@ -3,8 +3,9 @@ import { View, StyleSheet, Text, Image, Modal, ToastAndroid } from 'react-native
 import { Button } from 'react-native-elements';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import axios from 'axios';
-import { useTheme } from '@react-navigation/native';
-import { IconButton, Colors } from 'react-native-paper';
+import {useTheme} from '@react-navigation/native';
+import {IconButton, Colors} from 'react-native-paper';
+import testVariables from '../appium_automation_testing/test_variables';
 
 const selectInsect1 = ({ navigation }) => {
   const [insectList, setInsectList] = useState([]);
@@ -78,7 +79,10 @@ const selectInsect1 = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.viewContainer}>
+    <View
+      accessibilityLabel={testVariables.chooseInsectScreenContainer}
+      testID={testVariables.chooseInsectScreenContainer}
+      style={styles.viewContainer}>
       <ScrollView>
         {insectList.map((item, key) => (
           <View key={key} style={styles.container}>
@@ -98,6 +102,8 @@ const selectInsect1 = ({ navigation }) => {
               {item.insect_name}
             </Text>
             <Button
+              accessibilityLabel={testVariables.groupList}
+              testID={testVariables.groupList}
               onPress={() => {
                 setModalVisible(true);
                 setActionTriggered(item.insect_name);
@@ -134,12 +140,15 @@ const selectInsect1 = ({ navigation }) => {
       </ScrollView>
 
       <Button
+        accessibilityLabel={testVariables.submitInsectsAmountButton}
+        testID={testVariables.submitInsectsAmountButton}
         title="Done"
         titleProps={{}}
         titleStyle={{ marginHorizontal: 22, fontSize: 16 }}
         buttonStyle={styles.submitButton}
         onPress={() => handleSubmit()}
       />
+
       <Modal
         animationType="slide"
         visible={modalVisible}
@@ -156,11 +165,15 @@ const selectInsect1 = ({ navigation }) => {
             <Text>{description}</Text>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <TextInput
+                accessibilityLabel={testVariables.groupAmountInput}
+                testID={testVariables.groupAmountInput}
                 placeholder="amount"
                 onChangeText={val => setSelectedAmount(val)}
                 keyboardType="numeric"
               />
               <IconButton
+                accessibilityLabel={testVariables.addAmountIcon}
+                testID={testVariables.addAmountIcon}
                 icon="check-circle"
                 color={Colors.green500}
                 size={20}
@@ -172,6 +185,8 @@ const selectInsect1 = ({ navigation }) => {
             </View>
 
             <IconButton
+              accessibilityLabel={testVariables.cancelAddAmountIcon}
+              testID={testVariables.cancelAddAmountIcon}
               icon="close-circle"
               color={Colors.red500}
               size={20}
