@@ -19,6 +19,7 @@ After setting up the environment, run `npm i` to install dependencies.
   - [npm run android](#npm-run-android)
   - [npm run eject](#npm-run-eject)
 - [Writing and Running Tests](#writing-and-running-tests)
+- [UI Testing](#ui-testing)
 
 ## Available Scripts
 
@@ -55,3 +56,43 @@ This will start the process of "ejecting" from Create React Native App's build s
 ## Writing and Running Tests
 
 This project is set up to use [jest](https://facebook.github.io/jest/) for tests. You can configure whatever testing strategy you like, but jest works out of the box. Create test files in directories called `__tests__` or with the `.test` extension to have the files loaded by jest. See the [the template project](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/App.test.js) for an example test. The [jest documentation](https://facebook.github.io/jest/docs/en/getting-started.html) is also a wonderful resource, as is the [React Native testing tutorial](https://facebook.github.io/jest/docs/en/tutorial-react-native.html).
+
+## UI Testing
+
+The UI testing runs on [Appium](http://appium.io/) and test scripts wrote by [WebDriverIO](https://webdriver.io/), the Appium has set up in the project, or you can using [Appium Desktop](https://github.com/appium/appium-desktop) as server.
+
+End-to-end testing is a technique that tests the entire software product from beginning to end to ensure the application flow behaves as expected. It defines the product’s system dependencies and ensures all integrated pieces work together as expected.
+
+The main purpose of End-to-end (E2E) testing is to test from the end user’s experience by simulating the real user scenario and validating the system under test and its components for integration and data integrity.
+
+1. The E2E test scripts are inside folder mobile_ui/appium_automation_testing, make sure you have got into correct folder
+
+2. Use the package manager to install dependencies for E2E test
+
+   ```bash
+   npm install 
+   ```
+
+3. Go back mobile_ui folder to start Appium server, or if prefer using Appium Desktop, just run Appium server before the testing
+
+   ```bash
+   appium 
+   ```
+
+4. Launch Application on Android Device
+
+   ```bash
+   yarn android
+   ```
+
+5. Get into mobile_ui/appium_automation_testing folder and run test scripts 
+
+   ```bash
+   npm run testandroid
+   ```
+
+6. If you want to save report into local file, please make sure you have a folder called reports inside appium_automation_testing, then run test scripts 
+
+   ```bash
+   npm run testandroidwithreport
+   ```
