@@ -1,14 +1,14 @@
-import React, {useEffect, useState, Component} from 'react';
-import {View, StyleSheet, Text, Image, Modal, ToastAndroid} from 'react-native';
-import {Button} from 'react-native-elements';
-import {ScrollView, TextInput} from 'react-native-gesture-handler';
+import React, { useEffect, useState, Component } from 'react';
+import { View, StyleSheet, Text, Image, Modal, ToastAndroid } from 'react-native';
+import { Button } from 'react-native-elements';
+import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import axios from 'axios';
-import {useTheme} from '@react-navigation/native';
-import {IconButton, Colors} from 'react-native-paper';
+import { useTheme } from '@react-navigation/native';
+import { IconButton, Colors } from 'react-native-paper';
 
-const selectInsect1 = ({navigation}) => {
+const selectInsect1 = ({ navigation }) => {
   const [insectList, setInsectList] = useState([]);
-  const {colors} = useTheme();
+  const { colors } = useTheme();
   const [selectedInsectList, setSelectedInsectList] = useState([]);
 
   const [selectedInsect, setSelectedInsect] = useState({
@@ -74,7 +74,7 @@ const selectInsect1 = ({navigation}) => {
   };
 
   const handleSubmit = () => {
-    navigation.navigate('Insect', {post: selectedInsectList});
+    navigation.navigate('Insect', { post: selectedInsectList });
   };
 
   return (
@@ -104,12 +104,22 @@ const selectInsect1 = ({navigation}) => {
                 setDescription(item.insect_desc);
                 setImage(item.insect_image_path);
               }}
-              title="add"
+              title="ADD"
+              titleProps={{}}
+              titleStyle={{ fontSize: 18 }}
               buttonStyle={{
-                width: 50,
+                width: 65,
                 marginRight: 10,
-                backgroundColor: '#33cccc',
+                backgroundColor: "#625D52"
               }}
+              disabledStyle={{
+                borderWidth: 2,
+                borderColor: "#00F"
+              }}
+              disabledTitleStyle={{ color: "#00F" }}
+              linearGradientProps={null}
+              loadingProps={{ animating: true }}
+              loadingStyle={{}}
             />
           </View>
         ))}
@@ -125,15 +135,15 @@ const selectInsect1 = ({navigation}) => {
 
       <Button
         title="Done"
+        titleProps={{}}
+        titleStyle={{ marginHorizontal: 22, fontSize: 16 }}
         buttonStyle={styles.submitButton}
         onPress={() => handleSubmit()}
-        type="outline"
       />
       <Modal
         animationType="slide"
-        transparent={true}
         visible={modalVisible}
-        onRequestClose={() => {}}>
+        onRequestClose={() => { }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Image
@@ -144,7 +154,7 @@ const selectInsect1 = ({navigation}) => {
             />
             <Text>{actionTriggered}</Text>
             <Text>{description}</Text>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <TextInput
                 placeholder="amount"
                 onChangeText={val => setSelectedAmount(val)}
@@ -184,11 +194,13 @@ const styles = StyleSheet.create({
   tinyLogo: {
     width: 80,
     height: 80,
+    borderRadius:3,
   },
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginBottom: 3,
   },
   input: {
     width: 100,
@@ -196,6 +208,8 @@ const styles = StyleSheet.create({
   submitButton: {
     padding: 10,
     borderWidth: 2,
+    borderColor: '#44ad55',
+    backgroundColor: '#3fa24f',
   },
   centeredView: {
     flex: 1,

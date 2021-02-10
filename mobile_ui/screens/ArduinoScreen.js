@@ -6,6 +6,7 @@ import {useTheme} from '@react-navigation/native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 import * as Animatable from 'react-native-animatable';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 const ArduinoScreen = ({navigation}) => {
   const [data, setData] = React.useState({
     arduinoId: '',
@@ -34,7 +35,7 @@ const ArduinoScreen = ({navigation}) => {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: colors.background,
       marginBottom: 30,
     },
     input: {
@@ -43,8 +44,8 @@ const ArduinoScreen = ({navigation}) => {
       marginLeft: 10,
       paddingBottom: 10,
       paddingLeft: 0,
-      backgroundColor: '#fff',
-      color: '#424242',
+      backgroundColor: colors.background,
+      color: colors.text,
       borderBottomColor: colors.text,
       borderBottomWidth: 1,
     },
@@ -114,17 +115,17 @@ const ArduinoScreen = ({navigation}) => {
       <View style={styles.searchSection}>
         <TextInput
           placeholder="Insert Device ID here."
+          placeholderTextColor= {colors.text} 
           style={styles.input}
           onChangeText={val => {
             textInputChange(val);
           }}
         />
         <Icon.Button
-          style={styles.searchIcon}
           name="magnify"
           backgroundColor="transparent"
           size={20}
-          color="#000"
+          color= {colors.text}
           onPress={() => {
             checkDeviceId();
           }}

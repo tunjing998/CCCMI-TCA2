@@ -13,7 +13,7 @@ const resultPage = ({navigation, route}) => {
   const [selectedInsect, setSelectedInsect] = useState([])
 
   const handleFinish = () => {
-    clearData();
+    // clearData();
     navigation.navigate('Home')
   }
 

@@ -1,18 +1,20 @@
-import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, TextInput, PermissionsAndroid, ScrollView} from 'react-native';
-import {Button} from 'react-native-elements';
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, TextInput, PermissionsAndroid, ScrollView } from 'react-native';
+import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Text} from 'react-native-elements';
-import {useTheme} from '@react-navigation/native';
+import { Text } from 'react-native-elements';
+import { useTheme } from '@react-navigation/native';
 import testVariables from '../appium_automation_testing/test_variables';
 import LinearGradient from 'react-native-linear-gradient';
 
 import GetLocation from 'react-native-get-location';
-import {FlatList} from 'react-native-gesture-handler';
+import { FlatList } from 'react-native-gesture-handler';
+import { color } from 'react-native-reanimated';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const riverURL = 'http://cccmi-aquality.tk/aquality_server/rivers/';
 
-const SearchRiverScreen = ({navigation}) => {
+const SearchRiverScreen = ({ navigation }) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => {
     !isEnabled && getOneTimeLocation();
@@ -87,11 +89,11 @@ const SearchRiverScreen = ({navigation}) => {
         const currentLatitude = JSON.stringify(position.latitude);
 
         //Setting Longitude state
-        setLocation({latitude: currentLatitude, longitude: currentLongitude});
+        setLocation({ latitude: currentLatitude, longitude: currentLongitude });
         setSearchInput(currentLatitude + ',' + currentLongitude);
       })
       .catch(error => {
-        setLocationStatus({locationStatus: error.message});
+        setLocationStatus({ locationStatus: error.message });
       });
   };
 
@@ -99,27 +101,27 @@ const SearchRiverScreen = ({navigation}) => {
     let type = [];
 
     if (data.length > 0) {
-      type.push(<Text style={{fontSize: 20,color: colors.text,}}>Results:</Text>);
       data.forEach(el => {
         type.push(
           <Button
             key={el.river_id}
             title={el.river_name.toString()}
             onPress={() =>
-              navigation.navigate('SearchRiverScreen2', {data: el})
+              navigation.navigate('SearchRiverScreen2', { data: el })
             }
-            ViewComponent={LinearGradient} // Don't forget this!
-            linearGradientProps={{
-              colors: ['#4c4cff', '#6666ff'],
-              start: {x: 0, y: 0},
-              end: {x: 0, y: 1.5},
+            buttonStyle={{ width: 270, height: 50, backgroundColor: "#02ab9e" }}
+            containerStyle={{ margin: 5, alignItems: "center", marginTop: 20 }}
+            disabledStyle={{
+              borderWidth: 2,
+              borderColor: "#00F"
             }}
-            buttonStyle={{
-              margin: 5,
-              padding: 20,
-              borderRadius: 20,
-              width: 300,
-            }}
+            disabledTitleStyle={{ color: "#00F" }}
+            linearGradientProps={null}
+            loadingProps={{ animating: true }}
+            loadingStyle={{}}
+
+            titleProps={{}}
+            titleStyle={{ marginHorizontal: 22, fontSize: 18 }}
           />,
         );
       });
@@ -146,7 +148,7 @@ const SearchRiverScreen = ({navigation}) => {
   /**
    *Styles
    */
-  const {colors} = useTheme();
+  const { colors } = useTheme();
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -157,11 +159,8 @@ const SearchRiverScreen = ({navigation}) => {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: colors.background,
       marginBottom: 30,
-    },
-    searchIcon: {
-      padding: 10,
     },
     input: {
       flex: 1,
@@ -169,8 +168,8 @@ const SearchRiverScreen = ({navigation}) => {
       paddingRight: 10,
       paddingBottom: 10,
       paddingLeft: 0,
-      backgroundColor: '#fff',
-      color: '#424242',
+      backgroundColor: colors.background,
+      color: colors.text,
       borderBottomColor: colors.text,
       borderBottomWidth: 1,
     },
@@ -194,8 +193,8 @@ const SearchRiverScreen = ({navigation}) => {
       accessibilityLabel={testVariables.searchRiverScreenContainer}
       testID={testVariables.searchRiverScreenContainer}>
       {/* <Text>SearchRiver Screen</Text> */}
-      <Text h3 h3Style={styles.title}>
-        Search and choose the river.
+      <Text h4 h4Style={styles.title}>
+        River you want to sample from
       </Text>
 
       <View style={styles.searchSection}>
@@ -205,7 +204,7 @@ const SearchRiverScreen = ({navigation}) => {
           style={styles.searchIcon}
           name={isEnabled ? 'crosshairs-gps' : 'crosshairs'}
           size={20}
-          color="#000"
+          color={colors.text}
           backgroundColor="transparent"
           onPress={() => {
             toggleSwitch();
@@ -216,7 +215,8 @@ const SearchRiverScreen = ({navigation}) => {
           accessibilityLabel={testVariables.searchRiverLocateInput}
           testID={testVariables.searchRiverLocateInput}
           style={styles.input}
-          placeholder="Location name or Coordinates"
+          placeholder="River Name or Coordinates"
+          placeholderTextColor= {colors.text} 
           underlineColorAndroid="transparent"
           value={isEnabled ? searchInput : textInput}
           onChangeText={text => setTextInput(text)}
@@ -228,12 +228,12 @@ const SearchRiverScreen = ({navigation}) => {
           name="magnify"
           backgroundColor="transparent"
           size={20}
-          color="#000"
+          color={colors.text}
           onPress={() => searchRiver()}
         />
       </View>
       <ScrollView>{renderResults()}</ScrollView>
-      
+
     </View>
   );
 };

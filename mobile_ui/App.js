@@ -258,7 +258,7 @@ const App = () => {
         name="SearchRiverScreen"
         component={SearchRiverScreen}
         options={{
-          title: 'Locate River',
+          title: 'Search River',
           headerStyle: {
             backgroundColor: '#009387',
           },
@@ -272,7 +272,7 @@ const App = () => {
         name="SearchRiverScreen2"
         component={SearchRiverScreen2}
         options={{
-          title: 'Confirm river',
+          title: 'Confirm River',
           headerStyle: {
             backgroundColor: '#009387',
           },

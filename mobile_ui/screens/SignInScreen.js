@@ -96,7 +96,7 @@ const SignInScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#009387" barStyle="light-content" />
+    <StatusBar barStyle={useTheme.dark ? 'light-content' : 'dark-content'} />
       <View style={styles.header}>
         <Text style={styles.text_header}>Welcome!</Text>
       </View>
