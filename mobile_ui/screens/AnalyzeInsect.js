@@ -276,10 +276,6 @@ const AnalyzeScreen = ({ navigation }) => {
           opacity: Animated.add(0.1, Animated.multiply(fall, 1.0)),
         }}>
         <View style={{ alignItems: 'center', marginTop: 20 }}>
-          <TouchableOpacity onPress={() => bs.current.snapTo(0)}>
-            accessibilityLabel={testVariables.analysisInsectShowOptions}
-            testID={testVariables.analysisInsectShowOptions}
-        <View style={{alignItems: 'center', marginTop: 20}}>
           <TouchableOpacity
             accessibilityLabel={testVariables.analysisInsectShowOptions}
             testID={testVariables.analysisInsectShowOptions}
