@@ -1,6 +1,6 @@
 # Aquality 2.0 React Native app
 
-This is the app [Aquality 2.0]() [React Native](https://facebook.github.io/react-native/) app for our project.
+This is the [Aquality 2.0]() app built with [React Native](https://facebook.github.io/react-native/) app for our project.
 
 ## Setup
 
