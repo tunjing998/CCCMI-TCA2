@@ -17,7 +17,7 @@
 #define IP5306_ADDR          0x75
 #define IP5306_REG_SYS_CTL0  0x00
 
-// setPowerBoostKeepOn 
+// setPowerBoostKeepOn
 bool setupPMU()
 {
     bool en = true;
