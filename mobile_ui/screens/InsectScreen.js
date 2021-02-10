@@ -5,6 +5,7 @@ import {Text, Button} from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import testVariables from '../appium_automation_testing/test_variables';
 import AsyncStorage from '@react-native-community/async-storage';
+import Icon from "react-native-vector-icons/dist/MaterialCommunityIcons";
 
 const InsectScreen = ({navigation, route}) => {
   const {colors} = useTheme();
@@ -25,6 +26,7 @@ const InsectScreen = ({navigation, route}) => {
     tinyLogo: {
       width: 80,
       height: 80,
+      borderRadius:3,
     },
   });
 
@@ -32,20 +34,10 @@ const InsectScreen = ({navigation, route}) => {
     if (insectList.length > 0) {
       console.log(insectList); //selected insect list
       let comp = [];
-      comp.push(
-        <Text
-          accessibilityLabel={testVariables.insectScreenSelectedTitle}
-          testID={testVariables.insectScreenSelectedTitle}
-          style={{alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold'}}>
-          Selected :
-        </Text>,
-      );
+      comp.push(<Text accessibilityLabel={testVariables.insectScreenSelectedTitle} testID={testVariables.insectScreenSelectedTitle} style={{alignSelf: 'flex-start', fontSize: 20, fontWeight: 'bold', color:colors.text}}>Insects Selected</Text>)
       insectList.map(item => {
         comp.push(
-          <View
-            accessibilityLabel={testVariables.insectScreenSelectedInsects}
-            testID={testVariables.insectScreenSelectedInsects}
-            style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View accessibilityLabel={testVariables.insectScreenSelectedInsects} testID={testVariables.insectScreenSelectedInsects} style={{flexDirection: 'row', alignItems: 'center', marginBottom: 3,}}>
             <Image
               style={styles.tinyLogo}
               source={{
@@ -152,40 +144,40 @@ const InsectScreen = ({navigation, route}) => {
         onPress={() => navigation.navigate('selectInsect1')}
         accessibilityLabel={testVariables.insectScreenSelectInsectButton}
         testID={testVariables.insectScreenSelectInsectButton}
-        ViewComponent={LinearGradient}
-        linearGradientProps={{
-          colors: ['#4c4cff', '#6666ff'],
-          start: {x: 0, y: 0},
-          end: {x: 0, y: 1.5},
+        titleProps={{}}
+        titleStyle={{ marginHorizontal: 22, fontSize: 18 }}
+        buttonStyle={{ width: 270, height: 50, backgroundColor: "#625D52" }}
+        containerStyle={{ margin: 5, alignItems: "center", marginTop: 40}}
+        disabledStyle={{
+          borderWidth: 2,
+          borderColor: "#00F"
         }}
-        buttonStyle={{
-          margin: 5,
-          padding: 20,
-          borderRadius: 20,
-          width: 300,
-          marginTop: 50,
-        }}
+        disabledTitleStyle={{ color: "#00F" }}
+        linearGradientProps={null}
+        icon={<Icon name="buffer" size={19} color="#FAF9F7" />}
+        iconContainerStyle={{ background: "#000" }}
+        loadingProps={{ animating: true }}
+        loadingStyle={{}}
       />
       <Button
         accessibilityLabel={testVariables.insectScreenAnalyzeInsectButton}
         testID={testVariables.insectScreenAnalyzeInsectButton}
-        title="Analyze Insect"
-        onPress={() => {
-          navigation.navigate('AnalyzeInsect');
+        title="AI Analyse"
+        onPress={() => {navigation.navigate('AnalyzeInsect')}}
+        titleProps={{}}
+        titleStyle={{ marginHorizontal: 22, fontSize: 18 }}
+        buttonStyle={{ width: 270, height: 50, backgroundColor: "#625D52" }}
+        containerStyle={{ margin: 5, alignItems: "center", marginTop: 20, marginBottom: 33}}
+        disabledStyle={{
+          borderWidth: 2,
+          borderColor: "#00F"
         }}
-        ViewComponent={LinearGradient}
-        linearGradientProps={{
-          colors: ['#4c4cff', '#6666ff'],
-          start: {x: 0, y: 0},
-          end: {x: 0, y: 1.5},
-        }}
-        buttonStyle={{
-          margin: 5,
-          padding: 20,
-          borderRadius: 20,
-          width: 300,
-          marginBottom: 50,
-        }}
+        disabledTitleStyle={{ color: "#00F" }}
+        linearGradientProps={null}
+        icon={<Icon name="cube" size={19} color="#FAF9F7" />}
+        iconContainerStyle={{ background: "#000" }}
+        loadingProps={{ animating: true }}
+        loadingStyle={{}}
       />
       
 

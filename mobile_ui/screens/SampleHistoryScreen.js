@@ -1,21 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   SafeAreaView,
   ScrollView,
-  FlatList,
-  ActivityIndicator,
   StyleSheet,
   TouchableOpacity,
-  TextInput,
 } from 'react-native';
-import {Button, SearchBar} from 'react-native-elements';
+import { Button, SearchBar } from 'react-native-elements';
 import testVariables from '../appium_automation_testing/test_variables';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import LinearGradient from 'react-native-linear-gradient';
-import {useTheme} from '@react-navigation/native';
+import { useTheme } from '@react-navigation/native';
 
 let riverNameList = [];
 let dateList = [];
@@ -27,12 +23,23 @@ let url = 'http://cccmi-aquality.tk/aquality_server/samplerecord/?username=';
  * @description Sample History Screen component
  * @return {SampleHistoryScreen}
  */
-const SampleHistoryScreen = ({navigation}) => {
-  const {colors} = useTheme();
+const SampleHistoryScreen = ({ navigation }) => {
+  const { colors } = useTheme();
   const userName = 'kobe24';
   const [isLoading, setLoading] = useState(true);
   const [filterType, setFilterType] = useState('All');
   const [data, setData] = useState([]);
+  const [d, sd] = React.useState({
+    isLightTheme: true,
+});
+
+useEffect(
+  React.useCallback(() => {
+    const interval = setInterval(() => checkThemeForSearch())
+    return () => clearInterval(interval);
+  }, [])
+);
+
   // const [historyData, setHistoryData] = useState([]);
 
   const styles = StyleSheet.create({
@@ -57,6 +64,7 @@ const SampleHistoryScreen = ({navigation}) => {
     searchContainer: {
       justifyContent: 'center',
       alignItems: 'center',
+      marginTop: 35,
     },
     searchTitle: {
       fontSize: 20,
@@ -71,9 +79,6 @@ const SampleHistoryScreen = ({navigation}) => {
     inputContainer: {
       flexDirection: 'row',
       justifyContent: 'center',
-    },
-    resultButton: {
-      marginTop: 5,
     },
     resultsContainer: {
       marginTop: 40,
@@ -126,6 +131,20 @@ const SampleHistoryScreen = ({navigation}) => {
       .then(() => setLoading(false))
       .catch(error => alert(error));
   }, []);
+
+  const checkThemeForSearch = async () => {
+    if(colors.background==="#333333"){
+      sd({
+        ...d,
+        isLightTheme: false,
+      });
+    }else{
+      sd({
+        ...d,
+        isLightTheme: true,
+      });
+    }
+  }
 
   /**
    * @function convertDate
@@ -220,7 +239,7 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const renderResults = () => {
     let type = [];
-    type.push(<Text style={{fontSize: 30}}>Results</Text>);
+    type.push(<Text style={{ fontSize: 30, color: colors.text }}>Results</Text>);
     let riversNotRepeat = [];
     if (filterType === 'All' && historyData.length > 0) {
       riversNotRepeat = unique(historyData);
@@ -235,20 +254,21 @@ const SampleHistoryScreen = ({navigation}) => {
           testID={testVariables.sampleHistorySearchedSample}
           title={el.river_name.toString()}
           onPress={() => selectResult(el.river_id)}
-          buttonStyle={styles.resultButton}
+          buttonStyle={{ width: 270, height: 50, backgroundColor: "#02ab9e" }}
+          containerStyle={{ margin: 5, alignItems: "center", marginTop: 20 }}
+          disabledStyle={{
+            borderWidth: 2,
+            borderColor: "#00F"
+          }}
+          disabledTitleStyle={{ color: "#00F" }}
+          linearGradientProps={null}
+          loadingProps={{ animating: true }}
+          loadingStyle={{}}
+          icon={<Icon name="folder-outline" size={19} color="#0FF" />}
+          iconContainerStyle={{ background: "#000" }}
           key={el.river_id}
-          ViewComponent={LinearGradient} // Don't forget this!
-          linearGradientProps={{
-            colors: ['#4c4cff', '#6666ff'],
-            start: {x: 0, y: 0},
-            end: {x: 0, y: 1.5},
-          }}
-          buttonStyle={{
-            margin: 5,
-            padding: 20,
-            borderRadius: 20,
-            width: 300,
-          }}
+          titleProps={{}}
+          titleStyle={{ marginHorizontal: 22, fontSize: 18 }}
         />,
       );
     });
@@ -276,7 +296,7 @@ const SampleHistoryScreen = ({navigation}) => {
       );
     }
 
-    navigation.navigate('HistoryList', {data: select});
+    navigation.navigate('HistoryList', { data: select });
   };
 
   /**
@@ -311,12 +331,7 @@ const SampleHistoryScreen = ({navigation}) => {
       testID={testVariables.sampleHistoryScreenContainer}>
       <View style={styles.searchContainer}>
         {/* FOR DATE */}
-        <Text style={styles.searchTitle}>Sort by date</Text>
-        <TouchableOpacity
-          accessibilityLabel={testVariables.sampleHistoryDatePickerController}
-          testID={testVariables.sampleHistoryDatePickerController}
-          onPress={showDatepicker}
-          style={styles.button}>
+        <TouchableOpacity accessibilityLabel={testVariables.sampleHistoryDatePickerController} testID={testVariables.sampleHistoryDatePickerController} onPress={showDatepicker} style={styles.button}>
           <Text style={styles.btnText}>{formatDate(date)}</Text>
         </TouchableOpacity>
         {show && (
@@ -333,7 +348,7 @@ const SampleHistoryScreen = ({navigation}) => {
 
         {/* {isLoading ? <ActivityIndicator /> : renderOptions()} */}
 
-        <Text style={styles.searchTitle}>Search by river name</Text>
+
         <View style={styles.inputContainer}>
           {/* <TextInput
             placeholder="River Name"
@@ -349,7 +364,8 @@ const SampleHistoryScreen = ({navigation}) => {
             onChangeText={text => getInput(text)}
             value={river}
             containerStyle={styles.riverNameInput}
-            lightTheme={true}
+            lightTheme={d.isLightTheme}
+            round
             searchIcon={
               <Icon.Button
                 accessibilityLabel={testVariables.sampleHistorySearchRiverIcon}
@@ -357,7 +373,7 @@ const SampleHistoryScreen = ({navigation}) => {
                 style={styles.searchIcon}
                 name="magnify"
                 backgroundColor="transparent"
-                size={20}
+                size={27}
                 color="#000"
                 onPress={() => selectMatchItem(river)}
               />

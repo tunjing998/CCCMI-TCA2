@@ -6,6 +6,7 @@ import {useTheme} from '@react-navigation/native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 import * as Animatable from 'react-native-animatable';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 import testVariables from '../appium_automation_testing/test_variables';
 
 const ArduinoScreen = ({navigation}) => {
@@ -36,7 +37,7 @@ const ArduinoScreen = ({navigation}) => {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#fff',
+      backgroundColor: colors.background,
       marginBottom: 30,
     },
     input: {
@@ -45,8 +46,8 @@ const ArduinoScreen = ({navigation}) => {
       marginLeft: 10,
       paddingBottom: 10,
       paddingLeft: 0,
-      backgroundColor: '#fff',
-      color: '#424242',
+      backgroundColor: colors.background,
+      color: colors.text,
       borderBottomColor: colors.text,
       borderBottomWidth: 1,
     },
@@ -119,6 +120,7 @@ const ArduinoScreen = ({navigation}) => {
           accessibilityLabel={testVariables.arduinoScreenIDTextInput}
           testID={testVariables.arduinoScreenIDTextInput}
           placeholder="Insert Device ID here."
+          placeholderTextColor= {colors.text} 
           style={styles.input}
           onChangeText={val => {
             textInputChange(val);
@@ -127,11 +129,10 @@ const ArduinoScreen = ({navigation}) => {
         <Icon.Button
           accessibilityLabel={testVariables.arduinoScreenSearchIconButton}
           testID={testVariables.arduinoScreenSearchIconButton}
-          style={styles.searchIcon}
           name="magnify"
           backgroundColor="transparent"
           size={20}
-          color="#000"
+          color= {colors.text}
           onPress={() => {
             checkDeviceId();
           }}

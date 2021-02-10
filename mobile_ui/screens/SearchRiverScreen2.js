@@ -120,12 +120,18 @@ const SearchRiverScreen2 = ({navigation, route}) => {
           navigation.navigate('MainTabScreen');
           storeData(route.params.data);
         }}
-        ViewComponent={LinearGradient}
-        linearGradientProps={{
-          colors: ['#ffae1a', '#ffae1a'],
-          start: {x: 0, y: 0},
-          end: {x: 1, y: 0},
-        }}
+        buttonStyle={{ width: 360, height: 50, backgroundColor: "#02ab9e" }}
+          containerStyle={{ margin: 5, alignItems: "center", marginTop: 20 }}
+          disabledStyle={{
+            borderWidth: 2,
+            borderColor: "#00F"
+          }}
+          disabledTitleStyle={{ color: "#00F" }}
+          linearGradientProps={null}
+          loadingProps={{ animating: true }}
+          loadingStyle={{}}
+          titleProps={{}}
+          titleStyle={{ marginHorizontal: 22, fontSize: 18 }}
       />
     </View>
   );

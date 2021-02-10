@@ -30,7 +30,7 @@ const MainTabScreen = () => (
         tabBarAccessibilityLabel: testVariables.mainTabScreenDetailsTab,
         tabBarTestID: testVariables.mainTabScreenDetailsTab,
         tabBarLabel: 'Details',
-        tabBarColor: '#1f65ff',
+        tabBarColor: '#334E68',
         tabBarIcon: ({color}) => (
           <Icon name="information-outline" color={color} size={26} />
         ),
@@ -44,7 +44,7 @@ const MainTabScreen = () => (
         tabBarAccessibilityLabel: testVariables.mainTabScreenArduinoTab,
         tabBarTestID: testVariables.mainTabScreenArduinoTab,
         tabBarLabel: 'Arduino',
-        tabBarColor: '#694fad',
+        tabBarColor: '#616E7C',
         tabBarIcon: ({color}) => (
           <Icon name="cube-outline" color={color} size={26} />
         ),
@@ -58,7 +58,7 @@ const MainTabScreen = () => (
         tabBarAccessibilityLabel: testVariables.mainTabScreenInsectTab,
         tabBarTestID: testVariables.mainTabScreenInsectTab,
         tabBarLabel: 'Insect',
-        tabBarColor: '#e76f51',
+        tabBarColor: '#857F72',
         tabBarIcon: ({color}) => (
           <Icon name="bug-outline" color={color} size={26} />
         ),
@@ -73,7 +73,7 @@ const ArduinoStackScreen = ({navigation}) => (
   <ArduinoStack.Navigator
     screenOptions={{
       headerStyle: {
-        backgroundColor: '#694fad',
+        backgroundColor: '#616E7C',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
@@ -89,7 +89,7 @@ const ArduinoStackScreen = ({navigation}) => (
           <Icon.Button
             name="ios-menu"
             size={25}
-            backgroundColor="#694fad"
+            backgroundColor="#616E7C"
             onPress={() => navigation.openDrawer()}
           />
         ),
@@ -110,7 +110,7 @@ const DetailsStackScreen = ({navigation}) => (
   <DetailsStack.Navigator
     screenOptions={{
       headerStyle: {
-        backgroundColor: '#1f65ff',
+        backgroundColor: '#334E68',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
@@ -125,7 +125,7 @@ const DetailsStackScreen = ({navigation}) => (
           <Icon.Button
             name="ios-menu"
             size={25}
-            backgroundColor="#1f65ff"
+            backgroundColor="#334E68"
             onPress={() => navigation.openDrawer()}
           />
         ),
@@ -138,7 +138,7 @@ const InsectStackScreen = ({navigation}) => (
   <InsectStack.Navigator
     screenOptions={{
       headerStyle: {
-        backgroundColor: '#e76f51',
+        backgroundColor: '#857F72',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
@@ -153,7 +153,7 @@ const InsectStackScreen = ({navigation}) => (
           <Icon.Button
             name="ios-menu"
             size={25}
-            backgroundColor="#e76f51"
+            backgroundColor="#857F72"
             onPress={() => navigation.openDrawer()}
           />
         ),
@@ -161,7 +161,7 @@ const InsectStackScreen = ({navigation}) => (
           <Icon.Button
             name="checkmark-outline"
             size={25}
-            backgroundColor="#e76f51"
+            backgroundColor="#857F72"
             onPress={() => navigation.navigate('ResultPage')}
           />
         ),
