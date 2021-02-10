@@ -47,6 +47,7 @@ const testVariables = {
   insectScreenAnalyzeInsectButton: 'insectScreenAnalyzeInsectButton',
   insectScreenSelectedTitle: 'insectScreenSelectedTitle',
   insectScreenSelectedInsects: 'insectScreenSelectedInsects',
+  showResultIcon: 'showResultIcon',
 
   //choose insect screen
   chooseInsectScreenContainer: 'chooseInsectScreenContainer',
@@ -81,6 +82,9 @@ const testVariables = {
 
   //history detail screen
   historyDetailContainer: 'historyDetailContainer',
+
+  //result page
+  resultPageContainer: 'resultPageContainer',
 };
 
 module.exports = testVariables;
