@@ -1,12 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, StatusBar} from 'react-native';
-import {Button} from 'react-native-elements';
-import {useTheme} from '@react-navigation/native';
-import LinearGradient from 'react-native-linear-gradient';
+import { View, StyleSheet, StatusBar } from 'react-native';
+import { Button } from "react-native-elements";
+import Icon from "react-native-vector-icons/dist/MaterialCommunityIcons";
+import { useTheme } from '@react-navigation/native';
 import testVariables from '../appium_automation_testing/test_variables';
 
-const HomeScreen = ({navigation}) => {
-  const {colors} = useTheme();
+const HomeScreen = ({ navigation }) => {
+  const { colors } = useTheme();
 
   const theme = useTheme();
 
@@ -17,56 +17,61 @@ const HomeScreen = ({navigation}) => {
       testID={testVariables.homeScreenContainer}>
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
 
+
       <Button
-        ViewComponent={LinearGradient}
-        linearGradientProps={{
-          colors: ['#e76f51', '#f4a261'],
-          start: {x: 0, y: 0},
-          end: {x: 1, y: 0},
+        buttonStyle={{ width: 270, height: 50, backgroundColor: "#02ab9e" }}
+        containerStyle={{ margin: 5, alignItems: "center", marginTop: 200}}
+        disabledStyle={{
+          borderWidth: 2,
+          borderColor: "#00F"
         }}
-        title="Take new sample"
-        titleStyle={styles.title}
-        containerStyle={styles.buttonContainer}
-        onPress={() => navigation.navigate('SearchRiverScreen')}
-        accessibilityLabel={testVariables.homeScreenTakeNewSampleButton}
-        testID={testVariables.homeScreenTakeNewSampleButton}
+        disabledTitleStyle={{ color: "#00F" }}
+        linearGradientProps={null}
+        icon={<Icon name="water" size={19} color="#0FF" />}
+        iconContainerStyle={{ background: "#000" }}
+        loadingProps={{ animating: true }}
+        loadingStyle={{}}
+        onPress={() =>
+          navigation.navigate("SearchRiverScreen")
+        }
+        title="Take Sample"
+        titleProps={{}}
+        titleStyle={{ marginHorizontal: 22, fontSize: 18 }}
       />
       <Button
-        accessibilityLabel={testVariables.homeScreenViewSampleButton}
-        testID={testVariables.homeScreenViewSampleButton}
-        ViewComponent={LinearGradient}
-        linearGradientProps={{
-          colors: ['#e76f51', '#f4a261'],
-          start: {x: 0, y: 0},
-          end: {x: 1, y: 0},
+        buttonStyle={{ width: 270, height: 50, backgroundColor: "#02ab9e" }}
+        containerStyle={{ margin: 5, alignItems: "center", marginTop: 20}}
+        disabledStyle={{
+          borderWidth: 2,
+          borderColor: "#00F"
         }}
-        title="View sample"
-        titleStyle={styles.title}
-        containerStyle={styles.buttonContainer}
-        onPress={() => navigation.navigate('SampleHistoryScreen')}
+        disabledTitleStyle={{ color: "#00F" }}
+        linearGradientProps={null}
+        icon={<Icon name="flask-outline" size={19} color="#0FF" />}
+        iconContainerStyle={{ background: "#000" }}
+        loadingProps={{ animating: true }}
+        loadingStyle={{}}
+        onPress={() =>
+          navigation.navigate("SampleHistoryScreen")
+        }
+        title="View Sample"
+        titleProps={{}}
+        titleStyle={{ marginHorizontal: 22, fontSize: 18 }}
       />
-      {/* <Button
-        title="upload image test"
-        onPress={() => navigation.navigate('uploadImage')}
-      /> */}
     </View>
   );
 };
 
 export default HomeScreen;
+const width_proportion = '100%';
+const height_proportion = '100%';
+const height = '100%';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: '100%',
   },
-  title: {
-    fontSize: 30,
-    paddingHorizontal: 30,
-    paddingVertical: 10,
-  },
-  buttonContainer: {
-    padding: 35,
-  },
+
+
 });

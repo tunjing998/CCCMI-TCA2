@@ -325,9 +325,16 @@ describe('Testing tabs with screens', () => {
 
   //   $('~' + testVariables.insectScreenContainer).waitForDisplayed(10000, false);
 
-  //   $('~' + testVariables.finishSamplingButton).click();
   //   expect(
-  //     $('~' + testVariables.finishSamplingButton).isDisplayed(),
+  //     $('~' + testVariables.showResultIcon).isDisplayed(),
+  //     'should display √ icon',
+  //   ).to.be.true;
+
+  //   $('~' + testVariables.showResultIcon).click();
+
+  //   $('~' + testVariables.resultPageContainer).waitForDisplayed(10000, false);
+  //   expect(
+  //     $('~' + testVariables.resultPageContainer).isDisplayed(),
   //     'should display new sampling results',
   //   ).to.be.true;
   // });
