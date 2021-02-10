@@ -45,7 +45,6 @@ DATABASE_PASSWORD=password use to access database
 DATABASE_HOST=the url database hosting(should be localhost if hosting locally)
 DATABASE_PORT= port that database using( should be 5432 defaultly)
 DATABASE_INITCOMMAND="SET sql_mode='STRICT_TRANS_TABLES'"
-GOOGLEMAP_APIKEY = Google Map Api Key
 ```
 
 # Operating Instruction
