@@ -1,12 +1,12 @@
-import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
-import { useTheme } from '@react-navigation/native';
-import { ListItem, Icon } from 'react-native-elements';
+import React, {useState, useEffect} from 'react';
+import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import {useTheme} from '@react-navigation/native';
+import {ListItem, Icon} from 'react-native-elements';
 import testVariables from '../appium_automation_testing/test_variables';
 
-const HistoryDetail = ({ route }) => {
-  const { colors } = useTheme();
-  const { item } = route.params;
+const HistoryDetail = ({route}) => {
+  const {colors} = useTheme();
+  const {item} = route.params;
 
   const styles = StyleSheet.create({
     container: {
@@ -22,6 +22,15 @@ const HistoryDetail = ({ route }) => {
     },
   });
 
+  const [sample_item, setSampleItem] = useState({});
+
+  const url =
+    'http://cccmi-aquality.tk/aquality_server/sampledetail?sample_id=';
+  useEffect(
+    fetch(url + item.sample_id).then(response => console.log(response.json())),
+  );
+
+  console.log(item.sample_id);
   return (
     <View
       style={styles.listContainer}
@@ -32,7 +41,7 @@ const HistoryDetail = ({ route }) => {
           <ListItem.Content>
             <ListItem.Subtitle style={styles.title}>
               Sample Score
-          </ListItem.Subtitle>
+            </ListItem.Subtitle>
             <Text style={styles.title}>{item.sample_score}</Text>
           </ListItem.Content>
         </ListItem>
@@ -52,7 +61,7 @@ const HistoryDetail = ({ route }) => {
           <ListItem.Content>
             <ListItem.Subtitle style={styles.title}>
               Water Temperature
-          </ListItem.Subtitle>
+            </ListItem.Subtitle>
             <Text style={styles.title}>{item.sample_tmp}</Text>
           </ListItem.Content>
         </ListItem>
@@ -60,7 +69,7 @@ const HistoryDetail = ({ route }) => {
           <ListItem.Content>
             <ListItem.Subtitle style={styles.title}>
               Sample taken by
-          </ListItem.Subtitle>
+            </ListItem.Subtitle>
             <Text style={styles.title}>{item.sample_user}</Text>
           </ListItem.Content>
         </ListItem>
