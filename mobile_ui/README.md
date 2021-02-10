@@ -1,12 +1,10 @@
 # Aquality 2.0 React Native app
 
-This is the app [Aquality 2.0]() [React Native](https://facebook.github.io/react-native/) app for our project.
+This is the [Aquality 2.0]() app built with [React Native](https://facebook.github.io/react-native/) app for our project.
 
 ## Setup
 
-To set up the development environment on your desktop, follow the [Setting up the development environment](https://reactnative.dev/docs/environment-setup) by React Native.
-
-Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
+To set up the development environment on your desktop, follow the tutorial [Setting up the development environment](https://reactnative.dev/docs/environment-setup) by React Native.
 
 ## Install the app
 
