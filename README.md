@@ -1,4 +1,4 @@
-# CCCMI(4th year project DKIT.)
+# CCCMI(4th year project DKIT)
 
 # Aquality 2.0
 
@@ -57,7 +57,7 @@ foobar.singularize('phenomena') # returns 'phenomenon'
 ### Mobile Application: 
 
 1. Make sure you have React Native Environments or follow the link to set up: [Setting up the development environment](https://reactnative.dev/docs/environment-setup)  
-2. Get into mobile_ui folder, use the package manager to install dependencies.
+2. Get into mobile_ui folder, use the package manager to install dependencies for the React Native Project.
 
 ```bash
 yarn install
@@ -65,5 +65,38 @@ yarn install
 
 3. Launch Application on Android Device
 
-   yarn install
+```bash
+yarn android
+```
 
+4. Now you interact with Application
+
+#### UI Testing
+
+1. The E2E test scripts are inside folder mobile_ui/appium_automation_testing, make sure you have got into correct path
+
+2. Use the package manager to install dependencies for E2E environment
+
+   ```bash
+   npm install 
+   ```
+
+3. Go back mobile_ui folder to start appium server
+
+   ```bash
+   appium 
+   ```
+
+4. Launch Application on Android Device
+
+5. Get into mobile_ui/appium_automation_testing folder and run test scripts 
+
+   ```bash
+   npm run testandroid
+   ```
+
+6. If you want to save report into local file, please make sure you have a folder called reports inside appium_automation_testing folder, then run test scripts 
+
+   ```bash
+   npm run testandroidwithreport
+   ```
