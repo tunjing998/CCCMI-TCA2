@@ -46,9 +46,6 @@ DATABASE_HOST=the url database hosting(should be localhost if hosting locally)
 DATABASE_PORT= port that database using( should be 5432 defaultly)
 DATABASE_INITCOMMAND="SET sql_mode='STRICT_TRANS_TABLES'"
 GOOGLEMAP_APIKEY = Google Map Api Key
-AWS_ACCESS_KEY_ID = AWS account access key id that have premission to S3 Bucket
-AWS_SECRET_ACCESS_KEY = AWS secret access 
-AWS_STORAGE_BUCKET_NAME = AWS S3 Bucket Name to Store static and media file
 ```
 
 # Operating Instruction
