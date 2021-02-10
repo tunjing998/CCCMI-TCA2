@@ -24,6 +24,81 @@ const selectInsect1 = ({ navigation }) => {
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
 
+  const styles = StyleSheet.create({
+    viewContainer: {
+      flex: 1,
+      flexDirection: 'column',
+    },
+    tinyLogo: {
+      width: 80,
+      height: 80,
+      borderRadius:3,
+    },
+    container: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 3,
+    },
+    input: {
+      flex: 1,
+      paddingTop: 10,
+      marginLeft: 10,
+      paddingBottom: 10,
+      paddingLeft: 0,
+      backgroundColor: colors.background,
+      color: colors.text,
+      borderBottomColor: colors.text,
+      borderBottomWidth: 1,
+    },
+    submitButton: {
+      padding: 10,
+      borderWidth: 2,
+      borderColor: '#44ad55',
+      backgroundColor: '#3fa24f',
+    },
+    centeredView: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 0,
+      backgroundColor: colors.border,
+    },
+    modalView: {
+      margin: 20,
+      backgroundColor: colors.background,
+      borderRadius: 10,
+      borderColor: colors.text,
+      padding: 35,
+      alignItems: 'center',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
+      width: 300,
+      height: 'auto',
+    },
+    textStyle: {
+      color: 'white',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      backgroundColor: 'red',
+    },
+    searchSection: {
+      // flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: colors.background,
+      marginBottom: 30,
+    },
+  });
+  
+
   const showToast = val => {
     ToastAndroid.show(val + ' has been added.', ToastAndroid.SHORT);
   };
@@ -161,13 +236,15 @@ const selectInsect1 = ({ navigation }) => {
                 uri: image,
               }}
             />
-            <Text>{actionTriggered}</Text>
-            <Text>{description}</Text>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{color: colors.text, fontSize: 18}}>{actionTriggered}</Text>
+            <Text style={{color: colors.text}}>{description}</Text>
+            <View  style={styles.searchSection}>
               <TextInput
                 accessibilityLabel={testVariables.groupAmountInput}
                 testID={testVariables.groupAmountInput}
-                placeholder="amount"
+                placeholder="Insect Amount"
+                style={styles.input}
+                placeholderTextColor= {colors.text}
                 onChangeText={val => setSelectedAmount(val)}
                 keyboardType="numeric"
               />
@@ -201,58 +278,3 @@ const selectInsect1 = ({ navigation }) => {
 
 export default selectInsect1;
 
-const styles = StyleSheet.create({
-  viewContainer: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  tinyLogo: {
-    width: 80,
-    height: 80,
-    borderRadius:3,
-  },
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 3,
-  },
-  input: {
-    width: 100,
-  },
-  submitButton: {
-    padding: 10,
-    borderWidth: 2,
-    borderColor: '#44ad55',
-    backgroundColor: '#3fa24f',
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 22,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    width: 300,
-    height: 'auto',
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    backgroundColor: 'red',
-  },
-});
