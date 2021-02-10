@@ -36,67 +36,9 @@ Technologies:
 
 ## Installation
 
-### Aquality_Two_Backend_Server: 
+Installation setps please chekc each foder.
 
-1. Get into 
+## UI Screen Cut
+![image](https://cdn1.bbcode0.com/uploads/2021/2/11/0febfe6235e33980a2517303f79cf7ee-full.png)
 
-```bash
-pip install foobar
-```
 
-#### Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-### Mobile Application: 
-
-1. Make sure you have React Native Environments or follow the link to set up: [Setting up the development environment](https://reactnative.dev/docs/environment-setup)  
-2. Get into mobile_ui folder, use the package manager to install dependencies for the React Native Project.
-
-```bash
-yarn install
-```
-
-3. Launch Application on Android Device
-
-```bash
-yarn android
-```
-
-4. Now you interact with Application
-
-#### UI Testing
-
-1. The E2E test scripts are inside folder mobile_ui/appium_automation_testing, make sure you have got into correct path
-
-2. Use the package manager to install dependencies for E2E environment
-
-   ```bash
-   npm install 
-   ```
-
-3. Go back mobile_ui folder to start appium server
-
-   ```bash
-   appium 
-   ```
-
-4. Launch Application on Android Device
-
-5. Get into mobile_ui/appium_automation_testing folder and run test scripts 
-
-   ```bash
-   npm run testandroid
-   ```
-
-6. If you want to save report into local file, please make sure you have a folder called reports inside appium_automation_testing folder, then run test scripts 
-
-   ```bash
-   npm run testandroidwithreport
-   ```
