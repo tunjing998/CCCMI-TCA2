@@ -93,7 +93,6 @@ const ArduinoStackScreen = ({navigation}) => (
             onPress={() => navigation.openDrawer()}
           />
         ),
-        
       }}
     />
     <ArduinoStack.Screen
@@ -159,6 +158,8 @@ const InsectStackScreen = ({navigation}) => (
         ),
         headerRight: () => (
           <Icon.Button
+            tabBarAccessibilityLabel={testVariables.showResultIcon}
+            tabBarTestID={testVariables.showResultIcon}
             name="checkmark-outline"
             size={25}
             backgroundColor="#e76f51"
