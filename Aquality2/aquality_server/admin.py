@@ -3,8 +3,14 @@ from aquality_server.models import *
 
 # Register your models here.
 
-admin.site.register(Login_Account)
 admin.site.register(User_Account)
-admin.site.register(River)
 admin.site.register(Data)
-admin.site.register(Image)
+admin.site.register(DataHistoryImageImage)
+admin.site.register(River)
+admin.site.register(InsectGroup)
+admin.site.register(SampleRecord)
+admin.site.register(SampleRecordInsectDetail)
+
+@admin.register(Insect)
+class InsectAdmin(admin.ModelAdmin):
+    list_display = ('insect_id', 'insect_name','insect_group')

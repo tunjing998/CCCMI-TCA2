@@ -113,3 +113,10 @@ media/
 # **/migrations/**
 # !**/migrations
 # !**/migrations/__init__.py
+
+
+aqualityserver.session.sql
+
+.env2
+
+requirements.txt
