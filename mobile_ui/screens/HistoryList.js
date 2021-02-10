@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { ListItem, Icon } from 'react-native-elements';
 import testVariables from '../appium_automation_testing/test_variables';
@@ -25,9 +25,10 @@ const HistoryList = ({navigation, route}) => {
   return (
     <View
     style={styles.listContainer}
-    >
-      accessibilityLabel={testVariables.historyListContainer}
-      testID={testVariables.historyListContainer}>
+    accessibilityLabel={testVariables.historyListContainer}
+    testID={testVariables.historyListContainer}>
+      
+      
       {
         data.map((item, i) => (
           <ListItem
