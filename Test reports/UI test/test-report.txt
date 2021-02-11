@@ -1,0 +1,1655 @@
+
+Execution of 2 spec files started at 2021-02-09T20:54:30.566Z
+
+2021-02-09T20:54:30.571Z DEBUG @wdio/utils:initialiseServices: initialise wdio service "appium"
+2021-02-09T20:54:30.620Z INFO @wdio/cli:launcher: Run onPrepare hook
+2021-02-09T20:54:30.633Z INFO @wdio/local-runner: Start worker 0-0 with arg: run,wdio.conf.js
+[0-0] 2021-02-09T20:54:31.177Z INFO @wdio/local-runner: Run worker command: run
+[0-0] RUNNING in F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\android\app\build\outputs\apk\debug\app-debug.apk - F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\appium_automation_testing\test_cases\take_new_sample.test.js
+[0-0] 2021-02-09T20:54:31.340Z DEBUG @wdio/local-runner:utils: init remote session
+[0-0] 2021-02-09T20:54:31.341Z INFO webdriverio: Initiate new session using the webdriver protocol
+[0-0] 2021-02-09T20:54:31.343Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session
+[0-0] 2021-02-09T20:54:31.344Z INFO webdriver: DATA {
+  capabilities: {
+    alwaysMatch: {
+      appiumVersion: '1.13.0',
+      platformName: 'Android',
+      platformVersion: '11',
+      deviceName: 'Android 3a XL',
+      app: 'F:\\computing\\year4\\semester1\\team project\\CCCMI\\CCCMI\\mobile_ui\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk',
+      automationName: 'UiAutomator2'
+    },
+    firstMatch: [ {} ]
+  },
+  desiredCapabilities: {
+    appiumVersion: '1.13.0',
+    platformName: 'Android',
+    platformVersion: '11',
+    deviceName: 'Android 3a XL',
+    app: 'F:\\computing\\year4\\semester1\\team project\\CCCMI\\CCCMI\\mobile_ui\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk',
+    automationName: 'UiAutomator2'
+  }
+}
+[0-0] 2021-02-09T20:54:41.219Z INFO webdriver: COMMAND findElement("accessibility id", "splashTouchableOpacityButton")
+[0-0] 2021-02-09T20:54:41.220Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:41.220Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashTouchableOpacityButton' }
+[0-0] 2021-02-09T20:54:41.301Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:54:41.308Z DEBUG webdriverio: command click was called on an element ("~splashTouchableOpacityButton") that wasn't found, waiting for it...
+[0-0] 2021-02-09T20:54:41.309Z INFO webdriver: COMMAND findElements("accessibility id", "splashTouchableOpacityButton")
+[0-0] 2021-02-09T20:54:41.309Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:54:41.309Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashTouchableOpacityButton' }
+[0-0] 2021-02-09T20:54:41.376Z INFO webdriver: RESULT []
+[0-0] 2021-02-09T20:54:41.810Z INFO webdriver: COMMAND findElements("accessibility id", "splashTouchableOpacityButton")
+[0-0] 2021-02-09T20:54:41.810Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:54:41.810Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashTouchableOpacityButton' }
+[0-0] 2021-02-09T20:54:41.860Z INFO webdriver: RESULT []
+[0-0] 2021-02-09T20:54:42.311Z INFO webdriver: COMMAND findElements("accessibility id", "splashTouchableOpacityButton")
+[0-0] 2021-02-09T20:54:42.311Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:54:42.311Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashTouchableOpacityButton' }
+[0-0] 2021-02-09T20:54:42.360Z INFO webdriver: RESULT []
+[0-0] 2021-02-09T20:54:42.810Z INFO webdriver: COMMAND findElements("accessibility id", "splashTouchableOpacityButton")
+[0-0] 2021-02-09T20:54:42.810Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:54:42.810Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashTouchableOpacityButton' }
+[0-0] 2021-02-09T20:54:42.861Z INFO webdriver: RESULT []
+[0-0] 2021-02-09T20:54:43.310Z INFO webdriver: COMMAND findElements("accessibility id", "splashTouchableOpacityButton")
+[0-0] 2021-02-09T20:54:43.311Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:54:43.311Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashTouchableOpacityButton' }
+[0-0] 2021-02-09T20:54:44.894Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'dd275cab-5749-4d78-8f95-df7d1e852712',
+    ELEMENT: 'dd275cab-5749-4d78-8f95-df7d1e852712'
+  }
+]
+[0-0] 2021-02-09T20:54:44.900Z INFO webdriver: COMMAND findElement("accessibility id", "splashTouchableOpacityButton")
+[0-0] 2021-02-09T20:54:44.900Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:44.900Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashTouchableOpacityButton' }
+[0-0] 2021-02-09T20:54:44.937Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'eabbab2a-0880-4103-89f8-b964812fe1b1',
+  ELEMENT: 'eabbab2a-0880-4103-89f8-b964812fe1b1'
+}
+[0-0] 2021-02-09T20:54:44.940Z INFO webdriver: COMMAND elementClick("eabbab2a-0880-4103-89f8-b964812fe1b1")
+[0-0] 2021-02-09T20:54:44.940Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/eabbab2a-0880-4103-89f8-b964812fe1b1/click
+[0-0] 2021-02-09T20:54:45.010Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenUserName")
+[0-0] 2021-02-09T20:54:45.010Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:45.010Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenUserName' }
+[0-0] 2021-02-09T20:54:45.076Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:54:45.082Z DEBUG webdriverio: command setValue was called on an element ("~signScreenUserName") that wasn't found, waiting for it...
+[0-0] 2021-02-09T20:54:45.083Z INFO webdriver: COMMAND findElements("accessibility id", "signScreenUserName")
+[0-0] 2021-02-09T20:54:45.083Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:54:45.083Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenUserName' }
+[0-0] 2021-02-09T20:54:45.139Z INFO webdriver: RESULT []
+[0-0] 2021-02-09T20:54:45.584Z INFO webdriver: COMMAND findElements("accessibility id", "signScreenUserName")
+[0-0] 2021-02-09T20:54:45.584Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:54:45.584Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenUserName' }
+[0-0] 2021-02-09T20:54:46.914Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '21408acb-b885-4cab-a25c-89e0de670ecb',
+    ELEMENT: '21408acb-b885-4cab-a25c-89e0de670ecb'
+  }
+]
+[0-0] 2021-02-09T20:54:46.916Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenUserName")
+[0-0] 2021-02-09T20:54:46.916Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:46.916Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenUserName' }
+[0-0] 2021-02-09T20:54:46.959Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'dd6b7f4d-9a30-4248-b2e3-c9df6ea2e092',
+  ELEMENT: 'dd6b7f4d-9a30-4248-b2e3-c9df6ea2e092'
+}
+[0-0] 2021-02-09T20:54:46.960Z INFO webdriver: COMMAND elementClear("dd6b7f4d-9a30-4248-b2e3-c9df6ea2e092")
+[0-0] 2021-02-09T20:54:46.961Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/dd6b7f4d-9a30-4248-b2e3-c9df6ea2e092/clear
+[0-0] 2021-02-09T20:54:47.015Z INFO webdriver: COMMAND elementSendKeys("dd6b7f4d-9a30-4248-b2e3-c9df6ea2e092", "setanta24")
+[0-0] 2021-02-09T20:54:47.016Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/dd6b7f4d-9a30-4248-b2e3-c9df6ea2e092/value
+[0-0] 2021-02-09T20:54:47.016Z INFO webdriver: DATA { text: 'setanta24' }
+[0-0] 2021-02-09T20:54:47.550Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenPassword")
+[0-0] 2021-02-09T20:54:47.550Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:47.550Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenPassword' }
+[0-0] 2021-02-09T20:54:48.072Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '3a7e3a23-c599-42be-8c1f-5eacc3e41907',
+  ELEMENT: '3a7e3a23-c599-42be-8c1f-5eacc3e41907'
+}
+[0-0] 2021-02-09T20:54:48.073Z INFO webdriver: COMMAND elementClear("3a7e3a23-c599-42be-8c1f-5eacc3e41907")
+[0-0] 2021-02-09T20:54:48.073Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/3a7e3a23-c599-42be-8c1f-5eacc3e41907/clear
+[0-0] 2021-02-09T20:54:48.107Z INFO webdriver: COMMAND elementSendKeys("3a7e3a23-c599-42be-8c1f-5eacc3e41907", "Password_123")
+[0-0] 2021-02-09T20:54:48.108Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/3a7e3a23-c599-42be-8c1f-5eacc3e41907/value
+[0-0] 2021-02-09T20:54:48.108Z INFO webdriver: DATA { text: 'Password_123' }
+[0-0] 2021-02-09T20:54:49.125Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenSignInButton")
+[0-0] 2021-02-09T20:54:49.125Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:49.125Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenSignInButton' }
+[0-0] 2021-02-09T20:54:49.654Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6f083b0d-bd80-4698-a8e1-129229e206b6',
+  ELEMENT: '6f083b0d-bd80-4698-a8e1-129229e206b6'
+}
+[0-0] 2021-02-09T20:54:49.655Z INFO webdriver: COMMAND elementClick("6f083b0d-bd80-4698-a8e1-129229e206b6")
+[0-0] 2021-02-09T20:54:49.656Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/6f083b0d-bd80-4698-a8e1-129229e206b6/click
+[0-0] 2021-02-09T20:54:49.717Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-0] 2021-02-09T20:54:49.717Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:49.717Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-0] 2021-02-09T20:54:49.778Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:54:49.781Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-0] 2021-02-09T20:54:49.781Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:49.782Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-0] 2021-02-09T20:54:49.848Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:54:50.281Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-0] 2021-02-09T20:54:50.282Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:50.282Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-0] 2021-02-09T20:54:50.356Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:54:50.785Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-0] 2021-02-09T20:54:50.785Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+2021-02-09T20:54:50.785Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-0] 2021-02-09T20:54:51.081Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'de424ad8-a8d0-4708-a53c-65aacae91aee',
+  ELEMENT: 'de424ad8-a8d0-4708-a53c-65aacae91aee'
+}
+[0-0] 2021-02-09T20:54:51.084Z INFO webdriver: COMMAND isElementDisplayed("de424ad8-a8d0-4708-a53c-65aacae91aee")
+[0-0] 2021-02-09T20:54:51.084Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/de424ad8-a8d0-4708-a53c-65aacae91aee/displayed
+[0-0] 2021-02-09T20:54:51.762Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:54:51.764Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenTakeNewSampleButton")
+[0-0] 2021-02-09T20:54:51.765Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:51.765Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenTakeNewSampleButton' }
+[0-0] 2021-02-09T20:54:51.801Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b9dbbfe1-816b-4b2b-9d7a-61a3e738db5a',
+  ELEMENT: 'b9dbbfe1-816b-4b2b-9d7a-61a3e738db5a'
+}
+[0-0] 2021-02-09T20:54:51.804Z INFO webdriver: COMMAND isElementDisplayed("b9dbbfe1-816b-4b2b-9d7a-61a3e738db5a")
+[0-0] 2021-02-09T20:54:51.804Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/b9dbbfe1-816b-4b2b-9d7a-61a3e738db5a/displayed
+[0-0] 2021-02-09T20:54:51.835Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:54:51.836Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenViewSampleButton")
+[0-0] 2021-02-09T20:54:51.838Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:51.838Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenViewSampleButton' }
+[0-0] 2021-02-09T20:54:51.883Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '21eaf5f4-f249-4c48-bab2-5cf791b69c51',
+  ELEMENT: '21eaf5f4-f249-4c48-bab2-5cf791b69c51'
+}
+[0-0] 2021-02-09T20:54:51.885Z INFO webdriver: COMMAND isElementDisplayed("21eaf5f4-f249-4c48-bab2-5cf791b69c51")
+[0-0] 2021-02-09T20:54:51.885Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/21eaf5f4-f249-4c48-bab2-5cf791b69c51/displayed
+[0-0] 2021-02-09T20:54:51.905Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:54:51.906Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-0] 2021-02-09T20:54:51.907Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:51.907Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-0] 2021-02-09T20:54:51.949Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'de8804a1-1c5f-426d-80a8-9046c12179cd',
+  ELEMENT: 'de8804a1-1c5f-426d-80a8-9046c12179cd'
+}
+[0-0] 2021-02-09T20:54:51.951Z INFO webdriver: COMMAND isElementDisplayed("de8804a1-1c5f-426d-80a8-9046c12179cd")
+[0-0] 2021-02-09T20:54:51.951Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/de8804a1-1c5f-426d-80a8-9046c12179cd/displayed
+[0-0] 2021-02-09T20:54:51.970Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:54:51.971Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenTakeNewSampleButton")
+[0-0] 2021-02-09T20:54:51.971Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:51.971Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenTakeNewSampleButton' }
+[0-0] 2021-02-09T20:54:52.007Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '124ba9c4-f5e7-4cd1-b8be-74ff07a6a628',
+  ELEMENT: '124ba9c4-f5e7-4cd1-b8be-74ff07a6a628'
+}
+[0-0] 2021-02-09T20:54:52.009Z INFO webdriver: COMMAND elementClick("124ba9c4-f5e7-4cd1-b8be-74ff07a6a628")
+[0-0] 2021-02-09T20:54:52.010Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/124ba9c4-f5e7-4cd1-b8be-74ff07a6a628/click
+[0-0] 2021-02-09T20:54:52.080Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverScreenContainer")
+[0-0] 2021-02-09T20:54:52.081Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:52.081Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverScreenContainer' }
+[0-0] 2021-02-09T20:54:52.136Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:54:52.138Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverScreenContainer")
+[0-0] 2021-02-09T20:54:52.138Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:52.138Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverScreenContainer' }
+[0-0] 2021-02-09T20:54:52.200Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:54:52.638Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverScreenContainer")
+[0-0] 2021-02-09T20:54:52.638Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:52.638Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverScreenContainer' }
+[0-0] 2021-02-09T20:54:53.327Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '7005b2c9-09ee-431e-a2d3-dcf8a930ddf6',
+  ELEMENT: '7005b2c9-09ee-431e-a2d3-dcf8a930ddf6'
+}
+[0-0] 2021-02-09T20:54:53.328Z INFO webdriver: COMMAND isElementDisplayed("7005b2c9-09ee-431e-a2d3-dcf8a930ddf6")
+[0-0] 2021-02-09T20:54:53.329Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/7005b2c9-09ee-431e-a2d3-dcf8a930ddf6/displayed
+[0-0] 2021-02-09T20:54:53.353Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:54:53.354Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverScreenContainer")
+[0-0] 2021-02-09T20:54:53.354Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:53.354Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverScreenContainer' }
+[0-0] 2021-02-09T20:54:53.401Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b5e3aec5-6157-4fa6-b788-a5a01d72bebd',
+  ELEMENT: 'b5e3aec5-6157-4fa6-b788-a5a01d72bebd'
+}
+[0-0] 2021-02-09T20:54:53.403Z INFO webdriver: COMMAND isElementDisplayed("b5e3aec5-6157-4fa6-b788-a5a01d72bebd")
+[0-0] 2021-02-09T20:54:53.403Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/b5e3aec5-6157-4fa6-b788-a5a01d72bebd/displayed
+[0-0] 2021-02-09T20:54:53.421Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:54:53.423Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverScreenContainer")
+[0-0] 2021-02-09T20:54:53.423Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:53.423Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverScreenContainer' }
+[0-0] 2021-02-09T20:54:53.473Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '70ec8543-bf81-4a16-a0a8-13ee82aa6804',
+  ELEMENT: '70ec8543-bf81-4a16-a0a8-13ee82aa6804'
+}
+[0-0] 2021-02-09T20:54:53.475Z INFO webdriver: COMMAND isElementDisplayed("70ec8543-bf81-4a16-a0a8-13ee82aa6804")
+[0-0] 2021-02-09T20:54:53.475Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/70ec8543-bf81-4a16-a0a8-13ee82aa6804/displayed
+[0-0] 2021-02-09T20:54:53.504Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:54:53.505Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverLocateInput")
+[0-0] 2021-02-09T20:54:53.505Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:53.505Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverLocateInput' }
+[0-0] 2021-02-09T20:54:53.556Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '71bd8818-f114-4036-9cb9-8a3403347c05',
+  ELEMENT: '71bd8818-f114-4036-9cb9-8a3403347c05'
+}
+[0-0] 2021-02-09T20:54:53.558Z INFO webdriver: COMMAND getElementText("71bd8818-f114-4036-9cb9-8a3403347c05")
+[0-0] 2021-02-09T20:54:53.558Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/71bd8818-f114-4036-9cb9-8a3403347c05/text
+[0-0] 2021-02-09T20:54:53.588Z INFO webdriver: RESULT Location name or Coordinates
+[0-0] 2021-02-09T20:54:53.588Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverScreenContainer")
+[0-0] 2021-02-09T20:54:53.588Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:53.588Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverScreenContainer' }
+[0-0] 2021-02-09T20:54:53.631Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '37aa184a-ae9c-49d4-aa4f-adbd655fb4a9',
+  ELEMENT: '37aa184a-ae9c-49d4-aa4f-adbd655fb4a9'
+}
+[0-0] 2021-02-09T20:54:53.634Z INFO webdriver: COMMAND isElementDisplayed("37aa184a-ae9c-49d4-aa4f-adbd655fb4a9")
+[0-0] 2021-02-09T20:54:53.634Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/37aa184a-ae9c-49d4-aa4f-adbd655fb4a9/displayed
+[0-0] 2021-02-09T20:54:53.654Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:54:54.654Z INFO webdriver: COMMAND setGeoLocation(<object>)
+[0-0] 2021-02-09T20:54:54.654Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/location
+[0-0] 2021-02-09T20:54:54.654Z INFO webdriver: DATA { location: { latitude: '53.3542', longitude: '-6.35558' } }
+[0-0] 2021-02-09T20:54:54.851Z INFO webdriver: RESULT { latitude: 53.99912, longitude: -6.40896, altitude: 5e-324 }
+[0-0] 2021-02-09T20:54:55.852Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverLocateIcon")
+[0-0] 2021-02-09T20:54:55.853Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:55.853Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverLocateIcon' }
+[0-0] 2021-02-09T20:54:55.901Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'cd790bf5-0f3e-4435-8fd0-655b113ff66f',
+  ELEMENT: 'cd790bf5-0f3e-4435-8fd0-655b113ff66f'
+}
+[0-0] 2021-02-09T20:54:55.903Z INFO webdriver: COMMAND elementClick("cd790bf5-0f3e-4435-8fd0-655b113ff66f")
+[0-0] 2021-02-09T20:54:55.903Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/cd790bf5-0f3e-4435-8fd0-655b113ff66f/click
+[0-0] 2021-02-09T20:54:56.963Z INFO webdriver: COMMAND executeScript("mobile:acceptAlert", <object>)
+[0-0] 2021-02-09T20:54:56.964Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/execute/sync
+[0-0] 2021-02-09T20:54:56.964Z INFO webdriver: DATA { script: 'mobile:acceptAlert', args: [ { action: 'accept' } ] }
+[0-0] 2021-02-09T20:54:58.099Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverScreenContainer")
+[0-0] 2021-02-09T20:54:58.099Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:58.099Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverScreenContainer' }
+[0-0] 2021-02-09T20:54:58.151Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '3cd7445a-816d-4f49-b9f2-b09decf48913',
+  ELEMENT: '3cd7445a-816d-4f49-b9f2-b09decf48913'
+}
+[0-0] 2021-02-09T20:54:58.153Z INFO webdriver: COMMAND isElementDisplayed("3cd7445a-816d-4f49-b9f2-b09decf48913")
+[0-0] 2021-02-09T20:54:58.153Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/3cd7445a-816d-4f49-b9f2-b09decf48913/displayed
+[0-0] 2021-02-09T20:54:58.172Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:54:59.173Z INFO webdriver: COMMAND findElement("accessibility id", "searchRiverSearchIcon")
+[0-0] 2021-02-09T20:54:59.173Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:54:59.173Z INFO webdriver: DATA { using: 'accessibility id', value: 'searchRiverSearchIcon' }
+[0-0] 2021-02-09T20:54:59.220Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b54f3afc-741f-4798-b6b2-8ed535172ed4',
+  ELEMENT: 'b54f3afc-741f-4798-b6b2-8ed535172ed4'
+}
+[0-0] 2021-02-09T20:54:59.223Z INFO webdriver: COMMAND elementClick("b54f3afc-741f-4798-b6b2-8ed535172ed4")
+[0-0] 2021-02-09T20:54:59.223Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/b54f3afc-741f-4798-b6b2-8ed535172ed4/click
+[0-0] 2021-02-09T20:55:00.277Z INFO webdriver: COMMAND findElements("accessibility id", "flatlistItem")
+[0-0] 2021-02-09T20:55:00.277Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:55:00.277Z INFO webdriver: DATA { using: 'accessibility id', value: 'flatlistItem' }
+[0-0] 2021-02-09T20:55:00.550Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'd8054037-a590-4813-b5bb-7d19e9e43a66',
+    ELEMENT: 'd8054037-a590-4813-b5bb-7d19e9e43a66'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'a2f09747-e9f9-474b-bbdc-6e23c17abe48',
+    ELEMENT: 'a2f09747-e9f9-474b-bbdc-6e23c17abe48'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '29b0fa11-769f-41a2-82bb-04008389f44f',
+    ELEMENT: '29b0fa11-769f-41a2-82bb-04008389f44f'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '2719483e-b737-47e4-b970-4f49274f361c',
+    ELEMENT: '2719483e-b737-47e4-b970-4f49274f361c'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '12053777-8690-4e26-a619-fe3501e47b52',
+    ELEMENT: '12053777-8690-4e26-a619-fe3501e47b52'
+  }
+]
+[0-0] 2021-02-09T20:55:00.555Z INFO webdriver: COMMAND elementClick("d8054037-a590-4813-b5bb-7d19e9e43a66")
+[0-0] 2021-02-09T20:55:00.555Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/d8054037-a590-4813-b5bb-7d19e9e43a66/click
+[0-0] 2021-02-09T20:55:00.616Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailContainer")
+[0-0] 2021-02-09T20:55:00.616Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+2021-02-09T20:55:00.616Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailContainer' }
+[0-0] 2021-02-09T20:55:00.687Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:00.689Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailContainer")
+[0-0] 2021-02-09T20:55:00.689Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:00.689Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailContainer' }
+[0-0] 2021-02-09T20:55:00.757Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:01.190Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailContainer")
+[0-0] 2021-02-09T20:55:01.190Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:01.190Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailContainer' }
+[0-0] 2021-02-09T20:55:02.259Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b3ae35ec-6156-4865-9495-933157560f87',
+  ELEMENT: 'b3ae35ec-6156-4865-9495-933157560f87'
+}
+[0-0] 2021-02-09T20:55:02.261Z INFO webdriver: COMMAND isElementDisplayed("b3ae35ec-6156-4865-9495-933157560f87")
+[0-0] 2021-02-09T20:55:02.261Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/b3ae35ec-6156-4865-9495-933157560f87/displayed
+[0-0] 2021-02-09T20:55:02.289Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:02.289Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailContainer")
+[0-0] 2021-02-09T20:55:02.289Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:02.289Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailContainer' }
+[0-0] 2021-02-09T20:55:02.350Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'a76ff05f-ef2d-4ad5-b9c1-190f2ef19c35',
+  ELEMENT: 'a76ff05f-ef2d-4ad5-b9c1-190f2ef19c35'
+}
+[0-0] 2021-02-09T20:55:02.351Z INFO webdriver: COMMAND isElementDisplayed("a76ff05f-ef2d-4ad5-b9c1-190f2ef19c35")
+[0-0] 2021-02-09T20:55:02.351Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/a76ff05f-ef2d-4ad5-b9c1-190f2ef19c35/displayed
+[0-0] 2021-02-09T20:55:02.371Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:02.372Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailContainer")
+[0-0] 2021-02-09T20:55:02.372Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:02.372Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailContainer' }
+[0-0] 2021-02-09T20:55:02.432Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'd6ae5d30-9f16-441a-ba3d-15f9125b545c',
+  ELEMENT: 'd6ae5d30-9f16-441a-ba3d-15f9125b545c'
+}
+[0-0] 2021-02-09T20:55:02.434Z INFO webdriver: COMMAND isElementDisplayed("d6ae5d30-9f16-441a-ba3d-15f9125b545c")
+[0-0] 2021-02-09T20:55:02.434Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/d6ae5d30-9f16-441a-ba3d-15f9125b545c/displayed
+[0-0] 2021-02-09T20:55:02.453Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:02.454Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailContainer")
+[0-0] 2021-02-09T20:55:02.454Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:02.454Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailContainer' }
+[0-0] 2021-02-09T20:55:02.505Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'd71234e0-f9c3-4bd8-9760-0acebd4afc1f',
+  ELEMENT: 'd71234e0-f9c3-4bd8-9760-0acebd4afc1f'
+}
+[0-0] 2021-02-09T20:55:02.506Z INFO webdriver: COMMAND isElementDisplayed("d71234e0-f9c3-4bd8-9760-0acebd4afc1f")
+[0-0] 2021-02-09T20:55:02.507Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/d71234e0-f9c3-4bd8-9760-0acebd4afc1f/displayed
+[0-0] 2021-02-09T20:55:02.537Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:02.537Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailChooseRiverButton")
+[0-0] 2021-02-09T20:55:02.537Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:02.537Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailChooseRiverButton' }
+[0-0] 2021-02-09T20:55:02.587Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '319b07e6-5cb2-4c8d-be84-8e8f66ec45cd',
+  ELEMENT: '319b07e6-5cb2-4c8d-be84-8e8f66ec45cd'
+}
+[0-0] 2021-02-09T20:55:02.589Z INFO webdriver: COMMAND isElementDisplayed("319b07e6-5cb2-4c8d-be84-8e8f66ec45cd")
+[0-0] 2021-02-09T20:55:02.589Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/319b07e6-5cb2-4c8d-be84-8e8f66ec45cd/displayed
+[0-0] 2021-02-09T20:55:02.621Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:02.621Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailChooseRiverButton")
+[0-0] 2021-02-09T20:55:02.621Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:02.621Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailChooseRiverButton' }
+[0-0] 2021-02-09T20:55:02.674Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '17b9477a-df51-4396-872d-be7f71550e2c',
+  ELEMENT: '17b9477a-df51-4396-872d-be7f71550e2c'
+}
+[0-0] 2021-02-09T20:55:02.677Z INFO webdriver: COMMAND elementClick("17b9477a-df51-4396-872d-be7f71550e2c")
+[0-0] 2021-02-09T20:55:02.677Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/17b9477a-df51-4396-872d-be7f71550e2c/click
+[0-0] 2021-02-09T20:55:02.726Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailScreen")
+[0-0] 2021-02-09T20:55:02.727Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:02.727Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailScreen' }
+[0-0] 2021-02-09T20:55:02.809Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:02.811Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailScreen")
+[0-0] 2021-02-09T20:55:02.812Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:02.812Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailScreen' }
+[0-0] 2021-02-09T20:55:02.907Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:03.312Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailScreen")
+[0-0] 2021-02-09T20:55:03.312Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:03.312Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailScreen' }
+[0-0] 2021-02-09T20:55:04.188Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b3fabc98-834a-4bbb-afe3-24fda0af6353',
+  ELEMENT: 'b3fabc98-834a-4bbb-afe3-24fda0af6353'
+}
+[0-0] 2021-02-09T20:55:04.189Z INFO webdriver: COMMAND isElementDisplayed("b3fabc98-834a-4bbb-afe3-24fda0af6353")
+[0-0] 2021-02-09T20:55:04.190Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/b3fabc98-834a-4bbb-afe3-24fda0af6353/displayed
+[0-0] 2021-02-09T20:55:04.221Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:04.221Z INFO webdriver: COMMAND findElement("accessibility id", "riverDetailScreen")
+[0-0] 2021-02-09T20:55:04.222Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:04.222Z INFO webdriver: DATA { using: 'accessibility id', value: 'riverDetailScreen' }
+[0-0] 2021-02-09T20:55:04.266Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '28fe6e74-43ec-46bd-8216-4fb8143dded8',
+  ELEMENT: '28fe6e74-43ec-46bd-8216-4fb8143dded8'
+}
+[0-0] 2021-02-09T20:55:04.268Z INFO webdriver: COMMAND isElementDisplayed("28fe6e74-43ec-46bd-8216-4fb8143dded8")
+[0-0] 2021-02-09T20:55:04.269Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/28fe6e74-43ec-46bd-8216-4fb8143dded8/displayed
+[0-0] 2021-02-09T20:55:04.289Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:04.290Z INFO webdriver: COMMAND findElement("accessibility id", "mainTabScreenDetailsTab")
+[0-0] 2021-02-09T20:55:04.290Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:04.290Z INFO webdriver: DATA { using: 'accessibility id', value: 'mainTabScreenDetailsTab' }
+[0-0] 2021-02-09T20:55:04.331Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '2b8342ab-b00e-467a-95f1-34d60867c9b2',
+  ELEMENT: '2b8342ab-b00e-467a-95f1-34d60867c9b2'
+}
+[0-0] 2021-02-09T20:55:04.332Z INFO webdriver: COMMAND isElementDisplayed("2b8342ab-b00e-467a-95f1-34d60867c9b2")
+[0-0] 2021-02-09T20:55:04.332Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/2b8342ab-b00e-467a-95f1-34d60867c9b2/displayed
+[0-0] 2021-02-09T20:55:04.356Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:04.357Z INFO webdriver: COMMAND findElement("accessibility id", "mainTabScreenArduinoTab")
+[0-0] 2021-02-09T20:55:04.357Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:04.357Z INFO webdriver: DATA { using: 'accessibility id', value: 'mainTabScreenArduinoTab' }
+[0-0] 2021-02-09T20:55:04.409Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '79e5d2d4-e72c-476c-911f-c7113530c783',
+  ELEMENT: '79e5d2d4-e72c-476c-911f-c7113530c783'
+}
+[0-0] 2021-02-09T20:55:04.410Z INFO webdriver: COMMAND isElementDisplayed("79e5d2d4-e72c-476c-911f-c7113530c783")
+[0-0] 2021-02-09T20:55:04.411Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/79e5d2d4-e72c-476c-911f-c7113530c783/displayed
+[0-0] 2021-02-09T20:55:04.437Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:04.437Z INFO webdriver: COMMAND findElement("accessibility id", "mainTabScreenInsectTab")
+[0-0] 2021-02-09T20:55:04.437Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:04.438Z INFO webdriver: DATA { using: 'accessibility id', value: 'mainTabScreenInsectTab' }
+[0-0] 2021-02-09T20:55:04.478Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'dda1efbe-b99c-4b2f-b924-4f2e3ba27a72',
+  ELEMENT: 'dda1efbe-b99c-4b2f-b924-4f2e3ba27a72'
+}
+[0-0] 2021-02-09T20:55:04.479Z INFO webdriver: COMMAND isElementDisplayed("dda1efbe-b99c-4b2f-b924-4f2e3ba27a72")
+[0-0] 2021-02-09T20:55:04.479Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/dda1efbe-b99c-4b2f-b924-4f2e3ba27a72/displayed
+[0-0] 2021-02-09T20:55:04.494Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:05.495Z INFO webdriver: COMMAND findElement("accessibility id", "mainTabScreenArduinoTab")
+[0-0] 2021-02-09T20:55:05.495Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:05.495Z INFO webdriver: DATA { using: 'accessibility id', value: 'mainTabScreenArduinoTab' }
+[0-0] 2021-02-09T20:55:05.553Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '50fe5658-d171-4468-9529-5a8f6c247d71',
+  ELEMENT: '50fe5658-d171-4468-9529-5a8f6c247d71'
+}
+[0-0] 2021-02-09T20:55:05.555Z INFO webdriver: COMMAND isElementDisplayed("50fe5658-d171-4468-9529-5a8f6c247d71")
+[0-0] 2021-02-09T20:55:05.555Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/50fe5658-d171-4468-9529-5a8f6c247d71/displayed
+[0-0] 2021-02-09T20:55:05.573Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:05.573Z INFO webdriver: COMMAND findElement("accessibility id", "mainTabScreenArduinoTab")
+[0-0] 2021-02-09T20:55:05.573Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:05.573Z INFO webdriver: DATA { using: 'accessibility id', value: 'mainTabScreenArduinoTab' }
+[0-0] 2021-02-09T20:55:05.619Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'a1903416-efd3-4e0e-b60c-a038fd3325df',
+  ELEMENT: 'a1903416-efd3-4e0e-b60c-a038fd3325df'
+}
+[0-0] 2021-02-09T20:55:05.620Z INFO webdriver: COMMAND elementClick("a1903416-efd3-4e0e-b60c-a038fd3325df")
+[0-0] 2021-02-09T20:55:05.620Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/a1903416-efd3-4e0e-b60c-a038fd3325df/click
+[0-0] 2021-02-09T20:55:05.662Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoScreenContainer")
+[0-0] 2021-02-09T20:55:05.662Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+2021-02-09T20:55:05.662Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoScreenContainer' }
+[0-0] 2021-02-09T20:55:05.716Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:05.718Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoScreenContainer")
+[0-0] 2021-02-09T20:55:05.718Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:05.718Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoScreenContainer' }
+[0-0] 2021-02-09T20:55:05.775Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:06.219Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoScreenContainer")
+[0-0] 2021-02-09T20:55:06.219Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:06.219Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoScreenContainer' }
+[0-0] 2021-02-09T20:55:07.047Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '41ca8507-6528-4b35-83ba-f0099d4c405b',
+  ELEMENT: '41ca8507-6528-4b35-83ba-f0099d4c405b'
+}
+[0-0] 2021-02-09T20:55:07.048Z INFO webdriver: COMMAND isElementDisplayed("41ca8507-6528-4b35-83ba-f0099d4c405b")
+[0-0] 2021-02-09T20:55:07.048Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/41ca8507-6528-4b35-83ba-f0099d4c405b/displayed
+[0-0] 2021-02-09T20:55:07.070Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:07.070Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoScreenContainer")
+[0-0] 2021-02-09T20:55:07.070Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:07.070Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoScreenContainer' }
+[0-0] 2021-02-09T20:55:07.114Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b5ce9883-7966-4b80-aa17-abe18387ec75',
+  ELEMENT: 'b5ce9883-7966-4b80-aa17-abe18387ec75'
+}
+[0-0] 2021-02-09T20:55:07.116Z INFO webdriver: COMMAND isElementDisplayed("b5ce9883-7966-4b80-aa17-abe18387ec75")
+[0-0] 2021-02-09T20:55:07.116Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/b5ce9883-7966-4b80-aa17-abe18387ec75/displayed
+[0-0] 2021-02-09T20:55:07.136Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:07.137Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoScreenIDTextInput")
+[0-0] 2021-02-09T20:55:07.137Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:07.137Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoScreenIDTextInput' }
+[0-0] 2021-02-09T20:55:07.175Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'c12705ba-5d75-432c-aeb2-9d9c9899cce5',
+  ELEMENT: 'c12705ba-5d75-432c-aeb2-9d9c9899cce5'
+}
+[0-0] 2021-02-09T20:55:07.177Z INFO webdriver: COMMAND isElementDisplayed("c12705ba-5d75-432c-aeb2-9d9c9899cce5")
+[0-0] 2021-02-09T20:55:07.177Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/c12705ba-5d75-432c-aeb2-9d9c9899cce5/displayed
+[0-0] 2021-02-09T20:55:07.208Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:07.208Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoScreenIDTextInput")
+[0-0] 2021-02-09T20:55:07.208Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:07.208Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoScreenIDTextInput' }
+[0-0] 2021-02-09T20:55:07.250Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '4846c9d1-adae-41f8-a0e8-0c36639c98b4',
+  ELEMENT: '4846c9d1-adae-41f8-a0e8-0c36639c98b4'
+}
+[0-0] 2021-02-09T20:55:07.252Z INFO webdriver: COMMAND elementClear("4846c9d1-adae-41f8-a0e8-0c36639c98b4")
+[0-0] 2021-02-09T20:55:07.252Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/4846c9d1-adae-41f8-a0e8-0c36639c98b4/clear
+[0-0] 2021-02-09T20:55:07.275Z INFO webdriver: COMMAND elementSendKeys("4846c9d1-adae-41f8-a0e8-0c36639c98b4", "1")
+[0-0] 2021-02-09T20:55:07.276Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/4846c9d1-adae-41f8-a0e8-0c36639c98b4/value
+2021-02-09T20:55:07.276Z INFO webdriver: DATA { text: '1' }
+[0-0] 2021-02-09T20:55:08.304Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoScreenIDTextInput")
+[0-0] 2021-02-09T20:55:08.304Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:08.304Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoScreenIDTextInput' }
+[0-0] 2021-02-09T20:55:08.824Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '971b979f-c652-444e-8d0f-cf10a0a0f9e5',
+  ELEMENT: '971b979f-c652-444e-8d0f-cf10a0a0f9e5'
+}
+[0-0] 2021-02-09T20:55:08.825Z INFO webdriver: COMMAND getElementText("971b979f-c652-444e-8d0f-cf10a0a0f9e5")
+[0-0] 2021-02-09T20:55:08.826Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/971b979f-c652-444e-8d0f-cf10a0a0f9e5/text
+[0-0] 2021-02-09T20:55:08.854Z INFO webdriver: RESULT 1
+[0-0] 2021-02-09T20:55:08.855Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoScreenSearchIconButton")
+[0-0] 2021-02-09T20:55:08.855Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:08.855Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoScreenSearchIconButton' }
+[0-0] 2021-02-09T20:55:08.890Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'a6845271-2f56-41ca-b9a7-3241a5a00c42',
+  ELEMENT: 'a6845271-2f56-41ca-b9a7-3241a5a00c42'
+}
+[0-0] 2021-02-09T20:55:08.891Z INFO webdriver: COMMAND isElementDisplayed("a6845271-2f56-41ca-b9a7-3241a5a00c42")
+[0-0] 2021-02-09T20:55:08.891Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/a6845271-2f56-41ca-b9a7-3241a5a00c42/displayed
+[0-0] 2021-02-09T20:55:08.921Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:08.921Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoScreenSearchIconButton")
+[0-0] 2021-02-09T20:55:08.922Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:08.922Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoScreenSearchIconButton' }
+[0-0] 2021-02-09T20:55:08.955Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'fbb5b102-7c76-4389-a2f9-0d890989ceb5',
+  ELEMENT: 'fbb5b102-7c76-4389-a2f9-0d890989ceb5'
+}
+[0-0] 2021-02-09T20:55:08.957Z INFO webdriver: COMMAND elementClick("fbb5b102-7c76-4389-a2f9-0d890989ceb5")
+[0-0] 2021-02-09T20:55:08.957Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/fbb5b102-7c76-4389-a2f9-0d890989ceb5/click
+[0-0] 2021-02-09T20:55:09.010Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoConnectScreenContainer")
+[0-0] 2021-02-09T20:55:09.010Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:09.010Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoConnectScreenContainer' }
+[0-0] 2021-02-09T20:55:09.059Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:09.061Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoConnectScreenContainer")
+[0-0] 2021-02-09T20:55:09.061Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:09.061Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoConnectScreenContainer' }
+[0-0] 2021-02-09T20:55:09.122Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:09.561Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoConnectScreenContainer")
+[0-0] 2021-02-09T20:55:09.563Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:09.563Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoConnectScreenContainer' }
+[0-0] 2021-02-09T20:55:10.570Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '48e93625-d9b1-4dc8-83d7-f071373ed317',
+  ELEMENT: '48e93625-d9b1-4dc8-83d7-f071373ed317'
+}
+[0-0] 2021-02-09T20:55:10.571Z INFO webdriver: COMMAND isElementDisplayed("48e93625-d9b1-4dc8-83d7-f071373ed317")
+[0-0] 2021-02-09T20:55:10.572Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/48e93625-d9b1-4dc8-83d7-f071373ed317/displayed
+[0-0] 2021-02-09T20:55:10.588Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:10.588Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoConnectScreenContainer")
+[0-0] 2021-02-09T20:55:10.589Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+2021-02-09T20:55:10.589Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoConnectScreenContainer' }
+[0-0] 2021-02-09T20:55:10.631Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '78a771c1-1a70-4030-9086-2d97afd0c2a3',
+  ELEMENT: '78a771c1-1a70-4030-9086-2d97afd0c2a3'
+}
+[0-0] 2021-02-09T20:55:10.633Z INFO webdriver: COMMAND isElementDisplayed("78a771c1-1a70-4030-9086-2d97afd0c2a3")
+[0-0] 2021-02-09T20:55:10.633Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/78a771c1-1a70-4030-9086-2d97afd0c2a3/displayed
+[0-0] 2021-02-09T20:55:10.653Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:10.655Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoConnectScreenTemperatureValue")
+[0-0] 2021-02-09T20:55:10.656Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:10.656Z INFO webdriver: DATA {
+  using: 'accessibility id',
+  value: 'arduinoConnectScreenTemperatureValue'
+}
+[0-0] 2021-02-09T20:55:10.700Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6ad4a1eb-7877-4269-a876-89e7f386a5bc',
+  ELEMENT: '6ad4a1eb-7877-4269-a876-89e7f386a5bc'
+}
+[0-0] 2021-02-09T20:55:10.701Z INFO webdriver: COMMAND getElementText("6ad4a1eb-7877-4269-a876-89e7f386a5bc")
+[0-0] 2021-02-09T20:55:10.701Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/6ad4a1eb-7877-4269-a876-89e7f386a5bc/text
+[0-0] 2021-02-09T20:55:10.719Z INFO webdriver: RESULT 10.1
+[0-0] 2021-02-09T20:55:10.720Z INFO webdriver: COMMAND findElement("accessibility id", "arduinoConnectScreenPHValue")
+[0-0] 2021-02-09T20:55:10.720Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:10.720Z INFO webdriver: DATA { using: 'accessibility id', value: 'arduinoConnectScreenPHValue' }
+[0-0] 2021-02-09T20:55:10.757Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '62e48833-ec4d-4a34-947c-a6783678de9b',
+  ELEMENT: '62e48833-ec4d-4a34-947c-a6783678de9b'
+}
+[0-0] 2021-02-09T20:55:10.758Z INFO webdriver: COMMAND getElementText("62e48833-ec4d-4a34-947c-a6783678de9b")
+[0-0] 2021-02-09T20:55:10.758Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/62e48833-ec4d-4a34-947c-a6783678de9b/text
+[0-0] 2021-02-09T20:55:10.788Z INFO webdriver: RESULT 7.1
+[0-0] 2021-02-09T20:55:10.789Z INFO webdriver: COMMAND findElement("accessibility id", "mainTabScreenInsectTab")
+[0-0] 2021-02-09T20:55:10.789Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:10.789Z INFO webdriver: DATA { using: 'accessibility id', value: 'mainTabScreenInsectTab' }
+[0-0] 2021-02-09T20:55:10.837Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '3e8d3e51-8bc4-448f-94cf-eebee87ed90d',
+  ELEMENT: '3e8d3e51-8bc4-448f-94cf-eebee87ed90d'
+}
+[0-0] 2021-02-09T20:55:10.839Z INFO webdriver: COMMAND isElementDisplayed("3e8d3e51-8bc4-448f-94cf-eebee87ed90d")
+[0-0] 2021-02-09T20:55:10.839Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/3e8d3e51-8bc4-448f-94cf-eebee87ed90d/displayed
+[0-0] 2021-02-09T20:55:10.871Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:11.873Z INFO webdriver: COMMAND findElement("accessibility id", "mainTabScreenInsectTab")
+[0-0] 2021-02-09T20:55:11.873Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:11.873Z INFO webdriver: DATA { using: 'accessibility id', value: 'mainTabScreenInsectTab' }
+[0-0] 2021-02-09T20:55:11.922Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '5c9b2334-a230-454f-aef7-6eb4859dad0d',
+  ELEMENT: '5c9b2334-a230-454f-aef7-6eb4859dad0d'
+}
+[0-0] 2021-02-09T20:55:11.924Z INFO webdriver: COMMAND isElementDisplayed("5c9b2334-a230-454f-aef7-6eb4859dad0d")
+[0-0] 2021-02-09T20:55:11.924Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/5c9b2334-a230-454f-aef7-6eb4859dad0d/displayed
+[0-0] 2021-02-09T20:55:11.955Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:11.955Z INFO webdriver: COMMAND findElement("accessibility id", "mainTabScreenInsectTab")
+2021-02-09T20:55:11.955Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+2021-02-09T20:55:11.955Z INFO webdriver: DATA { using: 'accessibility id', value: 'mainTabScreenInsectTab' }
+[0-0] 2021-02-09T20:55:12.000Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '2122d657-14ea-442f-ae89-fd2d416e4394',
+  ELEMENT: '2122d657-14ea-442f-ae89-fd2d416e4394'
+}
+[0-0] 2021-02-09T20:55:12.001Z INFO webdriver: COMMAND elementClick("2122d657-14ea-442f-ae89-fd2d416e4394")
+[0-0] 2021-02-09T20:55:12.001Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/2122d657-14ea-442f-ae89-fd2d416e4394/click
+[0-0] 2021-02-09T20:55:12.062Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenContainer")
+[0-0] 2021-02-09T20:55:12.062Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:12.062Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenContainer' }
+[0-0] 2021-02-09T20:55:12.117Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:12.120Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenContainer")
+[0-0] 2021-02-09T20:55:12.120Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:12.120Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenContainer' }
+[0-0] 2021-02-09T20:55:12.182Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:12.621Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenContainer")
+[0-0] 2021-02-09T20:55:12.621Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:12.621Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenContainer' }
+[0-0] 2021-02-09T20:55:13.451Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '0fd57097-4ef7-41f8-a0c8-f3919d47a77e',
+  ELEMENT: '0fd57097-4ef7-41f8-a0c8-f3919d47a77e'
+}
+[0-0] 2021-02-09T20:55:13.453Z INFO webdriver: COMMAND isElementDisplayed("0fd57097-4ef7-41f8-a0c8-f3919d47a77e")
+[0-0] 2021-02-09T20:55:13.453Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/0fd57097-4ef7-41f8-a0c8-f3919d47a77e/displayed
+[0-0] 2021-02-09T20:55:13.471Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:13.472Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenContainer")
+2021-02-09T20:55:13.472Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:13.472Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenContainer' }
+[0-0] 2021-02-09T20:55:13.522Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '3df7ec2f-5106-4272-be68-2f56b47358d5',
+  ELEMENT: '3df7ec2f-5106-4272-be68-2f56b47358d5'
+}
+[0-0] 2021-02-09T20:55:13.524Z INFO webdriver: COMMAND isElementDisplayed("3df7ec2f-5106-4272-be68-2f56b47358d5")
+[0-0] 2021-02-09T20:55:13.524Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/3df7ec2f-5106-4272-be68-2f56b47358d5/displayed
+[0-0] 2021-02-09T20:55:13.552Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:13.553Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenSelectInsectButton")
+[0-0] 2021-02-09T20:55:13.553Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:13.553Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenSelectInsectButton' }
+[0-0] 2021-02-09T20:55:13.590Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'a055e477-656e-4fa5-bf1e-b20e148bd7e5',
+  ELEMENT: 'a055e477-656e-4fa5-bf1e-b20e148bd7e5'
+}
+[0-0] 2021-02-09T20:55:13.592Z INFO webdriver: COMMAND isElementDisplayed("a055e477-656e-4fa5-bf1e-b20e148bd7e5")
+[0-0] 2021-02-09T20:55:13.592Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/a055e477-656e-4fa5-bf1e-b20e148bd7e5/displayed
+[0-0] 2021-02-09T20:55:13.621Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:13.621Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenAnalyzeInsectButton")
+2021-02-09T20:55:13.621Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+2021-02-09T20:55:13.622Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenAnalyzeInsectButton' }
+[0-0] 2021-02-09T20:55:13.665Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'e562ace3-eae9-4aaa-b1a6-b9d2f1017dc5',
+  ELEMENT: 'e562ace3-eae9-4aaa-b1a6-b9d2f1017dc5'
+}
+[0-0] 2021-02-09T20:55:13.667Z INFO webdriver: COMMAND isElementDisplayed("e562ace3-eae9-4aaa-b1a6-b9d2f1017dc5")
+[0-0] 2021-02-09T20:55:13.667Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/e562ace3-eae9-4aaa-b1a6-b9d2f1017dc5/displayed
+[0-0] 2021-02-09T20:55:13.686Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:14.688Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenSelectInsectButton")
+[0-0] 2021-02-09T20:55:14.688Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:14.688Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenSelectInsectButton' }
+[0-0] 2021-02-09T20:55:14.743Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '40c54dcc-07d2-4498-9538-f84c0f795e32',
+  ELEMENT: '40c54dcc-07d2-4498-9538-f84c0f795e32'
+}
+[0-0] 2021-02-09T20:55:14.749Z INFO webdriver: COMMAND elementClick("40c54dcc-07d2-4498-9538-f84c0f795e32")
+[0-0] 2021-02-09T20:55:14.749Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/40c54dcc-07d2-4498-9538-f84c0f795e32/click
+[0-0] 2021-02-09T20:55:14.809Z INFO webdriver: COMMAND findElement("accessibility id", "chooseInsectScreenContainer")
+[0-0] 2021-02-09T20:55:14.809Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+2021-02-09T20:55:14.809Z INFO webdriver: DATA { using: 'accessibility id', value: 'chooseInsectScreenContainer' }
+[0-0] 2021-02-09T20:55:14.893Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:14.895Z INFO webdriver: COMMAND findElement("accessibility id", "chooseInsectScreenContainer")
+[0-0] 2021-02-09T20:55:14.895Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:14.895Z INFO webdriver: DATA { using: 'accessibility id', value: 'chooseInsectScreenContainer' }
+[0-0] 2021-02-09T20:55:14.940Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:15.395Z INFO webdriver: COMMAND findElement("accessibility id", "chooseInsectScreenContainer")
+[0-0] 2021-02-09T20:55:15.395Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+2021-02-09T20:55:15.395Z INFO webdriver: DATA { using: 'accessibility id', value: 'chooseInsectScreenContainer' }
+[0-0] 2021-02-09T20:55:18.164Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'c032c0fd-1e63-48bf-8ad7-13f3a4bec4a4',
+  ELEMENT: 'c032c0fd-1e63-48bf-8ad7-13f3a4bec4a4'
+}
+[0-0] 2021-02-09T20:55:18.166Z INFO webdriver: COMMAND isElementDisplayed("c032c0fd-1e63-48bf-8ad7-13f3a4bec4a4")
+[0-0] 2021-02-09T20:55:18.166Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/c032c0fd-1e63-48bf-8ad7-13f3a4bec4a4/displayed
+[0-0] 2021-02-09T20:55:18.187Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:18.187Z INFO webdriver: COMMAND findElement("accessibility id", "chooseInsectScreenContainer")
+[0-0] 2021-02-09T20:55:18.187Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:18.187Z INFO webdriver: DATA { using: 'accessibility id', value: 'chooseInsectScreenContainer' }
+[0-0] 2021-02-09T20:55:18.365Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '85563498-9c48-4470-af06-f87ace377e21',
+  ELEMENT: '85563498-9c48-4470-af06-f87ace377e21'
+}
+[0-0] 2021-02-09T20:55:18.366Z INFO webdriver: COMMAND isElementDisplayed("85563498-9c48-4470-af06-f87ace377e21")
+[0-0] 2021-02-09T20:55:18.366Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/85563498-9c48-4470-af06-f87ace377e21/displayed
+[0-0] 2021-02-09T20:55:18.386Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:18.387Z INFO webdriver: COMMAND findElement("accessibility id", "groupList")
+[0-0] 2021-02-09T20:55:18.387Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:18.387Z INFO webdriver: DATA { using: 'accessibility id', value: 'groupList' }
+[0-0] 2021-02-09T20:55:18.434Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '05a7b5c2-a89a-4067-9cb5-065dff4761b2',
+  ELEMENT: '05a7b5c2-a89a-4067-9cb5-065dff4761b2'
+}
+[0-0] 2021-02-09T20:55:18.436Z INFO webdriver: COMMAND isElementDisplayed("05a7b5c2-a89a-4067-9cb5-065dff4761b2")
+[0-0] 2021-02-09T20:55:18.436Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/05a7b5c2-a89a-4067-9cb5-065dff4761b2/displayed
+[0-0] 2021-02-09T20:55:18.457Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:18.457Z INFO webdriver: COMMAND findElements("accessibility id", "groupList")
+[0-0] 2021-02-09T20:55:18.457Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:55:18.458Z INFO webdriver: DATA { using: 'accessibility id', value: 'groupList' }
+[0-0] 2021-02-09T20:55:18.654Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'aaaea80a-5fe7-4abe-bc84-7c729bd5f309',
+    ELEMENT: 'aaaea80a-5fe7-4abe-bc84-7c729bd5f309'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '2c126ad2-e41d-470f-a792-7ebcba8731a0',
+    ELEMENT: '2c126ad2-e41d-470f-a792-7ebcba8731a0'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '96b5c7dc-3e82-477c-8ac1-743d60dd684c',
+    ELEMENT: '96b5c7dc-3e82-477c-8ac1-743d60dd684c'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'b81e9842-b52c-45e6-b96b-e301fa5c2e9b',
+    ELEMENT: 'b81e9842-b52c-45e6-b96b-e301fa5c2e9b'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '87e49c2b-ba30-427d-84ac-3eb57af9cd2f',
+    ELEMENT: '87e49c2b-ba30-427d-84ac-3eb57af9cd2f'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '202bb864-fbb3-48b1-8e3b-a3c031d57eae',
+    ELEMENT: '202bb864-fbb3-48b1-8e3b-a3c031d57eae'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '4133d158-16e1-4dcb-a55c-251c4285b70a',
+    ELEMENT: '4133d158-16e1-4dcb-a55c-251c4285b70a'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '3e0e3d77-1625-44dc-8589-6b98cbe4c545',
+    ELEMENT: '3e0e3d77-1625-44dc-8589-6b98cbe4c545'
+  }
+]
+[0-0] 2021-02-09T20:55:18.661Z INFO webdriver: COMMAND findElements("accessibility id", "groupList")
+[0-0] 2021-02-09T20:55:18.661Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:55:18.661Z INFO webdriver: DATA { using: 'accessibility id', value: 'groupList' }
+[0-0] 2021-02-09T20:55:18.859Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '0ad3d410-f33e-43f2-ab3d-58d88c6065ed',
+    ELEMENT: '0ad3d410-f33e-43f2-ab3d-58d88c6065ed'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'ba1d4e2c-1c06-4672-aa76-47cedabf1159',
+    ELEMENT: 'ba1d4e2c-1c06-4672-aa76-47cedabf1159'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'd574f85e-1758-4b1e-9e26-573f6ef86bcb',
+    ELEMENT: 'd574f85e-1758-4b1e-9e26-573f6ef86bcb'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'a6088ef6-2d60-4044-b77c-e9ea7f21eb04',
+    ELEMENT: 'a6088ef6-2d60-4044-b77c-e9ea7f21eb04'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '261ee17b-5edd-4cda-be3e-29b2617b1a69',
+    ELEMENT: '261ee17b-5edd-4cda-be3e-29b2617b1a69'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '3938abbf-1dfb-4a7f-bf03-7d4c336f89c4',
+    ELEMENT: '3938abbf-1dfb-4a7f-bf03-7d4c336f89c4'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '613eec56-8194-47af-9be8-b58851ad1d4f',
+    ELEMENT: '613eec56-8194-47af-9be8-b58851ad1d4f'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '1a9eb266-be20-4b50-a806-5293982a2620',
+    ELEMENT: '1a9eb266-be20-4b50-a806-5293982a2620'
+  }
+]
+[0-0] 2021-02-09T20:55:18.866Z INFO webdriver: COMMAND findElement("accessibility id", "groupAmountInput")
+[0-0] 2021-02-09T20:55:18.866Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:18.866Z INFO webdriver: DATA { using: 'accessibility id', value: 'groupAmountInput' }
+[0-0] 2021-02-09T20:55:19.072Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:19.073Z INFO webdriver: COMMAND elementClick("0ad3d410-f33e-43f2-ab3d-58d88c6065ed")
+[0-0] 2021-02-09T20:55:19.073Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/0ad3d410-f33e-43f2-ab3d-58d88c6065ed/click
+[0-0] 2021-02-09T20:55:20.129Z DEBUG webdriverio: command setValue was called on an element ("~groupAmountInput") that wasn't found, waiting for it...
+[0-0] 2021-02-09T20:55:20.130Z INFO webdriver: COMMAND findElements("accessibility id", "groupAmountInput")
+[0-0] 2021-02-09T20:55:20.130Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:55:20.130Z INFO webdriver: DATA { using: 'accessibility id', value: 'groupAmountInput' }
+[0-0] 2021-02-09T20:55:20.167Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': 'f6e15e9a-2c10-4bf2-a723-89a224a21f10',
+    ELEMENT: 'f6e15e9a-2c10-4bf2-a723-89a224a21f10'
+  }
+]
+[0-0] 2021-02-09T20:55:20.169Z INFO webdriver: COMMAND findElement("accessibility id", "groupAmountInput")
+[0-0] 2021-02-09T20:55:20.169Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:20.169Z INFO webdriver: DATA { using: 'accessibility id', value: 'groupAmountInput' }
+[0-0] 2021-02-09T20:55:20.205Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '01e8f678-bdf0-4a26-a723-e41b7414f9f3',
+  ELEMENT: '01e8f678-bdf0-4a26-a723-e41b7414f9f3'
+}
+[0-0] 2021-02-09T20:55:20.207Z INFO webdriver: COMMAND elementClear("01e8f678-bdf0-4a26-a723-e41b7414f9f3")
+[0-0] 2021-02-09T20:55:20.207Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/01e8f678-bdf0-4a26-a723-e41b7414f9f3/clear
+[0-0] 2021-02-09T20:55:20.242Z INFO webdriver: COMMAND elementSendKeys("01e8f678-bdf0-4a26-a723-e41b7414f9f3", "5")
+[0-0] 2021-02-09T20:55:20.243Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/01e8f678-bdf0-4a26-a723-e41b7414f9f3/value
+[0-0] 2021-02-09T20:55:20.243Z INFO webdriver: DATA { text: '5' }
+[0-0] 2021-02-09T20:55:22.268Z INFO webdriver: COMMAND getElementText("01e8f678-bdf0-4a26-a723-e41b7414f9f3")
+[0-0] 2021-02-09T20:55:22.268Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/01e8f678-bdf0-4a26-a723-e41b7414f9f3/text
+[0-0] 2021-02-09T20:55:22.302Z INFO webdriver: RESULT 5
+[0-0] 2021-02-09T20:55:22.302Z INFO webdriver: COMMAND findElement("accessibility id", "addAmountIcon")
+[0-0] 2021-02-09T20:55:22.303Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:22.303Z INFO webdriver: DATA { using: 'accessibility id', value: 'addAmountIcon' }
+[0-0] 2021-02-09T20:55:22.327Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b845f47d-ee61-4aa8-ba10-4d2df75109da',
+  ELEMENT: 'b845f47d-ee61-4aa8-ba10-4d2df75109da'
+}
+[0-0] 2021-02-09T20:55:22.331Z INFO webdriver: COMMAND elementClick("b845f47d-ee61-4aa8-ba10-4d2df75109da")
+[0-0] 2021-02-09T20:55:22.331Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/b845f47d-ee61-4aa8-ba10-4d2df75109da/click
+[0-0] 2021-02-09T20:55:23.379Z INFO webdriver: COMMAND findElement("accessibility id", "submitInsectsAmountButton")
+[0-0] 2021-02-09T20:55:23.380Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:23.380Z INFO webdriver: DATA { using: 'accessibility id', value: 'submitInsectsAmountButton' }
+[0-0] 2021-02-09T20:55:23.555Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '3b24743d-1acd-4f4e-928e-545cc33193d1',
+  ELEMENT: '3b24743d-1acd-4f4e-928e-545cc33193d1'
+}
+[0-0] 2021-02-09T20:55:23.556Z INFO webdriver: COMMAND isElementDisplayed("3b24743d-1acd-4f4e-928e-545cc33193d1")
+[0-0] 2021-02-09T20:55:23.556Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/3b24743d-1acd-4f4e-928e-545cc33193d1/displayed
+[0-0] 2021-02-09T20:55:23.587Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:23.587Z INFO webdriver: COMMAND findElement("accessibility id", "submitInsectsAmountButton")
+[0-0] 2021-02-09T20:55:23.587Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:23.587Z INFO webdriver: DATA { using: 'accessibility id', value: 'submitInsectsAmountButton' }
+[0-0] 2021-02-09T20:55:23.763Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'ccbc066e-a186-4351-8bc4-984fb8cc3606',
+  ELEMENT: 'ccbc066e-a186-4351-8bc4-984fb8cc3606'
+}
+[0-0] 2021-02-09T20:55:23.764Z INFO webdriver: COMMAND elementClick("ccbc066e-a186-4351-8bc4-984fb8cc3606")
+[0-0] 2021-02-09T20:55:23.765Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/ccbc066e-a186-4351-8bc4-984fb8cc3606/click
+[0-0] 2021-02-09T20:55:24.813Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenContainer")
+[0-0] 2021-02-09T20:55:24.813Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:24.813Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenContainer' }
+[0-0] 2021-02-09T20:55:25.310Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b30d363f-1ca7-4e74-8d15-d9d98358d495',
+  ELEMENT: 'b30d363f-1ca7-4e74-8d15-d9d98358d495'
+}
+[0-0] 2021-02-09T20:55:25.311Z INFO webdriver: COMMAND isElementDisplayed("b30d363f-1ca7-4e74-8d15-d9d98358d495")
+[0-0] 2021-02-09T20:55:25.312Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/b30d363f-1ca7-4e74-8d15-d9d98358d495/displayed
+[0-0] 2021-02-09T20:55:25.337Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:25.337Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenContainer")
+[0-0] 2021-02-09T20:55:25.337Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:25.337Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenContainer' }
+[0-0] 2021-02-09T20:55:25.382Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'd4a97ce0-859d-46e5-9368-dfb43445541e',
+  ELEMENT: 'd4a97ce0-859d-46e5-9368-dfb43445541e'
+}
+[0-0] 2021-02-09T20:55:25.384Z INFO webdriver: COMMAND isElementDisplayed("d4a97ce0-859d-46e5-9368-dfb43445541e")
+[0-0] 2021-02-09T20:55:25.384Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/d4a97ce0-859d-46e5-9368-dfb43445541e/displayed
+[0-0] 2021-02-09T20:55:25.403Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:25.403Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenSelectedTitle")
+[0-0] 2021-02-09T20:55:25.403Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:25.403Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenSelectedTitle' }
+[0-0] 2021-02-09T20:55:25.444Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '40e63779-1d0b-42ad-bf5c-ab3de1c874a4',
+  ELEMENT: '40e63779-1d0b-42ad-bf5c-ab3de1c874a4'
+}
+[0-0] 2021-02-09T20:55:25.447Z INFO webdriver: COMMAND getElementText("40e63779-1d0b-42ad-bf5c-ab3de1c874a4")
+[0-0] 2021-02-09T20:55:25.447Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/40e63779-1d0b-42ad-bf5c-ab3de1c874a4/text
+[0-0] 2021-02-09T20:55:25.470Z INFO webdriver: RESULT Selected :
+[0-0] 2021-02-09T20:55:25.471Z INFO webdriver: COMMAND findElements("accessibility id", "insectScreenSelectedInsects")
+[0-0] 2021-02-09T20:55:25.471Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/elements
+[0-0] 2021-02-09T20:55:25.471Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenSelectedInsects' }
+[0-0] 2021-02-09T20:55:25.522Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '25c757dc-725a-42a7-86c8-f9f3773b34d5',
+    ELEMENT: '25c757dc-725a-42a7-86c8-f9f3773b34d5'
+  }
+]
+[0-0] 2021-02-09T20:55:26.524Z INFO webdriver: COMMAND findElement("accessibility id", "insectScreenAnalyzeInsectButton")
+[0-0] 2021-02-09T20:55:26.524Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:26.524Z INFO webdriver: DATA { using: 'accessibility id', value: 'insectScreenAnalyzeInsectButton' }
+[0-0] 2021-02-09T20:55:26.568Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '89be65d5-9bdd-4b17-ba1e-61d557c43b28',
+  ELEMENT: '89be65d5-9bdd-4b17-ba1e-61d557c43b28'
+}
+[0-0] 2021-02-09T20:55:26.569Z INFO webdriver: COMMAND elementClick("89be65d5-9bdd-4b17-ba1e-61d557c43b28")
+[0-0] 2021-02-09T20:55:26.569Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/89be65d5-9bdd-4b17-ba1e-61d557c43b28/click
+[0-0] 2021-02-09T20:55:27.626Z INFO webdriver: COMMAND executeScript("mobile:acceptAlert", <object>)
+[0-0] 2021-02-09T20:55:27.626Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/execute/sync
+[0-0] 2021-02-09T20:55:27.626Z INFO webdriver: DATA { script: 'mobile:acceptAlert', args: [ { action: 'accept' } ] }
+[0-0] 2021-02-09T20:55:28.148Z INFO webdriver: COMMAND findElement("accessibility id", "analysisInsectScreenContainer")
+[0-0] 2021-02-09T20:55:28.148Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:28.148Z INFO webdriver: DATA { using: 'accessibility id', value: 'analysisInsectScreenContainer' }
+[0-0] 2021-02-09T20:55:28.249Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-0] 2021-02-09T20:55:28.252Z INFO webdriver: COMMAND findElement("accessibility id", "analysisInsectScreenContainer")
+[0-0] 2021-02-09T20:55:28.252Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:28.252Z INFO webdriver: DATA { using: 'accessibility id', value: 'analysisInsectScreenContainer' }
+[0-0] 2021-02-09T20:55:29.047Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '1f5e659a-7a95-440c-b86f-b437987d98f0',
+  ELEMENT: '1f5e659a-7a95-440c-b86f-b437987d98f0'
+}
+[0-0] 2021-02-09T20:55:29.050Z INFO webdriver: COMMAND isElementDisplayed("1f5e659a-7a95-440c-b86f-b437987d98f0")
+[0-0] 2021-02-09T20:55:29.050Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/1f5e659a-7a95-440c-b86f-b437987d98f0/displayed
+[0-0] 2021-02-09T20:55:29.081Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:29.081Z INFO webdriver: COMMAND findElement("accessibility id", "analysisInsectScreenContainer")
+[0-0] 2021-02-09T20:55:29.081Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:29.081Z INFO webdriver: DATA { using: 'accessibility id', value: 'analysisInsectScreenContainer' }
+[0-0] 2021-02-09T20:55:29.126Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '3ac07da4-5285-4081-afc0-55658f4f58f7',
+  ELEMENT: '3ac07da4-5285-4081-afc0-55658f4f58f7'
+}
+[0-0] 2021-02-09T20:55:29.128Z INFO webdriver: COMMAND isElementDisplayed("3ac07da4-5285-4081-afc0-55658f4f58f7")
+[0-0] 2021-02-09T20:55:29.128Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/3ac07da4-5285-4081-afc0-55658f4f58f7/displayed
+[0-0] 2021-02-09T20:55:29.153Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:29.153Z INFO webdriver: COMMAND findElement("accessibility id", "analysisInsectShowOptions")
+[0-0] 2021-02-09T20:55:29.153Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:29.153Z INFO webdriver: DATA { using: 'accessibility id', value: 'analysisInsectShowOptions' }
+[0-0] 2021-02-09T20:55:29.204Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '34b1c33d-778d-4fda-9185-b0400ea12dc9',
+  ELEMENT: '34b1c33d-778d-4fda-9185-b0400ea12dc9'
+}
+[0-0] 2021-02-09T20:55:29.207Z INFO webdriver: COMMAND elementClick("34b1c33d-778d-4fda-9185-b0400ea12dc9")
+[0-0] 2021-02-09T20:55:29.207Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/34b1c33d-778d-4fda-9185-b0400ea12dc9/click
+[0-0] 2021-02-09T20:55:30.264Z INFO webdriver: COMMAND findElement("accessibility id", "analysisInsectInnerView")
+[0-0] 2021-02-09T20:55:30.264Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:30.264Z INFO webdriver: DATA { using: 'accessibility id', value: 'analysisInsectInnerView' }
+[0-0] 2021-02-09T20:55:30.423Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'c561fff3-2683-4a44-90a5-670efd1ce362',
+  ELEMENT: 'c561fff3-2683-4a44-90a5-670efd1ce362'
+}
+[0-0] 2021-02-09T20:55:30.425Z INFO webdriver: COMMAND isElementDisplayed("c561fff3-2683-4a44-90a5-670efd1ce362")
+[0-0] 2021-02-09T20:55:30.425Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/c561fff3-2683-4a44-90a5-670efd1ce362/displayed
+[0-0] 2021-02-09T20:55:30.455Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:30.455Z INFO webdriver: COMMAND findElement("accessibility id", "takePhotoButton")
+[0-0] 2021-02-09T20:55:30.455Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:30.455Z INFO webdriver: DATA { using: 'accessibility id', value: 'takePhotoButton' }
+[0-0] 2021-02-09T20:55:30.503Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'eff6f974-5169-4131-88dd-85f2e29c9a1f',
+  ELEMENT: 'eff6f974-5169-4131-88dd-85f2e29c9a1f'
+}
+[0-0] 2021-02-09T20:55:30.505Z INFO webdriver: COMMAND isElementDisplayed("eff6f974-5169-4131-88dd-85f2e29c9a1f")
+[0-0] 2021-02-09T20:55:30.505Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/eff6f974-5169-4131-88dd-85f2e29c9a1f/displayed
+[0-0] 2021-02-09T20:55:30.535Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:30.535Z INFO webdriver: COMMAND findElement("accessibility id", "chooseFormLibraryButton")
+[0-0] 2021-02-09T20:55:30.535Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:30.535Z INFO webdriver: DATA { using: 'accessibility id', value: 'chooseFormLibraryButton' }
+[0-0] 2021-02-09T20:55:30.576Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '13cb30fe-4c6f-4248-aab6-bd738ddf7ed6',
+  ELEMENT: '13cb30fe-4c6f-4248-aab6-bd738ddf7ed6'
+}
+[0-0] 2021-02-09T20:55:30.577Z INFO webdriver: COMMAND isElementDisplayed("13cb30fe-4c6f-4248-aab6-bd738ddf7ed6")
+[0-0] 2021-02-09T20:55:30.577Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/13cb30fe-4c6f-4248-aab6-bd738ddf7ed6/displayed
+[0-0] 2021-02-09T20:55:30.604Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:30.604Z INFO webdriver: COMMAND findElement("accessibility id", "cancelButton")
+[0-0] 2021-02-09T20:55:30.604Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element
+[0-0] 2021-02-09T20:55:30.604Z INFO webdriver: DATA { using: 'accessibility id', value: 'cancelButton' }
+[0-0] 2021-02-09T20:55:30.651Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '8e096edb-58c5-49be-8d87-7687932e7848',
+  ELEMENT: '8e096edb-58c5-49be-8d87-7687932e7848'
+}
+[0-0] 2021-02-09T20:55:30.652Z INFO webdriver: COMMAND isElementDisplayed("8e096edb-58c5-49be-8d87-7687932e7848")
+[0-0] 2021-02-09T20:55:30.652Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3/element/8e096edb-58c5-49be-8d87-7687932e7848/displayed
+[0-0] 2021-02-09T20:55:30.671Z INFO webdriver: RESULT true
+[0-0] 2021-02-09T20:55:30.672Z INFO webdriver: COMMAND deleteSession()
+[0-0] 2021-02-09T20:55:30.672Z INFO webdriver: [DELETE] http://127.0.0.1:4723/wd/hub/session/8e054345-2f46-464b-8e69-39864ed6e7b3
+2021-02-09T20:55:31.183Z DEBUG @wdio/local-runner: Runner 0-0 finished with exit code 0
+[0-0] PASSED in F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\android\app\build\outputs\apk\debug\app-debug.apk - F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\appium_automation_testing\test_cases\take_new_sample.test.js
+2021-02-09T20:55:31.187Z INFO @wdio/local-runner: Start worker 0-1 with arg: run,wdio.conf.js
+[0-1] 2021-02-09T20:55:31.754Z INFO @wdio/local-runner: Run worker command: run
+[0-1] RUNNING in F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\android\app\build\outputs\apk\debug\app-debug.apk - F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\appium_automation_testing\test_cases\view_history.test.js
+[0-1] 2021-02-09T20:55:31.912Z DEBUG @wdio/local-runner:utils: init remote session
+[0-1] 2021-02-09T20:55:31.914Z INFO webdriverio: Initiate new session using the webdriver protocol
+[0-1] 2021-02-09T20:55:31.916Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session
+[0-1] 2021-02-09T20:55:31.916Z INFO webdriver: DATA {
+  capabilities: {
+    alwaysMatch: {
+      appiumVersion: '1.13.0',
+      platformName: 'Android',
+      platformVersion: '11',
+      deviceName: 'Android 3a XL',
+      app: 'F:\\computing\\year4\\semester1\\team project\\CCCMI\\CCCMI\\mobile_ui\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk',
+      automationName: 'UiAutomator2'
+    },
+    firstMatch: [ {} ]
+  },
+  desiredCapabilities: {
+    appiumVersion: '1.13.0',
+    platformName: 'Android',
+    platformVersion: '11',
+    deviceName: 'Android 3a XL',
+    app: 'F:\\computing\\year4\\semester1\\team project\\CCCMI\\CCCMI\\mobile_ui\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk',
+    automationName: 'UiAutomator2'
+  }
+}
+[0-1] 2021-02-09T20:55:40.794Z INFO webdriver: COMMAND findElement("accessibility id", "splashContainer")
+[0-1] 2021-02-09T20:55:40.794Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:40.794Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashContainer' }
+[0-1] 2021-02-09T20:55:41.103Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:41.114Z INFO webdriver: COMMAND findElement("accessibility id", "splashContainer")
+[0-1] 2021-02-09T20:55:41.114Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:41.114Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashContainer' }
+[0-1] 2021-02-09T20:55:41.172Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:41.614Z INFO webdriver: COMMAND findElement("accessibility id", "splashContainer")
+[0-1] 2021-02-09T20:55:41.614Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:41.614Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashContainer' }
+[0-1] 2021-02-09T20:55:41.683Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:42.115Z INFO webdriver: COMMAND findElement("accessibility id", "splashContainer")
+[0-1] 2021-02-09T20:55:42.115Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:42.115Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashContainer' }
+[0-1] 2021-02-09T20:55:42.167Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:42.613Z INFO webdriver: COMMAND findElement("accessibility id", "splashContainer")
+[0-1] 2021-02-09T20:55:42.613Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:42.613Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashContainer' }
+[0-1] 2021-02-09T20:55:42.667Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:43.113Z INFO webdriver: COMMAND findElement("accessibility id", "splashContainer")
+[0-1] 2021-02-09T20:55:43.113Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:43.113Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashContainer' }
+[0-1] 2021-02-09T20:55:44.811Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b26c4304-d68e-4e94-a023-fadf752edf81',
+  ELEMENT: 'b26c4304-d68e-4e94-a023-fadf752edf81'
+}
+[0-1] 2021-02-09T20:55:44.814Z INFO webdriver: COMMAND isElementDisplayed("b26c4304-d68e-4e94-a023-fadf752edf81")
+[0-1] 2021-02-09T20:55:44.814Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/b26c4304-d68e-4e94-a023-fadf752edf81/displayed
+[0-1] 2021-02-09T20:55:44.840Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:44.841Z INFO webdriver: COMMAND findElement("accessibility id", "splashContainer")
+[0-1] 2021-02-09T20:55:44.841Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:44.841Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashContainer' }
+[0-1] 2021-02-09T20:55:44.895Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '078e1976-467e-4339-ab3b-d1418ae9dddb',
+  ELEMENT: '078e1976-467e-4339-ab3b-d1418ae9dddb'
+}
+[0-1] 2021-02-09T20:55:44.899Z INFO webdriver: COMMAND isElementDisplayed("078e1976-467e-4339-ab3b-d1418ae9dddb")
+[0-1] 2021-02-09T20:55:44.900Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/078e1976-467e-4339-ab3b-d1418ae9dddb/displayed
+[0-1] 2021-02-09T20:55:44.921Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:44.923Z INFO webdriver: COMMAND findElement("accessibility id", "splashContainer")
+[0-1] 2021-02-09T20:55:44.923Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:44.923Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashContainer' }
+[0-1] 2021-02-09T20:55:44.975Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'efeb69c5-1ecb-4127-a7cd-d7c7b14cf1e3',
+  ELEMENT: 'efeb69c5-1ecb-4127-a7cd-d7c7b14cf1e3'
+}
+[0-1] 2021-02-09T20:55:44.981Z INFO webdriver: COMMAND isElementDisplayed("efeb69c5-1ecb-4127-a7cd-d7c7b14cf1e3")
+[0-1] 2021-02-09T20:55:44.981Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/efeb69c5-1ecb-4127-a7cd-d7c7b14cf1e3/displayed
+[0-1] 2021-02-09T20:55:45.019Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:45.020Z INFO webdriver: COMMAND findElement("accessibility id", "splashTouchableOpacityButton")
+[0-1] 2021-02-09T20:55:45.020Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:45.020Z INFO webdriver: DATA { using: 'accessibility id', value: 'splashTouchableOpacityButton' }
+[0-1] 2021-02-09T20:55:45.063Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'd82d3c5d-acda-45cf-9711-77f24f2b58a5',
+  ELEMENT: 'd82d3c5d-acda-45cf-9711-77f24f2b58a5'
+}
+[0-1] 2021-02-09T20:55:45.065Z INFO webdriver: COMMAND elementClick("d82d3c5d-acda-45cf-9711-77f24f2b58a5")
+[0-1] 2021-02-09T20:55:45.065Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/d82d3c5d-acda-45cf-9711-77f24f2b58a5/click
+[0-1] 2021-02-09T20:55:45.129Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenContainer")
+[0-1] 2021-02-09T20:55:45.130Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:45.130Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenContainer' }
+[0-1] 2021-02-09T20:55:45.177Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:45.181Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenContainer")
+[0-1] 2021-02-09T20:55:45.182Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:45.182Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenContainer' }
+[0-1] 2021-02-09T20:55:45.244Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:45.682Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenContainer")
+[0-1] 2021-02-09T20:55:45.682Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:45.682Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenContainer' }
+[0-1] 2021-02-09T20:55:46.952Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'ef0d233f-2aaa-4729-a48a-fcd12eb0d2b2',
+  ELEMENT: 'ef0d233f-2aaa-4729-a48a-fcd12eb0d2b2'
+}
+[0-1] 2021-02-09T20:55:46.953Z INFO webdriver: COMMAND isElementDisplayed("ef0d233f-2aaa-4729-a48a-fcd12eb0d2b2")
+[0-1] 2021-02-09T20:55:46.954Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/ef0d233f-2aaa-4729-a48a-fcd12eb0d2b2/displayed
+[0-1] 2021-02-09T20:55:46.986Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:46.986Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenContainer")
+[0-1] 2021-02-09T20:55:46.986Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:46.986Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenContainer' }
+[0-1] 2021-02-09T20:55:47.048Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '72229607-7baf-474b-9a26-c1e13fbf9d54',
+  ELEMENT: '72229607-7baf-474b-9a26-c1e13fbf9d54'
+}
+[0-1] 2021-02-09T20:55:47.049Z INFO webdriver: COMMAND isElementDisplayed("72229607-7baf-474b-9a26-c1e13fbf9d54")
+[0-1] 2021-02-09T20:55:47.050Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/72229607-7baf-474b-9a26-c1e13fbf9d54/displayed
+[0-1] 2021-02-09T20:55:47.069Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:47.070Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenContainer")
+[0-1] 2021-02-09T20:55:47.070Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:47.071Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenContainer' }
+[0-1] 2021-02-09T20:55:47.127Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '0974a426-a797-4cca-b73e-b3e5ef1f3a35',
+  ELEMENT: '0974a426-a797-4cca-b73e-b3e5ef1f3a35'
+}
+[0-1] 2021-02-09T20:55:47.129Z INFO webdriver: COMMAND isElementDisplayed("0974a426-a797-4cca-b73e-b3e5ef1f3a35")
+[0-1] 2021-02-09T20:55:47.130Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/0974a426-a797-4cca-b73e-b3e5ef1f3a35/displayed
+[0-1] 2021-02-09T20:55:47.153Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:47.153Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenUserName")
+[0-1] 2021-02-09T20:55:47.153Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:47.153Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenUserName' }
+[0-1] 2021-02-09T20:55:47.196Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'ac7c88c5-c7e4-41c5-8c70-485637f16d2b',
+  ELEMENT: 'ac7c88c5-c7e4-41c5-8c70-485637f16d2b'
+}
+[0-1] 2021-02-09T20:55:47.198Z INFO webdriver: COMMAND elementClear("ac7c88c5-c7e4-41c5-8c70-485637f16d2b")
+[0-1] 2021-02-09T20:55:47.198Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/ac7c88c5-c7e4-41c5-8c70-485637f16d2b/clear
+[0-1] 2021-02-09T20:55:47.228Z INFO webdriver: COMMAND elementSendKeys("ac7c88c5-c7e4-41c5-8c70-485637f16d2b", "setanta24")
+[0-1] 2021-02-09T20:55:47.228Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/ac7c88c5-c7e4-41c5-8c70-485637f16d2b/value
+[0-1] 2021-02-09T20:55:47.228Z INFO webdriver: DATA { text: 'setanta24' }
+[0-1] 2021-02-09T20:55:47.764Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenPassword")
+[0-1] 2021-02-09T20:55:47.764Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:47.764Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenPassword' }
+[0-1] 2021-02-09T20:55:48.285Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '0b9972a0-c422-4d6d-8f3b-c65da53c8f7b',
+  ELEMENT: '0b9972a0-c422-4d6d-8f3b-c65da53c8f7b'
+}
+[0-1] 2021-02-09T20:55:48.287Z INFO webdriver: COMMAND elementClear("0b9972a0-c422-4d6d-8f3b-c65da53c8f7b")
+[0-1] 2021-02-09T20:55:48.287Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/0b9972a0-c422-4d6d-8f3b-c65da53c8f7b/clear
+[0-1] 2021-02-09T20:55:48.321Z INFO webdriver: COMMAND elementSendKeys("0b9972a0-c422-4d6d-8f3b-c65da53c8f7b", "Password_123")
+[0-1] 2021-02-09T20:55:48.323Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/0b9972a0-c422-4d6d-8f3b-c65da53c8f7b/value
+[0-1] 2021-02-09T20:55:48.324Z INFO webdriver: DATA { text: 'Password_123' }
+[0-1] 2021-02-09T20:55:49.338Z INFO webdriver: COMMAND findElement("accessibility id", "signScreenSignInButton")
+[0-1] 2021-02-09T20:55:49.339Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:49.339Z INFO webdriver: DATA { using: 'accessibility id', value: 'signScreenSignInButton' }
+[0-1] 2021-02-09T20:55:49.865Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'b47449f9-9754-4a03-9351-2d1d77223c15',
+  ELEMENT: 'b47449f9-9754-4a03-9351-2d1d77223c15'
+}
+[0-1] 2021-02-09T20:55:49.867Z INFO webdriver: COMMAND elementClick("b47449f9-9754-4a03-9351-2d1d77223c15")
+[0-1] 2021-02-09T20:55:49.867Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/b47449f9-9754-4a03-9351-2d1d77223c15/click
+[0-1] 2021-02-09T20:55:49.910Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-1] 2021-02-09T20:55:49.910Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:49.910Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-1] 2021-02-09T20:55:49.971Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:49.974Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-1] 2021-02-09T20:55:49.974Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:49.974Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-1] 2021-02-09T20:55:50.046Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:50.475Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-1] 2021-02-09T20:55:50.475Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:50.475Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-1] 2021-02-09T20:55:50.551Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:50.974Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-1] 2021-02-09T20:55:50.975Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:50.975Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-1] 2021-02-09T20:55:51.174Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '2ecf17b7-3dc9-4dd5-9cad-76b48b5965af',
+  ELEMENT: '2ecf17b7-3dc9-4dd5-9cad-76b48b5965af'
+}
+[0-1] 2021-02-09T20:55:51.177Z INFO webdriver: COMMAND isElementDisplayed("2ecf17b7-3dc9-4dd5-9cad-76b48b5965af")
+[0-1] 2021-02-09T20:55:51.177Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/2ecf17b7-3dc9-4dd5-9cad-76b48b5965af/displayed
+[0-1] 2021-02-09T20:55:51.813Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:51.813Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-1] 2021-02-09T20:55:51.813Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:51.813Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-1] 2021-02-09T20:55:51.858Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6269303a-754a-4993-9eec-35ee7fd0665b',
+  ELEMENT: '6269303a-754a-4993-9eec-35ee7fd0665b'
+}
+[0-1] 2021-02-09T20:55:51.860Z INFO webdriver: COMMAND isElementDisplayed("6269303a-754a-4993-9eec-35ee7fd0665b")
+[0-1] 2021-02-09T20:55:51.860Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/6269303a-754a-4993-9eec-35ee7fd0665b/displayed
+[0-1] 2021-02-09T20:55:51.927Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:51.928Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenContainer")
+[0-1] 2021-02-09T20:55:51.929Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:51.929Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenContainer' }
+[0-1] 2021-02-09T20:55:51.965Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'a019b9a7-2789-4f76-a5ad-c0a79fa61f6b',
+  ELEMENT: 'a019b9a7-2789-4f76-a5ad-c0a79fa61f6b'
+}
+[0-1] 2021-02-09T20:55:51.967Z INFO webdriver: COMMAND isElementDisplayed("a019b9a7-2789-4f76-a5ad-c0a79fa61f6b")
+[0-1] 2021-02-09T20:55:51.967Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/a019b9a7-2789-4f76-a5ad-c0a79fa61f6b/displayed
+[0-1] 2021-02-09T20:55:51.988Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:51.989Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenTakeNewSampleButton")
+[0-1] 2021-02-09T20:55:51.989Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:51.989Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenTakeNewSampleButton' }
+[0-1] 2021-02-09T20:55:52.032Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '91d39274-1043-49a8-aad8-70de30d9367c',
+  ELEMENT: '91d39274-1043-49a8-aad8-70de30d9367c'
+}
+[0-1] 2021-02-09T20:55:52.034Z INFO webdriver: COMMAND isElementDisplayed("91d39274-1043-49a8-aad8-70de30d9367c")
+[0-1] 2021-02-09T20:55:52.034Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/91d39274-1043-49a8-aad8-70de30d9367c/displayed
+[0-1] 2021-02-09T20:55:52.053Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:52.054Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenViewSampleButton")
+[0-1] 2021-02-09T20:55:52.054Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:52.054Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenViewSampleButton' }
+[0-1] 2021-02-09T20:55:52.093Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'bd355934-0754-495f-94ff-27b88e334b11',
+  ELEMENT: 'bd355934-0754-495f-94ff-27b88e334b11'
+}
+[0-1] 2021-02-09T20:55:52.094Z INFO webdriver: COMMAND isElementDisplayed("bd355934-0754-495f-94ff-27b88e334b11")
+[0-1] 2021-02-09T20:55:52.094Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/bd355934-0754-495f-94ff-27b88e334b11/displayed
+[0-1] 2021-02-09T20:55:52.120Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:52.120Z INFO webdriver: COMMAND findElement("accessibility id", "homeScreenViewSampleButton")
+[0-1] 2021-02-09T20:55:52.120Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:52.120Z INFO webdriver: DATA { using: 'accessibility id', value: 'homeScreenViewSampleButton' }
+[0-1] 2021-02-09T20:55:52.161Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '6a91363e-faf7-4f60-a469-4de0ffcc0bbc',
+  ELEMENT: '6a91363e-faf7-4f60-a469-4de0ffcc0bbc'
+}
+[0-1] 2021-02-09T20:55:52.163Z INFO webdriver: COMMAND elementClick("6a91363e-faf7-4f60-a469-4de0ffcc0bbc")
+[0-1] 2021-02-09T20:55:52.164Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/6a91363e-faf7-4f60-a469-4de0ffcc0bbc/click
+[0-1] 2021-02-09T20:55:52.228Z INFO webdriver: COMMAND findElement("accessibility id", "sampleHistoryScreenContainer")
+[0-1] 2021-02-09T20:55:52.228Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:52.229Z INFO webdriver: DATA { using: 'accessibility id', value: 'sampleHistoryScreenContainer' }
+[0-1] 2021-02-09T20:55:52.276Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:52.280Z INFO webdriver: COMMAND findElement("accessibility id", "sampleHistoryScreenContainer")
+[0-1] 2021-02-09T20:55:52.280Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:52.280Z INFO webdriver: DATA { using: 'accessibility id', value: 'sampleHistoryScreenContainer' }
+[0-1] 2021-02-09T20:55:52.341Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:52.780Z INFO webdriver: COMMAND findElement("accessibility id", "sampleHistoryScreenContainer")
+[0-1] 2021-02-09T20:55:52.780Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:52.780Z INFO webdriver: DATA { using: 'accessibility id', value: 'sampleHistoryScreenContainer' }
+[0-1] 2021-02-09T20:55:53.531Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '2a159531-c0be-4376-bef1-fdb71ce1e9ab',
+  ELEMENT: '2a159531-c0be-4376-bef1-fdb71ce1e9ab'
+}
+[0-1] 2021-02-09T20:55:53.533Z INFO webdriver: COMMAND isElementDisplayed("2a159531-c0be-4376-bef1-fdb71ce1e9ab")
+[0-1] 2021-02-09T20:55:53.533Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/2a159531-c0be-4376-bef1-fdb71ce1e9ab/displayed
+[0-1] 2021-02-09T20:55:53.553Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:53.553Z INFO webdriver: COMMAND findElement("accessibility id", "sampleHistoryScreenContainer")
+[0-1] 2021-02-09T20:55:53.553Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:53.553Z INFO webdriver: DATA { using: 'accessibility id', value: 'sampleHistoryScreenContainer' }
+[0-1] 2021-02-09T20:55:53.608Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'e18e2f88-b3ab-4a4a-ad4c-5edfc7c9db5b',
+  ELEMENT: 'e18e2f88-b3ab-4a4a-ad4c-5edfc7c9db5b'
+}
+[0-1] 2021-02-09T20:55:53.609Z INFO webdriver: COMMAND isElementDisplayed("e18e2f88-b3ab-4a4a-ad4c-5edfc7c9db5b")
+[0-1] 2021-02-09T20:55:53.609Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/e18e2f88-b3ab-4a4a-ad4c-5edfc7c9db5b/displayed
+[0-1] 2021-02-09T20:55:53.639Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:53.640Z INFO webdriver: COMMAND findElements("accessibility id", "sampleHistorySearchedSample")
+[0-1] 2021-02-09T20:55:53.640Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/elements
+[0-1] 2021-02-09T20:55:53.640Z INFO webdriver: DATA { using: 'accessibility id', value: 'sampleHistorySearchedSample' }
+[0-1] 2021-02-09T20:55:53.702Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '973cfe4e-bec7-4472-9248-f9c971807ab0',
+    ELEMENT: '973cfe4e-bec7-4472-9248-f9c971807ab0'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '18319b9c-32d9-4df2-9ae1-2cf08d64cfe2',
+    ELEMENT: '18319b9c-32d9-4df2-9ae1-2cf08d64cfe2'
+  }
+]
+[0-1] 2021-02-09T20:55:53.706Z INFO webdriver: COMMAND findElement("accessibility id", "sampleHistorySearchRiverBar")
+[0-1] 2021-02-09T20:55:53.706Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:53.706Z INFO webdriver: DATA { using: 'accessibility id', value: 'sampleHistorySearchRiverBar' }
+[0-1] 2021-02-09T20:55:53.763Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': 'fcc04ad1-700a-498a-b6f5-be9b89bc4ec7',
+  ELEMENT: 'fcc04ad1-700a-498a-b6f5-be9b89bc4ec7'
+}
+[0-1] 2021-02-09T20:55:53.766Z INFO webdriver: COMMAND elementClear("fcc04ad1-700a-498a-b6f5-be9b89bc4ec7")
+[0-1] 2021-02-09T20:55:53.766Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/fcc04ad1-700a-498a-b6f5-be9b89bc4ec7/clear
+[0-1] 2021-02-09T20:55:53.796Z INFO webdriver: COMMAND elementSendKeys("fcc04ad1-700a-498a-b6f5-be9b89bc4ec7", "ST")
+[0-1] 2021-02-09T20:55:53.796Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/fcc04ad1-700a-498a-b6f5-be9b89bc4ec7/value
+[0-1] 2021-02-09T20:55:53.796Z INFO webdriver: DATA { text: 'ST' }
+[0-1] 2021-02-09T20:55:55.441Z INFO webdriver: COMMAND findElement("accessibility id", "sampleHistorySearchRiverIcon")
+[0-1] 2021-02-09T20:55:55.441Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:55.441Z INFO webdriver: DATA { using: 'accessibility id', value: 'sampleHistorySearchRiverIcon' }
+[0-1] 2021-02-09T20:55:55.500Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '833d8bd3-11dd-45e6-95ef-9e7b087c7f97',
+  ELEMENT: '833d8bd3-11dd-45e6-95ef-9e7b087c7f97'
+}
+[0-1] 2021-02-09T20:55:55.502Z INFO webdriver: COMMAND elementClick("833d8bd3-11dd-45e6-95ef-9e7b087c7f97")
+[0-1] 2021-02-09T20:55:55.502Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/833d8bd3-11dd-45e6-95ef-9e7b087c7f97/click
+[0-1] 2021-02-09T20:55:56.560Z INFO webdriver: COMMAND findElements("accessibility id", "sampleHistorySearchedSample")
+[0-1] 2021-02-09T20:55:56.560Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/elements
+[0-1] 2021-02-09T20:55:56.560Z INFO webdriver: DATA { using: 'accessibility id', value: 'sampleHistorySearchedSample' }
+[0-1] 2021-02-09T20:55:56.618Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '8d35eb27-5fd7-4bd9-a2e8-32677a972db6',
+    ELEMENT: '8d35eb27-5fd7-4bd9-a2e8-32677a972db6'
+  }
+]
+[0-1] 2021-02-09T20:55:56.620Z INFO webdriver: COMMAND findElements("accessibility id", "sampleHistorySearchedSample")
+[0-1] 2021-02-09T20:55:56.620Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/elements
+[0-1] 2021-02-09T20:55:56.620Z INFO webdriver: DATA { using: 'accessibility id', value: 'sampleHistorySearchedSample' }
+[0-1] 2021-02-09T20:55:56.676Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '517b9713-e136-4967-bb4c-5695b0908177',
+    ELEMENT: '517b9713-e136-4967-bb4c-5695b0908177'
+  }
+]
+[0-1] 2021-02-09T20:55:56.678Z INFO webdriver: COMMAND elementClick("517b9713-e136-4967-bb4c-5695b0908177")
+[0-1] 2021-02-09T20:55:56.679Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/517b9713-e136-4967-bb4c-5695b0908177/click
+[0-1] 2021-02-09T20:55:56.730Z INFO webdriver: COMMAND findElement("accessibility id", "historyListContainer")
+[0-1] 2021-02-09T20:55:56.730Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:56.730Z INFO webdriver: DATA { using: 'accessibility id', value: 'historyListContainer' }
+[0-1] 2021-02-09T20:55:56.802Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:56.803Z INFO webdriver: COMMAND findElement("accessibility id", "historyListContainer")
+[0-1] 2021-02-09T20:55:56.804Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:56.804Z INFO webdriver: DATA { using: 'accessibility id', value: 'historyListContainer' }
+[0-1] 2021-02-09T20:55:56.875Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:57.304Z INFO webdriver: COMMAND findElement("accessibility id", "historyListContainer")
+[0-1] 2021-02-09T20:55:57.304Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:57.304Z INFO webdriver: DATA { using: 'accessibility id', value: 'historyListContainer' }
+[0-1] 2021-02-09T20:55:58.162Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '0220ec1b-d0ae-4238-9289-1bbc4be5bc5f',
+  ELEMENT: '0220ec1b-d0ae-4238-9289-1bbc4be5bc5f'
+}
+[0-1] 2021-02-09T20:55:58.164Z INFO webdriver: COMMAND isElementDisplayed("0220ec1b-d0ae-4238-9289-1bbc4be5bc5f")
+[0-1] 2021-02-09T20:55:58.164Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/0220ec1b-d0ae-4238-9289-1bbc4be5bc5f/displayed
+[0-1] 2021-02-09T20:55:58.186Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:58.187Z INFO webdriver: COMMAND findElement("accessibility id", "historyListContainer")
+[0-1] 2021-02-09T20:55:58.187Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:58.187Z INFO webdriver: DATA { using: 'accessibility id', value: 'historyListContainer' }
+[0-1] 2021-02-09T20:55:58.239Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '66c0a91d-4aa7-4ac8-bd02-a43268e4ced5',
+  ELEMENT: '66c0a91d-4aa7-4ac8-bd02-a43268e4ced5'
+}
+[0-1] 2021-02-09T20:55:58.242Z INFO webdriver: COMMAND isElementDisplayed("66c0a91d-4aa7-4ac8-bd02-a43268e4ced5")
+[0-1] 2021-02-09T20:55:58.242Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/66c0a91d-4aa7-4ac8-bd02-a43268e4ced5/displayed
+[0-1] 2021-02-09T20:55:58.270Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:58.271Z INFO webdriver: COMMAND findElements("accessibility id", "historyListItems")
+[0-1] 2021-02-09T20:55:58.271Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/elements
+[0-1] 2021-02-09T20:55:58.271Z INFO webdriver: DATA { using: 'accessibility id', value: 'historyListItems' }
+[0-1] 2021-02-09T20:55:58.329Z INFO webdriver: RESULT [
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '8ceb362e-b396-49fe-afb0-2cc7c0ab0d60',
+    ELEMENT: '8ceb362e-b396-49fe-afb0-2cc7c0ab0d60'
+  },
+  {
+    'element-6066-11e4-a52e-4f735466cecf': '3cd1a522-332b-430e-b282-4059515c50b0',
+    ELEMENT: '3cd1a522-332b-430e-b282-4059515c50b0'
+  }
+]
+[0-1] 2021-02-09T20:55:58.332Z INFO webdriver: COMMAND elementClick("8ceb362e-b396-49fe-afb0-2cc7c0ab0d60")
+[0-1] 2021-02-09T20:55:58.332Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/8ceb362e-b396-49fe-afb0-2cc7c0ab0d60/click
+[0-1] 2021-02-09T20:55:58.378Z INFO webdriver: COMMAND findElement("accessibility id", "historyDetailContainer")
+[0-1] 2021-02-09T20:55:58.379Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+2021-02-09T20:55:58.379Z INFO webdriver: DATA { using: 'accessibility id', value: 'historyDetailContainer' }
+[0-1] 2021-02-09T20:55:58.432Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:58.434Z INFO webdriver: COMMAND findElement("accessibility id", "historyDetailContainer")
+[0-1] 2021-02-09T20:55:58.434Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:58.434Z INFO webdriver: DATA { using: 'accessibility id', value: 'historyDetailContainer' }
+[0-1] 2021-02-09T20:55:58.494Z INFO webdriver: RESULT {
+  error: 'no such element',
+  message: 'An element could not be located on the page using the given search parameters.',
+  stacktrace: 'NoSuchElementError: An element could not be located on the page using the given search parameters.\n' +
+    '    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\DELL\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\appium-android-driver\\lib\\commands\\find.js:75:11)\n' +
+    '    at runMicrotasks (<anonymous>)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:97:5)'
+}
+[0-1] 2021-02-09T20:55:58.934Z INFO webdriver: COMMAND findElement("accessibility id", "historyDetailContainer")
+[0-1] 2021-02-09T20:55:58.934Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:58.934Z INFO webdriver: DATA { using: 'accessibility id', value: 'historyDetailContainer' }
+[0-1] 2021-02-09T20:55:59.788Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '3458210c-b47d-4b7e-8047-637bcd497a62',
+  ELEMENT: '3458210c-b47d-4b7e-8047-637bcd497a62'
+}
+[0-1] 2021-02-09T20:55:59.790Z INFO webdriver: COMMAND isElementDisplayed("3458210c-b47d-4b7e-8047-637bcd497a62")
+[0-1] 2021-02-09T20:55:59.790Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/3458210c-b47d-4b7e-8047-637bcd497a62/displayed
+[0-1] 2021-02-09T20:55:59.819Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:59.819Z INFO webdriver: COMMAND findElement("accessibility id", "historyDetailContainer")
+[0-1] 2021-02-09T20:55:59.820Z INFO webdriver: [POST] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element
+[0-1] 2021-02-09T20:55:59.820Z INFO webdriver: DATA { using: 'accessibility id', value: 'historyDetailContainer' }
+[0-1] 2021-02-09T20:55:59.859Z INFO webdriver: RESULT {
+  'element-6066-11e4-a52e-4f735466cecf': '39c19447-fa3e-4a25-bcdb-6771b3e3f064',
+  ELEMENT: '39c19447-fa3e-4a25-bcdb-6771b3e3f064'
+}
+[0-1] 2021-02-09T20:55:59.861Z INFO webdriver: COMMAND isElementDisplayed("39c19447-fa3e-4a25-bcdb-6771b3e3f064")
+[0-1] 2021-02-09T20:55:59.861Z INFO webdriver: [GET] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9/element/39c19447-fa3e-4a25-bcdb-6771b3e3f064/displayed
+[0-1] 2021-02-09T20:55:59.886Z INFO webdriver: RESULT true
+[0-1] 2021-02-09T20:55:59.888Z INFO webdriver: COMMAND deleteSession()
+[0-1] 2021-02-09T20:55:59.888Z INFO webdriver: [DELETE] http://127.0.0.1:4723/wd/hub/session/d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9
+2021-02-09T20:56:00.453Z DEBUG @wdio/local-runner: Runner 0-1 finished with exit code 0
+[0-1] PASSED in F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\android\app\build\outputs\apk\debug\app-debug.apk - F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\appium_automation_testing\test_cases\view_history.test.js
+2021-02-09T20:56:00.453Z INFO @wdio/cli:launcher: Run onComplete hook
+
+ "spec" Reporter:
+------------------------------------------------------------------
+[emulator-5554 Android 11 #0-0] Spec: F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\appium_automation_testing\test_cases\take_new_sample.test.js
+[emulator-5554 Android 11 #0-0] Running: emulator-5554 on Android 11 executing F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\android\app\build\outputs\apk\debug\app-debug.apk
+[emulator-5554 Android 11 #0-0] Session ID: 8e054345-2f46-464b-8e69-39864ed6e7b3
+[emulator-5554 Android 11 #0-0]
+[emulator-5554 Android 11 #0-0] Testing user Landing page
+[emulator-5554 Android 11 #0-0]    ✓ should have two buttons on home screen 1.take new sample button, 2.view sample
+[emulator-5554 Android 11 #0-0]    ✓ should show search river screen container after clicking take new sample button
+[emulator-5554 Android 11 #0-0]
+[emulator-5554 Android 11 #0-0] Testing search river screen
+[emulator-5554 Android 11 #0-0]    ✓ should show empty locate text input before locate icon is clicked
+[emulator-5554 Android 11 #0-0]    ✓ should show locate text after locate icon is clicked
+[emulator-5554 Android 11 #0-0]    ✓ should click a button and show river detail screen
+[emulator-5554 Android 11 #0-0]
+[emulator-5554 Android 11 #0-0] Testing tabs with screens
+[emulator-5554 Android 11 #0-0]    ✓ should display 3 tabs and default river details screen after click choose button
+[emulator-5554 Android 11 #0-0]    ✓ should display arduino screen after clicking Arduino tab, 
+[emulator-5554 Android 11 #0-0]    ✓ should show Insert Arduino id
+[emulator-5554 Android 11 #0-0]    ✓ should show Arduino connect screen after press search icon button
+[emulator-5554 Android 11 #0-0]    ✓ should show sensors data
+[emulator-5554 Android 11 #0-0]    ✓ should show insect screen after press insect tab
+[emulator-5554 Android 11 #0-0]    ✓ should show display choose insects screen
+[emulator-5554 Android 11 #0-0]    ✓ should display insects groups
+[emulator-5554 Android 11 #0-0]    ✓ should display selected insect items
+[emulator-5554 Android 11 #0-0]    ✓ should pop out three options(take photo, choose form library, and cancel
+[emulator-5554 Android 11 #0-0]
+[emulator-5554 Android 11 #0-0] 15 passing (50.2s)
+------------------------------------------------------------------
+[emulator-5554 Android 11 #0-1] Spec: F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\appium_automation_testing\test_cases\view_history.test.js
+[emulator-5554 Android 11 #0-1] Running: emulator-5554 on Android 11 executing F:\computing\year4\semester1\team project\CCCMI\CCCMI\mobile_ui\android\app\build\outputs\apk\debug\app-debug.apk
+[emulator-5554 Android 11 #0-1] Session ID: d42cb0ef-f19f-4e73-bc4e-4aed4fd2ded9
+[emulator-5554 Android 11 #0-1]
+[emulator-5554 Android 11 #0-1] Testing splash landing page
+[emulator-5554 Android 11 #0-1]    ✓ should display splash Container
+[emulator-5554 Android 11 #0-1]    ✓ should display sign Screen Container after clicking splash Touchable Opacity Button
+[emulator-5554 Android 11 #0-1]
+[emulator-5554 Android 11 #0-1] Testing Sign in activity
+[emulator-5554 Android 11 #0-1]    ✓ should successful on signing in and show home Screen
+[emulator-5554 Android 11 #0-1]
+[emulator-5554 Android 11 #0-1] Testing user sampling history with filters
+[emulator-5554 Android 11 #0-1]    ✓ should have two buttons on home screen 1.take new sample button, 2.view sample
+[emulator-5554 Android 11 #0-1]    ✓ should show sampling history screen after click view sample button
+[emulator-5554 Android 11 #0-1]    ✓ should filter by River Name such as ST
+[emulator-5554 Android 11 #0-1]    ✓ should show selected sample id
+[emulator-5554 Android 11 #0-1]
+[emulator-5554 Android 11 #0-1] 7 passing (19.6s)
+
+
+Spec Files:	 2 passed, 2 total (100% completed) in 00:01:29 
+
+2021-02-09T20:56:00.454Z INFO @wdio/local-runner: Shutting down spawned worker
+2021-02-09T20:56:00.705Z INFO @wdio/local-runner: Waiting for 0 to shut down gracefully
+2021-02-09T20:56:00.706Z INFO @wdio/local-runner: shutting down
