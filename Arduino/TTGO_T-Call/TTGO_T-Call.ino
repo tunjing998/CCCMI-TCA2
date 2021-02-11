@@ -41,9 +41,10 @@ TinyGsm modem(SerialAT);
 #endif
 
 #define uS_TO_S_FACTOR 1000000ULL  /* Conversion factor for micro seconds to seconds */
-#define TIME_TO_SLEEP  60        /* Time ESP32 will go to sleep (in seconds) */
+#define TIME_TO_SLEEP  30        /* Time ESP32 will go to sleep (in seconds) */
 
 // Your GPRS credentials (leave empty, if missing)
+const int arduinoId = 5;
 const char apn[]      = "data.myeirmobile.ie"; // Your APN
 const char gprsUser[] = ""; // User
 const char gprsPass[] = ""; // Password
@@ -53,7 +54,7 @@ const char simPIN[]   = ""; // SIM card PIN code, if any
 String channelName = "arduino";
 const char publishKey[] = "pub-c-72e030ad-423e-4bba-ae6f-319b1c7a946f"; // secret key for publishing
 const char subscribeKey[] = "sub-c-05214e3e-3599-11eb-88bb-1ad0e2424f4f"; // secret key for subscribing
-const char server[] = "pubsub.pubnub.com";
+const char server[] = "ps.pndsn.com";
 
 TinyGsmClient client(modem);
 const int  port = 80;
@@ -177,6 +178,9 @@ void setup()
 
   // Set GSM module baud rate and UART pins
   SerialAT.begin(115200, SERIAL_8N1, MODEM_RX, MODEM_TX);
+
+  analogReadResolution(12);
+  analogSetAttenuation(ADC_11db);
 }
 
 void loop()
@@ -246,7 +250,7 @@ void loop()
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //Get data
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  
+
   // Get GPS coordinates
   while (Serial2.available() > 0 && latitude == 0.000000 && longtitude == 0.000000) {
     if (gps.encode(Serial2.read())) {
@@ -290,10 +294,10 @@ void loop()
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   float value1 = temperature;
   float value2 = phValue;
-  String dataInput = String(value1) + "%2C" + String(value2) + "%2C" + String(latitude, 6) + "%2C" + String(longtitude, 6);
+  String dataInput = "%7B%0A%20%20%20%20%20%20%20%20%22arduino_id%22%3A%20" + String(arduinoId) + "%2C%0A%20%20%20%20%20%20%20%20%22latitude%22%3A%20" + String(latitude, 6) + "%2C%0A%20%20%20%20%20%20%20%20%22longitude%22%3A%20" + String(longtitude, 6) + "%2C%0A%20%20%20%20%20%20%20%20%22ph%22%3A%20" + String(value2) + "%2C%0A%20%20%20%20%20%20%20%20%22temp%22%3A%20" + String(value1) + "%0A%20%20%20%20%7D";
 
   String resource = "/publish/" + String(publishKey) + "/" + String(subscribeKey)
-                    + "/0/" + channelName + "/0/%22" + dataInput + "%22";
+                    + "/0/" + channelName + "/0/" + dataInput;
 
   // Make a HTTP GET request:
   SerialMon.println("Performing HTTP GET request...");
