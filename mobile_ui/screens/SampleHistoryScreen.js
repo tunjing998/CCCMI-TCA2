@@ -239,7 +239,7 @@ const SampleHistoryScreen = ({navigation}) => {
    */
   const renderResults = () => {
     let type = [];
-    type.push(<Text style={{fontSize: 30, color: colors.text}}>Results</Text>);
+    type.push(<Text style={{fontSize: 30, color: colors.text}}>Rivers</Text>);
     let riversNotRepeat = [];
     if (filterType === 'All' && historyData.length > 0) {
       riversNotRepeat = unique(historyData);

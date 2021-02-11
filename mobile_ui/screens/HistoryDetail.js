@@ -31,15 +31,32 @@ const HistoryDetail = ({route}) => {
   }, []);
 
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
+    insectContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      justifyContent: 'center',
+      marginBottom: 3,
     },
     title: {
       color: colors.text,
     },
     listContainer: {
+      backgroundColor: colors.background,
+    },
+    sectionHeader: {
+      textAlign: 'center',
+      textAlignVertical: 'center',
+      fontSize: 18,
+      backgroundColor: 'rgba(0, 147, 135, 0.7)',
+      color: 'white',
+      height: 40,
+      width: "100%",
+      marginBottom: 15,
+      marginTop: 1,
+    },
+    textStyle: {
+      color: colors.text,
+      textAlign: 'center',
       backgroundColor: colors.background,
     },
   });
@@ -90,12 +107,13 @@ const HistoryDetail = ({route}) => {
             <Text style={styles.title}>{item.sample_user}</Text>
           </ListItem.Content>
         </ListItem>
+        <Text style={styles.sectionHeader}>Insects</Text>
         {insectsList &&
           insectsList.map(item => {
             return (
-              <View>
-                <Text>{item.sample_record_insect}</Text>
-                <Text>{item.insect_number}</Text>
+              <View style={styles.insectContainer}>
+                <Text style={styles.textStyle}>{item.sample_record_insect}</Text>
+                <Text style={styles.textStyle}>{item.insect_number}</Text>
               </View>
             );
           })}

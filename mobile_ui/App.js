@@ -216,7 +216,7 @@ const App = () => {
         name="SampleHistoryScreen"
         component={SampleHistoryScreen}
         options={{
-          title: 'History Samples',
+          title: 'Search History Samples',
           headerStyle: {
             backgroundColor: '#009387',
           },
@@ -230,7 +230,7 @@ const App = () => {
         name="HistoryDetail"
         component={HistoryDetail}
         options={{
-          title: 'History Sample Details',
+          title: 'Sample History',
           headerStyle: {
             backgroundColor: '#009387',
           },

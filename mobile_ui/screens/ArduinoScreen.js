@@ -113,7 +113,7 @@ const ArduinoScreen = ({navigation}) => {
       accessibilityLabel={testVariables.arduinoScreenContainer}
       testID={testVariables.arduinoScreenContainer}>
       <Text h4 h4Style={styles.title}>
-        Connect to Arduino device.
+        Connect to sensor device.
       </Text>
       <View style={styles.searchSection}>
         <TextInput
