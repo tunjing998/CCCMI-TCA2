@@ -90,8 +90,17 @@ const HistoryDetail = ({route}) => {
             <Text style={styles.title}>{item.sample_user}</Text>
           </ListItem.Content>
         </ListItem>
-        {renderInsects()}
+        {insectsList &&
+          insectsList.map(item => {
+            return (
+              <View>
+                <Text>{item.sample_record_insect}</Text>
+                <Text>{item.insect_number}</Text>
+              </View>
+            );
+          })}
       </ScrollView>
+      {renderInsects()}
     </View>
   );
 };
