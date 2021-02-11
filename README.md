@@ -35,7 +35,7 @@ Technologies:
 
 **.github/workflows**: GitHub action workflows used in CI pipeline
 
-**AI Model**: AI model build using Yolov3 and LabelImg helps to recognize insects
+**Aquality_2_AI_Model_Server**: AI model build using Yolov3 and LabelImg helps to recognize insects
 
 **Aquality_Two_Backend_Server:**  Server build on Django supports for Mobile Application and data storage
 
