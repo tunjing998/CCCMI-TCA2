@@ -7,6 +7,28 @@ import testVariables from '../appium_automation_testing/test_variables';
 const HistoryDetail = ({route}) => {
   const {colors} = useTheme();
   const {item} = route.params;
+  const [insectsList, setInsectsList] = useState([]);
+  const url = 'http://cccmi-aquality.tk/aquality_server/sampledetail';
+  var bodyFormData = new FormData();
+  bodyFormData.append('sample_id', item.sample_id);
+
+  useEffect(() => {
+    fetch(url, {
+      method: 'POST', // or 'PUT'
+      body: bodyFormData, // data can be `string` or {object}!
+      headers: new Headers({
+        'Content-Type': 'multipart/form-data',
+      }),
+    })
+      .then(response => {
+        if (response.status === 200) {
+          return response.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(json => setInsectsList(json.insect_list))
+      .catch(error => console.error('Error:', error));
+  }, []);
 
   const styles = StyleSheet.create({
     container: {
@@ -22,15 +44,10 @@ const HistoryDetail = ({route}) => {
     },
   });
 
-  const [sample_item, setSampleItem] = useState({});
-
-  const url =
-    'http://cccmi-aquality.tk/aquality_server/sampledetail?sample_id=';
-  useEffect(
-    fetch(url + item.sample_id).then(response => console.log(response.json())),
-  );
-
-  console.log(item.sample_id);
+  const renderInsects = () => {
+    console.log('renderInsects');
+    insectsList && console.log(insectsList);
+  };
   return (
     <View
       style={styles.listContainer}
@@ -73,6 +90,7 @@ const HistoryDetail = ({route}) => {
             <Text style={styles.title}>{item.sample_user}</Text>
           </ListItem.Content>
         </ListItem>
+        {renderInsects()}
       </ScrollView>
     </View>
   );
