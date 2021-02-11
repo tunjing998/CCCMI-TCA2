@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, ScrollView } from 'react-native';
+
 import { useTheme } from '@react-navigation/native';
 import { ListItem, Icon } from 'react-native-elements';
+import testVariables from '../appium_automation_testing/test_variables';
 
-const HistoryList = ({navigation, route }) => {
+const HistoryList = ({ navigation, route }) => {
   const { colors } = useTheme();
   const { data } = route.params;
 
@@ -23,26 +25,29 @@ const HistoryList = ({navigation, route }) => {
 
   return (
     <View
-    style={styles.listContainer}
-    >
-      {
-        data.map((item, i) => (
-          <ListItem
-            key={i}
-            bottomDivider
-            containerStyle={styles.listContainer}
-            onPress={() => {
-              navigation.navigate('HistoryDetail', {item})
-            }}
+      style={styles.listContainer}
+      accessibilityLabel={testVariables.historyListContainer}
+      testID={testVariables.historyListContainer}>
+      <ScrollView>
+        {
+          data.map((item, i) => (
+            <ListItem
+              key={i}
+              bottomDivider
+              containerStyle={styles.listContainer}
+              onPress={() => {
+                navigation.navigate('HistoryDetail', { item })
+              }}
             >
-            <Icon name={item.icon} />
-            <ListItem.Content>
-              <ListItem.Title style={styles.title}>Sample ID: {item.sample_id}</ListItem.Title>
-            </ListItem.Content>
-            <ListItem.Chevron />
-          </ListItem>
-        ))
-      }
+              <Icon name={item.icon} />
+              <ListItem.Content>
+                <ListItem.Title style={styles.title}>Sample ID: {item.sample_id}</ListItem.Title>
+              </ListItem.Content>
+              <ListItem.Chevron />
+            </ListItem>
+          ))
+        }
+      </ScrollView>
     </View>
   );
 };

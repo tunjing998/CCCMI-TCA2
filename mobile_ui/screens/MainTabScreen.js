@@ -43,7 +43,7 @@ const MainTabScreen = () => (
       options={{
         tabBarAccessibilityLabel: testVariables.mainTabScreenArduinoTab,
         tabBarTestID: testVariables.mainTabScreenArduinoTab,
-        tabBarLabel: 'Arduino',
+        tabBarLabel: 'Sensors',
         tabBarColor: '#616E7C',
         tabBarIcon: ({color}) => (
           <Icon name="cube-outline" color={color} size={26} />
@@ -57,7 +57,7 @@ const MainTabScreen = () => (
       options={{
         tabBarAccessibilityLabel: testVariables.mainTabScreenInsectTab,
         tabBarTestID: testVariables.mainTabScreenInsectTab,
-        tabBarLabel: 'Insect',
+        tabBarLabel: 'Insects',
         tabBarColor: '#857F72',
         tabBarIcon: ({color}) => (
           <Icon name="bug-outline" color={color} size={26} />
@@ -84,7 +84,7 @@ const ArduinoStackScreen = ({navigation}) => (
       name="ArduinoScreen1"
       component={ArduinoScreen}
       options={{
-        title: 'Arduino',
+        title: 'Sensor Device',
         headerLeft: () => (
           <Icon.Button
             name="ios-menu"
@@ -93,14 +93,13 @@ const ArduinoStackScreen = ({navigation}) => (
             onPress={() => navigation.openDrawer()}
           />
         ),
-        
       }}
     />
     <ArduinoStack.Screen
       name="ArduinoScreen2"
       component={ArduinoScreen2}
       options={{
-        title: 'Arduino',
+        title: 'Device Details',
       }}
     />
   </ArduinoStack.Navigator>
@@ -118,7 +117,7 @@ const DetailsStackScreen = ({navigation}) => (
       },
     }}>
     <DetailsStack.Screen
-      name="Details"
+      name="River Details"
       component={DetailsScreen}
       options={{
         headerLeft: () => (
@@ -159,6 +158,8 @@ const InsectStackScreen = ({navigation}) => (
         ),
         headerRight: () => (
           <Icon.Button
+            tabBarAccessibilityLabel={testVariables.showResultIcon}
+            tabBarTestID={testVariables.showResultIcon}
             name="checkmark-outline"
             size={25}
             backgroundColor="#857F72"

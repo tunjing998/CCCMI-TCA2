@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -7,11 +7,11 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import { Button, SearchBar } from 'react-native-elements';
+import {Button, SearchBar} from 'react-native-elements';
 import testVariables from '../appium_automation_testing/test_variables';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useTheme } from '@react-navigation/native';
+import {useTheme} from '@react-navigation/native';
 
 let riverNameList = [];
 let dateList = [];
@@ -23,22 +23,22 @@ let url = 'http://cccmi-aquality.tk/aquality_server/samplerecord/?username=';
  * @description Sample History Screen component
  * @return {SampleHistoryScreen}
  */
-const SampleHistoryScreen = ({ navigation }) => {
-  const { colors } = useTheme();
+const SampleHistoryScreen = ({navigation}) => {
+  const {colors} = useTheme();
   const userName = 'kobe24';
   const [isLoading, setLoading] = useState(true);
   const [filterType, setFilterType] = useState('All');
   const [data, setData] = useState([]);
   const [d, sd] = React.useState({
     isLightTheme: true,
-});
+  });
 
-useEffect(
-  React.useCallback(() => {
-    const interval = setInterval(() => checkThemeForSearch())
-    return () => clearInterval(interval);
-  }, [])
-);
+  useEffect(
+    React.useCallback(() => {
+      const interval = setInterval(() => checkThemeForSearch());
+      return () => clearInterval(interval);
+    }, []),
+  );
 
   // const [historyData, setHistoryData] = useState([]);
 
@@ -133,18 +133,18 @@ useEffect(
   }, []);
 
   const checkThemeForSearch = async () => {
-    if(colors.background==="#333333"){
+    if (colors.background === '#333333') {
       sd({
         ...d,
         isLightTheme: false,
       });
-    }else{
+    } else {
       sd({
         ...d,
         isLightTheme: true,
       });
     }
-  }
+  };
 
   /**
    * @function convertDate
@@ -239,7 +239,7 @@ useEffect(
    */
   const renderResults = () => {
     let type = [];
-    type.push(<Text style={{ fontSize: 30, color: colors.text }}>Results</Text>);
+    type.push(<Text style={{fontSize: 30, color: colors.text}}>Rivers</Text>);
     let riversNotRepeat = [];
     if (filterType === 'All' && historyData.length > 0) {
       riversNotRepeat = unique(historyData);
@@ -250,23 +250,25 @@ useEffect(
     riversNotRepeat.forEach(el => {
       type.push(
         <Button
+          accessibilityLabel={testVariables.sampleHistorySearchedSample}
+          testID={testVariables.sampleHistorySearchedSample}
           title={el.river_name.toString()}
           onPress={() => selectResult(el.river_id)}
-          buttonStyle={{ width: 270, height: 50, backgroundColor: "#02ab9e" }}
-          containerStyle={{ margin: 5, alignItems: "center", marginTop: 20 }}
+          buttonStyle={{width: 270, height: 50, backgroundColor: '#02ab9e'}}
+          containerStyle={{margin: 5, alignItems: 'center', marginTop: 20}}
           disabledStyle={{
             borderWidth: 2,
-            borderColor: "#00F"
+            borderColor: '#00F',
           }}
-          disabledTitleStyle={{ color: "#00F" }}
+          disabledTitleStyle={{color: '#00F'}}
           linearGradientProps={null}
-          loadingProps={{ animating: true }}
+          loadingProps={{animating: true}}
           loadingStyle={{}}
           icon={<Icon name="folder-outline" size={19} color="#0FF" />}
-          iconContainerStyle={{ background: "#000" }}
+          iconContainerStyle={{background: '#000'}}
           key={el.river_id}
           titleProps={{}}
-          titleStyle={{ marginHorizontal: 22, fontSize: 18 }}
+          titleStyle={{marginHorizontal: 22, fontSize: 18}}
         />,
       );
     });
@@ -294,7 +296,7 @@ useEffect(
       );
     }
 
-    navigation.navigate('HistoryList', { data: select });
+    navigation.navigate('HistoryList', {data: select});
   };
 
   /**
@@ -329,12 +331,17 @@ useEffect(
       testID={testVariables.sampleHistoryScreenContainer}>
       <View style={styles.searchContainer}>
         {/* FOR DATE */}
-        <TouchableOpacity onPress={showDatepicker} style={styles.button}>
+        <TouchableOpacity
+          accessibilityLabel={testVariables.sampleHistoryDatePickerController}
+          testID={testVariables.sampleHistoryDatePickerController}
+          onPress={showDatepicker}
+          style={styles.button}>
           <Text style={styles.btnText}>{formatDate(date)}</Text>
         </TouchableOpacity>
         {show && (
           <DateTimePicker
-            testID="dateTimePicker"
+            accessibilityLabel={testVariables.sampleHistoryDatePicker}
+            testID={testVariables.sampleHistoryDatePicker}
             value={date}
             mode={mode}
             display="default"
@@ -345,7 +352,6 @@ useEffect(
 
         {/* {isLoading ? <ActivityIndicator /> : renderOptions()} */}
 
-
         <View style={styles.inputContainer}>
           {/* <TextInput
             placeholder="River Name"
@@ -355,6 +361,8 @@ useEffect(
             style={styles.riverNameInput}
           /> */}
           <SearchBar
+            accessibilityLabel={testVariables.sampleHistorySearchRiverBar}
+            testID={testVariables.sampleHistorySearchRiverBar}
             placeholder="e.g. River Liffey"
             onChangeText={text => getInput(text)}
             value={river}
@@ -363,8 +371,8 @@ useEffect(
             round
             searchIcon={
               <Icon.Button
-                accessibilityLabel={testVariables.searchRiverSearchIcon}
-                testID={testVariables.searchRiverSearchIcon}
+                accessibilityLabel={testVariables.sampleHistorySearchRiverIcon}
+                testID={testVariables.sampleHistorySearchRiverIcon}
                 style={styles.searchIcon}
                 name="magnify"
                 backgroundColor="transparent"

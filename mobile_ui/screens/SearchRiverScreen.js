@@ -6,7 +6,6 @@ import { Text } from 'react-native-elements';
 import { useTheme } from '@react-navigation/native';
 import testVariables from '../appium_automation_testing/test_variables';
 import LinearGradient from 'react-native-linear-gradient';
-
 import GetLocation from 'react-native-get-location';
 import { FlatList } from 'react-native-gesture-handler';
 import { color } from 'react-native-reanimated';
@@ -104,6 +103,8 @@ const SearchRiverScreen = ({ navigation }) => {
       data.forEach(el => {
         type.push(
           <Button
+            accessibilityLabel={testVariables.flatlistItem}
+            testID={testVariables.flatlistItem}
             key={el.river_id}
             title={el.river_name.toString()}
             onPress={() =>
@@ -233,7 +234,6 @@ const SearchRiverScreen = ({ navigation }) => {
         />
       </View>
       <ScrollView>{renderResults()}</ScrollView>
-
     </View>
   );
 };

@@ -45,19 +45,46 @@ const testVariables = {
   insectScreenContainer: 'insectScreenContainer',
   insectScreenSelectInsectButton: 'insectScreenSelectInsectButton',
   insectScreenAnalyzeInsectButton: 'insectScreenAnalyzeInsectButton',
+  insectScreenSelectedTitle: 'insectScreenSelectedTitle',
+  insectScreenSelectedInsects: 'insectScreenSelectedInsects',
+  showResultIcon: 'showResultIcon',
 
   //choose insect screen
   chooseInsectScreenContainer: 'chooseInsectScreenContainer',
-  group1List: 'group1List',
-  group1ListItem: 'group1ListItem',
-  group2List: 'group2List',
-  group2ListItem: 'group2ListItem',
-  extendBarTextInput: 'extendBarTextInput',
-  finishSelectButton: 'finishSelectButton',
+  groupList: 'groupList',
+  groupAmountInput: 'groupAmountInput',
+  addAmountIcon: 'addAmountIcon',
+  cancelAddAmountIcon: 'cancelAddAmountIcon',
+  submitInsectsAmountButton: 'submitInsectsAmountButton',
+
+  //analysis insects
+  analysisInsectScreenContainer: 'analysisInsectScreenContainer',
+  analysisInsectShowOptions: 'analysisInsectShowOptions',
+  analysisInsectInnerView: 'analysisInsectInnerView',
   takePhotoButton: 'takePhotoButton',
-  chooseFormLibraryButton: 'finishSelectButton',
+  chooseFormLibraryButton: 'chooseFormLibraryButton',
   cancelButton: 'cancelButton',
-  uploadedPhoto: 'uploadedPhoto',
+  analysisInsectUploadedPhotoButton: 'analysisInsectUploadedPhotoButton',
+  analysisInsectSaveButton: 'analysisInsectSaveButton',
+  analysisInsectImageBackground: 'analysisInsectImageBackground',
+
+  //sample history screen
+  sampleHistoryScreenContainer: 'sampleHistoryScreenContainer',
+  sampleHistoryDatePickerController: 'sampleHistoryDatePickerController',
+  sampleHistoryDatePicker: 'sampleHistoryDatePicker',
+  sampleHistorySearchedSample: 'sampleHistorySearchedSample',
+  sampleHistorySearchRiverIcon: 'sampleHistorySearchRiverIcon',
+  sampleHistorySearchRiverBar: 'sampleHistorySearchRiverBar',
+
+  //history list screen
+  historyListContainer: 'historyListContainer',
+  historyListItems: 'historyListItems',
+
+  //history detail screen
+  historyDetailContainer: 'historyDetailContainer',
+
+  //result page
+  resultPageContainer: 'resultPageContainer',
 };
 
 module.exports = testVariables;
